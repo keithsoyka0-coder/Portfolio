@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keith-soyka-portfolio.vercel.app/sitemap.xml
