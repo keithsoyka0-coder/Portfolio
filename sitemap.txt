@@ -3,3 +3,4 @@ https://keith-soyka-portfolio.vercel.app/work.html
 https://keith-soyka-portfolio.vercel.app/services.html
 https://keith-soyka-portfolio.vercel.app/about.html
 https://keith-soyka-portfolio.vercel.app/contact.html
+https://keith-soyka-portfolio.vercel.app/sitemap.html
