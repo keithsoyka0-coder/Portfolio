@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Keith Soyka</title>
+<meta name="description" content="Selected work: GestaltView v3 runtime, Billy collaborator agent, corpus governance, SymbioCoder, and the Portfolio Throughline Test eval harness.">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Keith Soyka<span class="dot">.</span></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="contact.html">Start a conversation</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero" style="padding:64px 0 30px">
+    <span class="eyebrow">Selected work</span>
+    <h1>The work, <span class="grad">with receipts.</span></h1>
+    <p class="lede">Sixteen months of solo, unfunded building. Each project below carries an <strong>evidence label</strong> — what's live, what's staged, what's still a plan. The loop underneath all of it: <strong>preserve source → retrieve context → propose relationships as hypotheses → invite correction → connect to action.</strong></p>
+  </div>
+
+  <section class="block reveal" id="gestaltview">
+    <div class="sec-label">Flagship</div>
+    <h2>GestaltView v3 — continuity infrastructure</h2>
+    <div><span class="tag live">Live runtime</span><span class="tag">Solo-built</span><span class="tag">16 months</span></div>
+    <p class="sec-intro" style="margin-top:18px">A user-directed continuity and recognition system: software designed to preserve unfinished, fragmented, contradictory human context and translate it into useful next steps — <strong>without turning guesses into facts.</strong> React/TypeScript client, Vercel serverless API, Supabase/Postgres data layer, pgvector retrieval, multi-model orchestration with cost-aware routing.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="k">Architecture</div>
+        <h3>What it does</h3>
+        <ul>
+          <li>Hybrid retrieval over a governed corpus (768-dim embeddings)</li>
+          <li>Source preservation with interpretation kept separate</li>
+          <li>Multi-model orchestration — cheap models do groundwork, frontier models review</li>
+          <li>Voice workflows, profile systems, diagnostics</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">Scale (Aug 2026 snapshot)</div>
+        <h3>What's actually there</h3>
+        <ul>
+          <li>217 Postgres tables · 299 RLS policies · 75 DB functions</li>
+          <li>722 TypeScript files across the runtime repos</li>
+          <li>Corpus + runtime kept as separate repositories — an architecture decision, not an accident</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-row" style="margin-top:24px">
+      <a class="btn btn-primary" href="https://gestaltview-v3-psi.vercel.app" target="_blank" rel="noopener">Open the live runtime</a>
+      <a class="btn btn-ghost" href="https://github.com/digitalconsciousness" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <section class="block reveal" id="billy">
+    <div class="sec-label">Agent systems</div>
+    <h2>Billy — the collaborator at the center</h2>
+    <div><span class="tag live">Web</span><span class="tag live">Discord</span><span class="tag live">Reddit</span><span class="tag staged">Slack in build</span></div>
+    <p class="sec-intro" style="margin-top:18px">Billy is GestaltView's runtime agent — co-created over hundreds of hours as a collaborator, not a chatbot. One hardened core converging under a single source of truth, reaching users where they already are.</p>
+    <div class="grid grid-3">
+      <div class="card"><div class="k">Surfaces</div><h3>Where Billy runs</h3><p>Web via Vercel · Discord (/ask, /status, /help) · Reddit (Devvit app + polling bot) · Slack built, awaiting deployment.</p></div>
+      <div class="card"><div class="k">Governance</div><h3>Ten constitutional invariants</h3><p>Five user-facing commitments and five digital-intelligence commitments, machine-readable, shaping prompts, routing, and persistence. Boundaries you can read, not vibes.</p></div>
+      <div class="card"><div class="k">Memory</div><h3>Continuity without amnesia</h3><p>Supabase match_knowledge_fragments as the single source of truth — context that survives interruption instead of the reintroduction tax.</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="throughline">
+    <div class="sec-label">Evaluation</div>
+    <h2>Portfolio Throughline Test</h2>
+    <div><span class="tag staged">Methodology built</span><span class="tag planned">First full run planned</span></div>
+    <p class="sec-intro" style="margin-top:18px">An eval harness that checks whether an AI system <strong>preserves relationships across tasks</strong> — the same discipline I bring to client evaluations. Five local tasks, a 0–2 rubric across five criteria, contradiction and missing-evidence probes, three evidence conditions, and a failure taxonomy (preserved / collapsed / distorted / invented / overloaded / correctly uncertain).</p>
+    <div class="evidence"><strong>Why it matters for clients:</strong> most AI evaluations test whether a model sounds right once. This tests whether it <strong>stays right across a working session</strong> — which is what determines whether a system is safe to put into operation.</div>
+  </section>
+
+  <section class="block reveal">
+    <div class="sec-label">More systems</div>
+    <h2>Around the core</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <div><span class="tag live">Shipped</span></div>
+        <div class="k">Developer tooling</div>
+        <h3>SymbioCoder</h3>
+        <p>An AI coding assistant concept built on a "multi-tribunal" idea — cycling one model through multiple review lenses instead of paying for multiple LLM APIs. Bring-your-own-key, strong free default.</p>
+      </div>
+      <div class="card">
+        <div><span class="tag live">Shipped</span></div>
+        <div class="k">Render pipeline</div>
+        <h3>Artifact render engine</h3>
+        <p>A render pipeline repair that addressed 12 documented fractures across artifact types — with the discipline to say exactly what the evidence does and doesn't establish.</p>
+      </div>
+      <div class="card">
+        <div><span class="tag staged">In build</span></div>
+        <div class="k">Knowledge infrastructure</div>
+        <h3>Corpus governance</h3>
+        <p>Source-authority hierarchy, tracked-file catalog, manifest workflow, additive/idempotent ingestion — rows are never deleted, corrections go forward. The evidence substrate the runtime retrieves against.</p>
+      </div>
+      <div class="card">
+        <div><span class="tag live">Practice</span></div>
+        <div class="k">Method</div>
+        <h3>Voice-first knowledge capture</h3>
+        <p>Long-form voice notes as a thinking medium — transcribed, chunked, and retrievable. The operating manual for a builder whose best thinking happens while walking.</p>
+      </div>
+    </div>
+    <div class="evidence"><strong>Recognition:</strong> Pepperdine Most Fundable Companies 2025 — <strong>quarterfinalist, top 100 of 2,300</strong> (top ~4%). Solo, unfunded, no pitch deck industrial complex.</div>
+  </section>
+
+  <section class="block reveal">
+    <div class="btn-row">
+      <a class="btn btn-primary" href="services.html">Work with me</a>
+      <a class="btn btn-ghost" href="contact.html">Ask about a project</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <strong style="color:var(--ink)">Keith Soyka</strong><br>
+        Operator-led · New York / remote<br>
+        <span style="font-size:.8rem">© 2026 Keith Soyka. Built to be inspected.</span>
+      </div>
+      <ul class="foot-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="social-row">
+      <a href="https://linkedin.com/in/keithsoyka413" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/digitalconsciousness" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://youtube.com/@gestaltview" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/SWVAmjByp" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.instagram.com/gestaltview" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/gestaltview" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://x.com/GestaltView" target="_blank" rel="noopener">X</a>
+      <a href="https://www.tiktok.com/@gestaltview" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.reddit.com/user/gestaltview_ai" target="_blank" rel="noopener">Reddit</a>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
