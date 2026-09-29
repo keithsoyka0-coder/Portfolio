@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand System Sheet — Keith Soyka Design Services</title>
+<style>
+/* ============ PRIMITIVE TOKENS (from client globals.css) ============ */
+:root{
+  --color-white:#ffffff; --color-black:#000000;
+  --color-cream-50:#fcfcf9; --color-cream-100:#fffffd;
+  --color-gray-200:#f5f5f5; --color-gray-300:#a7a9a9; --color-gray-400:#777c7c;
+  --color-slate-500:#626c71; --color-brown-600:#5e5240;
+  --color-charcoal-700:#1f2121; --color-charcoal-800:#262828;
+  --color-slate-900:#13343b;
+  --color-teal-300:#32b8c6; --color-teal-400:#2da6b2; --color-teal-500:#21808d;
+  --color-teal-600:#1d7480; --color-teal-700:#1a6873; --color-teal-800:#2996a1;
+  --color-red-400:#ff5459; --color-red-500:#c0152f;
+  --color-orange-400:#e68161; --color-orange-500:#a84b2f;
+  --color-background:#1f2121; --color-surface:#262828;
+  --color-text:#f5f5f5; --color-text-secondary:rgba(167,169,169,.72);
+  --color-primary:#32b8c6; --color-primary-hover:#2da6b2;
+  --color-border:rgba(119,124,124,.30);
+  --color-card-border:rgba(119,124,124,.20);
+  --color-success:#32b8c6; --color-error:#ff5459;
+  --color-warning:#e68161; --color-info:#a7a9a9;
+  --font-size-xs:11px; --font-size-sm:12px; --font-size-base:14px;
+  --font-size-lg:16px; --font-size-xl:18px; --font-size-2xl:20px;
+  --font-size-3xl:24px; --font-size-4xl:30px;
+  --radius-sm:6px; --radius-base:8px; --radius-md:10px; --radius-lg:12px; --radius-full:9999px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.25);
+  --shadow-md:0 4px 6px -1px rgba(0,0,0,.35);
+  --shadow-lg:0 10px 25px -3px rgba(0,0,0,.5);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"FKGroteskNeue","Geist","Inter",-apple-system,"Segoe UI",Roboto,sans-serif;
+  background:var(--color-background); color:var(--color-text);
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.sheet{width:1200px;margin:0 auto;padding:56px 64px 48px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 12% -4%, rgba(50,184,198,.14), transparent 60%),
+    radial-gradient(760px 420px at 88% 6%, rgba(255,84,89,.08), transparent 60%),
+    radial-gradient(1000px 600px at 50% 110%, rgba(41,150,161,.10), transparent 60%),
+    #1f2121;
+}
+/* ============ HEADER ============ */
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--color-primary);
+  border:1px solid rgba(50,184,198,.35);border-radius:var(--radius-full);
+  padding:7px 16px;margin-bottom:22px;background:rgba(50,184,198,.07)}
+h1.hero{font-size:56px;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin-bottom:14px}
+h1.hero .grad{background:linear-gradient(100deg,#32b8c6,#2da6b2 40%,#ff5459 85%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:18px;color:var(--color-text-secondary);max-width:760px;margin-bottom:8px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.meta span{font-size:12.5px;color:var(--color-text-secondary);
+  border:1px solid var(--color-card-border);border-radius:var(--radius-full);
+  padding:6px 14px;background:rgba(255,255,255,.02)}
+.meta b{color:var(--color-text);font-weight:600}
+/* ============ SECTIONS ============ */
+section{margin-top:52px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-num{font-size:12px;font-weight:600;color:var(--color-primary);
+  border:1px solid rgba(50,184,198,.4);width:30px;height:30px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sec-head h2{font-size:23px;font-weight:600;letter-spacing:-.01em}
+.sec-sub{font-size:13.5px;color:var(--color-text-secondary);margin:2px 0 20px 44px;max-width:820px}
+.sec-sub code,.tok{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;background:rgba(50,184,198,.09);color:#7fdae6;
+  padding:2px 7px;border-radius:6px;border:1px solid rgba(50,184,198,.18)}
+/* ============ SWATCHES ============ */
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-left:44px}
+.swatch{border:1px solid var(--color-card-border);border-radius:var(--radius-md);
+  overflow:hidden;background:var(--color-surface)}
+.sw{height:64px}
+.sw-meta{padding:9px 11px}
+.sw-meta .n{font-size:12.5px;font-weight:600}
+.sw-meta .v{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:var(--color-text-secondary)}
+/* semantic rows */
+.sem-rows{margin-left:44px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sem{background:var(--color-surface);border:1px solid var(--color-card-border);
+  border-radius:var(--radius-md);padding:14px 16px;display:flex;align-items:center;gap:14px}
+.sem .dot{width:34px;height:34px;border-radius:10px;flex:none;border:1px solid rgba(255,255,255,.12)}
+.sem .t b{display:block;font-size:13.5px}
+.sem .t span{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--color-text-secondary)}
+/* ============ TYPE ============ */
+.type-rows{margin-left:44px;border:1px solid var(--color-card-border);
+  border-radius:var(--radius-lg);overflow:hidden}
+.tr{display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  padding:16px 22px;border-bottom:1px solid var(--color-card-border);background:rgba(255,255,255,.012)}
+.tr:last-child{border-bottom:none}
+.tr .sample{letter-spacing:-.01em}
+.tr .tok{flex:none}
+/* ============ BUTTONS ============ */
+.btnrow{margin-left:44px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+  background:rgba(255,255,255,.015);border:1px solid var(--color-card-border);
+  border-radius:var(--radius-lg);padding:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;
+  border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;border:none;
+  transition:all .25s var(--ease);font-family:inherit}
+.btn-primary{background:var(--color-primary);color:#13343b;font-weight:600}
+.btn-primary:hover{background:var(--color-primary-hover);box-shadow:0 0 22px rgba(50,184,198,.45)}
+.btn-secondary{background:rgba(119,124,124,.16);color:var(--color-text)}
+.btn-secondary:hover{background:rgba(119,124,124,.28)}
+.btn-outline{background:transparent;border:1px solid var(--color-border);color:var(--color-text)}
+.btn-outline:hover{background:rgba(119,124,124,.12)}
+.btn-neural{background:linear-gradient(135deg,#32b8c6,#2da6b2);color:#13343b;font-weight:600;
+  box-shadow:0 0 16px rgba(50,184,198,.35)}
+.btn-neural:hover{box-shadow:0 0 28px rgba(50,184,198,.6);transform:translateY(-1px)}
+.btn-glass{background:rgba(245,245,245,.06);border:1px solid rgba(245,245,245,.22);
+  color:var(--color-text);backdrop-filter:blur(8px)}
+.btn-glass:hover{background:rgba(245,245,245,.12)}
+.btn-label{font-size:11px;color:var(--color-text-secondary);font-family:ui-monospace,Menlo,monospace;
+  display:block;text-align:center;margin-top:8px}
+/* ============ CARDS ============ */
+.cardgrid{margin-left:44px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--color-surface);border:1px solid var(--color-card-border);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden}
+.card .ch{padding:16px 20px;border-bottom:1px solid var(--color-card-border);font-weight:600;font-size:15px}
+.card .cb{padding:18px 20px;font-size:13.5px;color:var(--color-text-secondary)}
+.card .cf{padding:14px 20px;border-top:1px solid var(--color-card-border)}
+.glass{background:rgba(245,245,245,.06);border:1px solid rgba(245,245,245,.14);
+  border-radius:var(--radius-lg);backdrop-filter:blur(14px);padding:22px;
+  box-shadow:var(--shadow-lg)}
+.pill{display:inline-flex;align-items:center;padding:6px 14px;border-radius:var(--radius-full);
+  font-size:12px;font-weight:500;border:1px solid}
+.pill.ok{color:#32b8c6;border-color:rgba(50,184,198,.4);background:rgba(50,184,198,.10)}
+.pill.err{color:#ff5459;border-color:rgba(255,84,89,.4);background:rgba(255,84,89,.10)}
+.pill.warn{color:#e68161;border-color:rgba(230,129,97,.4);background:rgba(230,129,97,.10)}
+.pill.info{color:#a7a9a9;border-color:rgba(167,169,169,.4);background:rgba(167,169,169,.10)}
+/* ============ RADIUS / FORM ============ */
+.shaperow{margin-left:44px;display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.shape{background:linear-gradient(135deg,rgba(50,184,198,.25),rgba(45,166,178,.08));
+  border:1px solid rgba(50,184,198,.4);width:104px;height:78px;
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px}
+.shape span{font-size:10.5px;font-family:ui-monospace,Menlo,monospace;color:#7fdae6}
+.formrow{margin-left:44px;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}
+.field label{display:block;font-size:12px;font-weight:500;margin-bottom:8px;color:var(--color-text-secondary)}
+.input{width:100%;padding:11px 14px;font-size:14px;color:var(--color-text);
+  background:var(--color-surface);border:1px solid var(--color-border);
+  border-radius:8px;font-family:inherit}
+.input:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(50,184,198,.25)}
+/* ============ FOOTER ============ */
+footer{margin-top:56px;border:1px solid rgba(50,184,198,.3);border-radius:18px;
+  padding:34px 38px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,rgba(50,184,198,.12),rgba(255,84,89,.06) 70%,transparent)}
+footer h3{font-size:26px;letter-spacing:-.01em;margin-bottom:8px}
+footer h3 .grad{background:linear-gradient(100deg,#32b8c6,#ff5459);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+footer p{color:var(--color-text-secondary);font-size:14px;max-width:640px;margin-bottom:18px}
+.prices{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.prices span{font-size:12.5px;border:1px solid var(--color-card-border);
+  border-radius:var(--radius-full);padding:7px 15px;background:rgba(255,255,255,.03)}
+.prices b{color:var(--color-primary)}
+.contact{font-size:13.5px;color:var(--color-text-secondary)}
+.contact b{color:var(--color-text)}
+.sheet-tag{position:absolute;top:26px;right:30px;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--color-text-secondary);
+  border:1px solid var(--color-card-border);padding:7px 14px;border-radius:var(--radius-full)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="sheet-tag">Client deliverable · v1.0</div>
+
+  <span class="eyebrow">Brand system · Globals sheet</span>
+  <h1 class="hero">Your brand,<br><span class="grad">engineered, not decorated.</span></h1>
+  <p class="lede">Every color, type decision, and component in one system — so your site, decks, and product all speak the same visual language. This sheet is built from a real client token set: the one running this page.</p>
+  <div class="meta">
+    <span><b>Keith Soyka</b> · Design Services</span>
+    <span>Dark-first · Light-mode ready</span>
+    <span>62 semantic tokens</span>
+    <span>WCAG-conscious contrast</span>
+  </div>
+
+  <!-- 01 COLOR -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Color primitives</h2></div>
+    <p class="sec-sub">The raw palette. Everything below is mixed from these — never a one-off hex.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="sw" style="background:#32b8c6"></div><div class="sw-meta"><div class="n">Teal 300</div><div class="v">#32B8C6 · primary</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#2da6b2"></div><div class="sw-meta"><div class="n">Teal 400</div><div class="v">#2DA6B2</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#21808d"></div><div class="sw-meta"><div class="n">Teal 500</div><div class="v">#21808D</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#1d7480"></div><div class="sw-meta"><div class="n">Teal 600</div><div class="v">#1D7480</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#1a6873"></div><div class="sw-meta"><div class="n">Teal 700</div><div class="v">#1A6873</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#2996a1"></div><div class="sw-meta"><div class="n">Teal 800</div><div class="v">#2996A1</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#1f2121"></div><div class="sw-meta"><div class="n">Charcoal 700</div><div class="v">#1F2121 · bg</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#262828"></div><div class="sw-meta"><div class="n">Charcoal 800</div><div class="v">#262828 · surface</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#13343b"></div><div class="sw-meta"><div class="n">Slate 900</div><div class="v">#13343B · text</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#626c71"></div><div class="sw-meta"><div class="n">Slate 500</div><div class="v">#626C71</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#fcfcf9"></div><div class="sw-meta"><div class="n">Cream 50</div><div class="v">#FCFCF9</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#f5f5f5"></div><div class="sw-meta"><div class="n">Gray 200</div><div class="v">#F5F5F5</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#a7a9a9"></div><div class="sw-meta"><div class="n">Gray 300</div><div class="v">#A7A9A9</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#777c7c"></div><div class="sw-meta"><div class="n">Gray 400</div><div class="v">#777C7C</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#5e5240"></div><div class="sw-meta"><div class="n">Brown 600</div><div class="v">#5E5240</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#ff5459"></div><div class="sw-meta"><div class="n">Red 400</div><div class="v">#FF5459 · error</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#c0152f"></div><div class="sw-meta"><div class="n">Red 500</div><div class="v">#C0152F</div></div></div>
+      <div class="swatch"><div class="sw" style="background:#e68161"></div><div class="sw-meta"><div class="n">Orange 400</div><div class="v">#E68161 · warning</div></div></div>
+    </div>
+  </section>
+
+  <!-- 02 SEMANTIC -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Semantic tokens</h2></div>
+    <p class="sec-sub">Components never touch raw color — they reference meaning: <span class="tok">--color-primary</span>, <span class="tok">--color-surface</span>, <span class="tok">--color-error</span>. Re-theme once, everywhere updates.</p>
+    <div class="sem-rows">
+      <div class="sem"><div class="dot" style="background:#1f2121;border-color:rgba(255,255,255,.2)"></div><div class="t"><b>Background</b><span>--color-background</span></div></div>
+      <div class="sem"><div class="dot" style="background:#262828"></div><div class="t"><b>Surface</b><span>--color-surface</span></div></div>
+      <div class="sem"><div class="dot" style="background:#f5f5f5"></div><div class="t"><b>Text</b><span>--color-text</span></div></div>
+      <div class="sem"><div class="dot" style="background:#32b8c6"></div><div class="t"><b>Primary / Action</b><span>--color-primary</span></div></div>
+      <div class="sem"><div class="dot" style="background:transparent;border:1px dashed #777c7c"></div><div class="t"><b>Border</b><span>--color-border · 30% gray-400</span></div></div>
+      <div class="sem"><div class="dot" style="background:rgba(50,184,198,.15);border-color:rgba(50,184,198,.5)"></div><div class="t"><b>Success</b><span>--color-success</span></div></div>
+      <div class="sem"><div class="dot" style="background:rgba(255,84,89,.15);border-color:rgba(255,84,89,.5)"></div><div class="t"><b>Error</b><span>--color-error</span></div></div>
+      <div class="sem"><div class="dot" style="background:rgba(230,129,97,.15);border-color:rgba(230,129,97,.5)"></div><div class="t"><b>Warning</b><span>--color-warning</span></div></div>
+    </div>
+  </section>
+
+  <!-- 03 TYPE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Typography</h2></div>
+    <p class="sec-sub">One family, one scale. Tight letter-spacing on display sizes, calm line-height on body.</p>
+    <div class="type-rows">
+      <div class="tr"><div class="sample" style="font-size:30px;font-weight:600">Display — the headline voice</div><span class="tok">--font-size-4xl · 600</span></div>
+      <div class="tr"><div class="sample" style="font-size:24px;font-weight:600">Section headings carry weight</div><span class="tok">--font-size-3xl · 600</span></div>
+      <div class="tr"><div class="sample" style="font-size:20px;font-weight:600">Card titles and subheads</div><span class="tok">--font-size-2xl · 600</span></div>
+      <div class="tr"><div class="sample" style="font-size:16px">Body large — comfortable reading at 1.5 line-height.</div><span class="tok">--font-size-lg · 400</span></div>
+      <div class="tr"><div class="sample" style="font-size:14px">Body — the workhorse. UI copy, paragraphs, form text.</div><span class="tok">--font-size-base · 400</span></div>
+      <div class="tr"><div class="sample" style="font-size:12px;color:var(--color-text-secondary)">Small — captions, labels, metadata. Never below 11px.</div><span class="tok">--font-size-sm · 500</span></div>
+      <div class="tr"><div class="sample" style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#7fdae6">const theme = await brand.systematize()</div><span class="tok">--font-family-mono</span></div>
+    </div>
+  </section>
+
+  <!-- 04 BUTTONS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Buttons</h2></div>
+    <p class="sec-sub">Five variants, one radius system, one motion curve <span class="tok">cubic-bezier(.16,1,.3,1)</span>.</p>
+    <div class="btnrow">
+      <div><button class="btn btn-primary">Primary action</button><span class="btn-label">.btn--primary</span></div>
+      <div><button class="btn btn-secondary">Secondary</button><span class="btn-label">.btn--secondary</span></div>
+      <div><button class="btn btn-outline">Outline</button><span class="btn-label">.btn--outline</span></div>
+      <div><button class="btn btn-neural">Neural glow</button><span class="btn-label">.btn-neural</span></div>
+      <div><button class="btn btn-glass">Glass</button><span class="btn-label">.btn-glass</span></div>
+    </div>
+  </section>
+
+  <!-- 05 CARDS + STATUS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cards &amp; status</h2></div>
+    <p class="sec-sub">Surfaces for content, pills for state. Borders do the separation — never heavy shadows.</p>
+    <div class="cardgrid">
+      <div class="card">
+        <div class="ch">Standard card</div>
+        <div class="cb">Surface background, hairline card border, soft shadow that deepens on hover. Header / body / footer slots.</div>
+        <div class="cf"><span class="pill ok">Live</span> <span class="pill info" style="margin-left:8px">v2.4</span></div>
+      </div>
+      <div class="glass">
+        <div style="font-weight:600;margin-bottom:8px">Glass card</div>
+        <div style="font-size:13.5px;color:var(--color-text-secondary);margin-bottom:14px">Frosted surface for overlays, hero panels, and floating UI. Backdrop blur over whatever sits beneath.</div>
+        <span class="pill warn">Beta</span> <span class="pill err" style="margin-left:8px">Attention</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SHAPE + FORM -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Shape &amp; inputs</h2></div>
+    <p class="sec-sub">Radius scale <span class="tok">6 → 12px</span> plus full-round. Inputs inherit border, focus ring, and caret tokens.</p>
+    <div class="shaperow">
+      <div class="shape" style="border-radius:6px"><span>radius-sm</span></div>
+      <div class="shape" style="border-radius:8px"><span>radius-base</span></div>
+      <div class="shape" style="border-radius:10px"><span>radius-md</span></div>
+      <div class="shape" style="border-radius:12px"><span>radius-lg</span></div>
+      <div class="shape" style="border-radius:9999px;width:120px"><span>radius-full</span></div>
+    </div>
+    <div class="formrow" style="margin-top:20px">
+      <div class="field"><label>Text input</label><input class="input" value="hello@client.com" readonly></div>
+      <div class="field"><label>Focus ring</label><input class="input" value=":focus-visible → teal ring" readonly style="border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(50,184,198,.25)"></div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Your brand, <span class="grad">systematized.</span></h3>
+    <p>This sheet is a client deliverable format: your palette, type, and components documented as a buildable token system — handed over with the files, not just a screenshot. Logos, decks, and web, all from the same source of truth.</p>
+    <div class="prices">
+      <span><b>Logos</b> $175 / $350</span>
+      <span><b>Decks</b> $75/hr</span>
+      <span><b>Web design</b> scoped</span>
+      <span><b>AI audits</b> $2,500</span>
+      <span><b>AI builds</b> from $5,000</span>
+    </div>
+    <div class="contact"><b>Keith Soyka</b> · keithsoyka@gmail.com · (646) 741-6849 · keith-soyka-portfolio.vercel.app</div>
+  </footer>
+</div>
+</body>
+</html>

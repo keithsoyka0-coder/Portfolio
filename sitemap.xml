@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+  <url>
+    <loc>https://keith-soyka-portfolio.vercel.app/showcase.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
     <loc>https://keith-soyka-portfolio.vercel.app/services.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>

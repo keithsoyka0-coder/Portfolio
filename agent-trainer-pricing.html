@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GestaltView Agent Trainer — Pricing</title>
+  <meta name="description" content="Train an AI on your world, not ours. The GestaltView Agent Trainer: a hardened, white-label AI assistant scaffold for operators who build seriously.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'DM Sans', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+      --font-mono:    'DM Mono', monospace;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --text-hero: clamp(2.5rem,   1rem    + 4vw,    5rem);
+      --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
+      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+      --content-default:960px;--content-wide:1200px;--content-narrow:640px;
+    }
+    [data-theme="dark"] {
+      --color-bg:#0f0e0d;--color-surface:#161513;--color-surface-2:#1c1a18;
+      --color-surface-offset:#211f1c;--color-divider:#2a2824;--color-border:#333028;
+      --color-text:#e8e5df;--color-text-muted:#8a8780;--color-text-faint:#4a4844;
+      --color-primary:#5ba8a0;--color-primary-hover:#3d8f86;
+      --color-primary-glow:oklch(0.58 0.09 185 / 0.18);
+      --color-accent:#c49a3c;--color-accent-hover:#d4aa4c;
+      --color-success:#6daa45;
+      --shadow-sm:0 1px 2px oklch(0 0 0 / 0.3);
+      --shadow-md:0 4px 16px oklch(0 0 0 / 0.4);
+      --shadow-lg:0 12px 40px oklch(0 0 0 / 0.5);
+      --shadow-glow:0 0 40px oklch(0.58 0.09 185 / 0.14);
+    }
+    [data-theme="light"] {
+      --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#ffffff;
+      --color-surface-offset:#f0ede8;--color-divider:#dcd9d5;--color-border:#d4d1ca;
+      --color-text:#1a1915;--color-text-muted:#6b6966;--color-text-faint:#a8a5a0;
+      --color-primary:#01696f;--color-primary-hover:#0c4e54;
+      --color-primary-glow:oklch(0.42 0.09 192 / 0.10);
+      --color-accent:#8a6200;--color-accent-hover:#6b4c00;
+      --color-success:#437a22;
+      --shadow-sm:0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md:0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --shadow-lg:0 12px 32px oklch(0.2 0.01 80 / 0.12);
+      --shadow-glow:0 0 32px oklch(0.42 0.09 192 / 0.08);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.65;}
+    img,svg{display:block;max-width:100%;}
+    p,li{max-width:72ch;text-wrap:pretty;}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.15;}
+    button{cursor:pointer;font:inherit;color:inherit;}
+    a{color:inherit;}
+    ::selection{background:var(--color-primary-glow);}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important;}}
+
+    /* Layout */
+    .container{max-width:var(--content-default);margin-inline:auto;padding-inline:var(--space-6);}
+    .container--wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6);}
+    .container--narrow{max-width:var(--content-narrow);margin-inline:auto;padding-inline:var(--space-6);}
+    section{padding-block:clamp(var(--space-12),8vw,var(--space-24));}
+
+    /* Nav */
+    nav{position:sticky;top:0;z-index:100;background:oklch(from var(--color-bg) l c h / 0.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--color-divider);padding:var(--space-4) var(--space-6);}
+    .nav-inner{max-width:var(--content-wide);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);}
+    .nav-logo{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;font-weight:600;font-size:var(--text-sm);letter-spacing:-0.01em;color:var(--color-text);}
+    .nav-links{display:flex;align-items:center;gap:var(--space-6);list-style:none;}
+    .nav-links a{text-decoration:none;font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition);}
+    .nav-links a:hover{color:var(--color-text);}
+    .nav-actions{display:flex;align-items:center;gap:var(--space-3);}
+    .theme-toggle{background:none;border:1px solid var(--color-border);padding:var(--space-2);border-radius:var(--radius-md);color:var(--color-text-muted);transition:color var(--transition),border-color var(--transition);display:flex;align-items:center;justify-content:center;}
+    .theme-toggle:hover{color:var(--color-text);border-color:var(--color-text-muted);}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3) var(--space-6);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:500;text-decoration:none;border:1px solid transparent;transition:background var(--transition),color var(--transition),border-color var(--transition),box-shadow var(--transition);white-space:nowrap;}
+    .btn-primary{background:var(--color-primary);color:var(--color-bg);border-color:var(--color-primary);}
+    .btn-primary:hover{background:var(--color-primary-hover);border-color:var(--color-primary-hover);box-shadow:var(--shadow-glow);}
+    .btn-secondary{background:transparent;color:var(--color-text);border-color:var(--color-border);}
+    .btn-secondary:hover{border-color:var(--color-text-muted);}
+    .btn--lg{padding:var(--space-4) var(--space-8);font-size:var(--text-base);}
+    .btn--full{width:100%;}
+
+    /* Hero */
+    .hero{padding-block:clamp(var(--space-16),12vw,10rem);text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--color-primary-glow),transparent 70%);pointer-events:none;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-family:var(--font-mono);color:var(--color-primary);letter-spacing:0.08em;text-transform:uppercase;background:oklch(from var(--color-primary) l c h / 0.1);border:1px solid oklch(from var(--color-primary) l c h / 0.25);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-6);}
+    .hero-title{font-size:var(--text-hero);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:var(--space-6);color:var(--color-text);}
+    .hero-title em{font-style:normal;color:var(--color-primary);}
+    .hero-sub{font-size:var(--text-lg);color:var(--color-text-muted);max-width:52ch;margin-inline:auto;margin-bottom:var(--space-10);line-height:1.6;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;}
+    .hero-badge{margin-top:var(--space-8);font-size:var(--text-xs);color:var(--color-text-faint);font-family:var(--font-mono);}
+
+    /* Founding Banner */
+    .founding-banner{background:oklch(from var(--color-accent) l c h / 0.07);border:1px solid oklch(from var(--color-accent) l c h / 0.2);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-6);display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;justify-content:space-between;margin-bottom:var(--space-10);}
+    .founding-banner-text{font-size:var(--text-sm);color:var(--color-text-muted);}
+    .founding-banner-text strong{color:var(--color-accent);}
+    .founding-badge{font-size:var(--text-xs);font-family:var(--font-mono);color:var(--color-accent);letter-spacing:0.06em;background:oklch(from var(--color-accent) l c h / 0.12);border:1px solid oklch(from var(--color-accent) l c h / 0.25);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);white-space:nowrap;}
+
+    /* Section Headers */
+    .section-eyebrow{font-size:var(--text-xs);font-family:var(--font-mono);color:var(--color-primary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--space-3);}
+    .section-title{font-size:var(--text-xl);font-weight:700;letter-spacing:-0.025em;margin-bottom:var(--space-4);}
+    .section-sub{font-size:var(--text-base);color:var(--color-text-muted);max-width:52ch;line-height:1.65;}
+    .section-header{margin-bottom:var(--space-10);}
+
+    /* Scaffold Card */
+    .scaffold-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),4vw,var(--space-12));display:grid;gap:var(--space-8);grid-template-columns:1fr 260px;align-items:start;position:relative;overflow:hidden;transition:box-shadow var(--transition);}
+    .scaffold-card:hover{box-shadow:var(--shadow-lg);}
+    .scaffold-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 100% 50%,var(--color-primary-glow),transparent 70%);pointer-events:none;}
+    .scaffold-tag{display:inline-flex;font-size:var(--text-xs);font-family:var(--font-mono);color:var(--color-primary);letter-spacing:0.06em;text-transform:uppercase;background:oklch(from var(--color-primary) l c h / 0.1);border:1px solid oklch(from var(--color-primary) l c h / 0.25);padding:2px var(--space-3);border-radius:var(--radius-full);width:fit-content;margin-bottom:var(--space-4);}
+    .scaffold-title{font-size:var(--text-xl);font-weight:700;letter-spacing:-0.025em;margin-bottom:var(--space-4);}
+    .scaffold-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;max-width:48ch;margin-bottom:var(--space-5);}
+    .scaffold-includes{display:flex;flex-wrap:wrap;gap:var(--space-2);}
+    .scaffold-chip{font-size:var(--text-xs);font-family:var(--font-mono);background:var(--color-surface-offset);border:1px solid var(--color-border);color:var(--color-text-muted);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);}
+    .scaffold-price-block{display:flex;flex-direction:column;align-items:flex-end;gap:var(--space-4);text-align:right;position:relative;}
+    .scaffold-price{font-size:var(--text-2xl);font-weight:700;letter-spacing:-0.04em;}
+    .scaffold-price-note{font-size:var(--text-xs);color:var(--color-text-faint);font-family:var(--font-mono);}
+    .scaffold-early{font-size:var(--text-sm);color:var(--color-accent);background:oklch(from var(--color-accent) l c h / 0.1);border:1px solid oklch(from var(--color-accent) l c h / 0.2);padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);text-align:center;}
+    .scaffold-secure{font-size:var(--text-xs);color:var(--color-text-faint);text-align:center;margin-top:calc(var(--space-1)*-1);}
+
+    /* Billing Toggle */
+    .billing-toggle{display:flex;align-items:center;justify-content:center;gap:var(--space-3);margin-bottom:var(--space-10);}
+    .toggle-track{position:relative;width:52px;height:28px;background:var(--color-surface-offset);border:1px solid var(--color-border);border-radius:var(--radius-full);cursor:pointer;transition:background var(--transition),border-color var(--transition);}
+    .toggle-track.active{background:var(--color-primary);border-color:var(--color-primary);}
+    .toggle-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:var(--radius-full);background:white;transition:transform var(--transition);box-shadow:var(--shadow-sm);}
+    .toggle-track.active .toggle-thumb{transform:translateX(24px);}
+    .toggle-label{font-size:var(--text-sm);color:var(--color-text-muted);cursor:pointer;transition:color var(--transition);}
+    .toggle-label.active-label{color:var(--color-text);font-weight:500;}
+    .save-badge{font-size:var(--text-xs);font-family:var(--font-mono);background:oklch(from var(--color-success) l c h / 0.12);color:var(--color-success);border:1px solid oklch(from var(--color-success) l c h / 0.25);padding:2px var(--space-2);border-radius:var(--radius-full);}
+
+    /* Pricing Grid */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:var(--space-4);align-items:start;}
+    .plan-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);display:flex;flex-direction:column;gap:var(--space-6);transition:box-shadow var(--transition),border-color var(--transition),transform var(--transition);position:relative;overflow:hidden;}
+    .plan-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+    .plan-card.featured{border-color:var(--color-primary);box-shadow:0 0 0 1px var(--color-primary),var(--shadow-glow);}
+    .plan-card.featured:hover{box-shadow:0 0 0 1px var(--color-primary),var(--shadow-lg),var(--shadow-glow);}
+    .plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;}
+    .plan-card.featured::before{background:var(--color-primary);}
+    .featured-tag{position:absolute;top:var(--space-4);right:var(--space-4);font-size:var(--text-xs);font-family:var(--font-mono);background:var(--color-primary);color:var(--color-bg);padding:2px var(--space-3);border-radius:var(--radius-full);letter-spacing:0.04em;}
+    .plan-name{font-size:var(--text-xs);font-family:var(--font-mono);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-muted);}
+    .plan-price{font-size:var(--text-xl);font-weight:700;letter-spacing:-0.03em;color:var(--color-text);display:flex;align-items:baseline;gap:var(--space-1);}
+    .plan-price-unit{font-size:var(--text-sm);font-weight:400;color:var(--color-text-muted);}
+    .plan-price-sub{font-size:var(--text-xs);color:var(--color-text-faint);font-family:var(--font-mono);margin-top:var(--space-1);}
+    .plan-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;}
+    .plan-features{list-style:none;display:flex;flex-direction:column;gap:var(--space-2);flex:1;}
+    .plan-features li{font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:flex-start;gap:var(--space-2);line-height:1.5;}
+    .plan-features li .check{color:var(--color-primary);flex-shrink:0;margin-top:2px;}
+    .plan-cta{margin-top:auto;}
+
+    /* Consulting */
+    .consulting-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:var(--space-4);}
+    .consult-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);transition:box-shadow var(--transition),border-color var(--transition);}
+    .consult-card:hover{box-shadow:var(--shadow-md);border-color:var(--color-text-faint);}
+    .consult-icon{width:40px;height:40px;border-radius:var(--radius-md);background:oklch(from var(--color-primary) l c h / 0.1);border:1px solid oklch(from var(--color-primary) l c h / 0.2);display:flex;align-items:center;justify-content:center;color:var(--color-primary);font-size:18px;}
+    .consult-name{font-size:var(--text-base);font-weight:600;}
+    .consult-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;flex:1;}
+    .consult-price{font-size:var(--text-lg);font-weight:700;color:var(--color-text);}
+    .consult-price-unit{font-size:var(--text-xs);font-weight:400;color:var(--color-text-muted);}
+
+    /* Coupons */
+    .coupon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:var(--space-3);}
+    .coupon-card{background:var(--color-surface);border:1px dashed var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-2);cursor:pointer;transition:border-color var(--transition),box-shadow var(--transition);}
+    .coupon-card:hover{border-color:var(--color-primary);box-shadow:var(--shadow-sm);}
+    .coupon-code{font-family:var(--font-mono);font-size:var(--text-sm);font-weight:500;color:var(--color-primary);letter-spacing:0.04em;}
+    .coupon-desc{font-size:var(--text-xs);color:var(--color-text-muted);}
+    .coupon-copy-hint{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-1);}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:var(--space-2);}
+    .faq-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+    .faq-question{width:100%;text-align:left;padding:var(--space-5) var(--space-6);font-size:var(--text-sm);font-weight:500;color:var(--color-text);background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);transition:color var(--transition);}
+    .faq-question:hover{color:var(--color-primary);}
+    .faq-chevron{flex-shrink:0;transition:transform var(--transition);color:var(--color-text-muted);}
+    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq-answer{display:none;padding:0 var(--space-6) var(--space-5);font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;}
+    .faq-item.open .faq-answer{display:block;}
+
+    /* CTA Banner */
+    .cta-banner{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:clamp(var(--space-8),6vw,var(--space-16));text-align:center;position:relative;overflow:hidden;}
+    .cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,var(--color-primary-glow),transparent 70%);pointer-events:none;}
+    .cta-title{font-size:var(--text-xl);font-weight:700;letter-spacing:-0.025em;margin-bottom:var(--space-4);}
+    .cta-sub{font-size:var(--text-base);color:var(--color-text-muted);max-width:44ch;margin-inline:auto;margin-bottom:var(--space-8);}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;}
+
+    /* Divider stripe */
+    .section-divider{border:none;border-top:1px solid var(--color-divider);margin:0;}
+
+    /* Footer */
+    footer{border-top:1px solid var(--color-divider);padding-block:var(--space-10);}
+    .footer-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-4);}
+    .footer-brand{font-size:var(--text-sm);color:var(--color-text-muted);}
+    .footer-links{display:flex;gap:var(--space-6);}
+    .footer-links a{font-size:var(--text-xs);color:var(--color-text-faint);text-decoration:none;transition:color var(--transition);}
+    .footer-links a:hover{color:var(--color-text-muted);}
+
+    /* Platform badges */
+    .platform-row{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);justify-content:center;}
+    .platform-badge{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-family:var(--font-mono);color:var(--color-text-faint);background:var(--color-surface-offset);border:1px solid var(--color-border);padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);}
+    .platform-dot{width:6px;height:6px;border-radius:var(--radius-full);background:var(--color-primary);flex-shrink:0;}
+
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .scaffold-card{grid-template-columns:1fr;}
+      .scaffold-price-block{align-items:flex-start;text-align:left;}
+    }
+    @media(max-width:480px){
+      .container,.container--wide{padding-inline:var(--space-4);}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="GestaltView logo">
+        <rect width="28" height="28" rx="6" fill="currentColor" opacity="0.08"/>
+        <circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <circle cx="14" cy="14" r="2" fill="currentColor"/>
+        <line x1="14" y1="4" x2="14" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="19" x2="14" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="4" y1="14" x2="9" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="19" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      GestaltView
+    </a>
+    <ul class="nav-links">
+      <li><a href="#scaffold">Scaffold</a></li>
+      <li><a href="#subscriptions">Subscriptions</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#scaffold" class="btn btn-primary">Get the Scaffold</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container--narrow">
+    <div class="hero-eyebrow">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+      GestaltView Agent Trainer &nbsp;·&nbsp; v0.1.0
+    </div>
+    <h1 class="hero-title">Train an AI on<br><em>your world</em>,<br>not ours.</h1>
+    <p class="hero-sub">A hardened, white-label AI assistant scaffold. Built for operators who understand that the corpus is the product — and the training is the moat.</p>
+    <div class="hero-actions">
+      <a href="#scaffold" class="btn btn-primary btn--lg">Get the Productized Floor →</a>
+      <a href="#subscriptions" class="btn btn-secondary btn--lg">View Subscriptions</a>
+    </div>
+    <p class="hero-badge">Use code <strong>EARLYBIRD20</strong> for 20% off at launch</p>
+    <div class="platform-row">
+      <span class="platform-badge"><span class="platform-dot"></span>Direct · gestaltview.com</span>
+      <span class="platform-badge"><span class="platform-dot"></span>Gumroad</span>
+      <span class="platform-badge"><span class="platform-dot"></span>Lemon Squeezy</span>
+      <span class="platform-badge"><span class="platform-dot"></span>Secure checkout via Stripe</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SCAFFOLD -->
+<section id="scaffold">
+  <div class="container--wide">
+    <div class="founding-banner">
+      <div>
+        <p class="founding-banner-text"><strong>Founding Buyer Pricing — $1,920</strong> with code EARLYBIRD20 (regular $2,400)</p>
+        <p class="founding-banner-text" style="margin-top:4px;font-size:0.8em;opacity:0.8;">Limited to early adopters. Price locks in. No subscription required.</p>
+      </div>
+      <span class="founding-badge">EARLYBIRD20</span>
+    </div>
+
+    <div class="scaffold-card">
+      <div>
+        <span class="scaffold-tag">Productized Floor — One-Time License</span>
+        <h2 class="scaffold-title">GestaltView Agent Trainer</h2>
+        <p class="scaffold-desc">The complete white-label AI assistant scaffold. A commercially usable deployment layer for training AI assistants grounded in your proprietary corpus, vocabulary, and operating context. You own it. You inspect it. You deploy it.</p>
+        <div class="scaffold-includes">
+          <span class="scaffold-chip">Four-Lane Corpus Model</span>
+          <span class="scaffold-chip">Personal Language Kit (PLK)</span>
+          <span class="scaffold-chip">Go-Live Readiness Scoring</span>
+          <span class="scaffold-chip">CLI + Setup Wizard</span>
+          <span class="scaffold-chip">Supabase Schema + RLS</span>
+          <span class="scaffold-chip">Operator Packs</span>
+          <span class="scaffold-chip">Sub-Agent Templates</span>
+          <span class="scaffold-chip">Multi-Agent Templates</span>
+          <span class="scaffold-chip">Corpus Ingestion Scripts</span>
+          <span class="scaffold-chip">Cross-Platform Entry</span>
+          <span class="scaffold-chip">React Components</span>
+          <span class="scaffold-chip">Smoke Tests</span>
+        </div>
+      </div>
+      <div class="scaffold-price-block">
+        <div>
+          <div class="scaffold-price">$2,400</div>
+          <div class="scaffold-price-note">one-time · perpetual license</div>
+        </div>
+        <div class="scaffold-early">Launch: $1,920 with EARLYBIRD20</div>
+        <a href="YOUR_STRIPE_PAYMENT_LINK_SCAFFOLD" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn--lg btn--full">Get the Scaffold →</a>
+        <p class="scaffold-secure">🔒 Secure checkout via Stripe</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SUBSCRIPTIONS -->
+<section id="subscriptions">
+  <div class="container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">Commercial Tracks</p>
+      <h2 class="section-title">Ongoing Platform Access</h2>
+      <p class="section-sub">Recurring access to the GAT platform for individuals, teams, and enterprise organizations. All monthly plans include a 7-day free trial.</p>
+    </div>
+
+    <div class="billing-toggle">
+      <span class="toggle-label active-label" id="monthlyLabel" onclick="setAnnual(false)">Monthly</span>
+      <button class="toggle-track" id="toggleBtn" aria-label="Switch billing period" onclick="setAnnual(!isAnnual)">
+        <div class="toggle-thumb"></div>
+      </button>
+      <span class="toggle-label" id="annualLabel" onclick="setAnnual(true)">Annual &nbsp;<span class="save-badge">Save ~20%</span></span>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Solo -->
+      <div class="plan-card">
+        <p class="plan-name">Solo Track</p>
+        <div>
+          <div class="plan-price">
+            <span class="price-display" data-monthly="$49" data-annual="$39">$49</span>
+            <span class="plan-price-unit">/mo</span>
+          </div>
+          <p class="plan-price-sub price-sub-display" data-monthly="7-day free trial · cancel anytime" data-annual="$468 billed annually · ~20% off">7-day free trial · cancel anytime</p>
+        </div>
+        <p class="plan-desc">For individual operators: fast setup, one workspace, personal corpus management, and PLK voice configuration.</p>
+        <ul class="plan-features">
+          <li><span class="check">✓</span>1 workspace</li>
+          <li><span class="check">✓</span>Personal corpus management</li>
+          <li><span class="check">✓</span>PLK voice configuration</li>
+          <li><span class="check">✓</span>CLI + Setup Wizard access</li>
+          <li><span class="check">✓</span>Session memory</li>
+          <li><span class="check">✓</span>Basic analytics</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="YOUR_STRIPE_PAYMENT_LINK_SOLO" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn--full">Start Solo Track</a>
+        </div>
+      </div>
+
+      <!-- Business (Featured) -->
+      <div class="plan-card featured">
+        <span class="featured-tag">Most Popular</span>
+        <p class="plan-name">Business Track</p>
+        <div>
+          <div class="plan-price">
+            <span class="price-display" data-monthly="$149" data-annual="$119">$149</span>
+            <span class="plan-price-unit">/mo</span>
+          </div>
+          <p class="plan-price-sub price-sub-display" data-monthly="Up to 10 seats · cancel anytime" data-annual="$1,428 billed annually · ~20% off">Up to 10 seats · cancel anytime</p>
+        </div>
+        <p class="plan-desc">For agencies and small-to-mid teams deploying multiple AI assistants with shared workspaces and Operator Packs.</p>
+        <ul class="plan-features">
+          <li><span class="check">✓</span>Up to 10 seats</li>
+          <li><span class="check">✓</span>Shared workspaces</li>
+          <li><span class="check">✓</span>Reusable Operator Packs</li>
+          <li><span class="check">✓</span>Collaborative corpus curation</li>
+          <li><span class="check">✓</span>Shared memory continuity</li>
+          <li><span class="check">✓</span>Multi-seat management</li>
+          <li><span class="check">✓</span>Advanced analytics</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="YOUR_STRIPE_PAYMENT_LINK_BUSINESS" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn--full">Start Business Track</a>
+        </div>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="plan-card">
+        <p class="plan-name">Enterprise Track</p>
+        <div>
+          <div class="plan-price">
+            <span class="price-display" data-monthly="$499" data-annual="$399">$499</span>
+            <span class="plan-price-unit">/mo</span>
+          </div>
+          <p class="plan-price-sub price-sub-display" data-monthly="Starting price · custom scoping" data-annual="$4,788 billed annually · custom scoping">Starting price · custom scoping</p>
+        </div>
+        <p class="plan-desc">Governance controls, policy enforcement, multi-workspace management, audit logging, and priority support.</p>
+        <ul class="plan-features">
+          <li><span class="check">✓</span>Unlimited workspaces</li>
+          <li><span class="check">✓</span>Governance + policy enforcement</li>
+          <li><span class="check">✓</span>Audit logging</li>
+          <li><span class="check">✓</span>IP boundary controls</li>
+          <li><span class="check">✓</span>Priority support</li>
+          <li><span class="check">✓</span>Custom scoping via Stripe Quotes</li>
+          <li><span class="check">✓</span>Dedicated onboarding</li>
+        </ul>
+        <div class="plan-cta">
+          <a href="YOUR_STRIPE_PAYMENT_LINK_ENTERPRISE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn--full">Start Enterprise Track</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONSULTING -->
+<section id="consulting">
+  <div class="container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">Professional Services</p>
+      <h2 class="section-title">Consulting &amp; Deployment</h2>
+      <p class="section-sub">The scaffold is the productized floor. Consulting is the strategic extension — for when you need the training translated into something another human can actually use.</p>
+    </div>
+    <div class="consulting-grid">
+      <div class="consult-card">
+        <div class="consult-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg>
+        </div>
+        <div class="consult-name">Custom Exhibit Buildout</div>
+        <p class="consult-desc">Domain-specific assistant surface, vocabulary profile, and curated workflow framing. Tailored to your industry and brand identity.</p>
+        <div class="consult-price">$2,500 <span class="consult-price-unit">flat</span></div>
+        <a href="YOUR_STRIPE_PAYMENT_LINK_EXHIBIT" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Book Exhibit Buildout</a>
+      </div>
+      <div class="consult-card">
+        <div class="consult-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="consult-name">Knowledge Curation</div>
+        <p class="consult-desc">Corpus audit, fragmentation strategy, metadata cleanup, and retrieval optimization. Minimum 3-hour engagement.</p>
+        <div class="consult-price">$150 <span class="consult-price-unit">/ hour · 3hr min</span></div>
+        <a href="YOUR_STRIPE_PAYMENT_LINK_KC" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Book Curation Session</a>
+      </div>
+      <div class="consult-card">
+        <div class="consult-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <div class="consult-name">Full Platform Deployment</div>
+        <p class="consult-desc">End-to-end: setup, configuration, corpus import, QA benchmarking, go-live readiness verification, and launch support.</p>
+        <div class="consult-price">$5,000 <span class="consult-price-unit">flat</span></div>
+        <a href="YOUR_STRIPE_PAYMENT_LINK_DEPLOY" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Book Full Deployment</a>
+      </div>
+      <div class="consult-card">
+        <div class="consult-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+        </div>
+        <div class="consult-name">Enterprise Engagement</div>
+        <p class="consult-desc">Governance architecture, policy planning, multi-workspace scaling, compliance requirements, and executive alignment.</p>
+        <div class="consult-price">$5,000+ <span class="consult-price-unit">custom scoping</span></div>
+        <a href="mailto:keith@gestaltview.com" class="btn btn-secondary">Contact for Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- COUPONS -->
+<section>
+  <div class="container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">Promotions</p>
+      <h2 class="section-title">Available Discount Codes</h2>
+      <p class="section-sub">Click any code to copy it. Apply at checkout in the Stripe promotion code field.</p>
+    </div>
+    <div class="coupon-grid">
+      <div class="coupon-card" onclick="copyCode('EARLYBIRD20',this)">
+        <div class="coupon-code">EARLYBIRD20</div>
+        <p class="coupon-desc">20% off the Productized Floor — launch promo, one use per customer</p>
+        <p class="coupon-copy-hint">Click to copy</p>
+      </div>
+      <div class="coupon-card" onclick="copyCode('ANNUALUPGRADE',this)">
+        <div class="coupon-code">ANNUALUPGRADE</div>
+        <p class="coupon-desc">20% off for 12 months — annual plan incentive</p>
+        <p class="coupon-copy-hint">Click to copy</p>
+      </div>
+      <div class="coupon-card" onclick="copyCode('BUNDLE500',this)">
+        <div class="coupon-code">BUNDLE500</div>
+        <p class="coupon-desc">$500 off — Scaffold + Full Deployment bundle</p>
+        <p class="coupon-copy-hint">Click to copy</p>
+      </div>
+      <div class="coupon-card" onclick="copyCode('REFERRAL10',this)">
+        <div class="coupon-code">REFERRAL10</div>
+        <p class="coupon-desc">10% off — referral program, one use per customer</p>
+        <p class="coupon-copy-hint">Click to copy</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container--narrow">
+    <div class="section-header">
+      <p class="section-eyebrow">Questions</p>
+      <h2 class="section-title">Frequently Asked</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What exactly do I get with the Productized Floor?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">A self-contained scaffold ZIP including: a Supabase schema with migrations, RLS, and retrieval RPCs; configurable tier system; preloadable Operator Packs; placeholder API modules; CLI layer; cross-platform entrypoints (shell, Windows, Docker, browser); React component scaffolds; corpus ingestion scripts; sub-agent and multi-agent templates; packaging scripts; and smoke tests. It is a commercially usable package designed for a buyer or engineer to configure, bootstrap, and extend.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is this a SaaS platform or a code package?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">The Productized Floor ($2,400) is a one-time code package — you own it, inspect it, deploy it. The Commercial Track subscriptions ($49–$499/mo) are for ongoing platform access. You can purchase just the scaffold, just a subscription, or both depending on your use case.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What does the scaffold NOT include?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">The scaffold intentionally excludes GestaltView's internal constitutional/runtime code, internal knowledge fragments and skill corpus content, founder-specific prompts or governance logic, and the full multi-provider routing and RRF retrieval stack used in the core product. This is by design — the protected IP stays protected, while the client-safe deployment layer is fully in your hands.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Who is this built for?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">Solo founders and educators building personal AI systems; agencies constructing reusable client AI layers; knowledge-heavy service businesses; niche coaches with deep domain expertise; and technical teams who need something deeper than a shallow wrapper. If you understand that the corpus is the product, this is for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Can I white-label and resell it?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">The scaffold is white-label by design — KITNAME, KITDOMAIN, and KITPRIMARYCOLOR are all environment-variable controlled. Agency licensing starts at $4,500–$7,500 depending on scope. Contact keith@gestaltview.com for multi-client licensing conversations.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What happens after I purchase?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">You'll receive your download link by email immediately after checkout. The scaffold includes a browser-based Setup Wizard and bootstrap scripts for shell, Windows, and Docker. Consulting add-ons can be booked separately once you've explored the package.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What is the refund policy?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer">If you have pre-purchase questions about fit, reach out before buying. Subscriptions can be cancelled anytime via the self-serve customer portal. For the one-time scaffold, contact keith@gestaltview.com within 7 days of purchase if you encounter a technical issue that cannot be resolved.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <h2 class="cta-title">Ready to train an AI on your world?</h2>
+      <p class="cta-sub">Start with the scaffold, extend with consulting. The corpus is your moat — let's build it.</p>
+      <div class="cta-actions">
+        <a href="#scaffold" class="btn btn-primary btn--lg">Get the Productized Floor →</a>
+        <a href="mailto:keith@gestaltview.com" class="btn btn-secondary btn--lg">Talk to Keith</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">© 2026 GestaltView &nbsp;·&nbsp; Keith Soyka &nbsp;·&nbsp; New York City</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="mailto:keith@gestaltview.com">Contact</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" target="_blank" rel="noopener">Terms</a>
+      <a href="#" target="_blank" rel="noopener">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  (function(){
+    const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+    let d=r.getAttribute('data-theme')||'dark';
+    function set(theme){
+      d=theme;r.setAttribute('data-theme',d);
+      if(t)t.innerHTML=d==='dark'
+        ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+        :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    }
+    set(d);
+    if(t)t.addEventListener('click',()=>set(d==='dark'?'light':'dark'));
+  })();
+
+  // Billing toggle
+  let isAnnual=false;
+  function setAnnual(val){
+    isAnnual=val;
+    document.querySelectorAll('.price-display').forEach(el=>el.textContent=isAnnual?el.dataset.annual:el.dataset.monthly);
+    document.querySelectorAll('.price-sub-display').forEach(el=>el.textContent=isAnnual?el.dataset.annual:el.dataset.monthly);
+    document.getElementById('monthlyLabel').classList.toggle('active-label',!isAnnual);
+    document.getElementById('annualLabel').classList.toggle('active-label',isAnnual);
+    document.getElementById('toggleBtn').classList.toggle('active',isAnnual);
+  }
+
+  // FAQ
+  function toggleFaq(btn){
+    const item=btn.closest('.faq-item'),open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  }
+
+  // Coupon copy
+  function copyCode(code,el){
+    navigator.clipboard.writeText(code).catch(()=>{});
+    const hint=el.querySelector('.coupon-copy-hint'),orig=hint.textContent;
+    hint.textContent='✓ Copied!';el.style.borderColor='var(--color-primary)';
+    setTimeout(()=>{hint.textContent=orig;el.style.borderColor='';},2000);
+  }
+</script>
+</body>
+</html>

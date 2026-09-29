@@ -1,0 +1,37 @@
+[
+ {
+  "product": "Logo Design \u2014 Standard",
+  "product_id": "prod_VL7aSKPlFJqMkZ",
+  "price_id": "price_1UKRLhPsLBcM8QAjWt7P0Sty",
+  "payment_link": "https://buy.stripe.com/28E5kF8Rn7lz81McLoak000",
+  "note": "Fixed-price personal logo package"
+ },
+ {
+  "product": "Logo Design \u2014 Business",
+  "product_id": "prod_VL7asaE4viovih",
+  "price_id": "price_1UKRLjPsLBcM8QAjB40VUITE",
+  "payment_link": "https://buy.stripe.com/bJedRb5FbcFTbdY26Kak001",
+  "note": "Fixed-price business logo package"
+ },
+ {
+  "product": "AI Opportunity Audit",
+  "product_id": "prod_VL7avVlj45dufw",
+  "price_id": "price_1UKRLlPsLBcM8QAjwVb63Cp9",
+  "payment_link": "https://buy.stripe.com/7sY14p5Fb8pD81M12Gak002",
+  "note": "Fixed-price audit engagement"
+ },
+ {
+  "product": "Fractional AI Advisory",
+  "product_id": "prod_VL7asdKlXs0xdU",
+  "price_id": "price_1UKRLnPsLBcM8QAjIUrPSkqF",
+  "payment_link": "https://buy.stripe.com/6oU5kFd7DdJX1Doh1Eak003",
+  "note": "Monthly advisory retainer"
+ },
+ {
+  "product": "Bespoke AI Agent Build \u2014 Project Deposit",
+  "product_id": "prod_VL7bF9l9s8jXRh",
+  "price_id": "price_1UKRLpPsLBcM8QAj488Z45QL",
+  "payment_link": "https://buy.stripe.com/28E3cx8Rn49ndm6bHkak004",
+  "note": "50% deposit on the $5,000 project floor; balance via milestone invoices"
+ }
+]

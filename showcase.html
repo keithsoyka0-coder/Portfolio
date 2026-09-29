@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Inner World Showcase — Keith Soyka</title>
+<meta name="description" content="Interactive HTML artifacts from the GestaltView build: inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit. Open and inspect each one.">
+<link rel="canonical" href="https://keith-soyka-portfolio.vercel.app/showcase.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Keith Soyka">
+<meta property="og:title" content="Dynamic Inner World Showcase — Keith Soyka">
+<meta property="og:description" content="Interactive HTML artifacts from the GestaltView build: inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit.">
+<meta property="og:url" content="https://keith-soyka-portfolio.vercel.app/showcase.html">
+<meta property="og:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dynamic Inner World Showcase — Keith Soyka">
+<meta name="twitter:description" content="Interactive HTML artifacts from the GestaltView build — open and inspect each one.">
+<meta name="twitter:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js")</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dynamic Inner World Showcase",
+  "url": "https://keith-soyka-portfolio.vercel.app/showcase.html",
+  "description": "Standalone interactive HTML artifacts from the GestaltView build, assembled as a public exhibit.",
+  "author": {"@type": "Person", "name": "Keith Soyka", "url": "https://keith-soyka-portfolio.vercel.app/"}
+}
+</script>
+<style>
+.show-visual{
+  height:150px;border-radius:12px;margin:-4px -4px 14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;color:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.08);
+}
+.show-visual.v-exhibit{background:linear-gradient(135deg,#05070B 0%,#0A1020 45%,#123 100%),linear-gradient(135deg,rgba(18,214,255,.35),rgba(138,92,255,.35));background-blend-mode:overlay}
+.show-visual.v-systems{background:linear-gradient(135deg,#05070B,#0A1020 60%,rgba(74,168,255,.25))}
+.show-visual.v-trainer{background:linear-gradient(135deg,#05070B,#0A1020 60%,rgba(110,231,183,.22))}
+.show-visual.v-brand{background:linear-gradient(135deg,#05070B,#0A1020 60%,rgba(255,60,172,.22))}
+.show-visual.v-profile{background:linear-gradient(135deg,#0A1020,#05070B 60%,rgba(247,178,103,.25))}
+.card .fine{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Keith Soyka<span class="dot">.</span></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="showcase.html" class="active">Showcase</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="contact.html">Start a conversation</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">GestaltView · interactive artifacts</span>
+    <h1>The Dynamic Inner World <span class="grad">Showcase.</span></h1>
+    <p class="lede">Standalone HTML artifacts from the GestaltView build — exhibits, architecture maps, product packages, and the brand kit — assembled as a public gallery. Every piece opens in full, in your browser. <strong>Built to be inspected, not mythologized.</strong></p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="showcase/exhibit-wiki.html" target="_blank" rel="noopener">Enter the Inner World Exhibit →</a>
+      <a class="btn btn-ghost" href="work.html">Back to selected work</a>
+    </div>
+  </div>
+
+  <section class="block reveal">
+    <div class="sec-label">The centerpiece</div>
+    <h2>Inner World <span style="color:var(--teal)">Exhibits</span></h2>
+    <p class="sec-intro">The "dynamic inner world" made navigable — interactive exhibits of the platform's philosophy, structure, and what it feels like from the inside.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="show-visual v-exhibit">◈</div>
+        <div><span class="tag live">Interactive</span><span class="tag">Exhibit</span></div>
+        <h3>Dynamic Inner World Exhibit</h3>
+        <p>The full wiki exhibit of GestaltView v2 — platform philosophy, the ten constitutional invariants, getting started, developer setup. The deepest single artifact in the gallery.</p>
+        <a class="card-link" href="showcase/exhibit-wiki.html" target="_blank" rel="noopener">Open the exhibit →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-exhibit">◉</div>
+        <div><span class="tag live">Interactive</span><span class="tag">Exhibit</span></div>
+        <h3>Dynamic Wiki — Interactive Index</h3>
+        <p>A companion wiki index with a private, local PDF viewer built in — the exhibit format paired with its source documents, browsable side by side.</p>
+        <a class="card-link" href="showcase/dynamic-wiki-interactive.html" target="_blank" rel="noopener">Open the index →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-exhibit">♪</div>
+        <div><span class="tag staged">Demo mode</span><span class="tag">Exhibit</span></div>
+        <h3>Musical DNA · Audio Analysis</h3>
+        <p>A demo-mode exhibit that maps 10 songs into 3 anchor songs and 7 listener-DNA traits at 94% profile confidence — identity rendered as listening patterns.</p>
+        <a class="card-link" href="showcase/exhibit-audio-analysis.html" target="_blank" rel="noopener">Open the analysis →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <div class="sec-label">How it's built</div>
+    <h2>Systems &amp; <span style="color:var(--teal)">Method</span></h2>
+    <p class="sec-intro">The architecture view and the professional record — what the system is, and who built it.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="show-visual v-systems">⬡</div>
+        <div><span class="tag live">Reference</span><span class="tag">Architecture</span></div>
+        <h3>Systems Architecture — Portfolio View</h3>
+        <p>How GestaltView's responsibilities fit together — identity, memory, presence, governed change, useful output — as a conceptual map. Implementation abstracted on purpose: the tour, not the filing cabinets.</p>
+        <a class="card-link" href="showcase/systems-architecture.html" target="_blank" rel="noopener">Open the map →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-profile">❖</div>
+        <div><span class="tag live">Profile</span></div>
+        <h3>Comprehensive Professional Profile</h3>
+        <p>The full styled professional profile — 22+ years of operations leadership, the GestaltView build, value proposition, and proof — as a designed reading experience.</p>
+        <a class="card-link" href="showcase/comprehensive-profile.html" target="_blank" rel="noopener">Open the profile →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <div class="sec-label">Product package</div>
+    <h2>Agent <span style="color:var(--teal)">Trainer</span></h2>
+    <p class="sec-intro">The white-label offer, presented as it was designed: train an AI on your world, not ours.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="show-visual v-trainer">⚙</div>
+        <div><span class="tag staged">Package</span></div>
+        <h3>Agent Trainer Sprint</h3>
+        <p>The sprint package view for the GestaltView Agent Trainer — a hardened, white-label AI assistant scaffold for operators who build seriously.</p>
+        <a class="card-link" href="showcase/agent-trainer-sprint.html" target="_blank" rel="noopener">Open the sprint →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-trainer">◈</div>
+        <div><span class="tag staged">Pricing</span></div>
+        <h3>Agent Trainer — Pricing</h3>
+        <p>The pricing presentation for the Agent Trainer package — scope, tiers, and what "trained on your world" actually includes.</p>
+        <a class="card-link" href="showcase/agent-trainer-pricing.html" target="_blank" rel="noopener">Open pricing →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal">
+    <div class="sec-label">Brand kit · Canva-ready HTML</div>
+    <h2>Brand <span style="color:var(--teal)">Boards &amp; Templates</span></h2>
+    <p class="sec-intro">Four standalone HTML designs translated from the canonical brand tokens — built to open in a browser and import into Canva as editable designs.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="show-visual v-brand">◩</div>
+        <div><span class="tag live">Brand</span></div>
+        <h3>Brand Board</h3>
+        <p>Palette, typography, voice, and visual principles — the canonical tokens (Obsidian, Void Navy, Electric Cyan, Signal Blue, Ultraviolet, Neon Magenta…) on one board.</p>
+        <a class="card-link" href="showcase/brand-board.html" target="_blank" rel="noopener">Open the board →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-brand">▦</div>
+        <div><span class="tag live">UI kit</span></div>
+        <h3>UI Component Sheet</h3>
+        <p>Static specimens of the component language — buttons, badges, glass surfaces, inputs, navigation, tabs, notices, empty states.</p>
+        <a class="card-link" href="showcase/ui-component-sheet.html" target="_blank" rel="noopener">Open the sheet →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-brand">▣</div>
+        <div><span class="tag live">Template</span></div>
+        <h3>Square Social Template</h3>
+        <p>A 1080 × 1080 social post template on-brand and ready to duplicate in Canva.</p>
+        <a class="card-link" href="showcase/square-social-template.html" target="_blank" rel="noopener">Open the template →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-brand">▤</div>
+        <div><span class="tag live">Template</span></div>
+        <h3>Story Template</h3>
+        <p>A 1080 × 1920 vertical story template — same tokens, same voice, built for the tall frame.</p>
+        <a class="card-link" href="showcase/story-template.html" target="_blank" rel="noopener">Open the template →</a>
+      </div>
+    </div>
+    <div class="evidence"><strong>Note:</strong> the brand-kit pages are static design references — no JavaScript, no external assets — so they import cleanly into Canva as editable designs. Reapply Cabin Sketch / Manrope / Geist Mono if Canva substitutes fonts.</div>
+  </section>
+
+  <section class="block reveal">
+    <div class="field-note">
+      <div class="sec-label">Field note</div>
+      <blockquote>"Don't try to fix somebody. Just meet them where they are."</blockquote>
+      <cite>— The ethic behind every artifact here: scaffolding beside the person, not a prescription for them.</cite>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="contact.html">Tell me what you want to build</a>
+      <a class="btn btn-ghost" href="services.html">See services &amp; pricing</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <strong style="color:var(--ink)">Keith Soyka</strong><br>
+        Operator-led · New York / remote<br>
+        <span style="font-size:.8rem">© 2026 Keith Soyka. Built to be inspected.</span>
+      </div>
+      <ul class="foot-links">
+        <li><a href="work.html">Work</a></li>
+        <li><a href="showcase.html">Showcase</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="social-row">
+      <a href="https://linkedin.com/in/keithsoyka413" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/digitalconsciousness" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://youtube.com/@gestaltview" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://discord.gg/SWVAmjByp" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.instagram.com/gestaltview" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/gestaltview" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://x.com/GestaltView" target="_blank" rel="noopener">X</a>
+      <a href="https://www.tiktok.com/@gestaltview" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.reddit.com/user/gestaltview_ai" target="_blank" rel="noopener">Reddit</a>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
