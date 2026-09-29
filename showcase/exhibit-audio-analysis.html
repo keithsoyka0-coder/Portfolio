@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musical DNA · Audio Analysis</title>
+<style>
+  :root { color-scheme: dark; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Inter, 'Helvetica Neue', sans-serif;
+    background: #05060a;
+    color: #e8edf5;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .shell {
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 60%, rgba(18,214,255,0.07) 0%, transparent 50%),
+      #05060a;
+  }
+  .frame {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.025);
+    box-shadow: 0 0 80px rgba(255,140,0,0.05);
+    overflow: hidden;
+  }
+  .chrome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.03);
+  }
+  .chrome-label { font-size: 10px; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,160,0,0.8); margin-bottom:6px; }
+  .chrome-title { font-size:22px; font-weight:600; color:#f0f6ff; }
+  .chrome-meta { font-size:11px; color:rgba(255,255,255,0.35); text-align:right; }
+  .body { padding: 36px 40px; }
+
+  /* Hero stat band */
+  .hero-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .hstat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .hstat-num { font-size:26px; font-weight:700; color:rgba(255,160,0,0.9); letter-spacing:-.02em; line-height:1; margin-bottom:4px; }
+  .hstat-label { font-size:10px; color:rgba(255,255,255,0.35); letter-spacing:.1em; text-transform:uppercase; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-header { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .section-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,160,0,0.7); flex-shrink:0; }
+  .section-title { font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,160,0,0.7); font-weight:600; }
+
+  /* Song cards */
+  .song-list { display:flex; flex-direction:column; gap:10px; }
+  .song-card {
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:14px;
+    padding:14px 18px;
+    transition:border-color 200ms;
+  }
+  .song-card:hover { border-color:rgba(255,160,0,0.25); }
+  .song-rank { font-size:11px; color:rgba(255,255,255,0.25); width:20px; text-align:center; flex-shrink:0; }
+  .song-dot {
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    background:linear-gradient(135deg, rgba(255,140,0,0.25), rgba(18,214,255,0.15));
+    border:1px solid rgba(255,255,255,0.08);
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+  }
+  .song-info { flex:1; min-width:0; }
+  .song-title { font-size:14px; font-weight:600; color:#e8edf5; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .song-artist { font-size:12px; color:rgba(255,255,255,0.4); margin-top:2px; }
+  .song-tag {
+    font-size:10px;
+    padding:3px 10px;
+    border-radius:999px;
+    background:rgba(255,140,0,0.1);
+    border:1px solid rgba(255,140,0,0.2);
+    color:rgba(255,160,0,0.8);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+
+  /* Waveform viz */
+  .waveform {
+    height:56px;
+    display:flex;
+    align-items:center;
+    gap:3px;
+    margin-bottom:36px;
+    padding:0 4px;
+  }
+  .waveform-bar {
+    flex:1;
+    border-radius:2px;
+    background:rgba(18,214,255,0.25);
+    transition:background 200ms;
+  }
+  .waveform-bar.active { background:rgba(255,160,0,0.6); }
+
+  /* Trait pills */
+  .trait-grid { display:flex; flex-wrap:wrap; gap:8px; }
+  .trait {
+    font-size:12px;
+    padding:6px 14px;
+    border-radius:999px;
+    background:rgba(18,214,255,0.06);
+    border:1px solid rgba(18,214,255,0.15);
+    color:rgba(18,214,255,0.8);
+  }
+
+  /* Upload CTA */
+  .upload-cta {
+    background: rgba(255,140,0,0.05);
+    border: 1px dashed rgba(255,140,0,0.25);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .upload-cta h3 { font-size:16px; color:rgba(255,160,0,0.9); margin-bottom:8px; }
+  .upload-cta p { font-size:13px; color:rgba(255,255,255,0.4); max-width:48ch; margin:0 auto; line-height:1.65; }
+
+  @media (max-width:600px) { .body { padding:24px 20px; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="frame">
+    <div class="chrome">
+      <div>
+        <div class="chrome-label">Dynamic Inner World · Exhibit</div>
+        <div class="chrome-title">Musical DNA · Audio Analysis</div>
+      </div>
+      <div class="chrome-meta">Demo Mode<br>GestaltView v2.5</div>
+    </div>
+    <div class="body">
+
+      <div class="hero-band">
+        <div class="hstat"><div class="hstat-num">10</div><div class="hstat-label">Songs Analyzed</div></div>
+        <div class="hstat"><div class="hstat-num">3</div><div class="hstat-label">Anchor Songs</div></div>
+        <div class="hstat"><div class="hstat-num">7</div><div class="hstat-label">DNA Traits</div></div>
+        <div class="hstat"><div class="hstat-num">94%</div><div class="hstat-label">Profile Confidence</div></div>
+      </div>
+
+      <div class="waveform" id="waveform"></div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-dot"></div><div class="section-title">Anchor Songs — Your Musical Identity Core</div></div>
+        <div class="song-list">
+          <div class="song-card">
+            <div class="song-rank">01</div>
+            <div class="song-dot">♪</div>
+            <div class="song-info"><div class="song-title">Anchor Song Alpha</div><div class="song-artist">Upload your library to reveal</div></div>
+            <div class="song-tag">Anchor</div>
+          </div>
+          <div class="song-card">
+            <div class="song-rank">02</div>
+            <div class="song-dot">♪</div>
+            <div class="song-info"><div class="song-title">Anchor Song Beta</div><div class="song-artist">Upload your library to reveal</div></div>
+            <div class="song-tag">Anchor</div>
+          </div>
+          <div class="song-card">
+            <div class="song-rank">03</div>
+            <div class="song-dot">♪</div>
+            <div class="song-info"><div class="song-title">Anchor Song Gamma</div><div class="song-artist">Upload your library to reveal</div></div>
+            <div class="song-tag">Anchor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header"><div class="section-dot"></div><div class="section-title">Listener DNA Traits</div></div>
+        <div class="trait-grid">
+          <span class="trait">Emotional Depth</span>
+          <span class="trait">Rhythm-Forward</span>
+          <span class="trait">Lyric Sensitivity</span>
+          <span class="trait">Harmonic Complexity</span>
+          <span class="trait">Tempo Variance</span>
+          <span class="trait">Late-Night Register</span>
+          <span class="trait">Identity Resonance</span>
+        </div>
+      </div>
+
+      <div class="upload-cta">
+        <h3>Upload Your Library to Activate</h3>
+        <p>Add up to 10 songs from your personal collection. GestaltView will detect your anchor songs, map your emotional arc, and generate your Musical DNA profile — no streaming account required.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  // Generate animated waveform bars
+  const wv = document.getElementById('waveform');
+  const total = 60;
+  const bars = [];
+  for (let i = 0; i < total; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'waveform-bar';
+    const h = 12 + Math.random() * 40;
+    bar.style.height = h + 'px';
+    wv.appendChild(bar);
+    bars.push(bar);
+  }
+  let cursor = 0;
+  function tick() {
+    bars.forEach((b, i) => b.classList.toggle('active', i === cursor));
+    cursor = (cursor + 1) % total;
+    setTimeout(tick, 80);
+  }
+  tick();
+</script>
+</body>
+</html>
