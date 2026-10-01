@@ -39,3 +39,5 @@ dist/
 build/
 .next/
 out/
+.vercel
+.env*
