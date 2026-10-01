@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/keithsoyka0-coder/Portfolio#readme",
   "dependencies": {
-    "@vercel/speed-insights": "^2.0.0"
+    "@vercel/speed-insights": "^2.0.0",
+    "module": "^2.0.0",
+    "type": "^2.7.3"
   }
 }

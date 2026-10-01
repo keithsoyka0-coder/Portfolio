@@ -6,7 +6,7 @@
  *
  * The browser demos post { text } here with no credentials. This function —
  * running server-side on Vercel — validates, rate-limits, builds the signed
- * insight_bot_request.v2 payload with the server-held INSIGHT_SIGNING_SECRET,
+ * insight_bot_request.v2 payload with the server-held INSIGHT_BOT_SIGNING_SECRET,
  * and forwards it to the GestaltView runtime's /api/insight-bot/respond.
  * The secret never enters browser code.
  *
@@ -20,9 +20,9 @@
  * api/*.js as serverless functions). Same project that serves showcase/.
  *
  * Env required:
- *   INSIGHT_SIGNING_SECRET   shared adapter secret (same one the Discord
+ *   INSIGHT_BOT_SIGNING_SECRET   shared adapter secret (same one the Discord
  *                            adapter uses). NEVER hardcode it.
- *   RUNTIME_URL              e.g. https://gestaltview-three.vercel.app
+ *   INSIGHT_BOT_RUNTIME_URL              e.g. https://gestaltview-three.vercel.app
  *                            (defaults to the live runtime)
  *
  * Runtime delta required (one allowlist change — Keith/Codex action):
