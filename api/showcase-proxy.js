@@ -79,8 +79,8 @@ export default async function handler(req, res) {
     return;
   }
 
-  const runtimeUrl = (process.env.RUNTIME_URL || "https://gestaltview-three.vercel.app").trim();
-  const signingSecret = (process.env.INSIGHT_SIGNING_SECRET || "").trim();
+  const runtimeUrl = (process.env.INSIGHT_BOT_RUNTIME_URL || "https://gestaltview-three.vercel.app").trim();
+  const signingSecret = (process.env.INSIGHT_BOT_SIGNING_SECRET || "").trim();
   if (!signingSecret) {
     send(res, 503, { error: "The GestaltView connection has not been configured.", code: "not_configured" });
     return;
