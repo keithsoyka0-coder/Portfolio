@@ -122,7 +122,7 @@
       degraded.hidden = false;
       if (e.message === "not_configured") {
         document.getElementById("degraded-detail").textContent =
-          "The proxy is reachable but INSIGHT_SIGNING_SECRET isn't set on the server. Set the env var and redeploy — see the README.";
+          "The proxy is reachable but INSIGHT_BOT_SIGNING_SECRET isn't set on the server. Set the env var and redeploy — see the README.";
       } else if (e.message === "rate_limited") {
         document.getElementById("degraded-detail").textContent =
           "Rate limit hit (10/minute). Wait a moment and try again.";

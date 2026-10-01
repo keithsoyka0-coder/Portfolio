@@ -8,7 +8,7 @@
 window.SHOWCASE_CONFIG = {
   // Public base of the live GestaltView runtime. Used for status links only;
   // demo traffic always goes through the same-origin proxy below.
-  RUNTIME_URL: "https://gestaltview-three.vercel.app",
+  INSIGHT_BOT_RUNTIME_URL: "https://gestaltview-three.vercel.app",
 
   // Same-origin serverless proxy. In the Portfolio repo this resolves to
   // <site>/api/showcase-proxy once api/showcase-proxy.js is deployed.

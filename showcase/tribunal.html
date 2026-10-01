@@ -152,7 +152,7 @@
     return e.message === "rate_limited"
       ? "Rate limit reached (10/minute). Wait a moment before convening again."
       : e.message === "not_configured"
-      ? "The proxy isn't configured yet (INSIGHT_SIGNING_SECRET missing server-side). See the README."
+      ? "The proxy isn't configured yet (INSIGHT_BOT_SIGNING_SECRET missing server-side). See the README."
       : "The runtime didn't answer. It may be deploying, or the showcase channel isn't allowlisted yet — see the README.";
   }
 

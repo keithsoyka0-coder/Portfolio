@@ -19,15 +19,15 @@ moves.
 | `showcase/render-engine.html` | Demo 03 — source material in, styled artifact out |
 | `showcase/showcase-config.js` | Single wiring config (runtime URL, proxy path, channel, limits) |
 | `showcase/showcase.css` | Neural Aurora canon, shared by all pages |
-| `api/showcase-proxy.js` | Same-origin serverless proxy — holds `INSIGHT_SIGNING_SECRET`, signs the `insight_bot_request.v2` payload, forwards to `/api/insight-bot/respond` |
+| `api/showcase-proxy.js` | Same-origin serverless proxy — holds `INSIGHT_BOT_SIGNING_SECRET`, signs the `insight_bot_request.v2` payload, forwards to `/api/insight-bot/respond` |
 
 ## Deploy (Vercel)
 
 1. Copy `showcase/` and `api/` into the repo root. Commit + push.
-2. In the Vercel project: set env var **`INSIGHT_SIGNING_SECRET`** to the same
+2. In the Vercel project: set env var **`INSIGHT_BOT_SIGNING_SECRET`** to the same
    shared adapter secret the Discord adapter uses. **Never hardcode it,
    never put it in client-side code.**
-3. `RUNTIME_URL` defaults to `https://gestaltview-three.vercel.app`; override
+3. `INSIGHT_BOT_RUNTIME_URL` defaults to `https://gestaltview-three.vercel.app`; override
    via env if the runtime moves.
 4. **Runtime allowlist (required — Keith/Codex action):**
    `/api/insight-bot/respond` must accept the new adapter identity, or every
@@ -57,7 +57,7 @@ moves.
    copy-markdown button.
 
 To test locally before deploying: the pages need the proxy, so serve the repo
-root (`npx vercel dev`) with `INSIGHT_SIGNING_SECRET` set — static file serving
+root (`npx vercel dev`) with `INSIGHT_BOT_SIGNING_SECRET` set — static file serving
 alone will show the degraded states, which is itself a useful test.
 
 ## LIVE vs STUBBED — the honest table
