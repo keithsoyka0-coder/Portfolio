@@ -50,8 +50,9 @@ moves.
    signed path on load). Send a message; Billy replies. Clear wipes the view
    (nothing was stored anywhere).
 2. **Tribunal** — open `showcase/tribunal.html`, pick a lens, ask a question.
-   Then "Convene the full tribunal" — 7 sequential calls, ~a minute, progress
-   bar throughout.
+   Then "Convene the full tribunal" — 7 sequential calls staggered ~4s apart
+   (keeps the runtime's orchestrator from tripping its circuit breaker),
+   ~a minute, progress bar throughout.
 3. **Render engine** — open `showcase/render-engine.html`, pick artifact type +
    style, paste source material, Render. The styled artifact appears with a
    copy-markdown button.

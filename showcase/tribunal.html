@@ -42,7 +42,7 @@
 
     <div class="chatlog" id="results" aria-live="polite"></div>
 
-    <p class="privacy-note">Ephemeral by design — nothing is stored by this page. Full tribunal = 7 sequential runtime calls; allow up to a minute. Rate-limited to 10 calls/minute.</p>
+    <p class="privacy-note">Ephemeral by design — nothing is stored by this page. Full tribunal = 7 sequential runtime calls, staggered ~4s apart so the runtime's orchestrator doesn't trip its circuit breaker; allow up to a minute. Rate-limited to 10 calls/minute.</p>
 
     <footer class="showcase-foot">
       <span class="tagline">Infrastructure for being seen.</span>
@@ -178,6 +178,7 @@
     busy = true;
     progress.hidden = false;
     var done = 0;
+    var staggerMs = (window.SHOWCASE_CONFIG && window.SHOWCASE_CONFIG.TRIBUNAL_STAGGER_MS) || 4000;
     for (var i = 0; i < PERSONAS.length; i++) {
       var p = PERSONAS[i];
       setStatus("warn", "CONVENING — " + p.name.toUpperCase() + " (" + (i + 1) + "/7)");
@@ -190,6 +191,13 @@
       }
       done++;
       progressBar.style.width = Math.round((done / PERSONAS.length) * 100) + "%";
+      // Stagger: give the runtime's orchestrator room between voices so its
+      // circuit breaker doesn't trip and serve fallback content.
+      if (i < PERSONAS.length - 1) {
+        var next = PERSONAS[i + 1];
+        setStatus("warn", "YIELDING — letting the runtime breathe before " + next.name.toUpperCase() + " (" + Math.round(staggerMs / 1000) + "s)");
+        await new Promise(function (r) { setTimeout(r, staggerMs); });
+      }
     }
     progress.hidden = true; progressBar.style.width = "0";
     setStatus("ok", "TRIBUNAL ADJOURNED — COMPARE CONVERGENCE AND DIVERGENCE YOURSELF");

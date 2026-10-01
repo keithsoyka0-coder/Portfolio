@@ -21,6 +21,12 @@ window.SHOWCASE_CONFIG = {
   // pre-emptively pace multi-call demos (tribunal council mode).
   RATE_LIMIT_PER_MIN: 10,
 
+  // Pause between the tribunal's sequential persona calls. The runtime's
+  // orchestrator trips its circuit breaker on rapid back-to-back calls and
+  // serves fallback content instead of real synthesis — staggering keeps
+  // every voice live. Raise it if fallbacks still appear.
+  TRIBUNAL_STAGGER_MS: 4000,
+
   // How long a demo waits for the runtime before calling it degraded.
   TIMEOUT_MS: 20000,
 
