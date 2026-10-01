@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dynamic Inner World Showcase — Keith Soyka</title>
-<meta name="description" content="Interactive HTML artifacts from the GestaltView build: inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit. Open and inspect each one.">
+<meta name="description" content="Interactive HTML artifacts from the GestaltView build: live demos wired to the runtime, inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit. Open and inspect each one.">
 <link rel="canonical" href="https://keith-soyka-portfolio.vercel.app/showcase.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Keith Soyka">
 <meta property="og:title" content="Dynamic Inner World Showcase — Keith Soyka">
-<meta property="og:description" content="Interactive HTML artifacts from the GestaltView build: inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit.">
+<meta property="og:description" content="Live demos wired to the GestaltView runtime, plus inner-world exhibits, systems architecture maps, the Agent Trainer package, and the Canva-ready brand kit.">
 <meta property="og:url" content="https://keith-soyka-portfolio.vercel.app/showcase.html">
 <meta property="og:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dynamic Inner World Showcase — Keith Soyka">
-<meta name="twitter:description" content="Interactive HTML artifacts from the GestaltView build — open and inspect each one.">
+<meta name="twitter:description" content="Live demos, exhibits, architecture maps — open and inspect each one.">
 <meta name="twitter:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png">
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -24,7 +24,7 @@
   "@type": "WebPage",
   "name": "Dynamic Inner World Showcase",
   "url": "https://keith-soyka-portfolio.vercel.app/showcase.html",
-  "description": "Standalone interactive HTML artifacts from the GestaltView build, assembled as a public exhibit.",
+  "description": "Live demos wired to the GestaltView runtime, plus standalone interactive HTML artifacts from the build, assembled as a public exhibit.",
   "author": {"@type": "Person", "name": "Keith Soyka", "url": "https://keith-soyka-portfolio.vercel.app/"}
 }
 </script>
@@ -40,6 +40,7 @@
 .show-visual.v-trainer{background:linear-gradient(135deg,#05070B,#0A1020 60%,rgba(110,231,183,.22))}
 .show-visual.v-brand{background:linear-gradient(135deg,#05070B,#0A1020 60%,rgba(255,60,172,.22))}
 .show-visual.v-profile{background:linear-gradient(135deg,#0A1020,#05070B 60%,rgba(247,178,103,.25))}
+.show-visual.v-live{background:linear-gradient(135deg,#05070B,#0A1020 55%,rgba(18,214,255,.22)),linear-gradient(315deg,rgba(255,60,172,.16),transparent 60%)}
 .card .fine{margin-top:10px}
 </style>
 </head>
@@ -67,7 +68,7 @@
   <div class="hero">
     <span class="eyebrow">GestaltView · interactive artifacts</span>
     <h1>The Dynamic Inner World <span class="grad">Showcase.</span></h1>
-    <p class="lede">Standalone HTML artifacts from the GestaltView build — exhibits, architecture maps, product packages, and the brand kit — assembled as a public gallery. Every piece opens in full, in your browser. <strong>Built to be inspected, not mythologized.</strong></p>
+    <p class="lede">Standalone HTML artifacts from the GestaltView build — live demos wired to the runtime, exhibits, architecture maps, product packages, and the brand kit — assembled as a public gallery. Every piece opens in full, in your browser. <strong>Built to be inspected, not mythologized.</strong></p>
     <div class="btn-row">
       <a class="btn btn-primary" href="showcase/exhibit-wiki.html" target="_blank" rel="noopener">Enter the Inner World Exhibit →</a>
       <a class="btn btn-ghost" href="work.html">Back to selected work</a>
@@ -101,6 +102,36 @@
         <a class="card-link" href="showcase/exhibit-audio-analysis.html" target="_blank" rel="noopener">Open the analysis →</a>
       </div>
     </div>
+  </section>
+
+  <section class="block reveal">
+    <div class="sec-label">Working pieces</div>
+    <h2>Live <span style="color:var(--teal)">Demos</span></h2>
+    <p class="sec-intro">Not mockups — working pieces wired to the GestaltView runtime. What says "live" is live; everything else says what it is.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="show-visual v-live">◑</div>
+        <div><span class="tag live">Live demo</span><span class="tag">Runtime-wired</span></div>
+        <h3>Billy — Live Chat</h3>
+        <p>A live conversation with Billy, the collaborator at the center of GestaltView — wired through the runtime. Ephemeral; nothing is stored.</p>
+        <a class="card-link" href="showcase/billy-chat.html" target="_blank" rel="noopener">Open the chat →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-live">⬢</div>
+        <div><span class="tag live">Live demo</span><span class="tag">Runtime-wired</span></div>
+        <h3>Tribunal of Understanding</h3>
+        <p>Seven personas — Architect, Guardian, Mirror, Philosopher, Witness, Weaver, Steward — one question through seven lenses. Or convene the full tribunal at once.</p>
+        <a class="card-link" href="showcase/tribunal.html" target="_blank" rel="noopener">Enter the tribunal →</a>
+      </div>
+      <div class="card">
+        <div class="show-visual v-live">✦</div>
+        <div><span class="tag live">Live demo</span><span class="tag">Runtime-wired</span></div>
+        <h3>Generative Render Engine</h3>
+        <p>Artifact type × synthesis style × PLK mode — pick the shape, supply the source, receive a styled artifact with copyable markdown.</p>
+        <a class="card-link" href="showcase/render-engine.html" target="_blank" rel="noopener">Run the engine →</a>
+      </div>
+    </div>
+    <div class="evidence"><strong>Note:</strong> the live demos call the GestaltView runtime through a signing proxy — no secrets in the page. Billy chat, tribunal synthesis, and render synthesis go live once the runtime allowlists the showcase channel; until then, each demo shows its degraded state instead of faking a reply.</div>
   </section>
 
   <section class="block reveal">
