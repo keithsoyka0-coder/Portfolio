@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GestaltView Showcase — Working Demos</title>
+<meta name="description" content="Working demos of the GestaltView runtime: talk with Billy, run a question through the Tribunal of Understanding, and generate artifacts with the render engine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Manrope:wght@400;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./showcase.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="wordmark"><a href="./index.html">GestaltView</a></div>
+    <div class="kicker">Showcase · Working demos</div>
+    <h1 class="display">Don't take our word for it.<br><span class="turn">Talk to the machine.</span></h1>
+    <hr class="magenta-rule">
+    <p class="lede">Three demos, one live runtime. Everything here either calls the real GestaltView system — or says exactly what it is instead.</p>
+    <p>
+      <span class="evidence-tag live">Live · signed proxy</span>
+      <span class="evidence-tag local">Local · in-browser</span>
+    </p>
+
+    <div class="demo-grid">
+      <a class="demo-card" href="./billy-chat.html">
+        <div class="kicker" style="margin:0 0 4px">Demo 01</div>
+        <h2>Talk with <span class="turn">Billy</span></h2>
+        <p><strong style="color:#fff">What it proves:</strong> the runtime answers — a real conversation with GestaltView's collaborator, through a signed, rate-limited proxy. Ephemeral by design.</p>
+        <p><span class="evidence-tag live">Live</span></p>
+      </a>
+      <a class="demo-card" href="./tribunal.html">
+        <div class="kicker" style="margin:0 0 4px">Demo 02</div>
+        <h2>The <span class="turn">Tribunal</span> of Understanding</h2>
+        <p><strong style="color:#fff">What it proves:</strong> one question, seven lenses — Architect, Guardian, Mirror, Philosopher, Witness, Weaver, Steward. Same runtime, seven ways of seeing.</p>
+        <p><span class="evidence-tag live">Live synthesis</span> <span class="evidence-tag local">Lens client-side</span></p>
+      </a>
+      <a class="demo-card" href="./render-engine.html">
+        <div class="kicker" style="margin:0 0 4px">Demo 03</div>
+        <h2>Generative <span class="turn">Render Engine</span></h2>
+        <p><strong style="color:#fff">What it proves:</strong> raw material in, finished artifact out — pick a synthesis style and artifact type, get a styled document built from your words.</p>
+        <p><span class="evidence-tag live">Live synthesis</span> <span class="evidence-tag local">Render in-browser</span></p>
+      </a>
+    </div>
+
+    <div class="callout">
+      <p><strong class="gold">Honest wiring.</strong> Demos marked <strong>Live</strong> call <span style="font-family:'Geist Mono',monospace;font-size:13px">https://gestaltview-three.vercel.app</span> through a same-origin signed proxy (no secrets in your browser, 10 requests/minute). Anything less than live is labeled on the demo itself — see <a href="./README.md">the README</a> for the full live-vs-stubbed table.</p>
+    </div>
+
+    <footer class="showcase-foot">
+      <span class="tagline">Infrastructure for being seen.</span>
+      <span class="handle">GestaltView / Showcase v1</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

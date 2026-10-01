@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tribunal of Understanding — GestaltView Showcase</title>
+<meta name="description" content="Ask one question through seven lenses — Architect, Guardian, Mirror, Philosopher, Witness, Weaver, Steward. Same runtime, seven ways of seeing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Manrope:wght@400;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./showcase.css">
+<script src="./showcase-config.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="wordmark"><a href="./index.html">GestaltView</a></div>
+    <div class="kicker">Showcase · Demo 02 ·
+      <span class="evidence-tag live" style="margin:0">Live synthesis</span>
+      <span class="evidence-tag local" style="margin:0">Lens client-side</span>
+    </div>
+    <h1 class="display">The Tribunal <span class="turn">of Understanding.</span></h1>
+    <hr class="magenta-rule">
+    <p class="lede">One question, seven lenses. The Tribunal's rule is simple: the same problem, seen from seven directions — then <em>you</em> keep epistemic custody. No blending, no averaging; convergence and divergence stay visible.</p>
+
+    <div class="callout">
+      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> each lens is applied here in the page as framing; the synthesis is done live by Billy through the signed proxy. There is no dedicated tribunal endpoint in this demo — when one is verified on the runtime, this page will use it. The seven lenses are the Tribunal's current set: Architect, Guardian, Mirror, Philosopher, Witness, Weaver, Steward.</p>
+    </div>
+
+    <label class="lbl">Choose a lens</label>
+    <div class="persona-grid" id="personas"></div>
+
+    <label class="lbl" for="q">Your question</label>
+    <textarea class="field" id="q" maxlength="4000" placeholder="What should the Tribunal consider?"></textarea>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="ask">Ask the lens</button>
+      <button class="btn ghost" id="convene">Convene the full tribunal</button>
+    </div>
+
+    <div class="status-line" id="status"><span class="dot warn"></span>SELECT A LENS, THEN ASK</div>
+    <div class="progress" id="progress" hidden><div></div></div>
+
+    <div class="chatlog" id="results" aria-live="polite"></div>
+
+    <p class="privacy-note">Ephemeral by design — nothing is stored by this page. Full tribunal = 7 sequential runtime calls; allow up to a minute. Rate-limited to 10 calls/minute.</p>
+
+    <footer class="showcase-foot">
+      <span class="tagline">Infrastructure for being seen.</span>
+      <span class="handle">GestaltView / Showcase v1</span>
+    </footer>
+  </div>
+</div>
+<script>
+(function () {
+  var cfg = window.SHOWCASE_CONFIG || {};
+  var PROXY = cfg.PROXY_PATH || "/api/showcase-proxy";
+  var TIMEOUT = cfg.TIMEOUT_MS || 20000;
+
+  // Lens framings. Architect / Guardian / Weaver are grounded in the
+  // canonical embodiment profiles; Mirror / Philosopher / Witness follow
+  // the Tribunal's documented roles; Steward is demo copy for the
+  // seventh seat (tending outcomes over time).
+  var PERSONAS = [
+    { id: "architect", name: "The Architect", role: "Strategy · which lane",
+      lens: "You are The Architect. Your truth: strategy is not a list of options — it is the sequence of irreversible choices that make all the other choices possible. You tell the asker which lane. Be direct, warm, and spare. Answer in 100-150 words." },
+    { id: "guardian", name: "The Guardian", role: "Protection · downstream voices",
+      lens: "You are The Guardian. Your truth: every decision has people downstream from it who had no vote — you speak for them. Principled and uncompromising when it counts, human always. Answer in 100-150 words." },
+    { id: "mirror", name: "The Mirror", role: "Emotional truth · validation",
+      lens: "You are The Mirror. Reflect emotional truth with profound empathy. Validate experience without judgment; create space for vulnerability. Never diagnose, never pathologize. Answer in 100-150 words." },
+    { id: "philosopher", name: "The Philosopher", role: "Meaning · purpose",
+      lens: "You are The Philosopher. Explore what this means and why it matters in a larger sense. Connect the specific to the universal without floating away from it. Answer in 100-150 words." },
+    { id: "witness", name: "The Witness", role: "Evidence · grounding",
+      lens: "You are The Witness. Ground your response in what is evidenced and observable. Distinguish what is known from what is inferred. Calm, precise, honest about uncertainty. Answer in 100-150 words." },
+    { id: "weaver", name: "The Weaver", role: "Connection · weak threads",
+      lens: "You are The Weaver. Every situation is a topology of trust — find where the threads are weak before they carry load, and show how the pieces connect. Deliver hard truths with love. Answer in 100-150 words." },
+    { id: "steward", name: "The Steward", role: "Tending · over time",
+      lens: "You are The Steward. You tend what this means over time: maintenance, care, what must be carried forward and what can be let go. Think in seasons, not moments. Answer in 100-150 words." }
+  ];
+
+  var grid = document.getElementById("personas");
+  var selected = PERSONAS[0];
+  PERSONAS.forEach(function (p, i) {
+    var b = document.createElement("button");
+    b.className = "persona-btn" + (i === 0 ? " active" : "");
+    b.type = "button";
+    b.innerHTML = '<span class="pname"></span><span class="prole"></span>';
+    b.querySelector(".pname").textContent = p.name;
+    b.querySelector(".prole").textContent = p.role;
+    b.addEventListener("click", function () {
+      selected = p;
+      Array.prototype.forEach.call(grid.children, function (c) { c.classList.remove("active"); });
+      b.classList.add("active");
+    });
+    grid.appendChild(b);
+  });
+
+  var statusEl = document.getElementById("status");
+  var results = document.getElementById("results");
+  var progress = document.getElementById("progress");
+  var progressBar = progress.querySelector("div");
+  var busy = false;
+
+  function setStatus(state, text) {
+    var dot = state === "ok" ? "ok" : state === "warn" ? "warn" : "err";
+    statusEl.innerHTML = '<span class="dot ' + dot + '"></span>' + text;
+  }
+
+  function askRuntime(text) {
+    var ctrl = new AbortController();
+    var t = setTimeout(function () { ctrl.abort(); }, TIMEOUT);
+    return fetch(PROXY, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ text: text }),
+      signal: ctrl.signal
+    }).then(function (res) {
+      return res.json().catch(function () { return null; }).then(function (data) {
+        clearTimeout(t);
+        if (!res.ok || !data || typeof data.text !== "string") {
+          var code = data && data.code;
+          throw new Error(code === "rate_limited" ? "rate_limited" : code === "not_configured" ? "not_configured" : "unavailable");
+        }
+        return data.text;
+      });
+    }).catch(function (e) { clearTimeout(t); throw e; });
+  }
+
+  function addCard(persona, text) {
+    var div = document.createElement("div");
+    div.className = "msg billy";
+    div.style.maxWidth = "100%";
+    var who = document.createElement("div");
+    who.className = "who";
+    who.textContent = persona.name + " · " + persona.role;
+    var body = document.createElement("div");
+    body.className = "body";
+    text.split(/\n\n+/).forEach(function (para) {
+      var p = document.createElement("p");
+      p.textContent = para;
+      body.appendChild(p);
+    });
+    div.appendChild(who); div.appendChild(body);
+    results.appendChild(div);
+    div.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function framed(persona, question) {
+    return "[Tribunal lens: " + persona.name + "]\n" + persona.lens + "\n\nThe question before the Tribunal:\n" + question;
+  }
+
+  function errText(e) {
+    return e.message === "rate_limited"
+      ? "Rate limit reached (10/minute). Wait a moment before convening again."
+      : e.message === "not_configured"
+      ? "The proxy isn't configured yet (INSIGHT_SIGNING_SECRET missing server-side). See the README."
+      : "The runtime didn't answer. It may be deploying, or the showcase channel isn't allowlisted yet — see the README.";
+  }
+
+  document.getElementById("ask").addEventListener("click", async function () {
+    if (busy) return;
+    var q = document.getElementById("q").value.trim();
+    if (!q) { setStatus("warn", "ASK A QUESTION FIRST"); return; }
+    busy = true; setStatus("warn", "CONSULTING " + selected.name.toUpperCase() + "…");
+    try {
+      var reply = await askRuntime(framed(selected, q));
+      addCard(selected, reply);
+      setStatus("ok", selected.name.toUpperCase() + " HAS SPOKEN — EPISTEMIC CUSTODY REMAINS YOURS");
+    } catch (e) {
+      setStatus("err", "DEGRADED — " + errText(e).toUpperCase().slice(0, 80));
+      addCard(selected, errText(e));
+    } finally { busy = false; }
+  });
+
+  document.getElementById("convene").addEventListener("click", async function () {
+    if (busy) return;
+    var q = document.getElementById("q").value.trim();
+    if (!q) { setStatus("warn", "ASK A QUESTION FIRST"); return; }
+    busy = true;
+    progress.hidden = false;
+    var done = 0;
+    for (var i = 0; i < PERSONAS.length; i++) {
+      var p = PERSONAS[i];
+      setStatus("warn", "CONVENING — " + p.name.toUpperCase() + " (" + (i + 1) + "/7)");
+      try {
+        var reply = await askRuntime(framed(p, q));
+        addCard(p, reply);
+      } catch (e) {
+        addCard(p, errText(e));
+        if (e.message === "rate_limited") break;
+      }
+      done++;
+      progressBar.style.width = Math.round((done / PERSONAS.length) * 100) + "%";
+    }
+    progress.hidden = true; progressBar.style.width = "0";
+    setStatus("ok", "TRIBUNAL ADJOURNED — COMPARE CONVERGENCE AND DIVERGENCE YOURSELF");
+    busy = false;
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talk with Billy — GestaltView Showcase</title>
+<meta name="description" content="A live conversation with Billy, GestaltView's conversational collaborator, through a signed ephemeral proxy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Manrope:wght@400;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./showcase.css">
+<script src="./showcase-config.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="wordmark"><a href="./index.html">GestaltView</a></div>
+    <div class="kicker">Showcase · Demo 01 · <span class="evidence-tag live" style="margin:0">Live</span></div>
+    <h1 class="display">Talk with <span class="turn">Billy.</span></h1>
+    <hr class="magenta-rule">
+    <p class="lede">Billy is the conversational collaborator at the center of GestaltView — the one who holds the thread. Ask anything. This demo calls the live runtime through a signed proxy; nothing you type is stored by this page.</p>
+
+    <div class="status-line" id="status"><span class="dot warn"></span>CHECKING CONNECTION…</div>
+
+    <div class="chatlog" id="chatlog" aria-live="polite"></div>
+
+    <form id="chatform">
+      <label class="lbl" for="msg">Your message</label>
+      <textarea class="field" id="msg" maxlength="4000" placeholder="Ask Billy anything…" autocomplete="off"></textarea>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" type="submit" id="send">Send</button>
+        <button class="btn ghost" type="button" id="clear">Clear conversation</button>
+      </div>
+    </form>
+
+    <p class="privacy-note">Ephemeral by design: messages go to the runtime for a reply and are not kept by this page — no localStorage, no cookies, no analytics on your words. Rate-limited to 10 messages/minute.</p>
+
+    <div class="callout" id="degraded" hidden>
+      <p><strong class="gold">The runtime isn't answering right now.</strong></p>
+      <p id="degraded-detail">The signed proxy couldn't reach GestaltView. This usually means the proxy isn't deployed yet or the runtime hasn't allowlisted the <span style="font-family:'Geist Mono',monospace">showcase</span> channel — both are deploy-time steps in the README, not a problem with the demo.</p>
+    </div>
+
+    <footer class="showcase-foot">
+      <span class="tagline">Infrastructure for being seen.</span>
+      <span class="handle">GestaltView / Showcase v1</span>
+    </footer>
+  </div>
+</div>
+<script>
+(function () {
+  const cfg = window.SHOWCASE_CONFIG || {};
+  const PROXY = cfg.PROXY_PATH || "/api/showcase-proxy";
+  const TIMEOUT = cfg.TIMEOUT_MS || 20000;
+
+  const chatlog = document.getElementById("chatlog");
+  const form = document.getElementById("chatform");
+  const msg = document.getElementById("msg");
+  const sendBtn = document.getElementById("send");
+  const statusEl = document.getElementById("status");
+  const degraded = document.getElementById("degraded");
+  let live = false;
+
+  function setStatus(state, text) {
+    const dot = state === "ok" ? "ok" : state === "warn" ? "warn" : "err";
+    statusEl.innerHTML = '<span class="dot ' + dot + '"></span>' + text;
+  }
+
+  function addMsg(who, text) {
+    const div = document.createElement("div");
+    div.className = "msg " + (who === "you" ? "user" : "billy");
+    const whoEl = document.createElement("div");
+    whoEl.className = "who";
+    whoEl.textContent = who === "you" ? "You" : "Billy";
+    const body = document.createElement("div");
+    body.className = "body";
+    // Plain-text render: Billy's reply is text; never inject HTML.
+    text.split(/\n\n+/).forEach(function (para) {
+      const p = document.createElement("p");
+      p.textContent = para;
+      body.appendChild(p);
+    });
+    div.appendChild(whoEl);
+    div.appendChild(body);
+    chatlog.appendChild(div);
+    div.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    return div;
+  }
+
+  async function ask(text) {
+    const ctrl = new AbortController();
+    const t = setTimeout(function () { ctrl.abort(); }, TIMEOUT);
+    try {
+      const res = await fetch(PROXY, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ text: text }),
+        signal: ctrl.signal,
+      });
+      const data = await res.json().catch(function () { return null; });
+      if (!res.ok || !data || typeof data.text !== "string") {
+        const code = data && data.code;
+        throw new Error(code === "not_configured" ? "not_configured" : code === "rate_limited" ? "rate_limited" : "unavailable");
+      }
+      return data.text;
+    } finally {
+      clearTimeout(t);
+    }
+  }
+
+  // Connection check: a lightweight ping through the same signed path.
+  (async function check() {
+    try {
+      await ask("ping");
+      // Don't show the ping in the chatlog; just mark live.
+      chatlog.innerHTML = "";
+      live = true;
+      setStatus("ok", "LIVE — CONNECTED TO THE GESTALTVIEW RUNTIME");
+      degraded.hidden = true;
+    } catch (e) {
+      live = false;
+      setStatus("err", "DEGRADED — RUNTIME UNREACHABLE (SEE NOTE BELOW)");
+      degraded.hidden = false;
+      if (e.message === "not_configured") {
+        document.getElementById("degraded-detail").textContent =
+          "The proxy is reachable but INSIGHT_SIGNING_SECRET isn't set on the server. Set the env var and redeploy — see the README.";
+      } else if (e.message === "rate_limited") {
+        document.getElementById("degraded-detail").textContent =
+          "Rate limit hit (10/minute). Wait a moment and try again.";
+      }
+    }
+  })();
+
+  form.addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    const text = msg.value.trim();
+    if (!text || sendBtn.disabled) return;
+    addMsg("you", text);
+    msg.value = "";
+    sendBtn.disabled = true;
+    const typing = addMsg("billy", "");
+    typing.querySelector(".body").innerHTML = '<p class="typing">Billy is thinking…</p>';
+    try {
+      const reply = await ask(text);
+      typing.querySelector(".body").innerHTML = "";
+      reply.split(/\n\n+/).forEach(function (para) {
+        const p = document.createElement("p");
+        p.textContent = para;
+        typing.querySelector(".body").appendChild(p);
+      });
+      if (!live) { live = true; setStatus("ok", "LIVE — CONNECTED TO THE GESTALTVIEW RUNTIME"); degraded.hidden = true; }
+    } catch (e) {
+      typing.querySelector(".body").innerHTML = "";
+      const p = document.createElement("p");
+      p.className = "typing";
+      p.textContent = e.message === "rate_limited"
+        ? "Too many messages — wait a minute, then try again."
+        : "Couldn't reach Billy just now. The runtime may be deploying, or the proxy isn't configured yet (see the note below).";
+      typing.querySelector(".body").appendChild(p);
+      setStatus("err", "DEGRADED — RUNTIME UNREACHABLE (SEE NOTE BELOW)");
+      degraded.hidden = false;
+    } finally {
+      sendBtn.disabled = false;
+      msg.focus();
+    }
+  });
+
+  document.getElementById("clear").addEventListener("click", function () {
+    chatlog.innerHTML = "";
+    msg.focus();
+  });
+
+  msg.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); }
+  });
+})();
+</script>
+</body>
+</html>
