@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "Static portfolio site for Keith Soyka (AI systems builder, founder of GestaltView). Live: https://keith-soyka-portfolio.vercel.app/",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keithsoyka0-coder/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keithsoyka0-coder/Portfolio/issues"
+  },
+  "homepage": "https://github.com/keithsoyka0-coder/Portfolio#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
