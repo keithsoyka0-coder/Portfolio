@@ -51,3 +51,11 @@ WF-10 packaging. Every change narrated, every artifact versioned. Keith integrat
 - New: destination selector (5 production destinations, declared intent only — the page says production routes for real) and a demo-computed provenance envelope line under each artifact (source hash, type, style, destination, engine version, timestamp).
 - Correction: the v1.6 callout claimed production "adds export formats (PDF, PNG, audio)" — wrong. Production tRPC export covers html/json/markdown; audio/video/image/pdf are content formats with dedicated Studio renderers. The callout now states this correctly.
 - Files touched: `showcase/render-engine.html`, `showcase/registry.json`, `showcase/registry.md`.
+
+## v1.8 — 2026-10-01
+- Bug fix (found by dogfooding): `pdf-ready-html` artifacts were fed through the markdown renderer, which saw the ```html fence and escaped the whole document into a code block — the user got a text dump of HTML source instead of a document.
+- `pdf-ready-html` now renders natively in a sandboxed iframe (sandbox="", no scripts) — the same approach as the Studio's HtmlRenderer. Fence-stripping plus a guarded unescape for models that emit literal \n.
+- Per-type export: for HTML artifacts the buttons become Copy HTML / Download .html / Print-PDF, and Download/Print operate on the artifact document itself (the actual print-ready file), not the demo wrapper. Markdown-oriented buttons hide for this type.
+- Theme selector disables for `pdf-ready-html` (the artifact carries its own print styles).
+- Fix verified by replaying the exact failing payload through the new extraction code: valid complete document out, fence-free.
+- Files touched: `showcase/render-engine.html`, `showcase/registry.json`, `showcase/registry.md`.
