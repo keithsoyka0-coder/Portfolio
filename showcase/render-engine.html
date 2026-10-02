@@ -4,12 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Generative Render Engine — GestaltView Showcase</title>
-<meta name="description" content="Raw material in, finished artifact out. Pick a synthesis style and artifact type; the runtime synthesizes, this page renders.">
+<meta name="description" content="Raw material in, finished artifact out. The demo drives the production Gen-Engine's actual contract: 15 artifact types, 8 synthesis styles, 4 PLK modes, destinations, and provenance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Manrope:wght@400;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./showcase.css">
 <script src="./showcase-config.js"></script>
+<style>
+  /* Render themes — applied to #artifact as theme-<name> */
+  #artifact.theme-parchment{background:#f6f1e5;color:#211d14;border-color:#d9cfae}
+  #artifact.theme-parchment h1,#artifact.theme-parchment h2,#artifact.theme-parchment h3{color:#14110a}
+  #artifact.theme-parchment blockquote{border-left-color:#b98a1d;color:#4a4132}
+  #artifact.theme-parchment code{background:rgba(120,90,20,.12);color:#5a4a1a}
+  #artifact.theme-parchment pre{background:#efe8d4;border-color:#d9cfae;color:#211d14}
+  #artifact.theme-parchment hr{border-top-color:rgba(0,0,0,.15)}
+  #artifact.theme-terminal{background:#020604;color:#4dff9d;border-color:#0e5c36;font-family:'Geist Mono',monospace}
+  #artifact.theme-terminal h1,#artifact.theme-terminal h2,#artifact.theme-terminal h3{color:#b6ffd9;font-family:'Geist Mono',monospace}
+  #artifact.theme-terminal p,#artifact.theme-terminal li{font-family:'Geist Mono',monospace;font-size:13.5px}
+  #artifact.theme-terminal blockquote{border-left-color:#4dff9d;color:#9dffc9}
+  #artifact.theme-terminal code{background:rgba(77,255,157,.1);color:#b6ffd9}
+  #artifact.theme-terminal pre{background:#010402;border-color:#0e5c36;color:#4dff9d}
+  #artifact.theme-terminal hr{border-top-color:rgba(77,255,157,.25)}
+  #artifact.theme-terminal strong{color:#d8ffe9}
+  #provenance{font-family:'Geist Mono',monospace;font-size:11.5px;opacity:.85;margin-top:-8px}
+  @media print{
+    body{background:#fff}
+    .frame>*:not(#artifact){display:none !important}
+    .frame{border:none;box-shadow:none;max-width:100%}
+    #artifact{display:block !important;border:none;margin:0;padding:0;max-width:100%}
+    #artifact.theme-obsidian,#artifact.theme-terminal{background:#fff !important;color:#111 !important}
+    #artifact.theme-obsidian h1,#artifact.theme-obsidian h2,#artifact.theme-obsidian h3,
+    #artifact.theme-terminal h1,#artifact.theme-terminal h2,#artifact.theme-terminal h3,
+    #artifact.theme-terminal strong{color:#111 !important}
+    #artifact.theme-terminal p,#artifact.theme-terminal li{font-family:'Manrope',sans-serif;font-size:15px;color:#111}
+    #artifact.theme-terminal code{background:#eee !important;color:#111 !important}
+    #artifact.theme-terminal pre{background:#f5f5f5 !important;border-color:#ccc !important;color:#111 !important}
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -21,34 +52,44 @@
     </div>
     <h1 class="display">Generative <span class="turn">Render Engine.</span></h1>
     <hr class="magenta-rule">
-    <p class="lede">The engine's real job: take source material, synthesize it in a chosen style, and return a finished artifact. Here you drive the same contract — style, artifact type, and PLK handling — that the production engine uses.</p>
+    <p class="lede">The engine's real job: take source material, synthesize it in a chosen style, and return a finished artifact. This demo drives the production Gen-Engine's actual contract — 15 artifact types, 8 synthesis styles, 4 PLK modes, destinations, and a provenance envelope — with the style guides and format directives quoted verbatim from the engine source.</p>
 
     <div class="callout">
-      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the synthesis prompt below is built with the engine's actual logic (style guides, artifact formats, PLK constraint) and sent to the live runtime through the signed proxy. Rendering to a styled artifact happens here in your browser. The production engine does this server-side and adds export formats (PDF, PNG, audio) — those aren't in this demo.</p>
+      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the prompt below is assembled the way the production engine assembles it — a system block (style directive + format directive) and a user block (title, source, PLK mode). Production sends them as separate system/user messages; this demo concatenates them because the signed proxy takes a single text field. Synthesis runs live via the runtime; rendering, themes, and file export happen here in your browser. Production adds: tRPC export (html/json/markdown), server-sealed provenance (SHA-256 + model provenance), artifact routing to destinations, and native renderers for mermaid/mind-map/graph — this demo renders everything as styled markdown and only <em>declares</em> a destination. Audio, video, image, and PDF are content formats with dedicated Studio renderers, not export formats.</p>
     </div>
 
     <div class="row">
       <div>
         <label class="lbl" for="atype">Artifact type</label>
         <select class="field" id="atype">
-          <option value="session-recap">Session recap</option>
-          <option value="blueprint-markdown">Blueprint</option>
-          <option value="share-card">Share card</option>
-          <option value="mind-map">Mind map</option>
+          <option value="markdown">Markdown</option>
+          <option value="pdf-ready-html">PDF-ready HTML</option>
+          <option value="blueprint-json">Blueprint (JSON)</option>
+          <option value="blueprint-markdown">Blueprint (Markdown)</option>
+          <option value="agent-prompt">Agent prompt</option>
+          <option value="image-prompt">Image prompt</option>
           <option value="marketing-copy">Marketing copy</option>
-          <option value="founder-note">Founder-voice note</option>
+          <option value="share-card">Share card</option>
+          <option value="code">Code</option>
+          <option value="session-recap">Session recap</option>
+          <option value="mind-map">Mind map</option>
+          <option value="diagram">Diagram</option>
+          <option value="mermaid">Mermaid</option>
+          <option value="graph">Graph</option>
+          <option value="workflow">Workflow</option>
         </select>
       </div>
       <div>
         <label class="lbl" for="style">Synthesis style</label>
         <select class="field" id="style">
-          <option value="faithful">Faithful — stay close, don't invent</option>
-          <option value="convergent">Convergent — find the single thread</option>
-          <option value="divergent">Divergent — explore what it implies</option>
-          <option value="gentle-reflective">Gentle reflective — warmth, no clinical language</option>
-          <option value="technical">Technical — precise and structured</option>
-          <option value="founder-voice">Founder voice — honest, peer to peer</option>
-          <option value="plk-resonant">PLK resonant — metaphors carry the weight</option>
+          <option value="faithful">Faithful — reproduce accurately and completely</option>
+          <option value="convergent">Convergent — find common ground</option>
+          <option value="divergent">Divergent — unexpected angles</option>
+          <option value="revolutionary">Revolutionary — reframe entirely</option>
+          <option value="gentle-reflective">Gentle reflective — warmth and clarity</option>
+          <option value="technical">Technical — precise and evidence-based</option>
+          <option value="founder-voice">Founder voice — bold and direct</option>
+          <option value="plk-resonant">PLK resonant — light, motion, emergence</option>
         </select>
       </div>
     </div>
@@ -58,6 +99,7 @@
         <label class="lbl" for="plk">PLK handling</label>
         <select class="field" id="plk">
           <option value="light-touch">Light touch — keep distinctive phrases</option>
+          <option value="score-only">Score only — resonance scored, language untouched</option>
           <option value="full-resonance-pass">Full resonance — exact language preserved</option>
           <option value="off">Off — no PLK constraint</option>
         </select>
@@ -68,23 +110,49 @@
       </div>
     </div>
 
+    <div class="row">
+      <div>
+        <label class="lbl" for="theme">Render theme</label>
+        <select class="field" id="theme">
+          <option value="obsidian">Obsidian — Tron-teal on black</option>
+          <option value="parchment">Parchment — light paper, print-friendly</option>
+          <option value="terminal">Terminal — phosphor mono</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" for="dest">Destination (declared)</label>
+        <select class="field" id="dest">
+          <option value="download-only">Download only — take the file, nothing routed</option>
+          <option value="creation-corner">Creation Corner — gallery route</option>
+          <option value="dynamic-inner-world">Dynamic Inner World — inner-world route</option>
+          <option value="external-scaffold-pending">External scaffold — staged for export</option>
+          <option value="gate-package-draft">Gate package — draft for release review</option>
+        </select>
+      </div>
+    </div>
+
     <label class="lbl" for="source">Source material</label>
     <textarea class="field" id="source" style="min-height:150px" maxlength="4000" placeholder="Paste the raw material — notes, a transcript excerpt, a rough idea. The engine synthesizes; it never invents beyond what's here."></textarea>
 
     <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
       <button class="btn" id="generate">Render artifact</button>
       <button class="btn ghost" id="copy" hidden>Copy markdown</button>
+      <button class="btn ghost" id="copyPlain" hidden>Copy plain text</button>
+      <button class="btn ghost" id="dlMd" hidden>Download .md</button>
+      <button class="btn ghost" id="dlHtml" hidden>Download .html</button>
+      <button class="btn ghost" id="printBtn" hidden>Print / PDF</button>
     </div>
 
     <div class="status-line" id="status"><span class="dot warn"></span>READY — NOTHING RENDERED YET</div>
 
-    <div class="artifact" id="artifact" hidden></div>
+    <div class="artifact theme-obsidian" id="artifact" hidden></div>
+    <div class="status-line" id="provenance" hidden></div>
 
-    <p class="privacy-note">Ephemeral by design — your source text goes to the runtime for synthesis and isn't kept by this page. Rate-limited to 10 renders/minute.</p>
+    <p class="privacy-note">Ephemeral by design — your source text goes to the runtime for synthesis and isn't kept by this page. Rate-limited to 10 renders/minute. The destination above is declared intent only; production routes the artifact for real.</p>
 
     <footer class="showcase-foot">
       <span class="tagline">Infrastructure for being seen.</span>
-      <span class="handle">GestaltView / Showcase v1</span>
+      <span class="handle">GestaltView / Showcase v1.7</span>
     </footer>
   </div>
 </div>
@@ -94,36 +162,61 @@
   var PROXY = cfg.PROXY_PATH || "/api/showcase-proxy";
   var TIMEOUT = cfg.TIMEOUT_MS || 20000;
 
-  // Mirrors the production engine's prompt logic (style guides, artifact
-  // formats, PLK constraint) so the demo drives the real contract.
+  // Style guides and format directives quoted VERBATIM from the production
+  // engine source (server/gen-engine-templates.ts). The demo assembles the
+  // prompt the same way production does: a system block + a user block.
+  // Production sends them as separate system/user messages; the demo
+  // concatenates them because the signed proxy takes a single text field.
   var STYLE_GUIDE = {
-    "faithful": "Stay close to the source material. Do not invent. Do not elaborate beyond what is present. Organize clearly and return it whole.",
-    "convergent": "Synthesize the core threads. Find what wants to be a single coherent statement. Remove redundancy without removing voice.",
-    "divergent": "Explore what the source material implies but does not say. Generate expansive possibilities while staying grounded in the original.",
-    "gentle-reflective": "Respond with warmth and gentleness. Treat the material as something precious. No clinical language.",
-    "technical": "Precise, structured, and technical. Use appropriate terminology. Organize with headers and bullet points where useful.",
-    "founder-voice": "Write as a founder explaining to a peer. Honest, direct, and grounded in lived reality. No corporate language.",
-    "plk-resonant": "Write with full PLK resonance. Metaphors carry the weight. The user's exact language is the primary artifact."
+    "faithful": "Reproduce the source material accurately and completely, preserving the original voice and structure.",
+    "convergent": "Synthesize multiple perspectives into a coherent, unified narrative that finds common ground.",
+    "divergent": "Explore unexpected angles, challenge assumptions, and surface non-obvious insights.",
+    "revolutionary": "Reframe the subject matter entirely, proposing bold new paradigms and transformative ideas.",
+    "gentle-reflective": "Write with warmth, introspection, and emotional intelligence. Prioritize clarity and human connection.",
+    "technical": "Use precise technical language, structured formatting, and evidence-based reasoning.",
+    "founder-voice": "Write with the conviction and clarity of a visionary founder. Bold, direct, and future-oriented.",
+    "plk-resonant": "Infuse the content with PLK resonance vocabulary: presence, luminosity, kinetic energy. Use metaphors of light, motion, and emergence."
   };
   var OUTPUT_FORMAT = {
-    "session-recap": "Respond with a structured session recap: key insights, decisions made, threads to follow, open questions.",
-    "blueprint-markdown": "Respond in markdown structured as a GestaltView blueprint — titled, tagged, with clear sections.",
-    "share-card": "Respond with a short (3-5 line) share card. Title, hook, essence. Designed to be copied and shared.",
-    "mind-map": "Respond with a markdown mind-map. Use indented bullet structure to show relationships and branches.",
-    "marketing-copy": "Respond with ready-to-publish copy. Compelling, concise, authentic. No corporate filler.",
-    "founder-note": "Respond as a short founder's note. Honest, direct, first person."
+    "markdown": "Generate well-structured Markdown content with headers, lists, and code blocks as appropriate.",
+    "pdf-ready-html": "Generate clean, print-ready HTML with inline styles suitable for PDF rendering.",
+    "blueprint-json": "Generate a structured JSON blueprint with clearly defined fields and nested objects.",
+    "blueprint-markdown": "Generate a Markdown blueprint with structured sections and clear headings.",
+    "agent-prompt": "Generate a precise, well-scoped system prompt for an AI agent. Include role, constraints, and output format.",
+    "image-prompt": "Generate a detailed, vivid image generation prompt with style, composition, lighting, and mood descriptors.",
+    "marketing-copy": "Generate compelling marketing copy with a clear value proposition, benefits, and call to action.",
+    "share-card": "Generate concise, shareable content suitable for social media or link previews.",
+    "code": "Generate clean, well-commented code with appropriate language syntax.",
+    "session-recap": "Generate a structured session recap with key topics, decisions, action items, and insights.",
+    "mind-map": "Generate a hierarchical mind map in Markdown outline format with # for root, ## for branches, ### for leaves.",
+    "diagram": "Generate a Mermaid diagram definition appropriate for the content.",
+    "mermaid": "Generate valid Mermaid diagram syntax.",
+    "graph": "Generate a graph structure description with nodes and edges.",
+    "workflow": "Generate a step-by-step workflow with clear stages, inputs, outputs, and decision points."
   };
-  function plkInstruction(mode) {
-    if (mode === "off") return "";
-    if (mode === "full-resonance-pass") return "\nPLK CONSTRAINT (highest priority): Preserve the user's exact voice, metaphors, and authentic phrasing. Do not paraphrase or compress their language. Scars and lived experience are signal, not noise.";
-    return "\nPLK NOTE: Preserve distinctive phrases and metaphors while improving clarity.";
-  }
 
   var statusEl = document.getElementById("status");
   var artifactEl = document.getElementById("artifact");
+  var provEl = document.getElementById("provenance");
   var copyBtn = document.getElementById("copy");
+  var copyPlainBtn = document.getElementById("copyPlain");
+  var dlMdBtn = document.getElementById("dlMd");
+  var dlHtmlBtn = document.getElementById("dlHtml");
+  var printBtn = document.getElementById("printBtn");
+  var themeSel = document.getElementById("theme");
   var genBtn = document.getElementById("generate");
   var lastMarkdown = "";
+  var lastTitle = "";
+
+  function applyTheme() {
+    artifactEl.className = "artifact theme-" + themeSel.value;
+  }
+  themeSel.addEventListener("change", function () {
+    if (!artifactEl.hidden) {
+      applyTheme();
+      setStatus("ok", "RE-RENDERED — " + themeSel.options[themeSel.selectedIndex].text.toUpperCase());
+    }
+  });
 
   function setStatus(state, text) {
     var dot = state === "ok" ? "ok" : state === "warn" ? "warn" : "err";
@@ -132,6 +225,65 @@
 
   function escapeHtml(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Demo-computed provenance hash. Production seals the envelope server-side
+  // with SHA-256 + model provider/name; this stands in so the contract is
+  // visible, and is labeled as demo-computed.
+  function hash53(str, seed) {
+    var h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+    for (var i = 0; i < str.length; i++) {
+      var ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+    return (h2 >>> 0).toString(16).padStart(8, "0") + (h1 >>> 0).toString(16).padStart(8, "0");
+  }
+
+  function toPlainText(md) {
+    return md
+      .replace(/^```.*$/gm, "")
+      .replace(/^#{1,6}\s+/gm, "")
+      .replace(/\*\*([^*]+)\*\*/g, "$1")
+      .replace(/(^|\W)\*([^*\n]+)\*/g, "$1$2")
+      .replace(/`([^`]+)`/g, "$1")
+      .replace(/^>\s?/gm, "")
+      .replace(/^[-*]\s+/gm, "\u2022 ")
+      .replace(/^\d+\.\s+/gm, "")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
+
+  function download(name, content, type) {
+    var blob = new Blob([content], { type: type });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+
+  var THEME_EXPORT_CSS = {
+    "obsidian": "body{background:#05070b;color:#e8eef4;font-family:Manrope,system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 24px;line-height:1.65}h1,h2,h3{color:#fff}a{color:#12d6ff}code{font-family:monospace;background:rgba(18,214,255,.08);padding:2px 6px;border-radius:6px}pre{background:#05070b;border:1px solid #1c2b3a;border-radius:12px;padding:16px;overflow-x:auto}blockquote{border-left:3px solid #f0f;padding-left:16px;color:#c7d2dc}hr{border:0;border-top:1px solid rgba(255,255,255,.12)}",
+    "parchment": "body{background:#f6f1e5;color:#211d14;font-family:Georgia,serif;max-width:760px;margin:40px auto;padding:0 24px;line-height:1.7}h1,h2,h3{color:#14110a}a{color:#8a5a00}code{font-family:monospace;background:rgba(120,90,20,.12);padding:2px 6px;border-radius:6px}pre{background:#efe8d4;border:1px solid #d9cfae;border-radius:12px;padding:16px;overflow-x:auto}blockquote{border-left:3px solid #b98a1d;padding-left:16px;color:#4a4132}hr{border:0;border-top:1px solid rgba(0,0,0,.15)}",
+    "terminal": "body{background:#020604;color:#4dff9d;font-family:monospace;max-width:760px;margin:40px auto;padding:0 24px;line-height:1.6;font-size:14px}h1,h2,h3{color:#b6ffd9}a{color:#b6ffd9}code{background:rgba(77,255,157,.1);padding:2px 6px;border-radius:6px}pre{background:#010402;border:1px solid #0e5c36;border-radius:12px;padding:16px;overflow-x:auto}blockquote{border-left:3px solid #4dff9d;padding-left:16px;color:#9dffc9}hr{border:0;border-top:1px solid rgba(77,255,157,.25)}"
+  };
+
+  function standaloneHTML(title, bodyHTML, theme) {
+    return "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\">" +
+      "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">" +
+      "<title>" + escapeHtml(title) + " — GestaltView artifact</title>" +
+      "<style>" + THEME_EXPORT_CSS[theme] + "</style></head><body>" +
+      bodyHTML +
+      "<hr><p style=\"opacity:.6;font-size:12px\">Rendered by the GestaltView Generation Engine demo · " +
+      escapeHtml(theme) + " theme · ephemeral, nothing stored.</p></body></html>";
+  }
+
+  function slug(s) {
+    return (s || "untitled-artifact").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "untitled-artifact";
   }
 
   // Minimal markdown renderer: escape first, then structure. No raw HTML
@@ -169,24 +321,36 @@
     var atype = document.getElementById("atype").value;
     var style = document.getElementById("style").value;
     var plk = document.getElementById("plk").value;
+    var dest = document.getElementById("dest").value;
     var title = document.getElementById("title").value.trim() || "Untitled artifact";
 
-    var prompt = [
-      "You are the GestaltView Generation Engine — a consciousness-serving synthesis layer.",
-      STYLE_GUIDE[style] || STYLE_GUIDE.faithful,
-      OUTPUT_FORMAT[atype] || "Respond in markdown.",
-      plkInstruction(plk),
-      "Do not include preamble, meta-commentary, or \"Here is the artifact:\" framing. Output the artifact directly.",
+    // Mirrors production's buildSystemPrompt + buildUserPrompt, concatenated
+    // (see note above about the single-text proxy).
+    var systemPrompt = [
+      "You are the GestaltView Gen-Engine, an advanced AI artifact synthesis system.",
       "",
-      "Artifact title: " + title,
+      "Synthesis Style: " + style,
+      "Style Directive: " + (STYLE_GUIDE[style] || STYLE_GUIDE.faithful),
       "",
-      "Source material:",
-      source
-    ].filter(Boolean).join("\n");
+      "Target Format: " + atype,
+      "Format Directive: " + (OUTPUT_FORMAT[atype] || OUTPUT_FORMAT.markdown),
+      "",
+      "Always produce high-quality, complete artifacts. Never truncate. Never add meta-commentary about the artifact itself."
+    ].join("\n");
+
+    var userParts = [];
+    userParts.push("Title: " + title);
+    userParts.push("Source Content:\n" + source.slice(0, 3000));
+    if (plk !== "off") userParts.push("PLK Mode: " + plk + " — Apply PLK resonance vocabulary where appropriate.");
+    userParts.push("Declared destination: " + dest + " (demo declares intent only; production routes the artifact).");
+    userParts.push("\nGenerate a " + atype + " artifact using the " + style + " synthesis style.");
+
+    var prompt = "[system]\n" + systemPrompt + "\n\n[user]\n" + userParts.join("\n\n");
 
     genBtn.disabled = true;
     setStatus("warn", "SYNTHESIZING VIA THE LIVE RUNTIME…");
-    artifactEl.hidden = true; copyBtn.hidden = true;
+    artifactEl.hidden = true; provEl.hidden = true;
+    [copyBtn, copyPlainBtn, dlMdBtn, dlHtmlBtn, printBtn].forEach(function (b) { b.hidden = true; });
 
     var ctrl = new AbortController();
     var t = setTimeout(function () { ctrl.abort(); }, TIMEOUT);
@@ -200,9 +364,16 @@
       var data = await res.json().catch(function () { return null; });
       if (!res.ok || !data || typeof data.text !== "string") throw new Error((data && data.code) || "unavailable");
       lastMarkdown = data.text;
+      lastTitle = title;
       artifactEl.innerHTML = renderMarkdown(data.text);
+      applyTheme();
       artifactEl.hidden = false;
-      copyBtn.hidden = false;
+      provEl.innerHTML = '<span class="dot ok"></span>PROVENANCE (demo-computed) · src ' + hash53(source, 7).slice(0, 12) +
+        ' · ' + atype + ' · ' + style + ' · → ' + dest +
+        ' · showcase-demo v1.7 · ' + new Date().toISOString() +
+        ' · production seals this server-side (SHA-256 + model provenance)';
+      provEl.hidden = false;
+      [copyBtn, copyPlainBtn, dlMdBtn, dlHtmlBtn, printBtn].forEach(function (b) { b.hidden = false; });
       setStatus("ok", "ARTIFACT RENDERED — SYNTHESIS LIVE, RENDER LOCAL");
       artifactEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     } catch (e) {
@@ -220,6 +391,29 @@
       function () { setStatus("ok", "COPIED — MARKDOWN ON YOUR CLIPBOARD"); },
       function () { setStatus("warn", "COPY BLOCKED BY THE BROWSER — SELECT THE TEXT MANUALLY"); }
     );
+  });
+
+  copyPlainBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(toPlainText(lastMarkdown)).then(
+      function () { setStatus("ok", "COPIED — PLAIN TEXT ON YOUR CLIPBOARD"); },
+      function () { setStatus("warn", "COPY BLOCKED BY THE BROWSER — SELECT THE TEXT MANUALLY"); }
+    );
+  });
+
+  dlMdBtn.addEventListener("click", function () {
+    download(slug(lastTitle) + ".md", "# " + lastTitle + "\n\n" + lastMarkdown, "text/markdown");
+    setStatus("ok", "DOWNLOADED — MARKDOWN FILE SAVED");
+  });
+
+  dlHtmlBtn.addEventListener("click", function () {
+    download(slug(lastTitle) + ".html",
+      standaloneHTML(lastTitle, artifactEl.innerHTML, themeSel.value), "text/html");
+    setStatus("ok", "DOWNLOADED — STANDALONE HTML IN THE " + themeSel.value.toUpperCase() + " THEME");
+  });
+
+  printBtn.addEventListener("click", function () {
+    setStatus("ok", "PRINT DIALOG OPEN — CHOOSE 'SAVE AS PDF' FOR A PDF");
+    window.print();
   });
 })();
 </script>

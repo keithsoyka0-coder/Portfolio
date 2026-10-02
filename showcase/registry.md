@@ -1,4 +1,4 @@
-# Showcase registry (v1.5.0, 2026-10-01)
+# Showcase registry (v1.7.0, 2026-10-01)
 
 | File | Title | Kind | Live | Evidence |
 |---|---|---|---|---|
@@ -17,3 +17,4 @@
 | square-social-template.html | Square Social Template | template | no | VERIFIED |
 | story-template.html | Story Template | template | no | VERIFIED |
 | community.html | Join the Community | demo | yes | STAGED |
+| billy-unslashed-council.html | Announcement — Billy, unslashed; the council is convening | announcement | no | STAGED |

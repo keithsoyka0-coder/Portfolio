@@ -88,13 +88,13 @@
     },
     {
       "added": "2026-10-01",
-      "description": "Artifact type \u00d7 synthesis style \u00d7 PLK mode \u2014 pick the shape, supply the source, receive a styled artifact with copyable markdown.",
+      "description": "The production Gen-Engine's full contract in a demo: 15 artifact types \u00d7 8 synthesis styles \u00d7 4 PLK modes \u00d7 render theme \u00d7 declared destination, with a demo-computed provenance envelope. Style guides and format directives quoted verbatim from the engine source.",
       "evidence": "STAGED",
       "file": "render-engine.html",
       "id": "render-engine",
       "kind": "demo",
       "live": true,
-      "note": "Synthesis via the runtime; markdown\u2192styled-HTML rendering is local. No server-side PDF/PNG/audio export claimed.",
+      "note": "Aligned to server/gen-engine-templates.ts in v1.7. Synthesis via the runtime through the single-text proxy (production uses separate system/user messages). Export = client-side md/html/print; production adds tRPC html/json/markdown export, server-sealed provenance, destination routing, and native mermaid/mind-map/graph renderers.",
       "runtime_wired": true,
       "section": "live-demos",
       "title": "Generative Render Engine"
@@ -183,6 +183,19 @@
       "runtime_wired": false,
       "note": "Discord widget iframe (guild 1555057818787127316). Requires the server widget to be enabled in Discord Server Settings; join button needs the owner's permanent invite link pasted in.",
       "added": "2026-10-01"
+    },
+    {
+      "id": "billy-unslashed-council-announcement",
+      "file": "billy-unslashed-council.html",
+      "title": "Announcement \u2014 Billy, unslashed; the council is convening",
+      "kind": "announcement",
+      "section": "live-demos",
+      "description": "Portfolio announcement post: Billy now talks in the open on the portfolio (no slash commands), and the Tribunal's next evolution \u2014 a multi-model council with a distinct model in each seat. Statuses labeled honestly: chat STAGED, council announced as the next build.",
+      "evidence": "STAGED",
+      "live": false,
+      "runtime_wired": false,
+      "note": "Content page. Billy unslashed = the billy-chat demo (STAGED until runtime allowlists the showcase channel). Multi-model council = roadmap, announced here first \u2014 not claimed as shipped.",
+      "added": "2026-10-01"
     }
   ],
   "registry": "showcase",
@@ -215,5 +228,5 @@
   ],
   "source_of_truth": "This file is the canonical index of the Portfolio showcase/ directory. The showcase page renders from it; a file not listed here is not part of the showcase.",
   "updated": "2026-10-01",
-  "version": "1.5.0"
+  "version": "1.7.0"
 }
