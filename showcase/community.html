@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — GestaltView Showcase</title>
+<meta name="description" content="Join the GestaltView Digital Intelligence Server on Discord — where Billy answers questions live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Manrope:wght@400;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./showcase.css">
+<style>
+  .widget-shell{display:flex;gap:32px;flex-wrap:wrap;align-items:flex-start;margin-top:28px}
+  .widget-copy{flex:1;min-width:260px}
+  .widget-frame{flex:0 0 350px;max-width:100%}
+  .widget-frame iframe{border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+  .join-btn{display:inline-block;margin-top:16px;padding:12px 28px;border-radius:999px;
+    background:linear-gradient(135deg,#5865F2,#9b59f6);color:#fff;font-weight:800;
+    text-decoration:none;font-family:'Manrope',sans-serif}
+  .join-btn:hover{filter:brightness(1.12)}
+  .step-list{list-style:none;padding:0;margin:20px 0}
+  .step-list li{margin:10px 0;padding-left:28px;position:relative}
+  .step-list li::before{content:"→";position:absolute;left:0;color:#f0f; font-weight:700}
+  code.mono{font-family:'Geist Mono',monospace;font-size:13px;background:rgba(255,255,255,.08);padding:2px 8px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="wordmark"><a href="./index.html">GestaltView</a></div>
+    <div class="kicker">Showcase · Community</div>
+    <h1 class="display">The door is <span class="turn">open.</span></h1>
+    <hr class="magenta-rule">
+    <p class="lede">The GestaltView Digital Intelligence Server — a safe space for nerds like us. Billy lives here: ask him anything with <code class="mono">/insight ask</code>, <code class="mono">/insight explain</code>, or <code class="mono">/insight help</code>.</p>
+    <p>
+      <span class="evidence-tag live">Live server</span>
+      <span class="evidence-tag local">Reddit coming next</span>
+    </p>
+
+    <div class="widget-shell">
+      <div class="widget-copy">
+        <h2 style="font-family:'Cabin Sketch',cursive;font-size:28px;margin:0 0 8px">What happens inside</h2>
+        <ul class="step-list">
+          <li><strong style="color:#fff">#introductions</strong> — share your "cognitive fingerprint," a snippet of your story</li>
+          <li><strong style="color:#fff">#bucket-drops-lab</strong> — toss in fleeting thoughts; watch them get sorted into something keepable</li>
+          <li><strong style="color:#fff">#methodology-immersion</strong> — deep dives into how GestaltView actually works</li>
+          <li><strong style="color:#fff">Billy, everywhere</strong> — <code class="mono">/insight ask</code> in any channel or DM. A witness, not a chatbot.</li>
+        </ul>
+        <p style="opacity:.75">No pressure. No templates. Just you.</p>
+        <!-- TODO: replace with your permanent invite link (Discord → Server Settings → Invites → create never-expiring invite) -->
+        <a class="join-btn" href="https://discord.gg/REPLACE-WITH-YOUR-INVITE">Join the server</a>
+      </div>
+      <div class="widget-frame">
+        <iframe src="https://discord.com/widget?id=1555057818787127316&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="GestaltView Discord server widget"></iframe>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:32px">
+      <p><strong class="gold">Heads up.</strong> If the widget above is blank, the server widget isn't enabled yet — Discord → Server Settings → Widget → <em>Enable Server Widget</em>. The join button needs your permanent invite link pasted in (search this file for <code class="mono">REPLACE-WITH-YOUR-INVITE</code>).</p>
+    </div>
+
+    <footer class="showcase-foot">
+      <span class="tagline">Infrastructure for being seen.</span>
+      <span class="handle">GestaltView / Showcase v1.5</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

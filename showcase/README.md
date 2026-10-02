@@ -29,7 +29,19 @@ moves.
    never put it in client-side code.**
 3. `INSIGHT_BOT_RUNTIME_URL` defaults to `https://gestaltview-three.vercel.app`; override
    via env if the runtime moves.
-4. **Runtime allowlist (required — Keith/Codex action):**
+4. **Owner testing bypass (optional):** the proxy rate-limits to 10 req/IP/min.
+   To test without tripping it, set **`SHOWCASE_ADMIN_TOKEN`** to a long random
+   string (`openssl rand -hex 32`), redeploy, then run this once in the browser
+   console on your portfolio domain (replace `PASTE_TOKEN`):
+
+   ```js
+   document.cookie = "showcase_admin=PASTE_TOKEN; path=/; max-age=604800; SameSite=Lax";
+   ```
+
+   Requests carrying that cookie skip the rate limiter. Validation, the signing
+   secret, and the runtime contract all still apply — and if the env var is
+   unset, no bypass exists at all.
+5. **Runtime allowlist (required — Keith/Codex action):**
    `/api/insight-bot/respond` must accept the new adapter identity, or every
    demo degrades. The exact change, in the runtime's adapter/channel check:
 
