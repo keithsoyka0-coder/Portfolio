@@ -25,6 +25,14 @@
  *   INSIGHT_BOT_RUNTIME_URL              e.g. https://gestaltview-three.vercel.app
  *                            (defaults to the live runtime)
  *
+ * Env optional:
+ *   SHOWCASE_ADMIN_TOKEN     owner testing bypass for the rate limiter.
+ *                            If set, a request carrying cookie
+ *                            showcase_admin=<token> skips the per-IP rate
+ *                            limit (validation still applies). If unset,
+ *                            no bypass exists — the limiter is absolute.
+ *                            Generate: openssl rand -hex 32
+ *
  * Runtime delta required (one allowlist change — Keith/Codex action):
  *   /api/insight-bot/respond must accept x-insight-bot-adapter: "showcase"
  *   and channel: "showcase". Everything else in the v2 contract is unchanged.
@@ -58,13 +66,30 @@ function send(res, status, body) {
   res.status(status).setHeader("Content-Type", "application/json").end(JSON.stringify(body));
 }
 
+// Owner testing bypass: skips the rate limiter ONLY. Input validation,
+// the signing secret, and the upstream contract all still apply.
+// Fails closed — if SHOWCASE_ADMIN_TOKEN is unset, nothing bypasses.
+function isAdmin(req) {
+  const expected = (process.env.SHOWCASE_ADMIN_TOKEN || "").trim();
+  if (!expected) return false;
+  const cookie = req.headers.cookie || "";
+  const m = cookie.match(/(?:^|;\s*)showcase_admin=([^;]+)/);
+  if (!m) return false;
+  let got = "";
+  try { got = decodeURIComponent(m[1]).trim(); } catch { return false; }
+  if (got.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ got.charCodeAt(i);
+  return diff === 0;
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     send(res, 405, { error: "Method not allowed" });
     return;
   }
-  if (rateLimited(clientIp(req))) {
+  if (!isAdmin(req) && rateLimited(clientIp(req))) {
     send(res, 429, { error: "Too many requests — please wait a minute.", code: "rate_limited" });
     return;
   }
