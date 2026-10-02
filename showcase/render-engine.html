@@ -26,6 +26,13 @@
   #artifact.theme-terminal pre{background:#010402;border-color:#0e5c36;color:#4dff9d}
   #artifact.theme-terminal hr{border-top-color:rgba(77,255,157,.25)}
   #artifact.theme-terminal strong{color:#d8ffe9}
+  /* v1.9: diagram-family staged blocks — labeled source, not soup */
+  #artifact .diagram-staged{margin:8px 0 18px;border:1px dashed rgba(18,214,255,.35);border-radius:12px;overflow:hidden}
+  #artifact .diagram-label{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.14em;padding:8px 14px;background:rgba(18,214,255,.08);color:#9adcff;border-bottom:1px solid rgba(18,214,255,.2)}
+  #artifact.theme-parchment .diagram-staged{border-color:rgba(138,90,0,.4)}
+  #artifact.theme-parchment .diagram-label{background:rgba(138,90,0,.08);color:#8a5a00;border-bottom-color:rgba(138,90,0,.25)}
+  #artifact.theme-terminal .diagram-staged{border-color:rgba(77,255,157,.4)}
+  #artifact.theme-terminal .diagram-label{background:rgba(77,255,157,.08);color:#b6ffd9;border-bottom-color:rgba(77,255,157,.25)}
   #provenance{font-family:'Geist Mono',monospace;font-size:11.5px;opacity:.85;margin-top:-8px}
   @media print{
     body{background:#fff}
@@ -55,7 +62,7 @@
     <p class="lede">The engine's real job: take source material, synthesize it in a chosen style, and return a finished artifact. This demo drives the production Gen-Engine's actual contract — 15 artifact types, 8 synthesis styles, 4 PLK modes, destinations, and a provenance envelope — with the style guides and format directives quoted verbatim from the engine source.</p>
 
     <div class="callout">
-      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the prompt below is assembled the way the production engine assembles it — a system block (style directive + format directive) and a user block (title, source, PLK mode). Production sends them as separate system/user messages; this demo concatenates them because the signed proxy takes a single text field. Synthesis runs live via the runtime; rendering, themes, and file export happen here in your browser. Production adds: tRPC export (html/json/markdown), server-sealed provenance (SHA-256 + model provenance), artifact routing to destinations, and native renderers for mermaid/mind-map/graph — this demo renders those as styled markdown and only <em>declares</em> a destination. One exception: <strong style="color:#fff">pdf-ready-html</strong> renders natively here in a sandboxed iframe (no scripts), the same approach as the Studio's HtmlRenderer — and its Download/Print buttons operate on the artifact document itself. Audio, video, image, and PDF are content formats with dedicated Studio renderers, not export formats.</p>
+      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the prompt below is assembled the way the production engine assembles it — a system block (style directive + format directive) and a user block (title, source, PLK mode). Production sends them as separate system/user messages; this demo concatenates them because the signed proxy takes a single text field. Synthesis runs live via the runtime; rendering, themes, and file export happen here in your browser. Production adds: tRPC export (html/json/markdown), server-sealed provenance (SHA-256 + model provenance), artifact routing to destinations, and native renderers for mermaid/mind-map/graph — this demo shows those as labeled source blocks and only <em>declares</em> a destination. One exception: <strong style="color:#fff">pdf-ready-html</strong> renders natively here in a sandboxed iframe (no scripts), the same approach as the Studio's HtmlRenderer — and its Download/Print buttons operate on the artifact document itself. Audio, video, image, and PDF are content formats with dedicated Studio renderers, not export formats.</p>
     </div>
 
     <div class="row">
@@ -153,7 +160,7 @@
 
     <footer class="showcase-foot">
       <span class="tagline">Infrastructure for being seen.</span>
-      <span class="handle">GestaltView / Showcase v1.8</span>
+      <span class="handle">GestaltView / Showcase v1.9</span>
     </footer>
   </div>
 </div>
@@ -349,6 +356,27 @@
     return html;
   }
 
+  // v1.9: diagram-family types (mermaid/diagram/graph) return raw diagram
+  // syntax, which is not markdown — running it through renderMarkdown turns
+  // it into paragraph soup. Until the native renderers land, show the source
+  // honestly in a labeled code block (STAGED).
+  var DIAGRAM_TYPES = { mermaid: 1, diagram: 1, graph: 1 };
+  function looksLikeDiagramSyntax(text) {
+    return /^\s*(graph|flowchart|sequenceDiagram|classDiagram|stateDiagram|erDiagram|gantt|pie|journey|gitGraph|mindmap|quadrantChart|zenuml)\b/m.test(text);
+  }
+  function renderDiagramAware(text, atype) {
+    var t = (text || "").trim();
+    if (DIAGRAM_TYPES[atype] || looksLikeDiagramSyntax(t)) {
+      // Strip a single wrapping fence pair if the model fenced it; the label
+      // carries the honesty either way.
+      var src = t.replace(/^```[\w-]*\s*\n?/, "").replace(/\n?```\s*$/, "").trim() || t;
+      var label = (atype || "diagram").toUpperCase() + " SOURCE — STAGED · NATIVE RENDERER IN PRODUCTION";
+      return '<div class="diagram-staged"><div class="diagram-label">' + escapeHtml(label) +
+        '</div><pre><code>' + escapeHtml(src) + '</code></pre></div>';
+    }
+    return renderMarkdown(text);
+  }
+
   genBtn.addEventListener("click", async function () {
     var source = document.getElementById("source").value.trim();
     if (!source) { setStatus("warn", "PASTE SOME SOURCE MATERIAL FIRST"); return; }
@@ -409,13 +437,13 @@
       } else {
         lastMarkdown = data.text;
         lastRawHtml = "";
-        artifactEl.innerHTML = renderMarkdown(data.text);
+        artifactEl.innerHTML = renderDiagramAware(data.text, atype);
         applyTheme();
       }
       artifactEl.hidden = false;
       provEl.innerHTML = '<span class="dot ok"></span>PROVENANCE (demo-computed) · src ' + hash53(source, 7).slice(0, 12) +
         ' · ' + atype + ' · ' + style + ' · → ' + dest +
-        ' · showcase-demo v1.8 · ' + new Date().toISOString() +
+        ' · showcase-demo v1.9 · ' + new Date().toISOString() +
         ' · production seals this server-side (SHA-256 + model provenance)';
       provEl.hidden = false;
       // Export buttons fit the artifact type: HTML types get HTML export,
@@ -436,7 +464,15 @@
         : "DEGRADED — THE RUNTIME DIDN'T ANSWER. CHECK THE README'S DEPLOY STEPS.");
     } finally {
       clearTimeout(t);
-      genBtn.disabled = false;
+      // v1.9: the runtime's orchestrator trips its circuit breaker on rapid
+      // back-to-back calls and serves fallback content (see CHANGELOG v1.3 —
+      // same root cause as the tribunal stagger). Enforce a 4s cooldown after
+      // every render attempt before the button comes back.
+      setStatus("warn", "COOLDOWN — NEXT RENDER IN 4S (RUNTIME CIRCUIT BREAKER)");
+      setTimeout(function () {
+        genBtn.disabled = false;
+        setStatus("ok", "READY");
+      }, 4000);
     }
   });
 

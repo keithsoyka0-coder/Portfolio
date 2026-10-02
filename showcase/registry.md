@@ -1,4 +1,4 @@
-# Showcase registry (v1.8.0, 2026-10-01)
+# Showcase registry (v1.9.0, 2026-10-02)
 
 | File | Title | Kind | Live | Evidence |
 |---|---|---|---|---|
