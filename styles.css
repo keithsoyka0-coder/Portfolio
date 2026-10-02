@@ -253,3 +253,10 @@ html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease
   .hero{padding:60px 0 44px}
   section.block{padding:40px 0}
 }
+
+.bridge{font-size:1.02rem;color:var(--muted);max-width:62ch;margin:-16px 0 28px;padding-left:16px;border-left:3px solid var(--teal)}
+.bridge strong{color:var(--ink);font-weight:650}
+.curiosity{align-items:center;margin-top:4px}
+.curiosity-label{font-size:.92rem;color:var(--muted);margin-right:2px}
+.deliverable{font-size:.93rem;color:var(--muted);margin:12px 0 6px}
+.deliverable strong{color:var(--ink);font-weight:650}
