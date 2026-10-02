@@ -2,6 +2,12 @@
 
 WF-10 packaging. Every change narrated, every artifact versioned. Keith integrates (repo push, deploy).
 
+## v1.9 — 2026-10-02
+- Diagram-family types (mermaid/diagram/graph) no longer render as paragraph soup: `renderDiagramAware()` detects raw diagram syntax (or the type selection) and shows it as a labeled, theme-aware source block ("… SOURCE — STAGED · NATIVE RENDERER IN PRODUCTION") instead of feeding it to the markdown renderer. Honest copy updated to match.
+- 4s post-render cooldown on the Generate button: switching formats and re-rendering quickly was serving the runtime's local-fallback content (reported 2026-10-02) — same circuit-breaker root cause as the v1.3 tribunal stagger, so the demo now enforces the same 4s spacing. Cooldown status names the reason.
+- Footer/provenance/registry → v1.9.0.
+- Files touched: `showcase/render-engine.html`, `showcase/registry.json`, `showcase/registry.md`.
+
 ## v1.4 — 2026-10-01
 - Added `SHOWCASE_ADMIN_TOKEN` owner bypass to `api/showcase-proxy.js`: requests carrying cookie `showcase_admin=<token>` skip the per-IP rate limiter. Fails closed (unset = no bypass); validation, signing, and the runtime contract still apply.
 - README: setup steps for the bypass (env var + console cookie snippet).
