@@ -55,7 +55,7 @@
     <p class="lede">The engine's real job: take source material, synthesize it in a chosen style, and return a finished artifact. This demo drives the production Gen-Engine's actual contract — 15 artifact types, 8 synthesis styles, 4 PLK modes, destinations, and a provenance envelope — with the style guides and format directives quoted verbatim from the engine source.</p>
 
     <div class="callout">
-      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the prompt below is assembled the way the production engine assembles it — a system block (style directive + format directive) and a user block (title, source, PLK mode). Production sends them as separate system/user messages; this demo concatenates them because the signed proxy takes a single text field. Synthesis runs live via the runtime; rendering, themes, and file export happen here in your browser. Production adds: tRPC export (html/json/markdown), server-sealed provenance (SHA-256 + model provenance), artifact routing to destinations, and native renderers for mermaid/mind-map/graph — this demo renders everything as styled markdown and only <em>declares</em> a destination. Audio, video, image, and PDF are content formats with dedicated Studio renderers, not export formats.</p>
+      <p style="margin:0"><strong class="gold">How this demo works, honestly:</strong> the prompt below is assembled the way the production engine assembles it — a system block (style directive + format directive) and a user block (title, source, PLK mode). Production sends them as separate system/user messages; this demo concatenates them because the signed proxy takes a single text field. Synthesis runs live via the runtime; rendering, themes, and file export happen here in your browser. Production adds: tRPC export (html/json/markdown), server-sealed provenance (SHA-256 + model provenance), artifact routing to destinations, and native renderers for mermaid/mind-map/graph — this demo renders those as styled markdown and only <em>declares</em> a destination. One exception: <strong style="color:#fff">pdf-ready-html</strong> renders natively here in a sandboxed iframe (no scripts), the same approach as the Studio's HtmlRenderer — and its Download/Print buttons operate on the artifact document itself. Audio, video, image, and PDF are content formats with dedicated Studio renderers, not export formats.</p>
     </div>
 
     <div class="row">
@@ -137,6 +137,7 @@
     <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
       <button class="btn" id="generate">Render artifact</button>
       <button class="btn ghost" id="copy" hidden>Copy markdown</button>
+      <button class="btn ghost" id="copyHtml" hidden>Copy HTML</button>
       <button class="btn ghost" id="copyPlain" hidden>Copy plain text</button>
       <button class="btn ghost" id="dlMd" hidden>Download .md</button>
       <button class="btn ghost" id="dlHtml" hidden>Download .html</button>
@@ -152,7 +153,7 @@
 
     <footer class="showcase-foot">
       <span class="tagline">Infrastructure for being seen.</span>
-      <span class="handle">GestaltView / Showcase v1.7</span>
+      <span class="handle">GestaltView / Showcase v1.8</span>
     </footer>
   </div>
 </div>
@@ -199,6 +200,7 @@
   var artifactEl = document.getElementById("artifact");
   var provEl = document.getElementById("provenance");
   var copyBtn = document.getElementById("copy");
+  var copyHtmlBtn = document.getElementById("copyHtml");
   var copyPlainBtn = document.getElementById("copyPlain");
   var dlMdBtn = document.getElementById("dlMd");
   var dlHtmlBtn = document.getElementById("dlHtml");
@@ -207,6 +209,7 @@
   var genBtn = document.getElementById("generate");
   var lastMarkdown = "";
   var lastTitle = "";
+  var lastRawHtml = "";
 
   function applyTheme() {
     artifactEl.className = "artifact theme-" + themeSel.value;
@@ -286,6 +289,37 @@
     return (s || "untitled-artifact").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "untitled-artifact";
   }
 
+  // Types whose payload is raw HTML, not markdown. Rendered in a sandboxed
+  // iframe (no scripts, no forms) — the same approach as the Studio's
+  // HtmlRenderer. Never injected into the page DOM.
+  function isHtmlType(t) { return t === "pdf-ready-html"; }
+
+  function extractHtml(text) {
+    var m = text.match(/```(?:html)?\s*([\s\S]*?)```/i);
+    var html = (m ? m[1] : text).trim();
+    // Some models emit literal \n inside code fences — restore real newlines,
+    // but only when the payload has no real line breaks of its own.
+    if (html.indexOf("\\n") !== -1 && html.indexOf("\n") === -1) {
+      html = html.replace(/\\n/g, "\n").replace(/\\t/g, "\t").replace(/\\"/g, '"');
+    }
+    return html;
+  }
+
+  function escapeAttr(s) {
+    return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  var atypeSel = document.getElementById("atype");
+  function syncTypeUI() {
+    var htmlType = isHtmlType(atypeSel.value);
+    themeSel.disabled = htmlType;
+    themeSel.title = htmlType
+      ? "PDF-ready HTML carries its own print styles — themes don't apply"
+      : "";
+  }
+  atypeSel.addEventListener("change", syncTypeUI);
+  syncTypeUI();
+
   // Minimal markdown renderer: escape first, then structure. No raw HTML
   // from the runtime ever reaches the DOM.
   function renderMarkdown(src) {
@@ -350,7 +384,7 @@
     genBtn.disabled = true;
     setStatus("warn", "SYNTHESIZING VIA THE LIVE RUNTIME…");
     artifactEl.hidden = true; provEl.hidden = true;
-    [copyBtn, copyPlainBtn, dlMdBtn, dlHtmlBtn, printBtn].forEach(function (b) { b.hidden = true; });
+    [copyBtn, copyHtmlBtn, copyPlainBtn, dlMdBtn, dlHtmlBtn, printBtn].forEach(function (b) { b.hidden = true; });
 
     var ctrl = new AbortController();
     var t = setTimeout(function () { ctrl.abort(); }, TIMEOUT);
@@ -363,18 +397,38 @@
       });
       var data = await res.json().catch(function () { return null; });
       if (!res.ok || !data || typeof data.text !== "string") throw new Error((data && data.code) || "unavailable");
-      lastMarkdown = data.text;
       lastTitle = title;
-      artifactEl.innerHTML = renderMarkdown(data.text);
-      applyTheme();
+      var htmlType = isHtmlType(atype);
+      if (htmlType) {
+        lastRawHtml = extractHtml(data.text);
+        lastMarkdown = "";
+        artifactEl.innerHTML = '<iframe title="PDF-ready artifact preview" sandbox="" srcdoc="' +
+          escapeAttr(lastRawHtml) +
+          '" style="width:100%;min-height:640px;border:0;border-radius:8px;background:#fff"></iframe>';
+        artifactEl.className = "artifact";
+      } else {
+        lastMarkdown = data.text;
+        lastRawHtml = "";
+        artifactEl.innerHTML = renderMarkdown(data.text);
+        applyTheme();
+      }
       artifactEl.hidden = false;
       provEl.innerHTML = '<span class="dot ok"></span>PROVENANCE (demo-computed) · src ' + hash53(source, 7).slice(0, 12) +
         ' · ' + atype + ' · ' + style + ' · → ' + dest +
-        ' · showcase-demo v1.7 · ' + new Date().toISOString() +
+        ' · showcase-demo v1.8 · ' + new Date().toISOString() +
         ' · production seals this server-side (SHA-256 + model provenance)';
       provEl.hidden = false;
-      [copyBtn, copyPlainBtn, dlMdBtn, dlHtmlBtn, printBtn].forEach(function (b) { b.hidden = false; });
-      setStatus("ok", "ARTIFACT RENDERED — SYNTHESIS LIVE, RENDER LOCAL");
+      // Export buttons fit the artifact type: HTML types get HTML export,
+      // markdown types get the markdown/text/file set. Print works for both.
+      copyBtn.hidden = htmlType;
+      copyPlainBtn.hidden = htmlType;
+      dlMdBtn.hidden = htmlType;
+      copyHtmlBtn.hidden = !htmlType;
+      dlHtmlBtn.hidden = false;
+      printBtn.hidden = false;
+      setStatus("ok", htmlType
+        ? "ARTIFACT RENDERED — PDF-READY HTML IN A SANDBOXED PREVIEW"
+        : "ARTIFACT RENDERED — SYNTHESIS LIVE, RENDER LOCAL");
       artifactEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     } catch (e) {
       setStatus("err", e.message === "rate_limited"
@@ -400,18 +454,45 @@
     );
   });
 
+  copyHtmlBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(lastRawHtml).then(
+      function () { setStatus("ok", "COPIED — HTML SOURCE ON YOUR CLIPBOARD"); },
+      function () { setStatus("warn", "COPY BLOCKED BY THE BROWSER — SELECT THE TEXT MANUALLY"); }
+    );
+  });
+
   dlMdBtn.addEventListener("click", function () {
     download(slug(lastTitle) + ".md", "# " + lastTitle + "\n\n" + lastMarkdown, "text/markdown");
     setStatus("ok", "DOWNLOADED — MARKDOWN FILE SAVED");
   });
 
   dlHtmlBtn.addEventListener("click", function () {
-    download(slug(lastTitle) + ".html",
-      standaloneHTML(lastTitle, artifactEl.innerHTML, themeSel.value), "text/html");
-    setStatus("ok", "DOWNLOADED — STANDALONE HTML IN THE " + themeSel.value.toUpperCase() + " THEME");
+    if (lastRawHtml) {
+      // PDF-ready HTML: the artifact IS the document — save it as-is.
+      download(slug(lastTitle) + ".html", lastRawHtml, "text/html");
+      setStatus("ok", "DOWNLOADED — PRINT-READY HTML (OPEN IT AND PRINT TO PDF)");
+    } else {
+      download(slug(lastTitle) + ".html",
+        standaloneHTML(lastTitle, artifactEl.innerHTML, themeSel.value), "text/html");
+      setStatus("ok", "DOWNLOADED — STANDALONE HTML IN THE " + themeSel.value.toUpperCase() + " THEME");
+    }
   });
 
   printBtn.addEventListener("click", function () {
+    if (lastRawHtml) {
+      // Print the artifact document itself, not the demo chrome around it.
+      var w = window.open("", "_blank");
+      if (w) {
+        w.document.write(lastRawHtml);
+        w.document.close();
+        w.focus();
+        w.print();
+        setStatus("ok", "PRINTING THE ARTIFACT DOCUMENT — SAVE AS PDF FOR A PDF");
+      } else {
+        setStatus("warn", "POPUP BLOCKED — ALLOW POPUPS, THEN PRINT AGAIN");
+      }
+      return;
+    }
     setStatus("ok", "PRINT DIALOG OPEN — CHOOSE 'SAVE AS PDF' FOR A PDF");
     window.print();
   });

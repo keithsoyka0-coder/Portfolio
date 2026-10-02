@@ -94,7 +94,7 @@
       "id": "render-engine",
       "kind": "demo",
       "live": true,
-      "note": "Aligned to server/gen-engine-templates.ts in v1.7. Synthesis via the runtime through the single-text proxy (production uses separate system/user messages). Export = client-side md/html/print; production adds tRPC html/json/markdown export, server-sealed provenance, destination routing, and native mermaid/mind-map/graph renderers.",
+      "note": "Aligned to server/gen-engine-templates.ts in v1.7. pdf-ready-html renders natively in a sandboxed iframe (v1.8, mirroring the Studio's HtmlRenderer); its export buttons operate on the artifact document itself. Synthesis via the runtime through the single-text proxy (production uses separate system/user messages).",
       "runtime_wired": true,
       "section": "live-demos",
       "title": "Generative Render Engine"
@@ -228,5 +228,5 @@
   ],
   "source_of_truth": "This file is the canonical index of the Portfolio showcase/ directory. The showcase page renders from it; a file not listed here is not part of the showcase.",
   "updated": "2026-10-01",
-  "version": "1.7.0"
+  "version": "1.8.0"
 }
