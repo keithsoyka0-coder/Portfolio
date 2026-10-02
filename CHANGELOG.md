@@ -31,3 +31,23 @@ WF-10 packaging. Every change narrated, every artifact versioned. Keith integrat
 - `registry.json` → v1.5.0, 15 entries (community.html added as STAGED).
 - Owner actions before this goes live: enable the server widget (Discord → Server Settings → Widget), and paste a permanent invite link over `REPLACE-WITH-YOUR-INVITE` in community.html.
 - Files touched: new `showcase/community.html`; `showcase/index.html`, `showcase/registry.json`, `showcase/registry.md`.
+
+## v1.5.1 — 2026-10-01
+- Wired the permanent invite link (https://discord.gg/HjdKeU9dV) into `showcase/community.html`'s join button.
+- Added the community card to the repo-root `showcase.html` Live Demos grid (it was only on `showcase/index.html`).
+- Files touched: `showcase/community.html`, `showcase.html`.
+
+## v1.6 — 2026-10-01
+- New page `showcase/billy-unslashed-council.html`: portfolio announcement post — Billy unslashed (plain conversation on the portfolio, no slash commands) and the Tribunal's next evolution into a multi-model council. Statuses labeled honestly: unslashed chat STAGED (runtime allowlist pending), council announced as the next build, not claimed as shipped.
+- `showcase/render-engine.html`: new render themes (Obsidian / Parchment / Terminal, switchable live) and new export modes — copy plain text, download .md, download standalone .html (in the active theme), print / save-as-PDF. Honest callout updated (production still adds server-side PNG/audio).
+- Announcement linked from `showcase/tribunal.html` and `showcase/billy-chat.html`.
+- All showcase footers bumped to v1.6; `registry.json` → v1.6.0, 16 entries.
+- Files touched: new `showcase/billy-unslashed-council.html`; `showcase/render-engine.html`, `showcase/tribunal.html`, `showcase/billy-chat.html`, `showcase/index.html`, `showcase/community.html`, `showcase/registry.json`, `showcase/registry.md`.
+
+## v1.7 — 2026-10-01
+- Contract alignment: the demo now drives the production Gen-Engine's actual contract, verified against `server/gen-engine-templates.ts` and `server/routers.ts` from the Gen-Render Studio source.
+- Added the missing synthesis style `revolutionary` and PLK mode `score-only`; artifact types expanded from 6 to the full 15 (markdown, pdf-ready-html, blueprint-json, agent-prompt, image-prompt, code, diagram, mermaid, graph, workflow added).
+- Style guides and format directives now quoted verbatim from the engine source; prompt assembly mirrors `buildSystemPrompt` + `buildUserPrompt` (concatenated — the proxy takes a single text field; production uses separate system/user messages, and the page says so).
+- New: destination selector (5 production destinations, declared intent only — the page says production routes for real) and a demo-computed provenance envelope line under each artifact (source hash, type, style, destination, engine version, timestamp).
+- Correction: the v1.6 callout claimed production "adds export formats (PDF, PNG, audio)" — wrong. Production tRPC export covers html/json/markdown; audio/video/image/pdf are content formats with dedicated Studio renderers. The callout now states this correctly.
+- Files touched: `showcase/render-engine.html`, `showcase/registry.json`, `showcase/registry.md`.
