@@ -83,7 +83,7 @@ upon the earliest of the following triggers:
 
 - **Trigger A:** GestaltView secures its first institutional funding round (Pre-Seed
   or Seed) from a recognized investor, fund, or accelerator; **or**
-- **Trigger B:** 36 months from the date of this license (i.e., March 6, 2029); **or**
+- **Trigger B:** 36 months from the original license date (i.e., March 6, 2029);
 - **Trigger C:** The author publishes a written notice of open release to the
   repository, explicitly superseding this license.
 
