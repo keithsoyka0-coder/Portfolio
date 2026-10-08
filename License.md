@@ -78,7 +78,7 @@ generates direct or indirect revenue for any entity other than the copyright hol
 
 ## Part III — Change Clause
 
-The restrictions in Part II will **automatically relax to full MIT License terms**
++The terms of this license will **automatically be superseded by the standard MIT License**
 upon the earliest of the following triggers:
 
 - **Trigger A:** GestaltView secures its first institutional funding round (Pre-Seed
