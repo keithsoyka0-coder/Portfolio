@@ -87,7 +87,7 @@ upon the earliest of the following triggers:
 - **Trigger C:** The author publishes a written notice of open release to the
   repository, explicitly superseding this license.
 
-Upon any trigger event, all code in this repository at that time converts to the
++Upon any trigger event, this license supersedes the GCL terms for all code in this repository, including code added after the trigger, under the standard MIT License as published by the Open Source Initiative (https://opensource.org/licenses/MIT).
 standard MIT License as published by the Open Source Initiative (https://opensource.org/licenses/MIT).
 
 ---
