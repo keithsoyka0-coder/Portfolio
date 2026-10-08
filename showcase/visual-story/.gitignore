@@ -1,0 +1,14 @@
+# User-provided source material; supply separately when rebuilding.
+GestaltView_Master_Wiki_v4.0.pdf
+
+# Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local logs and OS noise
+*.log
+.DS_Store
+Thumbs.db

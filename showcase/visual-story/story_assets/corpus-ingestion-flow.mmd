@@ -1,0 +1,6 @@
+graph TD
+  A["corpus-harvest-worker"] --> B["gsvw-ingest-batch"]
+  B --> C["gsvw_ingestion_chunks"]
+  C --> D["google/embeddinggemma-300m"]
+  D --> E["apply_gsvw_embeddings"]
+  E --> F["gsvw_bulk_update_chunk_embeddings"]

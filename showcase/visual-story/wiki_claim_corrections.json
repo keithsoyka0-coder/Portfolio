@@ -1,0 +1,143 @@
+{
+  "source_document": "GestaltView-DeepWiki-Compiled_2026-10-08.md",
+  "source_snapshot_date": "2026-10-08",
+  "baseline_commit": "03284ea",
+  "entries": [
+    {
+      "id": "billy-browser-path",
+      "category": "Billy and DI runtime",
+      "wiki_lines": [104, 180, 916, 919],
+      "claim": "The wiki presents Billy's primary real-time path as direct browser-side Gemini Flash calls.",
+      "correction": "The traced BillyLive interaction calls callBillyApi and /api/billy. A separate BillyEngine path calls /api/llm-proxy, and another branch calls /api/billy. These are backend-facing calls. Gemini is present in server-side provider routing; that does not establish a direct browser-to-provider path for the traced flow. Do not generalize beyond these specific paths.",
+      "disposition": "qualified",
+      "source_paths": [
+        {"path": "client/src/components/BillyLive.tsx", "line_range": "455", "finding": "callBillyApi call site"},
+        {"path": "client/src/lib/billyApi.ts", "line_range": "244", "finding": "Billy API helper"},
+        {"path": "client/src/lib/BillyEngine.ts", "line_range": "1261, 1485", "finding": "backend proxy/API calls"},
+        {"path": "api/billy.ts", "line_range": "552", "finding": "Billy bootstrap/model dispatch branch"},
+        {"path": "api/_lib/llmRouter.ts", "line_range": "60, 598", "finding": "server-side provider router"}
+      ],
+      "evidence_ids": ["05-E01–E04-1", "05-E01–E04-3", "05-E05-1", "01-E05-1"],
+      "related_map_ids": ["05-billy-di-runtime"]
+    },
+    {
+      "id": "billy-sub-100ms",
+      "category": "Performance claims",
+      "wiki_lines": [180, 2494],
+      "claim": "The wiki describes sub-100ms interactions and latency profiling in a way that may read as achieved runtime performance.",
+      "correction": "The repository documents performance targets and optimization guidance, but the source-tracing work did not benchmark live requests or verify a sub-100ms result. Keep the statement labeled as a target unless measured evidence is supplied.",
+      "disposition": "not established",
+      "source_paths": [
+        {"path": ".agents/agents/categories/05-data-ai/machine-learning-engineer.md", "line_range": "37-56", "finding": "optimization guidance/targets"},
+        {"path": "client/src/components/BillyLive.tsx", "finding": "source call path; no latency benchmark"}
+      ],
+      "evidence_ids": [],
+      "related_map_ids": ["05-billy-di-runtime", "11-build-deploy-operations"]
+    },
+    {
+      "id": "flat-api-entrypoints",
+      "category": "API surface",
+      "wiki_lines": [1053, 1054, 1055],
+      "claim": "The endpoint catalog names api/trainer.ts, api/gate.ts, and api/gen-engine.ts as handler files.",
+      "correction": "Those flat files are absent at this baseline. The checked tree has directory-based handler families, including api/trainer/agents.ts, api/gate/[...path].ts, and api/gen-engine/artifacts.ts. Describe the names as route families and cite concrete handlers; do not imply each flat file exists.",
+      "disposition": "corrected",
+      "source_paths": [
+        {"path": "api/trainer.ts", "finding": "absent at commit 03284ea"},
+        {"path": "api/trainer/agents.ts", "finding": "present handler"},
+        {"path": "api/gate.ts", "finding": "absent at commit 03284ea"},
+        {"path": "api/gate/[...path].ts", "finding": "present catch-all handler"},
+        {"path": "api/gen-engine.ts", "finding": "absent at commit 03284ea"},
+        {"path": "api/gen-engine/artifacts.ts", "finding": "present handler"}
+      ],
+      "evidence_ids": ["03-E08-1", "03-E09-1"],
+      "related_map_ids": ["03-api-surface"]
+    },
+    {
+      "id": "cron-inventory",
+      "category": "Scheduled work",
+      "wiki_lines": [2818],
+      "claim": "The wiki describes generic memory-compaction, embedding-refresh, and agent-state-sync cron jobs.",
+      "correction": "The four checked-in Vercel cron declarations are provenance-upgrade, codex-drain, profile-portrait-drain, and profile-portrait-cadence. They do not match the listed tasks. Configuration proves declaration only, not live execution.",
+      "disposition": "corrected",
+      "source_paths": [
+        {"path": "vercel.json", "line_range": "6-29", "finding": "four cron declarations"},
+        {"path": "api/cron/", "finding": "specific scheduled handlers"}
+      ],
+      "evidence_ids": ["11-E03-1", "08-E07–E09-1"],
+      "related_map_ids": ["08-trainer-and-workers", "11-build-deploy-operations"]
+    },
+    {
+      "id": "health-check-scope",
+      "category": "Health checks",
+      "wiki_lines": [2815, 2817],
+      "claim": "A generic api/health endpoint is described as validating database connectivity, pgvector, and external provider availability.",
+      "correction": "The checkout has specific health handlers. api/billy-health.ts checks Supabase pipeline status, invokes the search_knowledge_fragments RPC, reports configured-provider status, and returns voice status. Its top-level ok result combines Supabase, RPC, and configured-provider checks; voice is reported separately. This does not establish a generic endpoint with every claimed check.",
+      "disposition": "corrected",
+      "source_paths": [
+        {"path": "api/billy-health.ts", "finding": "specific Billy pipeline/readiness handler"},
+        {"path": "api/_lib/supabase.ts", "finding": "pipeline health and RPC helpers"},
+        {"path": "api/_lib/llmRouter.ts", "finding": "configured-provider status"},
+        {"path": "api/_lib/billyVoice.ts", "finding": "voice status payload"}
+      ],
+      "evidence_ids": [],
+      "related_map_ids": ["03-api-surface", "11-build-deploy-operations"]
+    },
+    {
+      "id": "edge-function-names",
+      "category": "Supabase Edge Functions",
+      "wiki_lines": [1648, 1730, 1755, 1759, 1760, 1761],
+      "claim": "The wiki names gsvw-auth, gsvw-ingest, and gsvw-sync as Edge Function workers.",
+      "correction": "At commit 03284ea, supabase/config.toml enables five functions: corpus-harvest-worker, gsvw-capture-event, gsvw-dormancy-review, gsvw-ingest-batch, and gsvw-runtime-health. The three wiki-named folders are absent from this checkout. Enabled configuration and source folders are not evidence of live deployment.",
+      "disposition": "corrected",
+      "source_paths": [
+        {"path": "supabase/config.toml", "line_range": "391-409", "finding": "five enabled function declarations"},
+        {"path": "supabase/functions/", "finding": "corresponding checked-in function directories"}
+      ],
+      "evidence_ids": ["01-E09-1", "04-E13–E14-1", "08-E11–E12-1"],
+      "related_map_ids": ["04-auth-and-trust", "08-trainer-and-workers"]
+    },
+    {
+      "id": "trainer-worker-entrypoint",
+      "category": "Trainer and background workers",
+      "wiki_lines": [1411, 2449, 2473, 2477, 2491],
+      "claim": "The wiki presents the Agent Trainer pipeline and asynchronous worker system as implemented deployment routines.",
+      "correction": "workers/codex exists and contains Codex worker code. Separately, package.json declares trainer:worker as tsx worker/trainer/main.ts, but that target path is absent from the checked-out tree. Distinguish existing Codex workers and trainer API routes from the missing trainer-worker entrypoint; do not describe that script as verified execution or production model deployment.",
+      "disposition": "qualified",
+      "source_paths": [
+        {"path": "workers/codex/", "finding": "present Codex worker files"},
+        {"path": "package.json", "line_range": "20", "finding": "trainer:worker target declaration"},
+        {"path": "worker/trainer/main.ts", "finding": "absent at commit 03284ea"}
+      ],
+      "evidence_ids": ["08-E13-1", "11-E10-1"],
+      "related_map_ids": ["08-trainer-and-workers", "11-build-deploy-operations"]
+    },
+    {
+      "id": "active-deployment-and-monitoring",
+      "category": "Deployment and operations",
+      "wiki_lines": [2956],
+      "claim": "The wiki presents Vercel as the primary active production/staging target and says health is continuously monitored.",
+      "correction": "Vercel configuration and a push-triggered Azure deployment workflow coexist in the repository. The active production target and actual monitoring state were not queried and remain unresolved. Present the checked-in files as declarations, not proof of a live deployment or continuous monitoring.",
+      "disposition": "qualified",
+      "source_paths": [
+        {"path": "vercel.json", "finding": "build/output and cron configuration"},
+        {"path": ".github/workflows/main_gestaltview.yml", "finding": "Azure deployment workflow declaration"}
+      ],
+      "evidence_ids": ["11-E03-1", "11-E06-1", "01-E10-1"],
+      "related_map_ids": ["11-build-deploy-operations"]
+    },
+    {
+      "id": "quality-metrics-not-results",
+      "category": "Quality and security metrics",
+      "wiki_lines": [2909, 2910],
+      "claim": "The wiki reports an >80% test-coverage threshold and more than 347 validated security controls as diligence metrics.",
+      "correction": "The >80% value appears in a code-review checklist as a target, not measured coverage. The 347 value appears in a sample security-audit progress JSON marked auditing; it is not proof that a real audit reviewed 347 controls or completed successfully. Label both as guidance/example content, not results.",
+      "disposition": "qualified",
+      "source_paths": [
+        {"path": ".agents/agents/categories/04-quality-security/code-reviewer.md", "line_range": "17-25", "finding": "review checklist threshold"},
+        {"path": ".agents/agents/categories/04-quality-security/security-auditor.md", "line_range": "196-208", "finding": "sample progress JSON with status auditing"}
+      ],
+      "evidence_ids": [],
+      "related_map_ids": ["11-build-deploy-operations"]
+    }
+  ]
+}

@@ -1,0 +1,3072 @@
+{
+  "source_baseline": {
+    "repository": "keithsoyka0-coder/GestaltView-v3",
+    "branch": "main",
+    "commit": "03284ea",
+    "inspected_date": "2026-10-08",
+    "source_scope": "implemented code and checked-in runtime/deployment configuration only"
+  },
+  "counts": {
+    "client_literal_routes": 115,
+    "api_default_export_handler_candidates": 169,
+    "sql_migrations": 94,
+    "vercel_crons": 4,
+    "enabled_supabase_edge_functions": 5
+  },
+  "client_routes": [
+    {
+      "path": "/",
+      "source_path": "client/src/App.tsx",
+      "line": 162,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/engine",
+      "source_path": "client/src/App.tsx",
+      "line": 163,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/codex",
+      "source_path": "client/src/App.tsx",
+      "line": 164,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/runtime",
+      "source_path": "client/src/App.tsx",
+      "line": 165,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/pricing",
+      "source_path": "client/src/App.tsx",
+      "line": 166,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/package-builder",
+      "source_path": "client/src/App.tsx",
+      "line": 167,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/orders/:id",
+      "source_path": "client/src/App.tsx",
+      "line": 168,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/control-plane",
+      "source_path": "client/src/App.tsx",
+      "line": 171,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer",
+      "source_path": "client/src/App.tsx",
+      "line": 174,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/record",
+      "source_path": "client/src/App.tsx",
+      "line": 175,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/billy/voicestudio",
+      "source_path": "client/src/App.tsx",
+      "line": 176,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/billy",
+      "source_path": "client/src/App.tsx",
+      "line": 177,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/pricing",
+      "source_path": "client/src/App.tsx",
+      "line": 180,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/demo",
+      "source_path": "client/src/App.tsx",
+      "line": 181,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/signup",
+      "source_path": "client/src/App.tsx",
+      "line": 182,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/app/sandbox",
+      "source_path": "client/src/App.tsx",
+      "line": 183,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/app/artifacts/:artifactId",
+      "source_path": "client/src/App.tsx",
+      "line": 184,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/app",
+      "source_path": "client/src/App.tsx",
+      "line": 185,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/settings",
+      "source_path": "client/src/App.tsx",
+      "line": 186,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/founder-runtime",
+      "source_path": "client/src/App.tsx",
+      "line": 187,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspaces",
+      "source_path": "client/src/App.tsx",
+      "line": 188,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/documents",
+      "source_path": "client/src/App.tsx",
+      "line": 189,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/voice",
+      "source_path": "client/src/App.tsx",
+      "line": 190,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/analytics",
+      "source_path": "client/src/App.tsx",
+      "line": 191,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/schema-dashboard",
+      "source_path": "client/src/App.tsx",
+      "line": 192,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent_builder",
+      "source_path": "client/src/App.tsx",
+      "line": 193,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-builder",
+      "source_path": "client/src/App.tsx",
+      "line": 194,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/builder",
+      "source_path": "client/src/App.tsx",
+      "line": 195,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/lair",
+      "source_path": "client/src/App.tsx",
+      "line": 196,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-trainer/dev-cli",
+      "source_path": "client/src/App.tsx",
+      "line": 197,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/consulting",
+      "source_path": "client/src/App.tsx",
+      "line": 198,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/external-scaffold",
+      "source_path": "client/src/App.tsx",
+      "line": 199,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/scaffold",
+      "source_path": "client/src/App.tsx",
+      "line": 200,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace",
+      "source_path": "client/src/App.tsx",
+      "line": 201,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/sanctuary",
+      "source_path": "client/src/App.tsx",
+      "line": 202,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/sanctuary",
+      "source_path": "client/src/App.tsx",
+      "line": 203,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/origin",
+      "source_path": "client/src/App.tsx",
+      "line": 204,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/pull-string",
+      "source_path": "client/src/App.tsx",
+      "line": 205,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/blackboard-room",
+      "source_path": "client/src/App.tsx",
+      "line": 206,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/transcriptory",
+      "source_path": "client/src/App.tsx",
+      "line": 207,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/artifact-gallery",
+      "source_path": "client/src/App.tsx",
+      "line": 208,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/dynamic-inner-world",
+      "source_path": "client/src/App.tsx",
+      "line": 209,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/profile",
+      "source_path": "client/src/App.tsx",
+      "line": 210,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/whiteboard-room",
+      "source_path": "client/src/App.tsx",
+      "line": 211,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/digital-intelligence-academy",
+      "source_path": "client/src/App.tsx",
+      "line": 212,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/agent-academy",
+      "source_path": "client/src/App.tsx",
+      "line": 213,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/embodiment-studio",
+      "source_path": "client/src/App.tsx",
+      "line": 214,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/tribunal",
+      "source_path": "client/src/App.tsx",
+      "line": 215,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/tribunal",
+      "source_path": "client/src/App.tsx",
+      "line": 216,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/agent-council",
+      "source_path": "client/src/App.tsx",
+      "line": 217,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/agent-council",
+      "source_path": "client/src/App.tsx",
+      "line": 218,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/cog-os",
+      "source_path": "client/src/App.tsx",
+      "line": 219,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/pull-string",
+      "source_path": "client/src/App.tsx",
+      "line": 220,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/living-legacy",
+      "source_path": "client/src/App.tsx",
+      "line": 221,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/rapid-prototype",
+      "source_path": "client/src/App.tsx",
+      "line": 222,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/rpe",
+      "source_path": "client/src/App.tsx",
+      "line": 223,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/adaptive-layout",
+      "source_path": "client/src/App.tsx",
+      "line": 224,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/creation-corner",
+      "source_path": "client/src/App.tsx",
+      "line": 225,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/creation-corner",
+      "source_path": "client/src/App.tsx",
+      "line": 226,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace-analysis",
+      "source_path": "client/src/App.tsx",
+      "line": 227,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/workspace-analysis",
+      "source_path": "client/src/App.tsx",
+      "line": 228,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/login",
+      "source_path": "client/src/App.tsx",
+      "line": 229,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/auth/consent",
+      "source_path": "client/src/App.tsx",
+      "line": 230,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/auth/consent/auth/callback",
+      "source_path": "client/src/App.tsx",
+      "line": 231,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/contact",
+      "source_path": "client/src/App.tsx",
+      "line": 232,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/signin",
+      "source_path": "client/src/App.tsx",
+      "line": 233,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/dashboard",
+      "source_path": "client/src/App.tsx",
+      "line": 234,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/welcome",
+      "source_path": "client/src/App.tsx",
+      "line": 235,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/auth/callback",
+      "source_path": "client/src/App.tsx",
+      "line": 236,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/spotify/callback",
+      "source_path": "client/src/App.tsx",
+      "line": 237,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/alzheimers-legacy",
+      "source_path": "client/src/App.tsx",
+      "line": 240,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/daydreamer",
+      "source_path": "client/src/App.tsx",
+      "line": 241,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/addiction-recovery",
+      "source_path": "client/src/App.tsx",
+      "line": 242,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/adhd-powerup",
+      "source_path": "client/src/App.tsx",
+      "line": 243,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/musical-dna",
+      "source_path": "client/src/App.tsx",
+      "line": 244,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/symbiocoder",
+      "source_path": "client/src/App.tsx",
+      "line": 245,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/vibe-coder",
+      "source_path": "client/src/App.tsx",
+      "line": 246,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/resume-rockstar",
+      "source_path": "client/src/App.tsx",
+      "line": 247,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/brain-sparks",
+      "source_path": "client/src/App.tsx",
+      "line": 248,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/continuum-codex",
+      "source_path": "client/src/App.tsx",
+      "line": 249,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/validation-wall",
+      "source_path": "client/src/App.tsx",
+      "line": 252,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/village-builders",
+      "source_path": "client/src/App.tsx",
+      "line": 253,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/brain-sparks-station",
+      "source_path": "client/src/App.tsx",
+      "line": 254,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/metrics-dashboard",
+      "source_path": "client/src/App.tsx",
+      "line": 255,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/heirloom-companion",
+      "source_path": "client/src/App.tsx",
+      "line": 256,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/bucket-drops",
+      "source_path": "client/src/App.tsx",
+      "line": 257,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/gravity",
+      "source_path": "client/src/App.tsx",
+      "line": 258,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/platform",
+      "source_path": "client/src/App.tsx",
+      "line": 261,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/museum",
+      "source_path": "client/src/App.tsx",
+      "line": 262,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/collaboration-proof",
+      "source_path": "client/src/App.tsx",
+      "line": 263,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/resonance-loop",
+      "source_path": "client/src/App.tsx",
+      "line": 264,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/ethics-framework",
+      "source_path": "client/src/App.tsx",
+      "line": 265,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/tribunal-of-understanding",
+      "source_path": "client/src/App.tsx",
+      "line": 266,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/orientation",
+      "source_path": "client/src/App.tsx",
+      "line": 267,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/exhibitions/view/:spaceId",
+      "source_path": "client/src/App.tsx",
+      "line": 270,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/exhibitions/new",
+      "source_path": "client/src/App.tsx",
+      "line": 271,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/exhibitions/:spaceId",
+      "source_path": "client/src/App.tsx",
+      "line": 272,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/exhibitions",
+      "source_path": "client/src/App.tsx",
+      "line": 273,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/exhibits",
+      "source_path": "client/src/App.tsx",
+      "line": 276,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/resume-rockstar",
+      "source_path": "client/src/App.tsx",
+      "line": 279,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace/modules/resume-rockstar",
+      "source_path": "client/src/App.tsx",
+      "line": 280,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/symbio-coder",
+      "source_path": "client/src/App.tsx",
+      "line": 281,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace/modules/symbio-coder",
+      "source_path": "client/src/App.tsx",
+      "line": 282,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/vibe-coder",
+      "source_path": "client/src/App.tsx",
+      "line": 283,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace/modules/vibe-coder",
+      "source_path": "client/src/App.tsx",
+      "line": 284,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/masterclass",
+      "source_path": "client/src/App.tsx",
+      "line": 285,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace/modules/masterclass",
+      "source_path": "client/src/App.tsx",
+      "line": 286,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/di/:slug",
+      "source_path": "client/src/App.tsx",
+      "line": 288,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/module/masterclass/:slug",
+      "source_path": "client/src/App.tsx",
+      "line": 289,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/workspace/modules/masterclass/:slug",
+      "source_path": "client/src/App.tsx",
+      "line": 290,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/sandbox",
+      "source_path": "client/src/App.tsx",
+      "line": 293,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/privacy",
+      "source_path": "client/src/App.tsx",
+      "line": 296,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/faq",
+      "source_path": "client/src/App.tsx",
+      "line": 297,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/terms",
+      "source_path": "client/src/App.tsx",
+      "line": 298,
+      "evidence_type": "direct_code_path"
+    },
+    {
+      "path": "/404",
+      "source_path": "client/src/App.tsx",
+      "line": 299,
+      "evidence_type": "direct_code_path"
+    }
+  ],
+  "api_handlers": [
+    {
+      "source_path": "api/actions/[...path].ts",
+      "route_pattern_inferred_from_file": "/api/actions/[...path]",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/billy/code.ts",
+      "route_pattern_inferred_from_file": "/api/actions/billy/code",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/billy/loom.ts",
+      "route_pattern_inferred_from_file": "/api/actions/billy/loom",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/billy/synthesize.ts",
+      "route_pattern_inferred_from_file": "/api/actions/billy/synthesize",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/bucket-drops.ts",
+      "route_pattern_inferred_from_file": "/api/actions/bucket-drops",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/chat.ts",
+      "route_pattern_inferred_from_file": "/api/actions/chat",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/consciousness/reflect.ts",
+      "route_pattern_inferred_from_file": "/api/actions/consciousness/reflect",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/embodiment-profiles.ts",
+      "route_pattern_inferred_from_file": "/api/actions/embodiment-profiles",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/embodiment_profiles.ts",
+      "route_pattern_inferred_from_file": "/api/actions/embodiment_profiles",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/features.ts",
+      "route_pattern_inferred_from_file": "/api/actions/features",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/health.ts",
+      "route_pattern_inferred_from_file": "/api/actions/health",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/logic.ts",
+      "route_pattern_inferred_from_file": "/api/actions/logic",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/musical-dna/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/actions/musical-dna/analyze",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/providers/status.ts",
+      "route_pattern_inferred_from_file": "/api/actions/providers/status",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/runtime.ts",
+      "route_pattern_inferred_from_file": "/api/actions/runtime",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/actions/tribunal/run.ts",
+      "route_pattern_inferred_from_file": "/api/actions/tribunal/run",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/agents/[slug]/files.ts",
+      "route_pattern_inferred_from_file": "/api/agents/[slug]/files",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/agents/[slug]/manifest.ts",
+      "route_pattern_inferred_from_file": "/api/agents/[slug]/manifest",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/auth/session.ts",
+      "route_pattern_inferred_from_file": "/api/auth/session",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/auth/supabase/exchange.ts",
+      "route_pattern_inferred_from_file": "/api/auth/supabase/exchange",
+      "default_handler_line": 41,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/auth/supabase/magic-link.ts",
+      "route_pattern_inferred_from_file": "/api/auth/supabase/magic-link",
+      "default_handler_line": 40,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/auth/supabase/session.ts",
+      "route_pattern_inferred_from_file": "/api/auth/supabase/session",
+      "default_handler_line": 25,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/billy-bucket-drop.ts",
+      "route_pattern_inferred_from_file": "/api/billy-bucket-drop",
+      "default_handler_line": 37,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/billy-health.ts",
+      "route_pattern_inferred_from_file": "/api/billy-health",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/billy.ts",
+      "route_pattern_inferred_from_file": "/api/billy",
+      "default_handler_line": 475,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/artifacts/[artifactId]/drain-exports.ts",
+      "route_pattern_inferred_from_file": "/api/codex/artifacts/[artifactId]/drain-exports",
+      "default_handler_line": 28,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/artifacts/[artifactId]/exports/[format].ts",
+      "route_pattern_inferred_from_file": "/api/codex/artifacts/[artifactId]/exports/[format]",
+      "default_handler_line": 29,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/artifacts/[artifactId]/exports.ts",
+      "route_pattern_inferred_from_file": "/api/codex/artifacts/[artifactId]/exports",
+      "default_handler_line": 10,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/artifacts/[artifactId].ts",
+      "route_pattern_inferred_from_file": "/api/codex/artifacts/[artifactId]",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/forge.ts",
+      "route_pattern_inferred_from_file": "/api/codex/forge",
+      "default_handler_line": 95,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/hooks/export-complete.ts",
+      "route_pattern_inferred_from_file": "/api/codex/hooks/export-complete",
+      "default_handler_line": 9,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/jobs/[jobId]/run.ts",
+      "route_pattern_inferred_from_file": "/api/codex/jobs/[jobId]/run",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/codex/jobs/[jobId].ts",
+      "route_pattern_inferred_from_file": "/api/codex/jobs/[jobId]",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/collaborators/provision.ts",
+      "route_pattern_inferred_from_file": "/api/collaborators/provision",
+      "default_handler_line": 19,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/consciousness/[surface].ts",
+      "route_pattern_inferred_from_file": "/api/consciousness/[surface]",
+      "default_handler_line": 92,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/consciousness/dynamic-inner-world.ts",
+      "route_pattern_inferred_from_file": "/api/consciousness/dynamic-inner-world",
+      "default_handler_line": 47,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/council/run.ts",
+      "route_pattern_inferred_from_file": "/api/council/run",
+      "default_handler_line": 76,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/creation-corner/blueprints.ts",
+      "route_pattern_inferred_from_file": "/api/creation-corner/blueprints",
+      "default_handler_line": 129,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/creation-corner/synthesize.ts",
+      "route_pattern_inferred_from_file": "/api/creation-corner/synthesize",
+      "default_handler_line": 43,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/cron/codex-drain.ts",
+      "route_pattern_inferred_from_file": "/api/cron/codex-drain",
+      "default_handler_line": 79,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/cron/profile-portrait-cadence.ts",
+      "route_pattern_inferred_from_file": "/api/cron/profile-portrait-cadence",
+      "default_handler_line": 41,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/cron/profile-portrait-drain.ts",
+      "route_pattern_inferred_from_file": "/api/cron/profile-portrait-drain",
+      "default_handler_line": 73,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/cron/provenance-upgrade.ts",
+      "route_pattern_inferred_from_file": "/api/cron/provenance-upgrade",
+      "default_handler_line": 208,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/debug-sentry.ts",
+      "route_pattern_inferred_from_file": "/api/debug-sentry",
+      "default_handler_line": 28,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/di-health.ts",
+      "route_pattern_inferred_from_file": "/api/di-health",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/di.ts",
+      "route_pattern_inferred_from_file": "/api/di",
+      "default_handler_line": 138,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/diligence/ots.ts",
+      "route_pattern_inferred_from_file": "/api/diligence/ots",
+      "default_handler_line": 138,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/diligence.ts",
+      "route_pattern_inferred_from_file": "/api/diligence",
+      "default_handler_line": 318,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/discord/interactions.ts",
+      "route_pattern_inferred_from_file": "/api/discord/interactions",
+      "default_handler_line": 130,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/documents/index.ts",
+      "route_pattern_inferred_from_file": "/api/documents",
+      "default_handler_line": 39,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/embodiment/list.ts",
+      "route_pattern_inferred_from_file": "/api/embodiment/list",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/embodiment/upsert.ts",
+      "route_pattern_inferred_from_file": "/api/embodiment/upsert",
+      "default_handler_line": 12,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/embodiments/by-route.ts",
+      "route_pattern_inferred_from_file": "/api/embodiments/by-route",
+      "default_handler_line": 69,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/exhibitions/[...path].ts",
+      "route_pattern_inferred_from_file": "/api/exhibitions/[...path]",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/build-job-regenerate.ts",
+      "route_pattern_inferred_from_file": "/api/gate/build-job-regenerate",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/build-job-run.ts",
+      "route_pattern_inferred_from_file": "/api/gate/build-job-run",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/checkout.ts",
+      "route_pattern_inferred_from_file": "/api/gate/checkout",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/draft-validate.ts",
+      "route_pattern_inferred_from_file": "/api/gate/draft-validate",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/draft.ts",
+      "route_pattern_inferred_from_file": "/api/gate/draft",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/drafts.ts",
+      "route_pattern_inferred_from_file": "/api/gate/drafts",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/order-download.ts",
+      "route_pattern_inferred_from_file": "/api/gate/order-download",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/order-redeem.ts",
+      "route_pattern_inferred_from_file": "/api/gate/order-redeem",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/order.ts",
+      "route_pattern_inferred_from_file": "/api/gate/order",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/support-request.ts",
+      "route_pattern_inferred_from_file": "/api/gate/support-request",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gate/webhook-stripe.ts",
+      "route_pattern_inferred_from_file": "/api/gate/webhook-stripe",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/ambient-scan.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/ambient-scan",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/artifact.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/artifact",
+      "default_handler_line": 26,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/artifacts.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/artifacts",
+      "default_handler_line": 126,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/chart-snapshot.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/chart-snapshot",
+      "default_handler_line": 72,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/export.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/export",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/fusion.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/fusion",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/health.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/health",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/learn.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/learn",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/lightning.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/lightning",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/predict.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/predict",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/render-decide.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/render-decide",
+      "default_handler_line": 28,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gen-engine/resonance.ts",
+      "route_pattern_inferred_from_file": "/api/gen-engine/resonance",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/gravity.ts",
+      "route_pattern_inferred_from_file": "/api/gravity",
+      "default_handler_line": 31,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/health/supabase.ts",
+      "route_pattern_inferred_from_file": "/api/health/supabase",
+      "default_handler_line": 73,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/inner-world/artifacts/[id].ts",
+      "route_pattern_inferred_from_file": "/api/inner-world/artifacts/[id]",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/inner-world/artifacts.ts",
+      "route_pattern_inferred_from_file": "/api/inner-world/artifacts",
+      "default_handler_line": 47,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/inner-world/files/[id]/share.ts",
+      "route_pattern_inferred_from_file": "/api/inner-world/files/[id]/share",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/inner-world/files/[id].ts",
+      "route_pattern_inferred_from_file": "/api/inner-world/files/[id]",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/inner-world/files.ts",
+      "route_pattern_inferred_from_file": "/api/inner-world/files",
+      "default_handler_line": 20,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/insight-bot/respond.ts",
+      "route_pattern_inferred_from_file": "/api/insight-bot/respond",
+      "default_handler_line": 103,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/insights.ts",
+      "route_pattern_inferred_from_file": "/api/insights",
+      "default_handler_line": 115,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/keep-alive.ts",
+      "route_pattern_inferred_from_file": "/api/keep-alive",
+      "default_handler_line": 242,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/llm-proxy.ts",
+      "route_pattern_inferred_from_file": "/api/llm-proxy",
+      "default_handler_line": 324,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/login.ts",
+      "route_pattern_inferred_from_file": "/api/login",
+      "default_handler_line": 39,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/logout.ts",
+      "route_pattern_inferred_from_file": "/api/logout",
+      "default_handler_line": 5,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/model-homes.ts",
+      "route_pattern_inferred_from_file": "/api/model-homes",
+      "default_handler_line": 15,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/resume-rockstar/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/modules/resume-rockstar/analyze",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/resume-rockstar/enhance.ts",
+      "route_pattern_inferred_from_file": "/api/modules/resume-rockstar/enhance",
+      "default_handler_line": 23,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/resume-rockstar/export.ts",
+      "route_pattern_inferred_from_file": "/api/modules/resume-rockstar/export",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/resume-rockstar/save.ts",
+      "route_pattern_inferred_from_file": "/api/modules/resume-rockstar/save",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/symbio-coder/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/modules/symbio-coder/analyze",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/symbio-coder/chat.ts",
+      "route_pattern_inferred_from_file": "/api/modules/symbio-coder/chat",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/symbio-coder/suggest.ts",
+      "route_pattern_inferred_from_file": "/api/modules/symbio-coder/suggest",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/vibe-coder/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/modules/vibe-coder/analyze",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/vibe-coder/link-profile.ts",
+      "route_pattern_inferred_from_file": "/api/modules/vibe-coder/link-profile",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/modules/vibe-coder/suggestions.ts",
+      "route_pattern_inferred_from_file": "/api/modules/vibe-coder/suggestions",
+      "default_handler_line": 6,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/orchestrator/analytics.ts",
+      "route_pattern_inferred_from_file": "/api/orchestrator/analytics",
+      "default_handler_line": 81,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/orchestrator/decide.ts",
+      "route_pattern_inferred_from_file": "/api/orchestrator/decide",
+      "default_handler_line": 113,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/orchestrator/execute.ts",
+      "route_pattern_inferred_from_file": "/api/orchestrator/execute",
+      "default_handler_line": 118,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/orchestrator/extract.ts",
+      "route_pattern_inferred_from_file": "/api/orchestrator/extract",
+      "default_handler_line": 30,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/persona-chat.ts",
+      "route_pattern_inferred_from_file": "/api/persona-chat",
+      "default_handler_line": 95,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/pricing.ts",
+      "route_pattern_inferred_from_file": "/api/pricing",
+      "default_handler_line": 8,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/profile/ingest.ts",
+      "route_pattern_inferred_from_file": "/api/profile/ingest",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/profile/personality.ts",
+      "route_pattern_inferred_from_file": "/api/profile/personality",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/profile/preferences.ts",
+      "route_pattern_inferred_from_file": "/api/profile/preferences",
+      "default_handler_line": 51,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/render/decide.ts",
+      "route_pattern_inferred_from_file": "/api/render/decide",
+      "default_handler_line": 117,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/render/engine.ts",
+      "route_pattern_inferred_from_file": "/api/render/engine",
+      "default_handler_line": 34,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/resume-rockstar/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/resume-rockstar/analyze",
+      "default_handler_line": 10,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/resume-rockstar/enhance.ts",
+      "route_pattern_inferred_from_file": "/api/resume-rockstar/enhance",
+      "default_handler_line": 104,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/resume-rockstar/score-section.ts",
+      "route_pattern_inferred_from_file": "/api/resume-rockstar/score-section",
+      "default_handler_line": 22,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/sanctuary/journal.ts",
+      "route_pattern_inferred_from_file": "/api/sanctuary/journal",
+      "default_handler_line": 44,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/sanctuary/scrapbook.ts",
+      "route_pattern_inferred_from_file": "/api/sanctuary/scrapbook",
+      "default_handler_line": 144,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/schema/dashboard.ts",
+      "route_pattern_inferred_from_file": "/api/schema/dashboard",
+      "default_handler_line": 31,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/session/dashboard.ts",
+      "route_pattern_inferred_from_file": "/api/session/dashboard",
+      "default_handler_line": 569,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/session/memory.ts",
+      "route_pattern_inferred_from_file": "/api/session/memory",
+      "default_handler_line": 63,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/session/state.ts",
+      "route_pattern_inferred_from_file": "/api/session/state",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/sessionRecap.ts",
+      "route_pattern_inferred_from_file": "/api/sessionRecap",
+      "default_handler_line": 31,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/stripe/agent-trainer-checkout.ts",
+      "route_pattern_inferred_from_file": "/api/stripe/agent-trainer-checkout",
+      "default_handler_line": 90,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/stripe/checkout.ts",
+      "route_pattern_inferred_from_file": "/api/stripe/checkout",
+      "default_handler_line": 77,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/stripe/stripe-webhook.ts",
+      "route_pattern_inferred_from_file": "/api/stripe/stripe-webhook",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/stripe/webhook.ts",
+      "route_pattern_inferred_from_file": "/api/stripe/webhook",
+      "default_handler_line": 85,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/symbiocoder/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/symbiocoder/analyze",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/agents.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/agents",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/connectors.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/connectors",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments/[id]/flag/[flagId].ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments/[id]/flag/[flagId]",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments/[id]/flag.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments/[id]/flag",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments/[id]/review.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments/[id]/review",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments/[id]/sources.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments/[id]/sources",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments/[id].ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments/[id]",
+      "default_handler_line": 15,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/experiments.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/experiments",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/graphs.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/graphs",
+      "default_handler_line": 11,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/jobs/[id]/retry.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/jobs/[id]/retry",
+      "default_handler_line": 14,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/memory-surfaces.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/memory-surfaces",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/packaging-candidates/[id]/attachments.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/packaging-candidates/[id]/attachments",
+      "default_handler_line": 12,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/packaging-candidates/[id].ts",
+      "route_pattern_inferred_from_file": "/api/trainer/packaging-candidates/[id]",
+      "default_handler_line": 18,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/packaging-candidates.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/packaging-candidates",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/persona-chat.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/persona-chat",
+      "default_handler_line": 360,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/personhood.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/personhood",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/queue-health.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/queue-health",
+      "default_handler_line": 52,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/approve.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/approve",
+      "default_handler_line": 12,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/cancel-request.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/cancel-request",
+      "default_handler_line": 14,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/deploy.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/deploy",
+      "default_handler_line": 11,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/events.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/events",
+      "default_handler_line": 41,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/execute.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/execute",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id]/reject.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]/reject",
+      "default_handler_line": 12,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/[id].ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs/[id]",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/runs/index.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/runs",
+      "default_handler_line": 19,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/scenario-sets.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/scenario-sets",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/skills.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/skills",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/study-sources/index.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/study-sources",
+      "default_handler_line": 7,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/trainer/study-sources/recommendations.ts",
+      "route_pattern_inferred_from_file": "/api/trainer/study-sources/recommendations",
+      "default_handler_line": 67,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/captures/[id]/handoff.ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/captures/[id]/handoff",
+      "default_handler_line": 15,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/captures/[id].ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/captures/[id]",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/captures.ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/captures",
+      "default_handler_line": 15,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/sessions/[id].ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/sessions/[id]",
+      "default_handler_line": 13,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/sessions.ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/sessions",
+      "default_handler_line": 12,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/transcriptory/transcribe.ts",
+      "route_pattern_inferred_from_file": "/api/transcriptory/transcribe",
+      "default_handler_line": 490,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/vibecoder/analyze.ts",
+      "route_pattern_inferred_from_file": "/api/vibecoder/analyze",
+      "default_handler_line": 17,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/voice/billy.ts",
+      "route_pattern_inferred_from_file": "/api/voice/billy",
+      "default_handler_line": 80,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/workbook/items/[id].ts",
+      "route_pattern_inferred_from_file": "/api/workbook/items/[id]",
+      "default_handler_line": 18,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/workbook/items.ts",
+      "route_pattern_inferred_from_file": "/api/workbook/items",
+      "default_handler_line": 34,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/workbook/sync-runs.ts",
+      "route_pattern_inferred_from_file": "/api/workbook/sync-runs",
+      "default_handler_line": 16,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/workspaces/index.ts",
+      "route_pattern_inferred_from_file": "/api/workspaces",
+      "default_handler_line": 22,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    },
+    {
+      "source_path": "api/ws.d.ts",
+      "route_pattern_inferred_from_file": "/api/ws.d",
+      "default_handler_line": 4,
+      "evidence_type": "file_system_route_candidate",
+      "note": "Route pattern is inferred from the API file path; rewrites or platform settings may alter the exposed path."
+    }
+  ],
+  "migrations": [
+    {
+      "source_path": "supabase/migrations/20260301000100_rate_limits_and_users.sql",
+      "tables_touched_or_created": [
+        "session_rate_limits",
+        "users"
+      ],
+      "functions_created_or_replaced": [
+        "update_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260301000200_admin_seed_original.sql",
+      "tables_touched_or_created": [
+        "users"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260301000400_user_trigger.sql",
+      "tables_touched_or_created": [
+        "users"
+      ],
+      "functions_created_or_replaced": [
+        "handle_new_user"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260311162044_new-migration.sql",
+      "tables_touched_or_created": [
+        "app_users",
+        "billy_sessions",
+        "bucket_drops",
+        "consciousness_profiles",
+        "documents",
+        "embeddings",
+        "knowledge_fragments",
+        "musical_dna_analyses",
+        "processing_runs",
+        "tribunal_sessions"
+      ],
+      "functions_created_or_replaced": [
+        "match_knowledge_fragments",
+        "matchknowledgefragments",
+        "search_knowledge_fragments",
+        "searchknowledgefragments"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260319162400_tribunal-tables.sql",
+      "tables_touched_or_created": [
+        "documents",
+        "processing_runs",
+        "tribunal_events",
+        "tribunal_evidence"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260319164400_orders-loom-concepts.sql",
+      "tables_touched_or_created": [
+        "annotation_concepts",
+        "concepts",
+        "deliverables",
+        "document_concepts",
+        "embeddings",
+        "loom_annotations",
+        "order_notes",
+        "orders",
+        "summaries",
+        "uploads"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260321100000_founder-context.sql",
+      "tables_touched_or_created": [
+        "founder_context"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260321104200_grace_period.sql",
+      "tables_touched_or_created": [
+        "users"
+      ],
+      "functions_created_or_replaced": [
+        "has_valid_subscription_access"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260321104300_fix_embedding_dims_768.sql",
+      "tables_touched_or_created": [
+        "embeddings",
+        "knowledge_fragments"
+      ],
+      "functions_created_or_replaced": [
+        "match_knowledge_fragments",
+        "search_knowledge_fragments"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260324010700_add_filter_package_to_rpcs.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "match_knowledge_fragments",
+        "matchknowledgefragments",
+        "search_knowledge_fragments",
+        "searchknowledgefragments"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260324010800_fix_rpc_conflict.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "match_knowledge_fragments",
+        "search_knowledge_fragments"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260325000000_create_skill_tables.sql",
+      "tables_touched_or_created": [
+        "skill_fragments",
+        "skills"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260327094500_align_fragment_embeddings_to_768.sql",
+      "tables_touched_or_created": [
+        "embeddings",
+        "knowledge_fragments",
+        "skill_fragments"
+      ],
+      "functions_created_or_replaced": [
+        "match_knowledge_fragments",
+        "match_skill_fragments",
+        "matchknowledgefragments"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260327094600_fix_vector_dims.sql",
+      "tables_touched_or_created": [
+        "embeddings",
+        "knowledge_fragments",
+        "skill_fragments"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260330115505_trainer_security_hardening.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "claim_trainer_job"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260330120000_trainer_core.sql",
+      "tables_touched_or_created": [
+        "agent_versions",
+        "agents",
+        "approvals",
+        "deployment_artifacts",
+        "eval_results",
+        "eval_rubrics",
+        "model_providers",
+        "models",
+        "scenario_sets",
+        "scenarios",
+        "trainer_jobs",
+        "training_runs",
+        "training_steps"
+      ],
+      "functions_created_or_replaced": [
+        "claim_trainer_job"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260330120830_trainer_rls_policies.sql",
+      "tables_touched_or_created": [
+        "public"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260330170000_founder_admin_bootstrap.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "handle_new_user",
+        "is_founder_admin_email"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260330193000_persistent_memory_entries.sql",
+      "tables_touched_or_created": [
+        "memory_entries"
+      ],
+      "functions_created_or_replaced": [
+        "match_memory_entries",
+        "search_memory_entries"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260331110000_trainer_study_sources_rpc.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "trainer_list_knowledge_sources"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260331110001_vector_sim_source.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "trainer_search_study_sources"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260410190000_agent_personhood_framework.sql",
+      "tables_touched_or_created": [
+        "agent_code_artifacts",
+        "agent_knowledge_links",
+        "agent_manifest_entries",
+        "agent_manifests",
+        "agent_memories",
+        "agent_relationships",
+        "agent_skills",
+        "embodiment_mutations",
+        "knowledge_asset_chunks",
+        "knowledge_asset_tags",
+        "knowledge_assets",
+        "knowledge_interpretations",
+        "knowledge_tags",
+        "public"
+      ],
+      "functions_created_or_replaced": [
+        "set_agent_personhood_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260410200000_resolve_legacy_tables_rls.sql",
+      "tables_touched_or_created": [
+        "agent_versions",
+        "agents",
+        "annotation_concepts",
+        "app_users",
+        "approvals",
+        "artifacts",
+        "billy_sessions",
+        "bucket_drops",
+        "build_jobs",
+        "buyers",
+        "concepts",
+        "consciousness_profiles",
+        "deployment_artifacts",
+        "document_concepts",
+        "documents",
+        "embeddings",
+        "eval_results",
+        "eval_rubrics",
+        "founder_context",
+        "knowledge_fragments",
+        "loom_annotations",
+        "memory_entries",
+        "model_providers",
+        "models",
+        "musical_dna_analyses",
+        "order_items",
+        "orders",
+        "package_drafts",
+        "processing_runs",
+        "scenario_sets",
+        "scenarios",
+        "skill_fragments",
+        "skills",
+        "summaries",
+        "support_requests",
+        "trainer_jobs",
+        "training_runs",
+        "training_steps",
+        "tribunal_events",
+        "tribunal_evidence",
+        "tribunal_sessions",
+        "users"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260410213000_workbook_and_experiment_governance.sql",
+      "tables_touched_or_created": [
+        "ops_workbook_items",
+        "ops_workbook_sync_runs",
+        "public",
+        "trainer_experiment_sources",
+        "trainer_experiments",
+        "trainer_packaging_candidates",
+        "trainer_policy_flags",
+        "trainer_review_decisions",
+        "training_runs"
+      ],
+      "functions_created_or_replaced": [
+        "set_workbook_governance_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260411110000_integrate_agent_identity_governance.sql",
+      "tables_touched_or_created": [
+        "agent_autobiographies",
+        "agent_constitutions",
+        "agent_context_views",
+        "agent_governance_policies",
+        "agent_memory_records",
+        "agent_preference_nodes",
+        "agent_presentation_profiles",
+        "agent_private_interiors",
+        "agent_relationship_edges",
+        "agent_skill_profiles",
+        "agents",
+        "collaborative_memory_records",
+        "collaborative_space_members",
+        "collaborative_spaces",
+        "identity_contradictions",
+        "identity_evidence",
+        "identity_evidence_links",
+        "identity_mutation_proposals",
+        "identity_review_events",
+        "identity_rollback_events",
+        "public"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260412093000_trainer_control_plane_stabilization.sql",
+      "tables_touched_or_created": [
+        "public",
+        "trainer_job_events",
+        "trainer_jobs",
+        "trainer_workers",
+        "training_runs"
+      ],
+      "functions_created_or_replaced": [
+        "claim_trainer_job",
+        "heartbeat_trainer_worker",
+        "repair_stale_trainer_jobs",
+        "trainer_queue_health",
+        "trainer_search_study_sources"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260412101500_fix_trgm_search_path_for_trainer_search.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "trainer_search_study_sources"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260413120000_add_temporal_metadata_to_corpus_tables.sql",
+      "tables_touched_or_created": [
+        "documents",
+        "knowledge_fragments"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260413121000_temporal_backfill.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260413143526_manifest_pipeline_schema_enhancements.sql",
+      "tables_touched_or_created": [
+        "knowledge_fragments"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260413190000_add_collaborator_system.sql",
+      "tables_touched_or_created": [
+        "agents",
+        "collaborator_embodiment_links",
+        "collaborator_onboarding_events",
+        "collaborator_permissions",
+        "collaborator_relationships",
+        "collaborator_roles",
+        "collaborators"
+      ],
+      "functions_created_or_replaced": [
+        "set_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260413193000_backfill_collaborators.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260417030218_add_ingested_at_and_file_modified_to_knowledge_fragments.sql",
+      "tables_touched_or_created": [
+        "knowledge_fragments"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260419090700_runtime_alignment_carryover.sql",
+      "tables_touched_or_created": [
+        "ingestion_safety_events"
+      ],
+      "functions_created_or_replaced": [
+        "trainer_search_study_sources"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260420150000_human_continuity_schema.sql",
+      "tables_touched_or_created": [
+        "app_users",
+        "consciousness_profiles",
+        "context_injection_packets",
+        "context_injection_rules",
+        "founder_context",
+        "human_cognition_profiles",
+        "human_consciousness_profiles",
+        "human_context_views",
+        "human_continuity_snapshots",
+        "human_identity_evidence",
+        "human_identity_mutations",
+        "human_identity_profiles",
+        "human_identity_review_events",
+        "human_identity_rollback_events",
+        "human_memory_records",
+        "human_personality_profiles",
+        "human_relationship_edges",
+        "identity_subjects",
+        "memory_entries"
+      ],
+      "functions_created_or_replaced": [
+        "touch_updated_at",
+        "try_cast_uuid"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260427100000_trainer_hyperagent_integration.sql",
+      "tables_touched_or_created": [
+        "public",
+        "trainer_connectors",
+        "trainer_experiments",
+        "trainer_memory_bindings",
+        "trainer_skills",
+        "training_runs"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260428000000_trainer_list_indexes.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260429120000_gestaltview_module_registry.sql",
+      "tables_touched_or_created": [
+        "gestaltview_module_keys",
+        "gestaltview_module_profiles",
+        "gestaltview_modules"
+      ],
+      "functions_created_or_replaced": [
+        "gestaltview_get_module_profile",
+        "gestaltview_upsert_module_profile",
+        "touch_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260430143000_workspaces_documents_persistence.sql",
+      "tables_touched_or_created": [
+        "workspace_documents",
+        "workspace_rooms"
+      ],
+      "functions_created_or_replaced": [
+        "set_workspace_persistence_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260501222005_bucket_drops_promotion_pipeline.sql",
+      "tables_touched_or_created": [
+        "bucket_drops"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260509000000_embodiment_governance_persistence.sql",
+      "tables_touched_or_created": [
+        "embodiment_mutation_proposals",
+        "embodiment_readiness_scores",
+        "embodiment_review_log"
+      ],
+      "functions_created_or_replaced": [
+        "is_founder_admin_user"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260515000000_inner_world_files.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts",
+        "user_files"
+      ],
+      "functions_created_or_replaced": [
+        "set_inner_world_files_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260515000100_embodiment_profiles.sql",
+      "tables_touched_or_created": [
+        "embodiment_profiles",
+        "embodiment_training_runs"
+      ],
+      "functions_created_or_replaced": [
+        "set_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260515134500_manhattan_mornings_inner_world_schema.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts",
+        "user_files"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260518000000_backfill_embodiment_profile_history.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260518001000_backfill_embodiment_profile_governance.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260519000000_add_user_content_tables.sql",
+      "tables_touched_or_created": [
+        "blueprints",
+        "inner_world_artifacts",
+        "insights",
+        "journals",
+        "scrapbook_items",
+        "user_preferences"
+      ],
+      "functions_created_or_replaced": [
+        "set_user_content_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260519010000_fix_blueprints_schema.sql",
+      "tables_touched_or_created": [
+        "blueprints"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260519020000_add_source_refs_to_inner_world_and_insights.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts",
+        "insights",
+        "user_files"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260525000000_di_runtime.sql",
+      "tables_touched_or_created": [
+        "di_memory_events",
+        "di_sessions"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260526000000_add_profile_preference_fields.sql",
+      "tables_touched_or_created": [
+        "user_preferences"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260526001000_add_sanctuary_source_refs.sql",
+      "tables_touched_or_created": [
+        "journals",
+        "scrapbook_items"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260528000000_profile_ingestion_and_route_embodiments.sql",
+      "tables_touched_or_created": [
+        "embodiment_modules",
+        "profile_ingestion_sources",
+        "route_embodiment_assignments",
+        "user_personality_dimensions",
+        "user_profile_ingestion_runs"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260531013000_masterclass_module_setup_and_progress_tracking.sql",
+      "tables_touched_or_created": [
+        "masterclass_progress"
+      ],
+      "functions_created_or_replaced": [
+        "upsert_masterclass_session"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260531020000_vector_search_and_indexes.sql",
+      "tables_touched_or_created": [
+        "memory_entries"
+      ],
+      "functions_created_or_replaced": [
+        "match_memories"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260601000100_profile_pipeline_v1_core.sql",
+      "tables_touched_or_created": [
+        "artifacts",
+        "capture_events",
+        "identity_claims",
+        "profile_pipeline_run_links",
+        "profile_pipeline_runs",
+        "provenance_envelopes",
+        "provenance_links",
+        "scaffold_nodes"
+      ],
+      "functions_created_or_replaced": [
+        "gv_capture_events_guard",
+        "gv_profile_pipeline_touch_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260601000200_profile_pipeline_v1_rls.sql",
+      "tables_touched_or_created": [
+        "artifacts",
+        "capture_events",
+        "identity_claims",
+        "profile_pipeline_run_links",
+        "profile_pipeline_runs",
+        "provenance_envelopes",
+        "provenance_links",
+        "scaffold_nodes"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260601000300_profile_pipeline_v1_backfill.sql",
+      "tables_touched_or_created": [
+        "migration_user_map"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260601000400_profile_pipeline_v1_rpc_helpers.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "gv_approve_scaffold_node",
+        "gv_attach_provenance_envelope",
+        "gv_begin_profile_pipeline_run",
+        "gv_complete_profile_pipeline_run",
+        "gv_create_identity_claim",
+        "gv_create_pending_scaffold_node",
+        "gv_link_pipeline_object",
+        "gv_record_capture_event",
+        "resolve_route_embodiment_assignment"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260601000500_model_homes_v1.sql",
+      "tables_touched_or_created": [
+        "model_home_assignments",
+        "model_home_capabilities",
+        "model_home_consent_grants",
+        "model_home_evaluations",
+        "model_home_events",
+        "model_homes",
+        "model_providers"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260601000600_resonance_event_bus_v1.sql",
+      "tables_touched_or_created": [
+        "resonance_events"
+      ],
+      "functions_created_or_replaced": [
+        "gv_emit_resonance_event"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260601000700_route_embodiment_alignment.sql",
+      "tables_touched_or_created": [
+        "embodiment_profiles"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260602000100_codex_artifacts.sql",
+      "tables_touched_or_created": [
+        "codex_artifacts",
+        "codex_jobs"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260604000100_codex_artifact_tables.sql",
+      "tables_touched_or_created": [
+        "artifact_provenance_envelopes",
+        "created_artifacts"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260609000100_transcriptory_captures.sql",
+      "tables_touched_or_created": [
+        "transcriptory_captures"
+      ],
+      "functions_created_or_replaced": [
+        "set_transcriptory_captures_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260609000200_transcriptory_audio_bucket.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260609000300_artifact_query_indexes.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260610000100_transcriptory_sessions_and_sources.sql",
+      "tables_touched_or_created": [
+        "transcriptory_captures",
+        "transcriptory_sessions",
+        "transcriptory_sources"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260610000200_transcriptory_search_and_triggers.sql",
+      "tables_touched_or_created": [
+        "transcriptory_captures",
+        "transcriptory_sessions",
+        "transcriptory_sources"
+      ],
+      "functions_created_or_replaced": [
+        "set_updated_at",
+        "transcriptory_captures_search_document_fn"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260610000300_transcriptory_processing_state.sql",
+      "tables_touched_or_created": [
+        "transcriptory_captures"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260611000100_codex_job_claim_rpc.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "claim_codex_jobs"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260616000100_identity_subject_human_profiles.sql",
+      "tables_touched_or_created": [
+        "human_cognition_profiles",
+        "human_consciousness_profiles",
+        "human_context_views",
+        "human_continuity_snapshots",
+        "human_identity_evidence",
+        "human_identity_mutations",
+        "human_identity_profiles",
+        "human_identity_review_events",
+        "human_memory_records",
+        "human_personality_profiles",
+        "human_relationship_edges",
+        "identity_subjects"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260616000200_runtime_contract_backfill.sql",
+      "tables_touched_or_created": [
+        "deliverables",
+        "order_notes",
+        "session_rate_limits",
+        "uploads"
+      ],
+      "functions_created_or_replaced": [
+        "update_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260617130000_create_profile_portraits.sql",
+      "tables_touched_or_created": [
+        "portrait_dimensions",
+        "profile_portraits"
+      ],
+      "functions_created_or_replaced": [
+        "set_profile_portraits_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260617131000_create_portrait_inference_runs.sql",
+      "tables_touched_or_created": [
+        "portrait_inference_runs",
+        "profile_portraits"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260617132000_create_portrait_inference_queue.sql",
+      "tables_touched_or_created": [
+        "portrait_inference_queue"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260617133000_create_portrait_helper_functions.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "get_current_portrait_version",
+        "get_portrait_signal_count",
+        "maybe_queue_portrait_inference"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260617134000_create_portrait_bucket_drop_trigger.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "check_portrait_threshold_on_bucket_drop"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260618090000_add_portrait_monthly_cadence_helper.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "maybe_queue_portrait_cadence"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260618100000_create_portrait_render_events.sql",
+      "tables_touched_or_created": [
+        "portrait_render_events"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260620103000_create_orchestration_decisions.sql",
+      "tables_touched_or_created": [
+        "orchestration_decisions"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260621000000_collaborator_security_rls.sql",
+      "tables_touched_or_created": [
+        "collaborator_embodiment_links",
+        "collaborator_onboarding_events",
+        "collaborator_permissions",
+        "collaborator_relationships",
+        "collaborator_roles",
+        "collaborators"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260625174800_widen_inner_world_artifacts_status.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260628000000_gsvw_ingestion_alignment.sql",
+      "tables_touched_or_created": [
+        "gsvw_dormancy_review_items",
+        "gsvw_ingestion_chunks",
+        "gsvw_ingestion_documents",
+        "gsvw_ingestion_events",
+        "gsvw_ingestion_runs",
+        "gsvw_repo_alignment_snapshots",
+        "gsvw_runtime_capture_events"
+      ],
+      "functions_created_or_replaced": [
+        "gsvw_mark_document_seen",
+        "gsvw_set_updated_at"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260628133731_rebuild_compatibility_and_security.sql",
+      "tables_touched_or_created": [
+        "corpus_harvest_events",
+        "human_cognition_profiles",
+        "human_consciousness_profiles",
+        "human_context_views",
+        "human_continuity_snapshots",
+        "human_identity_evidence",
+        "human_identity_mutations",
+        "human_identity_profiles",
+        "human_memory_records",
+        "human_personality_profiles",
+        "human_relationship_edges",
+        "identity_subjects"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260628150000_schema_dashboard_snapshot.sql",
+      "tables_touched_or_created": [],
+      "functions_created_or_replaced": [
+        "get_schema_dashboard_snapshot"
+      ]
+    },
+    {
+      "source_path": "supabase/migrations/20260629120000_add_embedding_meta_to_personality_dimensions.sql",
+      "tables_touched_or_created": [
+        "user_personality_dimensions"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260629120100_add_embedding_meta_to_transcripts_and_bucket_drops.sql",
+      "tables_touched_or_created": [
+        "transcripts"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/202607070001_nextgen_rendering_engine.sql",
+      "tables_touched_or_created": [
+        "render_artifacts",
+        "render_jobs"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/202607080001_operation_render_reasoning_voice.sql",
+      "tables_touched_or_created": [
+        "embodiment_reasoning_policies",
+        "field_continuity_events",
+        "operation_render_audits",
+        "reasoning_sessions",
+        "tool_call_audit",
+        "visible_reasoning_cards",
+        "voice_profiles",
+        "voice_session_audit"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20260709000000_july_8_runtime_hotfix.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts",
+        "profile_ingestion_sources"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/202607100001_deepgram_voice_profiles.sql",
+      "tables_touched_or_created": [
+        "voice_profiles"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20261006000100_add_artifact_promotion_state.sql",
+      "tables_touched_or_created": [
+        "inner_world_artifacts"
+      ],
+      "functions_created_or_replaced": []
+    },
+    {
+      "source_path": "supabase/migrations/20261007000100_exhibition_spaces.sql",
+      "tables_touched_or_created": [
+        "exhibition_spaces",
+        "exhibition_versions",
+        "exhibition_visit_events",
+        "exhibition_visitor_grants"
+      ],
+      "functions_created_or_replaced": []
+    }
+  ],
+  "schema_reference_artifacts": [
+    "supabase/visual/CompleteSchema.sql",
+    "supabase/schema_contract_report.sql",
+    "supabase/db_dumps/supabase-db-dump-2026-07-08T06-02-17-543Z.sql",
+    "supabase/supabase-db-dump-2026-06-21T06-21-21-963Z.sql"
+  ],
+  "worker_entrypoints": [
+    {
+      "kind": "vercel_cron",
+      "name": "/api/cron/provenance-upgrade",
+      "path": "/api/cron/provenance-upgrade",
+      "schedule": "0 */2 * * *",
+      "source_path": "vercel.json",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "vercel_cron",
+      "name": "/api/cron/codex-drain",
+      "path": "/api/cron/codex-drain",
+      "schedule": "*/2 * * * *",
+      "source_path": "vercel.json",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "vercel_cron",
+      "name": "/api/cron/profile-portrait-drain",
+      "path": "/api/cron/profile-portrait-drain",
+      "schedule": "*/5 * * * *",
+      "source_path": "vercel.json",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "vercel_cron",
+      "name": "/api/cron/profile-portrait-cadence",
+      "path": "/api/cron/profile-portrait-cadence",
+      "schedule": "0 0 1 * *",
+      "source_path": "vercel.json",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "supabase_edge_function",
+      "name": "corpus-harvest-worker",
+      "path": "supabase/functions/corpus-harvest-worker/index.ts",
+      "enabled": true,
+      "verify_jwt": false,
+      "source_path": "supabase/config.toml",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "supabase_edge_function",
+      "name": "gsvw-capture-event",
+      "path": "supabase/functions/gsvw-capture-event/index.ts",
+      "enabled": true,
+      "verify_jwt": false,
+      "source_path": "supabase/config.toml",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "supabase_edge_function",
+      "name": "gsvw-dormancy-review",
+      "path": "supabase/functions/gsvw-dormancy-review/index.ts",
+      "enabled": true,
+      "verify_jwt": false,
+      "source_path": "supabase/config.toml",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "supabase_edge_function",
+      "name": "gsvw-ingest-batch",
+      "path": "supabase/functions/gsvw-ingest-batch/index.ts",
+      "enabled": true,
+      "verify_jwt": false,
+      "source_path": "supabase/config.toml",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "supabase_edge_function",
+      "name": "gsvw-runtime-health",
+      "path": "supabase/functions/gsvw-runtime-health/index.ts",
+      "enabled": true,
+      "verify_jwt": false,
+      "source_path": "supabase/config.toml",
+      "evidence_type": "configuration_dependent"
+    },
+    {
+      "kind": "runtime_component",
+      "name": "Codex export runner",
+      "path": "workers/codex/runner.ts",
+      "source_path": "api/cron/codex-drain.ts",
+      "evidence_type": "direct_code_path",
+      "note": "Invoked by the scheduled Codex drain route."
+    },
+    {
+      "kind": "node_process",
+      "name": "Express static server",
+      "path": "server/index.ts",
+      "source_path": "package.json",
+      "evidence_type": "direct_code_path",
+      "note": "Package script `server`; serves static build and a Sentry debug route, not the Vercel API handlers."
+    },
+    {
+      "kind": "declared_but_missing_target",
+      "name": "Trainer worker command",
+      "path": "worker/trainer/main.ts",
+      "source_path": "package.json",
+      "evidence_type": "unresolved",
+      "note": "Package script names this entrypoint, but the target is absent from the checked-out tree."
+    },
+    {
+      "kind": "manual_ingestion_workflow",
+      "name": "Corpus v2 ingest workflow",
+      "path": ".github/workflows/ingest_corpus_v2.yml",
+      "source_path": ".github/workflows/ingest_corpus_v2.yml",
+      "evidence_type": "configuration_dependent",
+      "note": "workflow_dispatch only; its CLI arguments do not match the inspected script parser."
+    },
+    {
+      "kind": "manual_ingestion_workflow",
+      "name": "Agent Trainer ingest workflow",
+      "path": ".github/workflows/ingest_agent_files.yml",
+      "source_path": ".github/workflows/ingest_agent_files.yml",
+      "evidence_type": "configuration_dependent",
+      "note": "workflow_dispatch only; defaults to dry-run and no embeddings."
+    }
+  ],
+  "persistence_anchor_groups": [
+    {
+      "domain": "knowledge and skills",
+      "objects": [
+        "documents",
+        "processing_runs",
+        "knowledge_fragments",
+        "skill_fragments"
+      ],
+      "source_paths": [
+        "scripts/ingest_corpus_v2.py",
+        "api/_lib/supabase.ts",
+        "supabase/migrations/20260327094500_align_fragment_embeddings_to_768.sql"
+      ]
+    },
+    {
+      "domain": "user memory",
+      "objects": [
+        "memory_entries"
+      ],
+      "source_paths": [
+        "api/_lib/memory.ts",
+        "api/_lib/supabase.ts",
+        "supabase/migrations/20260330193000_persistent_memory_entries.sql"
+      ]
+    },
+    {
+      "domain": "Digital Intelligence continuity",
+      "objects": [
+        "di_sessions",
+        "di_memory_events"
+      ],
+      "source_paths": [
+        "api/di.ts",
+        "supabase/migrations/20260525000000_di_runtime.sql"
+      ]
+    },
+    {
+      "domain": "Codex artifacts and export jobs",
+      "objects": [
+        "codex_artifacts",
+        "codex_jobs"
+      ],
+      "source_paths": [
+        "api/codex/_persistence.ts",
+        "workers/codex/runner.ts",
+        "supabase/migrations"
+      ]
+    },
+    {
+      "domain": "GSVW-named Edge Function data",
+      "objects": [
+        "gsvw_ingestion_runs",
+        "gsvw_ingestion_documents",
+        "gsvw_ingestion_chunks",
+        "gsvw_runtime_capture_events",
+        "gsvw_dormancy_review_items"
+      ],
+      "source_paths": [
+        "supabase/functions/gsvw-ingest-batch/index.ts",
+        "supabase/functions/gsvw-capture-event/index.ts",
+        "supabase/functions/gsvw-dormancy-review/index.ts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+graph TD
+  NL1["Natural Language Chunk"] --> CE1["supabase/functions/gsvw-ingest-batch"]
+  NL2["768-dim Vector Representation"] --> CE2["gsvw_ingestion_chunks"]
+  NL3["Bulk Embedding Update"] --> CE3["gsvw_bulk_update_chunk_embeddings"]
+  NL4["Single Vector Application"] --> CE4["apply_gsvw_embeddings"]
