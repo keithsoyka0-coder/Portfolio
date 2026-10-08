@@ -1,5 +1,12 @@
 # Changelog — Keith Soyka Portfolio Site
 
+## v10.3 — 2026-10-08
+**Visual Story integration (folded into the portfolio — no new hosted side layer)**
+- Added `showcase/visual-story/`: the GestaltView Visual Story v3.4 as a portfolio exhibit — 65 visuals across two labeled evidence layers (54 historical wiki diagrams + 11 code-verified runtime maps at GestaltView-v3 commit 03284ea), line-cited correction ledger, three reading depths. Fully static, zero absolute paths; drops into the showcase tree cleanly.
+- showcase.html: new "Visual Story — The Infrastructure for Being Seen" card in Systems & Method.
+- Fixed at integration: the bundle's entry files shipped renamed to `.txt` (Copilot won't accept .html/.md uploads — Keith's rename, not a build defect); renamed back to `.html`. 6/6 tests + 101/101 SHA256 checksums green.
+- Open: LICENSE-NOTICE.md assigns no license — Keith to confirm rights before public hosting (all material is his own wiki/code-derived work).
+
 ## v10.2 — 2026-10-02
 **Conversion pass (Grok + Perplexity reviews, run through the register)**
 - index.html: bridge sentence under the hero lede (consultant ↔ GestaltView founder — "I bring that same discipline to client systems"); primary CTA "Book a free 15-minute call" → "Find the real constraint" ("free" dropped from the button); new curiosity row under the hero — "Meet Billy" / "Convene the Tribunal" buttons firing straight to the live demos; Lane B card reframed (identity & communication systems, logo prices de-emphasized on the index).
