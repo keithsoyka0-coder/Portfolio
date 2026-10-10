@@ -18,18 +18,42 @@ class VerifiedAtlasIntegrationTests(unittest.TestCase):
         cls.items = cls.inventory["items"]
         cls.runtime_items = [item for item in cls.items if item.get("kind") == "runtime_map"]
         cls.legacy_items = [item for item in cls.items if item.get("kind") != "runtime_map"]
+        cls.wiki_items = [item for item in cls.legacy_items if item.get("kind") != "principle"]
+        cls.principle_items = [item for item in cls.legacy_items if item.get("kind") == "principle"]
 
     def test_integrated_inventory_preserves_legacy_and_adds_runtime_lane(self):
-        self.assertEqual(len(self.legacy_items), 54)
+        self.assertEqual(len(self.wiki_items), 54)
+        self.assertEqual(len(self.principle_items), 6)
         self.assertEqual(len(self.runtime_items), 11)
-        self.assertEqual(self.inventory["counts"]["total"], 65)
-        self.assertEqual(self.inventory["source_layer_counts"], {"master_wiki_v4": 54, "v3_runtime": 11})
+        self.assertEqual(self.inventory["counts"]["total"], 71)
         self.assertEqual(
-            (sum(item["kind"] == "curated" for item in self.legacy_items),
-             sum(item["kind"] == "captioned_figure" for item in self.legacy_items),
-             sum(item["kind"] == "mermaid_source" for item in self.legacy_items)),
+            self.inventory["source_layer_counts"],
+            {"principles": 6, "master_wiki_v4": 54, "v3_runtime": 11},
+        )
+        self.assertEqual(
+            (sum(item["kind"] == "curated" for item in self.wiki_items),
+             sum(item["kind"] == "captioned_figure" for item in self.wiki_items),
+             sum(item["kind"] == "mermaid_source" for item in self.wiki_items)),
             (13, 39, 2),
         )
+        # Principles chapter leads the story.
+        self.assertEqual(self.inventory["chapters"][0]["id"], "principles")
+
+    def test_principles_chapter_is_author_voice_with_assets_and_three_depths(self):
+        ids = [item["id"] for item in self.principle_items]
+        self.assertEqual(len(set(ids)), 6)
+        for item in self.principle_items:
+            with self.subTest(principle=item.get("id")):
+                self.assertEqual(item["source_layer"], "principles")
+                self.assertEqual(item["chapter_id"], "principles")
+                self.assertEqual(item["kind_label"], "Principle")
+                self.assertTrue(item["title"].strip())
+                self.assertTrue(item["source_ref"].strip())
+                self.assertTrue(item["source_form"].strip())
+                self.assertEqual(item["confidence"], "high")
+                self.assertTrue((ROOT / item["asset_path"]).is_file())
+                for depth in ("orientation", "system", "architecture"):
+                    self.assertTrue(item["explanations"][depth].strip())
 
     def test_every_runtime_map_has_source_snapshot_assets_and_three_depths(self):
         ids = [item["id"] for item in self.runtime_items]

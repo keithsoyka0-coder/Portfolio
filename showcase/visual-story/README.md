@@ -16,8 +16,9 @@ Open `http://localhost:8000`, or open `index.html` directly in a modern browser.
 
 ## What readers get
 
-The opening screen offers three levels: **Get oriented**, **Understand the system**, and **Explore the architecture**. The searchable atlas contains 65 visuals across two clearly labeled source layers:
+The opening screen offers three levels: **Get oriented**, **Understand the system**, and **Explore the architecture**. The searchable atlas contains 65 visuals plus 6 author-voice principle cards, across three clearly labeled source layers:
 
+- **Principles:** 6 author-voice principle cards (Keith Soyka, Oct 2026) opening the story — the safety principles, evidence rules, and founder stances the system is built to honor. Stated as positions, not derived from the codebase or the wiki.
 - **Master Wiki v4.0:** 13 curated opening diagrams, 39 later captioned figures, and 2 printed Mermaid source snippets. Wiki items retain PDF page references.
 - **GestaltView-v3 runtime atlas:** 11 Mermaid maps traced to commit `03284ea`. Each map links to its Markdown source and the included claim-to-source evidence index. These are repository-snapshot maps, not live deployment reports.
 
@@ -34,7 +35,7 @@ The [Deep Wiki correction ledger](docs/WIKI_CLAIM_CORRECTIONS.md) records the cl
 - `story_assets/` — historical PDF crops and Mermaid renders
 - `source_pack/v3-architecture-atlas/` — 11 Mermaid map sources/renders, scope note, pinned inventory, and evidence index
 - `source_pack/room-definitions/RoomsandSpaces.md` — supplied room-definition summary used for the room-card correction; product contract, not runtime proof
-- `diagram_inventory.json`, `diagram_index.csv` — combined 65-item catalog and provenance
+- `diagram_inventory.json`, `diagram_index.csv` — combined 71-item catalog and provenance
 - `wiki_claim_corrections.json`, `docs/WIKI_CLAIM_CORRECTIONS.md` — machine-readable and readable correction ledger
 - `tests/` — acceptance checks for inventory, source paths, depth lenses, corrections, and static-host constraints
 - `docs/` — source provenance and implementation notes
@@ -62,7 +63,7 @@ python3 build_integrated_story.py
 python3 -m unittest discover -s tests -v
 ```
 
-The first builder regenerates the historical 54-item layer and temporarily writes a 54-item entry page. The second restores the integrated 65-item inventory and final static page. `manus-render-diagram` is needed only for re-rendering the two historical Mermaid snippets; the v3 maps' PNGs are already bundled.
+The first builder regenerates the historical 54-item layer and temporarily writes a 54-item entry page. The second restores the integrated 71-item inventory and final static page. `manus-render-diagram` is needed only for re-rendering the two historical Mermaid snippets; the v3 maps' PNGs are already bundled.
 
 ## Source boundary
 

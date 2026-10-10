@@ -54,6 +54,9 @@ class StoryArtifactAcceptanceTests(unittest.TestCase):
             if item["kind"] == "runtime_map":
                 self.assertIsNone(item["page"])
                 self.assertEqual(item["source_commit"], "03284ea")
+            elif item["kind"] == "principle":
+                self.assertIsNone(item["page"])
+                self.assertEqual(item["source_layer"], "principles")
             else:
                 self.assertGreaterEqual(item["page"], 1)
                 self.assertLessEqual(item["page"], 116)

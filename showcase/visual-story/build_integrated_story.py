@@ -292,22 +292,33 @@ def integrate(root: Path = ROOT) -> dict[str, Any]:
 
     legacy_items = [item for item in inventory["items"] if item.get("kind") != "runtime_map"]
     for item in legacy_items:
-        item["source_layer"] = "master_wiki_v4"
         item.pop("image_data", None)
-    if len(legacy_items) != 54:
-        raise RuntimeError(f"Expected 54 preserved wiki visuals, found {len(legacy_items)}")
+    wiki_items = [item for item in legacy_items if item.get("kind") != "principle"]
+    principle_items = [item for item in legacy_items if item.get("kind") == "principle"]
+    for item in wiki_items:
+        item["source_layer"] = "master_wiki_v4"
+    for item in principle_items:
+        item["source_layer"] = "principles"
+    if len(wiki_items) != 54:
+        raise RuntimeError(f"Expected 54 preserved wiki visuals, found {len(wiki_items)}")
+    if not principle_items:
+        raise RuntimeError("Principles chapter is empty; run add_principles_chapter.py first")
 
     runtime_items = build_runtime_items(root, corrections)
-    items = legacy_items + runtime_items
+    items = principle_items + wiki_items + runtime_items
     if len({item["id"] for item in items}) != len(items):
         raise RuntimeError("Item IDs are not unique after integration")
     chapters = [chapter for chapter in inventory["chapters"] if chapter.get("id") != RUNTIME_CHAPTER["id"]]
     chapters.append(RUNTIME_CHAPTER)
 
     counts = dict(inventory.get("counts", {}))
-    counts.update({"total": len(items), "runtime_maps": len(runtime_items)})
+    counts.update({"total": len(items), "runtime_maps": len(runtime_items), "principles": len(principle_items)})
     inventory["counts"] = counts
-    inventory["source_layer_counts"] = {"master_wiki_v4": len(legacy_items), "v3_runtime": len(runtime_items)}
+    inventory["source_layer_counts"] = {
+        "principles": len(principle_items),
+        "master_wiki_v4": len(wiki_items),
+        "v3_runtime": len(runtime_items),
+    }
     inventory["source_baselines"] = {
         "master_wiki_v4": "GestaltView_Master_Wiki_v4.0.pdf (source PDF not included)",
         "v3_runtime": COMMIT,
@@ -316,6 +327,9 @@ def integrate(root: Path = ROOT) -> dict[str, Any]:
     runtime_note = "The 11 runtime maps are source-traced to v3 commit 03284ea; checked-in configuration is not proof of live deployment."
     if runtime_note not in notes:
         notes.append(runtime_note)
+    principles_note = "The Principles chapter is author-voice content (Keith Soyka, Oct 2026) \u2014 stated positions, not derived from the codebase or the wiki."
+    if principles_note not in notes:
+        notes.append(principles_note)
     inventory["chapters"] = chapters
     inventory["items"] = items
 
@@ -332,7 +346,7 @@ def integrate(root: Path = ROOT) -> dict[str, Any]:
     html = template.replace("__APP_DATA__", payload)
     (root / ARTIFACT_PATH).write_text(html, encoding="utf-8")
 
-    print(f"Integrated {len(legacy_items)} wiki visuals + {len(runtime_items)} runtime maps = {len(items)} total")
+    print(f"Integrated {len(wiki_items)} wiki visuals + {len(principle_items)} principles + {len(runtime_items)} runtime maps = {len(items)} total")
     print(f"Runtime source baseline: GestaltView-v3@{COMMIT}")
     print(f"Claim corrections: {len(corrections['entries'])}")
     print(f"Inventory: {inventory_path}")

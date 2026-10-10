@@ -101,7 +101,7 @@
     nav.innerHTML = chapters.map(chapter => {
       const entries = shown.filter(item => item.chapter_id === chapter.id);
       if (!entries.length) return '';
-      return `<section><h2 class="chapter-title">${escapeHtml(chapter.title)}</h2>${entries.map(item => {const ref=item.source_layer==='v3_runtime'?`v3 @ ${item.source_commit}`:`PDF p. ${item.page}`;return `<button class="nav-item ${item.id===activeId?'active':''}" type="button" data-item="${escapeHtml(item.id)}">${escapeHtml(item.title)}<small>${escapeHtml(item.kind_label)} · ${escapeHtml(ref)}</small></button>`;}).join('')}</section>`;
+      return `<section><h2 class="chapter-title">${escapeHtml(chapter.title)}</h2>${entries.map(item => {const ref=item.source_layer==='v3_runtime'?`v3 @ ${item.source_commit}`:item.source_layer==='principles'?`Author\u2019s voice`:`PDF p. ${item.page}`;return `<button class="nav-item ${item.id===activeId?'active':''}" type="button" data-item="${escapeHtml(item.id)}">${escapeHtml(item.title)}<small>${escapeHtml(item.kind_label)} · ${escapeHtml(ref)}</small></button>`;}).join('')}</section>`;
     }).join('');
   }
   function escapeHtml(value) {
@@ -139,9 +139,11 @@
     const chapter = chapters.find(entry => entry.id === item.chapter_id);
     const levelText = item.explanations[activeLevel] || item.explanations.system;
     let selectedPartIndex = -1;
-    const pageRef = item.source_layer === 'v3_runtime' ? `Repository snapshot ${item.source_commit}` : `Source page ${item.page} of 116`;
+    const pageRef = item.source_layer === 'v3_runtime' ? `Repository snapshot ${item.source_commit}` : item.source_layer === 'principles' ? `Author\u2019s articulation \u00b7 Oct 2026` : `Source page ${item.page} of 116`;
     const honestyNote = item.source_layer === 'v3_runtime'
       ? 'Source code and checked-in configuration show repository-level paths, not successful live execution or deployment.'
+      : item.source_layer === 'principles'
+      ? 'These are the author\u2019s stated positions, preserved from his own recorded articulations \u2014 not derived from the codebase or the wiki.'
       : 'A relationship map is not a status report. The source page is the authority for what this visual claims.';
     const sourceLinks = item.source_map_path ? ` · <a href="${escapeHtml(item.source_map_path)}" target="_blank" rel="noopener">Open Mermaid source</a><a href="${escapeHtml(item.evidence_index_path)}" target="_blank" rel="noopener">Evidence index</a>` : '';
     const correctionNotes = renderCorrectionNotes(item);
@@ -167,7 +169,7 @@
           <p class="explanation" id="explanation-text">${escapeHtml(levelText)}</p>
           ${item.context ? `<div class="source-context"><strong>${escapeHtml(item.context_label || 'What the surrounding wiki says')}</strong>${escapeHtml(item.context)}</div>` : ''}
           ${correctionNotes}
-          <p class="honesty-note"><strong>${item.source_layer === 'v3_runtime' ? 'Runtime boundary:' : 'Interpretation rule:'}</strong> ${escapeHtml(honestyNote)}</p>
+          <p class="honesty-note"><strong>${item.source_layer === 'v3_runtime' ? 'Runtime boundary:' : item.source_layer === 'principles' ? 'Author\u2019s position:' : 'Interpretation rule:'}</strong> ${escapeHtml(honestyNote)}</p>
           <p class="source-note">${escapeHtml(item.source_ref)}${item.anchor ? ` · ${escapeHtml(item.anchor)}` : ''}${sourceLinks}</p>
         </div>
       </section>
