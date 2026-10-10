@@ -96,8 +96,21 @@ class VerifiedAtlasIntegrationTests(unittest.TestCase):
         self.assertTrue(bool(re.search(r"Claim correction", html)))
         self.assertIn("03284ea", html)
         self.assertIn("items.length", html)
-        self.assertIsNone(re.search(r'<script\b[^>]*\bsrc\s*=\s*["\']https?://', html, re.I))
-        self.assertIsNone(re.search(r'<img\b[^>]*\bsrc\s*=\s*["\']https?://', html, re.I))
+        self.assertIsNone(re.search(r'<script\b[^>]*\bsrc\s*=\s*[\"\']https?://', html, re.I))
+        self.assertIsNone(re.search(r'<img\b[^>]*\bsrc\s*=\s*[\"\']https?://', html, re.I))
+
+    def test_five_minute_tour_strip_targets_real_items(self):
+        template = (ROOT / "story_template.html").read_text(encoding="utf-8")
+        self.assertIn('id="tour-strip"', template)
+        self.assertIn("SUGGESTED_PATH", template)
+        tour_ids = ["principle-01", "curated-01", "curated-03", "runtime-01-system-context"]
+        item_ids = {item["id"] for item in self.items}
+        for tour_id in tour_ids:
+            with self.subTest(stop=tour_id):
+                self.assertIn(tour_id, item_ids)
+                self.assertIn(tour_id, template)
+        html = ARTIFACT.read_text(encoding="utf-8")
+        self.assertIn("five-minute tour", html)
 
 
 if __name__ == "__main__":
