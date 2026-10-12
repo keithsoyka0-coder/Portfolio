@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-005",
+    "statement": "Built the GestaltView runtime API backend (TypeScript): multi-agent orchestration endpoints, LLM proxy routing, session recap, action modules (Billy, tribunal, consciousness, musical-dna), a lightweight event bus, tRPC contract discipline, and GPT Actions OpenAPI middleware.",
+    "category": "Multi-Agent Orchestration",
+    "micro_category": "multi-agent-orchestration",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 107\u2013415; full list in _analysis/claim-manifest.json). Grade reason: Runtime API backend corroborated: api/ tree exists in gestaltview (telegram + meta webhooks verified on main), live deployment responds; exact '286-file package' counts not tallied. Market value (assessor-stated): External systems, channel apps, and portfolio embeds can integrate against one governed API surface instead of raw model calls. Issuer evidence 2026-10-11: fresh repo manifest (REPO_MANIFEST_10_11_26_18_szew.json, generated 2026-10-10, labeled 'gestaltview-v2'): 1,516 files / 16.3MB, 118 routes, 207 API endpoints, 179 canonical docs, 195 test scripts. Note: no matching 'gestaltview-v2' remote repo found under his accounts (checked keithsoyka0-coder and DigitalConsciousness) \u2014 treat as a local snapshot, figures manifest-stated. Also: CurrentState_Runtime_17_5e76.md, a 7,944-line dated development log (per-pass scope, changes, validation, deferred risks) \u2014 primary evidence of sustained solo engineering practice with per-pass test validation.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-005-1",
+        "descriptor": "API surface (api/)",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:api/ incl. api/telegram/webhook.ts, api/meta/webhook.ts (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-005-2",
+        "descriptor": "Live API backend",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://gestaltview-three.vercel.app",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-005-4",
+        "descriptor": "Runtime repo manifest, 2026-10-10 (1,516 files, 207 API endpoints)",
+        "function": "Checkable scale figure for the runtime codebase: file/category/route/endpoint counts with per-file hashes.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/REPO_MANIFEST_10_11_26_18_szew.json",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-005-5",
+        "descriptor": "CurrentState development log (7,944 lines, dated passes with validation)",
+        "function": "Demonstrates engineering discipline: every work pass records scope, changes, validation performed, and deferred risks.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/CurrentState_Runtime_17_5e76.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

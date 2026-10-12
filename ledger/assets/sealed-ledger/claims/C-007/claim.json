@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-007",
+    "statement": "Designed and partially implemented the Dynamic Inner World: five governed rooms (Sanctuary, Blackboard, Dynamic Inner World, External Scaffold, Creation Corner) with a locked Curator v2.6.0 persona, manual promotion gates, curated exhibitions, and a Translate-to-Workflow SPEC for safe agent composition.",
+    "category": "Multi-Agent Orchestration",
+    "micro_category": "multi-agent-orchestration",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 36\u2013377; full list in _analysis/claim-manifest.json). Grade reason: DIW spec exists on disk and ROOM_DEFINITIONS v0.4 is merged, but rows themselves describe partial implementation (vertical slice Oct 2026); not a shipped product. Market value (assessor-stated): Provides governed sandboxes for multi-agent exploration where AI state transitions require explicit human approval, including addiction-aware safeguards.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-007-1",
+        "descriptor": "Exhibitions spec",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/SPEC-Dynamic-Inner-World-Curated-Exhibitions-v1.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-007-2",
+        "descriptor": "Room definitions",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:docs/ROOM_DEFINITIONS.md \u2014 PR #23 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

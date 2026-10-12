@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-021",
+    "statement": "Enforced governance operations: manual promotion gates in spatial runtime rooms (no auto-promotion of AI outputs), commercial boundary enforcement with package manifest auditing, draft-only content agents, promotion-gated artifact metadata, and DI-to-DI intermediary prompt routing (the 'Rosetta Stone' translation layer).",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 14\u2013313; full list in _analysis/claim-manifest.json). Grade reason: Governance operations corroborated at the documentation layer (ROOM_DEFINITIONS v0.4 merged, PR #18 referenced); live enforcement of promotion gates is self-reported. Market value (assessor-stated): Multi-agent systems stay human-controlled at every state transition and commercial boundary.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-021-1",
+        "descriptor": "Room definitions",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:docs/ROOM_DEFINITIONS.md \u2014 PR #23 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-021-2",
+        "descriptor": "Gate enforcement in production [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "self-reported; not independently verifiable",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

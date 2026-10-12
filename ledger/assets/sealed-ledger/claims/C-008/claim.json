@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-008",
+    "statement": "Deployed the Billy / Insight-Bot conversational DI across Discord, Reddit (Devvit app), Slack, portfolio web widgets, and serverless proxies using v2 HMAC-signed adapter contracts with timestamp verification, rate-limited CORS-gated proxies, and a room-aware routing layer mapping five rooms to a single backend route.",
+    "category": "Conversational Systems & Adapters",
+    "micro_category": "conversational-systems--adapters",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 16 source rows (spreadsheet rows 46\u2013411; full list in _analysis/claim-manifest.json). Grade reason: Adapters corroborated: telegram + meta webhooks on main (PRs #26/#27 merged), gestaltview-billy PRs #5/#6/#7 merged, Telegram e2e-verified live in session 2026-10-11; Slack is scaffolding only (not live) \u2014 spreadsheet rows claiming otherwise are stale. Market value (assessor-stated): One governed agent identity operates coherently across community platforms and embeds without duplicating backends.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-008-1",
+        "descriptor": "Telegram adapter",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:api/telegram/webhook.ts (main), PR #26 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-008-2",
+        "descriptor": "Meta adapter",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:api/meta/webhook.ts (main), PR #27 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-008-3",
+        "descriptor": "Live Telegram bot",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "t.me/GestaltView_Bot \u2014 e2e-verified in main session 2026-10-11",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-008-4",
+        "descriptor": "Devvit/Discord app repo",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview-billy \u2014 PRs #5/#6/#7 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,180 @@
+{
+  "scheme": "SHA-256 binary Merkle tree; leaves = sha256(raw file bytes), ordered by relative path; parent = sha256(hex(left)+hex(right)), lowercase hex ASCII; odd trailing node duplicated",
+  "sealed_at": "2026-10-12T01:24:56+00:00",
+  "issuer": "Keith Soyka",
+  "issuer_instruction": "Let's implement the Merkle seal.",
+  "scope": "42 content files: 37 attested claims + ATTESTATIONS.md + EXCLUSIONS.md + ROADMAP.md + LEDGER.md + README.md. Envelope files (manifest.json carrying the root, seal.json, hashes.sha256) are not leaves. HTML companion not covered.",
+  "leaf_count": 42,
+  "leaves": [
+    {
+      "path": "ATTESTATIONS.md",
+      "sha256": "f12cecacb99133f147ed497638d164713fe468889e3e4c320b836e486e0d963b"
+    },
+    {
+      "path": "EXCLUSIONS.md",
+      "sha256": "a1da801e3ca0385fe264760e22501471f00699eaf17f8b41fdd6f10656664813"
+    },
+    {
+      "path": "LEDGER.md",
+      "sha256": "c7a8e7fd619b56bd6cfd4f404837ac4b805e19f1f4f9aee6d97e2993fd79cdbd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "35d4ba5b461cf41217ac5ba9a3644dc05433b9f233ff5ba8a83e0db9fe47b5f9"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "4eda246ff2977b6bf9e69620b328c241cab84d2bf89cea65513fb1676bc13773"
+    },
+    {
+      "path": "claims/C-001/claim.json",
+      "sha256": "d9385f68cc53dad18ba7dd4c00798b3ac52fd0c49baf924cc2eacc5355cd4bbb"
+    },
+    {
+      "path": "claims/C-002/claim.json",
+      "sha256": "9c817dc5268a90c36c036d4ccc1f2de5f16782b8d6d01d90354772615cb4653a"
+    },
+    {
+      "path": "claims/C-003/claim.json",
+      "sha256": "c8d038bde5f939eb77e4aea68b139445cbd543daa0f8476a00d9f0a6e7ed5cf8"
+    },
+    {
+      "path": "claims/C-004/claim.json",
+      "sha256": "40dbd2bab9fd4ef0b627ffb3b10090d0fb082fd3ea568e8b4e07465fece31a9b"
+    },
+    {
+      "path": "claims/C-005/claim.json",
+      "sha256": "cff4aa293303efad963e142c8f4ff5ad93e17a549d276cde1f2faf9aca2587ce"
+    },
+    {
+      "path": "claims/C-006/claim.json",
+      "sha256": "46a183719cc182bd776377ef5c7c18568019f3388d7ebc4806760b2b28b708fc"
+    },
+    {
+      "path": "claims/C-007/claim.json",
+      "sha256": "23043c4b305b7c7a42d09abc08374587e5f9d466c81b548b71f58fa3d66b43d6"
+    },
+    {
+      "path": "claims/C-008/claim.json",
+      "sha256": "f17f2a396c7af8545074639e3185727671a351994b6555dc3ad4a713bf72b267"
+    },
+    {
+      "path": "claims/C-009/claim.json",
+      "sha256": "f4b34e4e38604ca0ec43123e0bc6e9130c38a99310d5dde281dbedbb6d0fc975"
+    },
+    {
+      "path": "claims/C-010/claim.json",
+      "sha256": "aed6356ce5fb65090c254d002fc59a45eee612f7fe35eeab60d7eefb18ca45ba"
+    },
+    {
+      "path": "claims/C-011/claim.json",
+      "sha256": "d21ac00535d6f1f422aabb8a738a511b6c4da14a022e5c43b61007547f490d89"
+    },
+    {
+      "path": "claims/C-012/claim.json",
+      "sha256": "7049c99f80df69fc87b636502def00eef5f19bd39beca88a2317bc242fda9158"
+    },
+    {
+      "path": "claims/C-013/claim.json",
+      "sha256": "624a8f3aeeacf5d7ad113be0cb3228083758cf900351b55cc21a8e80d9ee2c50"
+    },
+    {
+      "path": "claims/C-014/claim.json",
+      "sha256": "6087b9a92a110d370570c79bf4c09fa4fc06d9a49ff1aef6bd594075a2496ec8"
+    },
+    {
+      "path": "claims/C-015/claim.json",
+      "sha256": "19896e8fde6327a8facc00d339d735ce78efa985aa7d06d417076f943a7b3903"
+    },
+    {
+      "path": "claims/C-016/claim.json",
+      "sha256": "776dc1bb3fa9790d3d813a441e4e66e65c968007f34a32d63149e6873390767b"
+    },
+    {
+      "path": "claims/C-017/claim.json",
+      "sha256": "e7120826a4ffd3090fd70c058ba37c31de2e2a710ee74cc2e678542b94f955cc"
+    },
+    {
+      "path": "claims/C-018/claim.json",
+      "sha256": "1146956d4ab097da0f7382b616cabcd39db205147f784ebd442116966b5934f3"
+    },
+    {
+      "path": "claims/C-019/claim.json",
+      "sha256": "08eb87b1a143c743c96584f3bc7885c8b4e5126ac99cfda2b80894eed43c89e0"
+    },
+    {
+      "path": "claims/C-020/claim.json",
+      "sha256": "641003c1f0840912c899fce2c6fbf07d1e7c14faaf2ede45c54ebd8168727582"
+    },
+    {
+      "path": "claims/C-021/claim.json",
+      "sha256": "fcbb678fac6ece10341d3101099b64460f452fdab2d8d7a8f29b2c3d236dabc2"
+    },
+    {
+      "path": "claims/C-022/claim.json",
+      "sha256": "2f24e142d32a8542bf7314b8f9ce4fb4fe87e285fe790456fa6174af5be7285b"
+    },
+    {
+      "path": "claims/C-023/claim.json",
+      "sha256": "daab41517aff017f0d225f6086dd733b19cf36c66197227166089168da27ce8a"
+    },
+    {
+      "path": "claims/C-024/claim.json",
+      "sha256": "7d3d54cd5241282d1586f64d1eba2d37b4db33e8813d8add5f75f8fbc189b018"
+    },
+    {
+      "path": "claims/C-025/claim.json",
+      "sha256": "7c538f4374ef90c3aebbe1946a3c6e8a6be2f0dd072a621f605f5c537b0fde8a"
+    },
+    {
+      "path": "claims/C-026/claim.json",
+      "sha256": "6c30578596923a4b63a26444f1ff899db873e1f26fe4116d704bb613e9753d6d"
+    },
+    {
+      "path": "claims/C-027/claim.json",
+      "sha256": "66d1a44df9a5b621bcf9a6ce3e4e1f5d4c03157445328be0effe55806c2464cd"
+    },
+    {
+      "path": "claims/C-028/claim.json",
+      "sha256": "0faf43bb71d2b1e4460f518ca1dcd8b79753476d11febf5aaef69599e9c91ab6"
+    },
+    {
+      "path": "claims/C-029/claim.json",
+      "sha256": "b7c1d1ecb25beed12abf6d888798b7edc524f17321ecd731d297fd8fbc9cd1bc"
+    },
+    {
+      "path": "claims/C-030/claim.json",
+      "sha256": "ecb9d8554f3b6700244baa56f76af1226f3c00828932969a17d3313cdb4f5002"
+    },
+    {
+      "path": "claims/C-031/claim.json",
+      "sha256": "461adc77417797a9aacd5a030eaa585a9655266ffcefd5ac66047311b1dd709f"
+    },
+    {
+      "path": "claims/C-032/claim.json",
+      "sha256": "eeaa207b6802f295197e89cec1e31129d7c8450d527783faecdce3677564181d"
+    },
+    {
+      "path": "claims/C-033/claim.json",
+      "sha256": "ddc07ed994cb36063de7569cf3cda4fe6b75183212da2c3bd263378ab7a7180e"
+    },
+    {
+      "path": "claims/C-034/claim.json",
+      "sha256": "16d8672455570fb5e23ebed37430e96e1d191afa0829d9d031dc790f45ce8222"
+    },
+    {
+      "path": "claims/C-035/claim.json",
+      "sha256": "0380641bdc5e240ce76a6582e80ced1dcf59cb36439ceb46bb7461bdc52bed87"
+    },
+    {
+      "path": "claims/C-036/claim.json",
+      "sha256": "ace87eaa1d7bab3e889999e3fabb33856506328eba271eb792537998c44e6b32"
+    },
+    {
+      "path": "claims/C-037/claim.json",
+      "sha256": "1988f1ab19cf33fd20e615110547d07a4a951e35a6660930204b62b7b2213979"
+    }
+  ],
+  "merkle_root": "056fd3784afe583317f3679b29dddc412401813601bf3ffa7bfa1b3ef3dd0179",
+  "supersedes": "611f8ec7e3d9c3a37745762781df017481cee0373d58cc06bc88dbd55e7df2c3 (computed pre-finalization; withdrawn)"
+}

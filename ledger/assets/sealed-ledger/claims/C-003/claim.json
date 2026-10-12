@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-003",
+    "statement": "Built the Bot Squad as a platform-agnostic agent fleet: 11 instruction-only agent profiles (Sextant, Quill, Signal, Herald, Bridge, Relay, Lantern, Tide, Builder, Corpus Da Vinci, Weird Digger) with 7 platform adapters (own runtime, OpenClaw, VS Code, Cursor, Gemini CLI, OpenAI Codex, Cline), WF-01 through WF-11 runbooks, draft-only publishing boundaries, human-gated approval, append-only run receipts \u2014 packaged as the Portable Agent Pack, shippable as a product that gives any user the same fleet.",
+    "category": "Multi-Agent Orchestration",
+    "micro_category": "multi-agent-orchestration",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 18 source rows (spreadsheet rows 3\u2013428; full list in _analysis/claim-manifest.json). Grade reason: fleet corroborated \u2014 Portable Agent Pack (portable-agent-pack_CLEAN_2026-10-09_13_wehc.zip) strip-and-inspected 2026-10-11: 96 files, 11 agent profiles, 7 platform adapters, manifest with SHA-256 fingerprints, no credentials bundled. Earlier count variance (10/12/13) resolved: 11 is the canonical current roster; the squad evolved from a fixed roster into platform-neutral profiles + adapters. Issuer verdict 2026-10-11: packageable as a product for any user. Market value (assessor-stated): a solo operator or agency can run parallel GTM, research, distribution, and repo-maintenance workflows with guardrails instead of ad-hoc prompting.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-003-1",
+        "descriptor": "Squad workspace",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/bot-squad/ (SQUAD.md, INVENTORY.md, WORKFLOWS.md, agents/)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-003-2",
+        "descriptor": "Packaged squad",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/Bot_Squad_v1.1.zip",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-003-3",
+        "descriptor": "Builder agent PR",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview PR #17 \u2014 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-003-4",
+        "descriptor": "Portable Agent Pack (11 profiles, 7 adapters, SHA-256 manifest)",
+        "function": "Demonstrates the agnostic-fleet packaging: platform-neutral agent instructions shippable to any runtime.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/portable-agent-pack_CLEAN_2026-10-09_13_wehc.zip; strip-and-inspected 2026-10-11",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

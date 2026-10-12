@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-020",
+    "statement": "Set a non-extractive privacy posture: disabled model training on his data, agency-first data controls with opt-out defaults, and a local-first sovereign architecture design (CRDT storage, end-to-end encrypted sync) rejecting client-server dependence.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 3 source rows (spreadsheet rows 49\u2013238; full list in _analysis/claim-manifest.json). Grade reason: Privacy posture is a documented framework (Ethos PDF on disk) plus self-reported settings (model-training disabled); local-first/CRDT rows are designs, not shipped systems. Market value (assessor-stated): Privacy-sensitive users and regulated clients get data ownership and offline availability instead of platform lock-in.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-020-1",
+        "descriptor": "Framework PDF",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/The_Ethos_of_Orchestration-_A_Governance_Framework_for_Human-Centric_AI_20_ysuv.pdf",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-020-2",
+        "descriptor": "Training opt-out setting [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "self-reported; not independently verifiable",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}
