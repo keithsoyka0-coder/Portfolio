@@ -5,7 +5,9 @@
     "category": "Data Layer & Retrieval",
     "micro_category": "data-layer--retrieval",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 21 source rows (spreadsheet rows 12\u2013414; full list in _analysis/claim-manifest.json). Grade reason: Memory/retrieval architecture corroborated: mem0-mcp skill installed, pgvector retrieval is the runtime's documented source of truth; 1,418 fragments vs 27,737 rows treated as different DB targets; '10ms p99' latency figure EXCLUDED per issuer rule 2026-10-11 (no replicable logs); reinstate only with logs. Market value (assessor-stated): Persistent companions and advisors retain context across sessions and runtimes without compressing identity or hallucinating memory.",
+    "how_and_why": "Grade reason: Memory/retrieval architecture corroborated: mem0-mcp skill installed, pgvector retrieval is the runtime's documented source of truth; 1,418 fragments vs 27,737 rows treated as different DB targets; '10ms p99' latency figure EXCLUDED per issuer rule 2026-10-11 (no replicable logs); reinstate only with logs.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 21 source rows (spreadsheet rows 12\u2013414; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Persistent companions and advisors retain context across sessions and runtimes without compressing identity or hallucinating memory.",
     "evidence": [
       {
         "artifact_id": "A-C-012-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-012-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       }
     ]
   },

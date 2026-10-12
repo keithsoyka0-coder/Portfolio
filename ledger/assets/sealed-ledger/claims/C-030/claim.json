@@ -5,7 +5,9 @@
     "category": "Business & Commercialization",
     "micro_category": "business--commercialization",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 81\u2013398; full list in _analysis/claim-manifest.json). Grade reason: ADHD Power-Up app surface corroborated (page + skill in workspace); addiction/Alzheimer's builds are prototype-stage or explicitly incomplete per rows; all are staged, not production. Market value (assessor-stated): Underserved users - ADHD, addiction recovery, elder legacy, learners - get dignity-first AI scaffolds with externalized working memory.",
+    "how_and_why": "Grade reason: ADHD Power-Up app surface corroborated (page + skill in workspace); addiction/Alzheimer's builds are prototype-stage or explicitly incomplete per rows; all are staged, not production.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 81\u2013398; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Underserved users - ADHD, addiction recovery, elder legacy, learners - get dignity-first AI scaffolds with externalized working memory.",
     "evidence": [
       {
         "artifact_id": "A-C-030-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-030-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

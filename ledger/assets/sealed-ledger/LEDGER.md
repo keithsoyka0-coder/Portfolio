@@ -1,11 +1,15 @@
-# Capability Ledger — draft claim index
+# Capability Ledger — attested claim index (v2)
 
-37 draft claims, all DRAFT pending Keith's attestation.
+37 claims, attested by the issuer 2026-10-11. This index supersedes the v1 draft
+index (which recorded pre-attestation state and is preserved in the sealed v1 package).
 
-## Grade distribution
-- verified: 24
-- partial: 11
+## Grade distribution (v2)
+- verified: 23
+- partial: 12
 - planned: 2
+
+v2 changes: C-008 verified→partial (Slack overclaim corrected; per-surface states),
+C-017 verified→partial (compound claim split into component assertions).
 
 ## By category
 - Governance & Security: 8
@@ -19,8 +23,12 @@
 - Evaluation & Observability: 1
 - Operations Leadership: 1
 
-## How to attest
-For each claim: attest · edit (say what changes) · re-grade (say what to) · drop.
-See `_analysis/analysis-notes.md` for the confirm queue (canonical numbers,
-missing artifacts, revenue-as-projection, garbled source cells).
-Nothing here is a finding until attested.
+## Grading rule (v2)
+Overall grade defaults to the **least-supported material assertion** within the
+claim, unless the statement is rewritten to exclude that assertion. Compound
+claims carry a component `assertions` array with per-assertion grades.
+
+## Attestation record
+See ATTESTATIONS.md: prototype attestation, blanket claims attestation
+("I attest the claims and their strict boundary controls," 2026-10-11),
+Merkle seal record, and independent review R-2026-10-11-SOL.

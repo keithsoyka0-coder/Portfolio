@@ -5,7 +5,9 @@
     "category": "Business & Commercialization",
     "micro_category": "business--commercialization",
     "evidence_grade": "planned",
-    "how_and_why": "DRAFT from spreadsheet mergence: 2 source rows (spreadsheet rows 90\u2013354; full list in _analysis/claim-manifest.json). Grade reason: Shopify Revenue Agent: only 2 rows, assessor-labeled STAGED yet 'production-ready' \u2014 no repo, directory, or deployment found; treated as a staged plan, not a built product. Market value (assessor-stated): Small e-commerce operators get automated storefront analytics and conversion insights.",
+    "how_and_why": "Grade reason: Shopify Revenue Agent: only 2 rows, assessor-labeled STAGED yet 'production-ready' \u2014 no repo, directory, or deployment found; treated as a staged plan, not a built product.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 2 source rows (spreadsheet rows 90\u2013354; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Small e-commerce operators get automated storefront analytics and conversion insights.",
     "evidence": [
       {
         "artifact_id": "A-C-029-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

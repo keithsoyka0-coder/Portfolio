@@ -1,11 +1,11 @@
 {
   "claim": {
     "id": "C-008",
-    "statement": "Deployed the Billy / Insight-Bot conversational DI across Discord, Reddit (Devvit app), Slack, portfolio web widgets, and serverless proxies using v2 HMAC-signed adapter contracts with timestamp verification, rate-limited CORS-gated proxies, and a room-aware routing layer mapping five rooms to a single backend route.",
+    "statement": "Operates the Billy / Insight-Bot conversational DI across community surfaces via v2 HMAC-signed adapter contracts (timestamp verification, rate-limited CORS-gated proxies, room-aware routing across five rooms): Telegram live and e2e-verified 2026-10-11; Meta (Messenger/Instagram) adapter merged (PR #27), webhook verification pending; Discord/Reddit Devvit app merged (PRs #5/#6/#7), resubmit pending; portfolio web widgets + proxies live. Slack is scaffolding only \u2014 not deployed.",
     "category": "Conversational Systems & Adapters",
     "micro_category": "conversational-systems--adapters",
-    "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 16 source rows (spreadsheet rows 46\u2013411; full list in _analysis/claim-manifest.json). Grade reason: Adapters corroborated: telegram + meta webhooks on main (PRs #26/#27 merged), gestaltview-billy PRs #5/#6/#7 merged, Telegram e2e-verified live in session 2026-10-11; Slack is scaffolding only (not live) \u2014 spreadsheet rows claiming otherwise are stale. Market value (assessor-stated): One governed agent identity operates coherently across community platforms and embeds without duplicating backends.",
+    "evidence_grade": "partial",
+    "how_and_why": "Grade reason (v2): per-surface states as of 2026-10-11 \u2014 Telegram live and e2e-verified; Meta adapter merged (PR #27), webhook verification pending; Discord/Reddit Devvit app merged (PRs #5/#6/#7), resubmit pending; portfolio widgets + proxies live. The v1 statement listed Slack among deployed surfaces; Slack is scaffolding only \u2014 an overclaim corrected in the v2 statement per independent review R-2026-10-11-SOL. Overall grade: partial (least-supported material assertion).",
     "evidence": [
       {
         "artifact_id": "A-C-008-1",
@@ -16,7 +16,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-008-2",
@@ -27,7 +30,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-008-3",
@@ -38,7 +44,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "automated_inspection",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-008-4",
@@ -49,9 +58,43 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       }
-    ]
+    ],
+    "assertions": [
+      {
+        "id": "C-008.A1",
+        "assertion": "Telegram adapter merged and bot live, e2e-verified 2026-10-11",
+        "grade": "verified"
+      },
+      {
+        "id": "C-008.A2",
+        "assertion": "Meta (Messenger/Instagram) adapter merged; webhook verification pending",
+        "grade": "partial"
+      },
+      {
+        "id": "C-008.A3",
+        "assertion": "Discord/Reddit Devvit app merged; resubmit pending",
+        "grade": "partial"
+      },
+      {
+        "id": "C-008.A4",
+        "assertion": "Portfolio web widgets + HMAC-signed proxies live",
+        "grade": "verified"
+      },
+      {
+        "id": "C-008.A5",
+        "assertion": "Slack deployment",
+        "grade": "not_deployed",
+        "note": "Scaffolding only; excluded from the deployed set."
+      }
+    ],
+    "derivation_history": "DRAFT from spreadsheet mergence: 16 source rows (spreadsheet rows 46\u2013411; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): One governed agent identity operates coherently across community platforms and embeds without duplicating backends.",
+    "v2_changes": "Statement amended for per-surface honesty (Slack removed from deployed set); grade verified\u2192partial; component assertions added."
   },
   "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
 }

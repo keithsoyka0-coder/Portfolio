@@ -5,7 +5,9 @@
     "category": "Evaluation & Observability",
     "micro_category": "evaluation--observability",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 14 source rows (spreadsheet rows 15\u2013435; full list in _analysis/claim-manifest.json). Grade reason: Evaluation practice corroborated: Throughline Test doc on disk and the methodology is published on his live portfolio; Throughline Test score EXCLUDED per issuer rule 2026-10-11 (assessor-reported, no logs on file); reinstate only with replicable logs; Upwork-application row excluded as job-seeking, not capability. Market value (assessor-stated): Positions him for AI training and evaluation roles and gives clients auditable model-behavior evidence.",
+    "how_and_why": "Grade reason: Evaluation practice corroborated: Throughline Test doc on disk and the methodology is published on his live portfolio; Throughline Test score EXCLUDED per issuer rule 2026-10-11 (assessor-reported, no logs on file); reinstate only with replicable logs; Upwork-application row excluded as job-seeking, not capability.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 14 source rows (spreadsheet rows 15\u2013435; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Positions him for AI training and evaluation roles and gives clients auditable model-behavior evidence.",
     "evidence": [
       {
         "artifact_id": "A-C-023-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-023-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       }
     ]
   },
