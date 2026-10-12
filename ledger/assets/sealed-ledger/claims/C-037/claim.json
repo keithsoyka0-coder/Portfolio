@@ -5,7 +5,9 @@
     "category": "Business & Commercialization",
     "micro_category": "business--commercialization",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 35\u2013331; full list in _analysis/claim-manifest.json). Grade reason: Thought leadership corroborated at the artifact layer (peerj-paper dir, recognition-gap doc, ORCID bio, 2 of 6 LinkedIn articles published); PeerJ manuscript is outline/abstract-stage, not a submitted paper. Market value (assessor-stated): Positions him as a practitioner-researcher in personal intelligence infrastructure and gives his methods citable form.",
+    "how_and_why": "Grade reason: Thought leadership corroborated at the artifact layer (peerj-paper dir, recognition-gap doc, ORCID bio, 2 of 6 LinkedIn articles published); PeerJ manuscript is outline/abstract-stage, not a submitted paper.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 35\u2013331; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Positions him as a practitioner-researcher in personal intelligence infrastructure and gives his methods citable form.",
     "evidence": [
       {
         "artifact_id": "A-C-037-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-037-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-037-3",
@@ -38,7 +46,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-037-4",
@@ -49,7 +60,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

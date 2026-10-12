@@ -5,7 +5,9 @@
     "category": "Operations Leadership",
     "micro_category": "operations-leadership",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 113\u2013364; full list in _analysis/claim-manifest.json). Grade reason: 22-year ops career is self-reported across consistent rows and his resumes, with supporting workbooks on disk; no independent employment verification \u2014 graded partial per the same honest standard as the prototype's SS-01. Market value (assessor-stated): AI and systems work is grounded in frontline operational reality - software matches how work actually gets done.",
+    "how_and_why": "Grade reason: 22-year ops career is self-reported across consistent rows and his resumes, with supporting workbooks on disk; no independent employment verification \u2014 graded partial per the same honest standard as the prototype's SS-01.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 113\u2013364; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): AI and systems work is grounded in frontline operational reality - software matches how work actually gets done.",
     "evidence": [
       {
         "artifact_id": "A-C-034-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-034-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-034-3",
@@ -38,7 +46,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

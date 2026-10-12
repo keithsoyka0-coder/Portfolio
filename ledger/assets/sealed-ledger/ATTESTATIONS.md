@@ -11,7 +11,7 @@ issuer's own verdict, recorded verbatim.
 presents the ledger package contents (37 draft claims, grade distribution 25/10/2,
 exclusions register, design principles, red-to-green journey records) as they stand.
 
-**Explicitly NOT covered:** per-claim attestation. At that point, the 37 claims remained DRAFT pending
+**Explicitly NOT covered:** per-claim attestation. The 37 claims remain DRAFT pending
 individual verdicts (attest / edit / re-grade / drop). This artifact attestation does
 not upgrade any claim's grade or status.
 
@@ -56,3 +56,20 @@ grade, or register requires a new version, not an edit — corrections go forwar
 *Correction note: an earlier root value (611f8ec7…) was computed before the
 attestation record and manifest were finalized, so it did not match the shipped
 files. It is superseded by the canonical root in seal.json.*
+
+## 2026-10-12 — Ledger v2 issued (supersedes v1)
+
+**Basis:** issuer instruction "Yes please" (2026-10-11) to fold independent review
+R-2026-10-11-SOL's findings into a v2 cut and record the review as structured evidence.
+
+**v2 changes:**
+- C-008: statement amended (per-surface honesty; Slack removed from deployed set); grade verified→partial.
+- C-017: rescoped to component assertions (A1 verified; A2–A3 partial; A4–A5 planned); grade verified→partial.
+- C-013: statement clarified (implemented module vs spec-stage vision); grade unchanged (verified).
+- Governing docs corrected: LEDGER.md (attested index, 23/12/2), README.md (v2 status + non-propagation invariant), ROADMAP.md (promotion view built; review-driven items).
+- Language layering across all 37 claims: public narrative vs derivation_history vs assessment_notes.
+- Evidence dimensions added: access / independence / reproducibility on every evidence item.
+- Review record: reviews/R-2026-10-11-SOL.md (first structured review object).
+
+**Grade distribution (v2):** 23 verified / 12 partial / 2 planned (37 claims).
+**Note:** v1's seal remains valid for v1's files. v2 is a superseding release with its own seal, per corrections-go-forward.

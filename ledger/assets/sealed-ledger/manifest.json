@@ -1,18 +1,18 @@
 {
-  "ledger": "ledger-keithsoyka-2026-10-11-v1",
+  "ledger": "ledger-keithsoyka-2026-10-11-v2",
   "issuer": "Keith Soyka",
-  "issued": "2026-10-12T00:43:09+00:00",
-  "status": "SEALED 2026-10-11 by issuer instruction (corrected 2026-10-11)",
+  "issued": "2026-10-12T02:36:58+00:00",
+  "status": "SEALED v2 2026-10-11 by issuer instruction; supersedes v1",
   "source": "Keith_Soyka_Accomplishments_and_Capabilities_3_wwv7.xlsx (434 rows) via _analysis/claim-manifest.json",
   "claims_total": 37,
   "grade_distribution": {
-    "verified": 25,
-    "partial": 10,
+    "verified": 23,
+    "partial": 12,
     "planned": 2
   },
+  "review": "reviews/R-2026-10-11-SOL.md",
   "attestation_record": "ATTESTATIONS.md",
-  "note": "Attestation confirms the claims as stated at their grades. No AI output here is a finding; the issuer's verdicts are the findings.",
-  "merkle_root": "056fd3784afe583317f3679b29dddc412401813601bf3ffa7bfa1b3ef3dd0179",
+  "merkle_root": "da6bd04bbc1c948e8170ec3cfb75bdd0173fb5dff127a3430c954a46f4995642",
   "seal": "seal.json",
-  "seal_scheme": "SHA-256 binary Merkle tree; leaves = sha256(raw file bytes), ordered by relative path; parent = sha256(hex(left)+hex(right)), lowercase hex ASCII; odd trailing node duplicated"
+  "note": "Attestation confirms the claims as stated at their grades. The ledger attests to artifacts, provenance, associations, assessments, decisions, and state transitions \u2014 not that evidence proves the conclusions attributed to it."
 }

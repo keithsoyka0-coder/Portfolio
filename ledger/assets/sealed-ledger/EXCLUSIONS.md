@@ -1,6 +1,6 @@
 # Capability Ledger — Exclusions Register
 
-Figures and framings the issuer has excluded from ledger documents,
+Figures and framings the issuer has permanently excluded from ledger documents,
 with reasons and reinstatement conditions. Exclusion here does not mean deletion
 from the corpus: per the issuer's corrections-go-forward rule, originals are
 preserved in the corpus with amendments, never silently rewritten.

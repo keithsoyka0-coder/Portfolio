@@ -5,7 +5,9 @@
     "category": "Multi-Agent Orchestration",
     "micro_category": "multi-agent-orchestration",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 36\u2013377; full list in _analysis/claim-manifest.json). Grade reason: DIW spec exists on disk and ROOM_DEFINITIONS v0.4 is merged, but rows themselves describe partial implementation (vertical slice Oct 2026); not a shipped product. Market value (assessor-stated): Provides governed sandboxes for multi-agent exploration where AI state transitions require explicit human approval, including addiction-aware safeguards.",
+    "how_and_why": "Grade reason: DIW spec exists on disk and ROOM_DEFINITIONS v0.4 is merged, but rows themselves describe partial implementation (vertical slice Oct 2026); not a shipped product.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 36\u2013377; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Provides governed sandboxes for multi-agent exploration where AI state transitions require explicit human approval, including addiction-aware safeguards.",
     "evidence": [
       {
         "artifact_id": "A-C-007-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-007-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       }
     ]
   },

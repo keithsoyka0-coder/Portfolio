@@ -5,7 +5,9 @@
     "category": "Multi-Agent Orchestration",
     "micro_category": "multi-agent-orchestration",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 18 source rows (spreadsheet rows 3\u2013428; full list in _analysis/claim-manifest.json). Grade reason: fleet corroborated \u2014 Portable Agent Pack (portable-agent-pack_CLEAN_2026-10-09_13_wehc.zip) strip-and-inspected 2026-10-11: 96 files, 11 agent profiles, 7 platform adapters, manifest with SHA-256 fingerprints, no credentials bundled. Earlier count variance (10/12/13) resolved: 11 is the canonical current roster; the squad evolved from a fixed roster into platform-neutral profiles + adapters. Issuer verdict 2026-10-11: packageable as a product for any user. Market value (assessor-stated): a solo operator or agency can run parallel GTM, research, distribution, and repo-maintenance workflows with guardrails instead of ad-hoc prompting.",
+    "how_and_why": "Grade reason: fleet corroborated \u2014 Portable Agent Pack (portable-agent-pack_CLEAN_2026-10-09_13_wehc.zip) strip-and-inspected 2026-10-11: 96 files, 11 agent profiles, 7 platform adapters, manifest with SHA-256 fingerprints, no credentials bundled. Earlier count variance (10/12/13) resolved: 11 is the canonical current roster; the squad evolved from a fixed roster into platform-neutral profiles + adapters. Issuer verdict 2026-10-11: packageable as a product for any user.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 18 source rows (spreadsheet rows 3\u2013428; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): a solo operator or agency can run parallel GTM, research, distribution, and repo-maintenance workflows with guardrails instead of ad-hoc prompting.",
     "evidence": [
       {
         "artifact_id": "A-C-003-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-003-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-003-3",
@@ -38,7 +46,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-003-4",
@@ -49,7 +60,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "automated_inspection",
+        "reproducibility": "inspectable"
       }
     ]
   },

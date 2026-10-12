@@ -5,7 +5,9 @@
     "category": "Data Layer & Retrieval",
     "micro_category": "data-layer--retrieval",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 13 source rows (spreadsheet rows 4\u2013371; full list in _analysis/claim-manifest.json). Grade reason: Large Supabase schema corroborated by his published snapshot figures (217 tables / 299 RLS / 75 functions, Aug 2026) repeated on his live portfolio; exact counts are snapshot-reported, not independently tallied. Market value (assessor-stated): Multi-tenant agent systems get row-level isolation, auditable state, and a migration path from transactional to analytical workloads.",
+    "how_and_why": "Grade reason: Large Supabase schema corroborated by his published snapshot figures (217 tables / 299 RLS / 75 functions, Aug 2026) repeated on his live portfolio; exact counts are snapshot-reported, not independently tallied.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 13 source rows (spreadsheet rows 4\u2013371; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Multi-tenant agent systems get row-level isolation, auditable state, and a migration path from transactional to analytical workloads.",
     "evidence": [
       {
         "artifact_id": "A-C-010-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-010-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       }
     ]
   },

@@ -5,7 +5,9 @@
     "category": "Voice & Multimodal",
     "micro_category": "voice--multimodal",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 138\u2013343; full list in _analysis/claim-manifest.json). Grade reason: Canonical voice sample exists on disk and TTS/voice skills exist in the agent environment, but a production voice pipeline in the GestaltView runtime was not verified; Transcriptory/voicestudio claims are self-reported. Market value (assessor-stated): Enables hands-free capture and natural voice interaction for accessibility, executive debriefing, meeting intelligence, and companion interfaces.",
+    "how_and_why": "Grade reason: Canonical voice sample exists on disk and TTS/voice skills exist in the agent environment, but a production voice pipeline in the GestaltView runtime was not verified; Transcriptory/voicestudio claims are self-reported.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 138\u2013343; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Enables hands-free capture and natural voice interaction for accessibility, executive debriefing, meeting intelligence, and companion interfaces.",
     "evidence": [
       {
         "artifact_id": "A-C-009-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-009-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

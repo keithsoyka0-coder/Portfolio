@@ -5,7 +5,9 @@
     "category": "Governance & Security",
     "micro_category": "governance--security",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 42\u2013417; full list in _analysis/claim-manifest.json). Grade reason: GCL v1.1 corroborated: canonical License.md on disk as the single source of truth; rollout PRs exist across repos per the record. Market value (assessor-stated): Open collaboration with retained commercial and ethical protections for foundational AI work.",
+    "how_and_why": "Grade reason: GCL v1.1 corroborated: canonical License.md on disk as the single source of truth; rollout PRs exist across repos per the record.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 42\u2013417; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Open collaboration with retained commercial and ethical protections for foundational AI work.",
     "evidence": [
       {
         "artifact_id": "A-C-018-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       }
     ]
   },

@@ -5,7 +5,9 @@
     "category": "Multi-Agent Orchestration",
     "micro_category": "multi-agent-orchestration",
     "evidence_grade": "verified",
-    "how_and_why": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 107\u2013415; full list in _analysis/claim-manifest.json). Grade reason: Runtime API backend corroborated: api/ tree exists in gestaltview (telegram + meta webhooks verified on main), live deployment responds; exact '286-file package' counts not tallied. Market value (assessor-stated): External systems, channel apps, and portfolio embeds can integrate against one governed API surface instead of raw model calls. Issuer evidence 2026-10-11: fresh repo manifest (REPO_MANIFEST_10_11_26_18_szew.json, generated 2026-10-10, labeled 'gestaltview-v2'): 1,516 files / 16.3MB, 118 routes, 207 API endpoints, 179 canonical docs, 195 test scripts. Note: no matching 'gestaltview-v2' remote repo found under his accounts (checked keithsoyka0-coder and DigitalConsciousness) \u2014 treat as a local snapshot, figures manifest-stated. Also: CurrentState_Runtime_17_5e76.md, a 7,944-line dated development log (per-pass scope, changes, validation, deferred risks) \u2014 primary evidence of sustained solo engineering practice with per-pass test validation.",
+    "how_and_why": "Grade reason: Runtime API backend corroborated: api/ tree exists in gestaltview (telegram + meta webhooks verified on main), live deployment responds; exact '286-file package' counts not tallied. Issuer evidence 2026-10-11: fresh repo manifest (REPO_MANIFEST_10_11_26_18_szew.json, generated 2026-10-10, labeled 'gestaltview-v2'): 1,516 files / 16.3MB, 118 routes, 207 API endpoints, 179 canonical docs, 195 test scripts. Note: no matching 'gestaltview-v2' remote repo found under his accounts (checked keithsoyka0-coder and DigitalConsciousness) \u2014 treat as a local snapshot, figures manifest-stated. Also: CurrentState_Runtime_17_5e76.md, a 7,944-line dated development log (per-pass scope, changes, validation, deferred risks) \u2014 primary evidence of sustained solo engineering practice with per-pass test validation.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 107\u2013415; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): External systems, channel apps, and portfolio embeds can integrate against one governed API surface instead of raw model calls.",
     "evidence": [
       {
         "artifact_id": "A-C-005-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-005-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-005-4",
@@ -38,7 +46,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-005-5",
@@ -49,7 +60,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       }
     ]
   },

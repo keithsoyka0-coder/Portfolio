@@ -5,7 +5,9 @@
     "category": "Developer Tooling",
     "micro_category": "developer-tooling",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 89\u2013368; full list in _analysis/claim-manifest.json). Grade reason: SymbioCoder release is suggested by a review directory for the v1.0 release in the workspace, but the release package itself was not located; 'shippable after rewiring' per assessor. Market value (assessor-stated): Developers get AI pair-programming with enforced review gates and no forced cloud dependency.",
+    "how_and_why": "Grade reason: SymbioCoder release is suggested by a review directory for the v1.0 release in the workspace, but the release package itself was not located; 'shippable after rewiring' per assessor.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 89\u2013368; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Developers get AI pair-programming with enforced review gates and no forced cloud dependency.",
     "evidence": [
       {
         "artifact_id": "A-C-028-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-028-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },

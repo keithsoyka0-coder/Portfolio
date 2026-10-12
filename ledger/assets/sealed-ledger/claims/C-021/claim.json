@@ -5,7 +5,9 @@
     "category": "Governance & Security",
     "micro_category": "governance--security",
     "evidence_grade": "partial",
-    "how_and_why": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 14\u2013313; full list in _analysis/claim-manifest.json). Grade reason: Governance operations corroborated at the documentation layer (ROOM_DEFINITIONS v0.4 merged, PR #18 referenced); live enforcement of promotion gates is self-reported. Market value (assessor-stated): Multi-agent systems stay human-controlled at every state transition and commercial boundary.",
+    "how_and_why": "Grade reason: Governance operations corroborated at the documentation layer (ROOM_DEFINITIONS v0.4 merged, PR #18 referenced); live enforcement of promotion gates is self-reported.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 5 source rows (spreadsheet rows 14\u2013313; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Multi-agent systems stay human-controlled at every state transition and commercial boundary.",
     "evidence": [
       {
         "artifact_id": "A-C-021-1",
@@ -16,7 +18,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
       },
       {
         "artifact_id": "A-C-021-2",
@@ -27,7 +32,10 @@
         "captured_at": null,
         "package_path": null,
         "sha256": null,
-        "bytes": null
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
       }
     ]
   },
