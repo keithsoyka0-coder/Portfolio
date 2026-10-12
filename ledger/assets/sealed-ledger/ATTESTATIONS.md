@@ -11,7 +11,7 @@ issuer's own verdict, recorded verbatim.
 presents the ledger package contents (37 draft claims, grade distribution 25/10/2,
 exclusions register, design principles, red-to-green journey records) as they stand.
 
-**Explicitly NOT covered:** per-claim attestation. The 37 claims remain DRAFT pending
+**Explicitly NOT covered:** per-claim attestation. At that point, the 37 claims remained DRAFT pending
 individual verdicts (attest / edit / re-grade / drop). This artifact attestation does
 not upgrade any claim's grade or status.
 
