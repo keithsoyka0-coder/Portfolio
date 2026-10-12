@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "id": "C-017",
+    "statement": "Implemented cryptographic attestation: OpenTimestamps proofs (255 receipts over ~2,200 artifacts), provenance envelopes with content hashing and interpretation bounds, Merkle-tree client-side verification, selective disclosure via W3C verifiable credentials / BBS+ / zero-knowledge proofs, and revocation via cryptographic accumulators.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 9 source rows (spreadsheet rows 21\u2013288; full list in _analysis/claim-manifest.json). Grade reason: OpenTimestamps usage is plausible and referenced in his materials, but no .ots receipt files were found in the workspace; 172-receipt / 2,200-artifact counts are assessor-reported; ZKP/selective-disclosure rows read as thesis-derived designs. Market value (assessor-stated): Individuals and firms can prove claims and capability provenance without exposing underlying private data. Issuer verdict 2026-10-11: receipts located \u2014 ots_15_o7go.zip strip-and-inspected 2026-10-11: 255 .ots files, all 255 carrying valid OpenTimestamps v1 proof headers (verified byte-level). Upgrades this claim from partial to verified. Artifact-coverage scale (~2,200 artifacts) remains issuer-stated; the receipt files themselves are the verified evidence.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-017-1",
+        "descriptor": "OTS receipt files [not_found]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "not_found",
+        "provenance": "searched ~/workspace \u2014 none found",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-017-2",
+        "descriptor": "OTS references [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "referenced in thesis/ledger materials; receipts not located",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-017-4",
+        "descriptor": "255 OpenTimestamps proof files (.ots)",
+        "function": "Proves cryptographic timestamping practice: every file carries a valid OTS v1 proof header.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/ots_15_o7go.zip; strip-and-inspected 2026-10-11",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

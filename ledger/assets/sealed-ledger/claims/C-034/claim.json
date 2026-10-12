@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "id": "C-034",
+    "statement": "Brings 22+ years of frontline operations management: P&L ownership, labor and inventory control, multi-site leadership (teams up to 75 across Showcase Cinemas, Dunkin' franchise transitions, Big Lots, Rogers Orchards), SOP and onboarding curricula, escalation protocols, operational audits, and versioned release/workflow discipline.",
+    "category": "Operations Leadership",
+    "micro_category": "operations-leadership",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 113\u2013364; full list in _analysis/claim-manifest.json). Grade reason: 22-year ops career is self-reported across consistent rows and his resumes, with supporting workbooks on disk; no independent employment verification \u2014 graded partial per the same honest standard as the prototype's SS-01. Market value (assessor-stated): AI and systems work is grounded in frontline operational reality - software matches how work actually gets done.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-034-1",
+        "descriptor": "Operations resume",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/Keith_Soyka_Operations_Resume.pdf",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-034-2",
+        "descriptor": "Operational Bible workbook",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/Operational_Bible_Workbook_28_9v9u.xlsx",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-034-3",
+        "descriptor": "Employment verification [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "self-reported; no independent verification",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

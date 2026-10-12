@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-009",
+    "statement": "Built a voice pipeline: real-time voice synthesis and interaction studio, a voice-ingestion pipeline (Transcriptory) turning raw audio into transcripts, themes, and linked captures, a Deepgram STT/TTS module, and multimodal content processing with spatial (Three.js) visualization.",
+    "category": "Voice & Multimodal",
+    "micro_category": "voice--multimodal",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 138\u2013343; full list in _analysis/claim-manifest.json). Grade reason: Canonical voice sample exists on disk and TTS/voice skills exist in the agent environment, but a production voice pipeline in the GestaltView runtime was not verified; Transcriptory/voicestudio claims are self-reported. Market value (assessor-stated): Enables hands-free capture and natural voice interaction for accessibility, executive debriefing, meeting intelligence, and companion interfaces.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-009-1",
+        "descriptor": "Canonical voice sample",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/billy-voice.mp3",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-009-2",
+        "descriptor": "Voice pipeline code [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "named in rows (billy_voice/, transcriptory.ts); runtime integration not verified",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

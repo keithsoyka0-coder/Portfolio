@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "id": "C-033",
+    "statement": "Assembled investor and fundraising materials: Pepperdine Most Fundable Companies 2025 quarterfinalist (top 100 of 2,300), IndieGogo campaign ($50k flexible goal, launched 2026-10-08), multi-audience investor outreach package, diligence compendium, DeepWiki, ecosystem glossary, and background-trust badge assets.",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 13 source rows (spreadsheet rows 9\u2013322; full list in _analysis/claim-manifest.json). Grade reason: Investor materials corroborated: IndieGogo brief on disk (campaign launched 2026-10-08), outreach package on disk, ORCID bio independently confirms Pepperdine quarterfinalist (top 100 of 2,300); valuation figures are assessor hypotheses. Market value (assessor-stated): External validation and packaged diligence lower the cost of investor and partner conversations. Issuer verdict 2026-10-11: all revenue and valuation figures are GATED as assumed projections \u2014 unverifiable until realized. The claim covers the practice of assembling the materials, never the numbers as fact.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-033-1",
+        "descriptor": "IndieGogo brief",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/goals/gestaltview-indiegogo-campaign/files/GestaltView-IndieGogo-Campaign-Brief-DRAFT_2026-10-08.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-033-2",
+        "descriptor": "Outreach package",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/GestaltView-Investor-Outreach-Package-Merged_2026-10-06.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-033-3",
+        "descriptor": "Independent corroboration",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://orcid.org/0009-0006-5585-112X \u2014 bio confirms quarterfinalist, 22+ yrs ops, founder since 2025-05-05",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

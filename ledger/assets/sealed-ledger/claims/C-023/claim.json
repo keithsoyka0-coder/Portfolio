@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-023",
+    "statement": "Built evaluation harnesses and observability: the Portfolio Throughline Test, a dual-DI conversation eval rig (merged PR #9), structured pipeline logging and telemetry, per-response provider/cost reporting, canonical metrics architecture against number drift, and applied quantitative AI evaluation work.",
+    "category": "Evaluation & Observability",
+    "micro_category": "evaluation--observability",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 14 source rows (spreadsheet rows 15\u2013435; full list in _analysis/claim-manifest.json). Grade reason: Evaluation practice corroborated: Throughline Test doc on disk and the methodology is published on his live portfolio; Throughline Test score EXCLUDED per issuer rule 2026-10-11 (assessor-reported, no logs on file); reinstate only with replicable logs; Upwork-application row excluded as job-seeking, not capability. Market value (assessor-stated): Positions him for AI training and evaluation roles and gives clients auditable model-behavior evidence.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-023-1",
+        "descriptor": "Throughline Test doc",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/Portfolio_Throughline_Test_18_83au.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-023-2",
+        "descriptor": "Published methodology",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://keith-soyka-portfolio.vercel.app \u2014 'Portfolio Throughline Test' section",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

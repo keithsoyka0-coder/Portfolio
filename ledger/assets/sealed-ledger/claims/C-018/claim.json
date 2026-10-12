@@ -1,0 +1,24 @@
+{
+  "claim": {
+    "id": "C-018",
+    "statement": "Authored the GestaltView Collaborative License (GCL v1.1), an MIT-style open-source license with proprietary protections and a scope clause, and rolled it out via PRs across ecosystem repos, alongside an IP dossier, asset verification ledger, archive inventory, and a GATE module for controlled asset packaging.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 42\u2013417; full list in _analysis/claim-manifest.json). Grade reason: GCL v1.1 corroborated: canonical License.md on disk as the single source of truth; rollout PRs exist across repos per the record. Market value (assessor-stated): Open collaboration with retained commercial and ethical protections for foundational AI work.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-018-1",
+        "descriptor": "Canonical license",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/License.md (GCL v1.1)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-030",
+    "statement": "Built neurodivergent-first and legacy vertical applications: ADHD Power-Up (FastAPI+React, containerized, 75 files), Addiction Recovery companion (journaling, craving tracking, voice chat), Alzheimer's Legacy Edition v7 (voice-print legacy preservation, sealed time capsules, FastAPI+SQLite), a personalized learning companion schema, and privacy-first mental-health safety web apps (WCAG 2.2 AA, offline, local-storage).",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "partial",
+    "how_and_why": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 81\u2013398; full list in _analysis/claim-manifest.json). Grade reason: ADHD Power-Up app surface corroborated (page + skill in workspace); addiction/Alzheimer's builds are prototype-stage or explicitly incomplete per rows; all are staged, not production. Market value (assessor-stated): Underserved users - ADHD, addiction recovery, elder legacy, learners - get dignity-first AI scaffolds with externalized working memory.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-030-1",
+        "descriptor": "ADHD app surface",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/brand-kit-70/pages/ADHDPowerUpPage.tsx.txt; ~/workspace/brand-kit-70/Skills/gestaltview-adhd-power-up",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-030-2",
+        "descriptor": "Addiction/Alzheimer's builds [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "prototype-stage per rows; packages not located",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

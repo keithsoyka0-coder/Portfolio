@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "id": "C-002",
+    "statement": "Built the Tribunal of Understanding: a seven-persona (Architect, Guardian, Mirror, Philosopher, Witness, Weaver, Steward) multi-model deliberation system with persona health circuit breakers, parallel multi-voice dispatch, staggered invocation, dialectical synthesis, and manual promotion gates so consensus is never auto-presented as a finding.",
+    "category": "Multi-Agent Orchestration",
+    "micro_category": "multi-agent-orchestration",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 10\u2013410; full list in _analysis/claim-manifest.json). Grade reason: Tribunal system corroborated: shared/tribunal in repo, ROOM_DEFINITIONS.md v0.4 via merged PR #23, showcase demo page in Portfolio repo; production-runtime status of all seven personas not individually confirmed. Market value (assessor-stated): Teams needing defensible multi-perspective analysis can cycle models through analytical lenses instead of paying for multiple APIs, with the human adjudicating outcomes. Issuer verdict 2026-10-11: the '1-in-784-trillion odds' figure (spreadsheet row 389, assessor invention) is permanently excluded from ledger documents. Preserved and amended in the corpus per the issuer's corrections-go-forward rule.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-002-1",
+        "descriptor": "Tribunal engine (shared/tribunal)",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:shared/tribunal (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-002-2",
+        "descriptor": "Room definitions v0.4",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:docs/ROOM_DEFINITIONS.md \u2014 PR #23 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-002-3",
+        "descriptor": "Showcase demo page",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/Portfolio:showcase/billy-unslashed-council.html (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

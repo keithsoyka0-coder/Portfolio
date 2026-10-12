@@ -1,0 +1,46 @@
+{
+  "claim": {
+    "id": "C-016",
+    "statement": "Built an anti-delusion evidence apparatus: claim ledgers (CL-001-CL-008), skepticism registers (S-001-S-004), evidence grading tiers (Verified/Attested/Staged/Planned/Interpretation), cite registers, structured claims registers for audits, verification-before-completion discipline, test-driven prompt engineering, operational diligence workbooks, and human-attestation rules ('no AI output is ever a finding'; the Capability/Credibility Ledger spec with two-level SHA-256 sealing).",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 34 source rows (spreadsheet rows 7\u2013432; full list in _analysis/claim-manifest.json). Grade reason: Anti-delusion apparatus corroborated: Credibility Ledger spec + concept docs on disk, Dunton evidence index PDF on disk, frozen v1 prototype ledger exists; Dunton rows are personal litigation documentation (context kept); ledger prototype itself is DRAFT pending attestation. Market value (assessor-stated): Buyers and auditors of AI systems get checkable claim discipline and a paper trail instead of hype.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-016-1",
+        "descriptor": "Ledger spec",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/Credibility-Ledger-SPEC-v1_2026-10-08.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-016-2",
+        "descriptor": "Ledger concept",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/Credibility-Ledger-Concept_2026-10-08.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-016-3",
+        "descriptor": "Dunton evidence index",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/dunton-evidence-index_2026-10-03.pdf",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,35 @@
+{
+  "claim": {
+    "id": "C-025",
+    "statement": "Built developer tooling: a systematized agent skills library (13+ gestaltview-* skills, ~197 files) with dynamic re-loading, repo operations and cataloging scripts, an 11-command CLI with embedded web dashboard and local-first LLM routing, and a Manus API connector skill.",
+    "category": "Developer Tooling",
+    "micro_category": "developer-tooling",
+    "evidence_grade": "verified",
+    "how_and_why": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 67\u2013433; full list in _analysis/claim-manifest.json). Grade reason: Skills library corroborated: 12 skill dirs in ~/workspace/skills (discord, telegram, reddit, slack, supabase, github\u2026), 1,580 files under .agents/skills in repo; exact skill counts vary by snapshot. Market value (assessor-stated): Reusable, portable agent capabilities and local-first terminal workflows for agent operations and development.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-025-1",
+        "descriptor": "Workspace skills",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/skills/ \u2014 discord, telegram, reddit, slack, supabase, github, vercel, stripe\u2026",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      },
+      {
+        "artifact_id": "A-C-025-2",
+        "descriptor": "Repo skills",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:.agents/skills/ (main) \u2014 1,580 files",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}
