@@ -1,7 +1,7 @@
 {
   "claim": {
     "id": "C-013",
-    "statement": "Designed the Two-Pass Gravity Protocol ('hype has surface area, signal has gravity'): a spec'd heuristic engine with database tables, API endpoints, inspector UI, and tests that scores knowledge fragments for hype vs signal during ingestion.",
+    "statement": "Designed the Two-Pass Gravity Protocol ('hype has surface area, signal has gravity'); its protocol module is implemented, while the broader engine vision remains spec-stage.",
     "category": "Data Layer & Retrieval",
     "micro_category": "data-layer--retrieval",
     "evidence_grade": "verified",
