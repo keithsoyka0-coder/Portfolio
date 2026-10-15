@@ -13,14 +13,20 @@
     <priority>0.8</priority>
   </url>
   <url>
-  <url>
     <loc>https://keith-soyka-portfolio.vercel.app/showcase.html</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
     <loc>https://keith-soyka-portfolio.vercel.app/services.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://keith-soyka-portfolio.vercel.app/ai-ops-sprint.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +44,7 @@
   </url>
   <url>
     <loc>https://keith-soyka-portfolio.vercel.app/sitemap.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
