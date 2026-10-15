@@ -1,5 +1,11 @@
 # Changelog — Keith Soyka Portfolio Site
 
+## v10.4 — 2026-10-15
+**AI Ops Sprint page (self-hosted — no new hosted side layer)**
+- Added `ai-ops-sprint.html`: the AI Ops Sprint offer page (the offer, 30-sec cut, campaign kit) migrated from the Muse-hosted artifact to the portfolio domain, with a back-link to the portfolio and per-page SEO headers (canonical, OG, Twitter).
+- services.html: new flagship AI Ops Sprint card in Lane A linking to the page.
+- sitemap.xml / sitemap.txt / sitemap.html updated for the new page; also fixed a malformed `<url>` block in sitemap.xml (the services entry was nested inside an unclosed tag).
+
 ## v10.3 — 2026-10-08
 **Visual Story integration (folded into the portfolio — no new hosted side layer)**
 - Added `showcase/visual-story/`: the GestaltView Visual Story v3.4 as a portfolio exhibit — 65 visuals across two labeled evidence layers (54 historical wiki diagrams + 11 code-verified runtime maps at GestaltView-v3 commit 03284ea), line-cited correction ledger, three reading depths. Fully static, zero absolute paths; drops into the showcase tree cleanly.
