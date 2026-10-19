@@ -1,0 +1,89 @@
+{
+  "envelope": "provenance-envelope/v1",
+  "attribution": {
+    "source": "author",
+    "author": "Keith Soyka / GestaltView",
+    "note": "All client content is FICTIONAL (Los Pollos Hermanos, Breaking Bad). SAMPLE only."
+  },
+  "born": "\u00a9 2026 Keith Soyka / GestaltView \u00b7 born:2026-10-18 \u00b7 prov:2026-10-18 \u00b7 origin:sample-kit",
+  "created": "2026-10-18",
+  "kit": "sample-deliverables-kit_2026-10-18",
+  "files": [
+    {
+      "path": "README-quickstart-sample.md",
+      "sha256": "322750ca8f91ae4fffb25ca4463eafa8425ef0e7eac9fd293d85ab08f320e264",
+      "bytes": 7515
+    },
+    {
+      "path": "_brief/fictional-client-brief.md",
+      "sha256": "e6e7c239b3532b2e01c049096159c7ed1342eeca57abe5bbe7fb79be0de7344d",
+      "bytes": 5227,
+      "role": "source-brief"
+    },
+    {
+      "path": "design-spec.html",
+      "sha256": "0e4588ac399687c1c4c71f5b5793f406048bd6888be8c2db1a87a0e36f8f2bd2",
+      "bytes": 34786
+    },
+    {
+      "path": "design-spec.pdf",
+      "sha256": "1c2dc0245c9abd79fc0fdfb1d3ea885e94933a08511c10ac829a4527977c1006",
+      "bytes": 149194
+    },
+    {
+      "path": "discovery-findings.html",
+      "sha256": "dec826ff3faaaf31f9e7ef5962f75199f3ed9ca55fb96c34e275271870c5f254",
+      "bytes": 19651
+    },
+    {
+      "path": "discovery-findings.pdf",
+      "sha256": "fe0789592543a6d1cbc05662d5bf2de968298a51725b88ac580e8940a4cc90b9",
+      "bytes": 58868
+    },
+    {
+      "path": "implementation-spec.html",
+      "sha256": "f1de433e0ac7f11fb614824a8088b952abccf5fed13a31852550020e1a8cd242",
+      "bytes": 23216
+    },
+    {
+      "path": "implementation-spec.pdf",
+      "sha256": "61f712263fe01546fbf5778813c9d2ebc8e19aaeab9c4aca3be9c181d7b586ae",
+      "bytes": 72466
+    },
+    {
+      "path": "kit-README.md",
+      "sha256": "e1420152f5d29e1741ee3bfbb0daae70a66d0ab4048ec4bcce28331391b23f55",
+      "bytes": 2743
+    },
+    {
+      "path": "mock-boards/board-1-home-desktop.html",
+      "sha256": "83870d92847d3e7e74944af2269e0d806f8e60850d8a3c7d6a9db269602693f1",
+      "bytes": 18479
+    },
+    {
+      "path": "mock-boards/board-2-home-mobile-menu.html",
+      "sha256": "2f476940b67519de4a7da1e3cb65d25a4fa53eb4ea97d40bcd2f7a08f6136d28",
+      "bytes": 22324
+    },
+    {
+      "path": "page-contracts/01-home.md",
+      "sha256": "75449f1b372b2406271ad572b2658311bbf2e3cb3b77a0af5dad7a0ea6477a50",
+      "bytes": 3490
+    },
+    {
+      "path": "page-contracts/02-menu.md",
+      "sha256": "eab1b0f11e2da1aef6622987338df991b1064c1da037bcb534fb2f1cb3a7a291",
+      "bytes": 3650
+    },
+    {
+      "path": "page-contracts/03-locations.md",
+      "sha256": "0c1afebf7abe7ffd45f2ed08300bdff37a7e026d1a67818a71b109ca76151868",
+      "bytes": 3585
+    },
+    {
+      "path": "page-contracts/04-contact.md",
+      "sha256": "e4e32221d32c36d49c4138020c81374dcc0bf9135de43b79fb5d8db8bb8cb79f",
+      "bytes": 4359
+    }
+  ]
+}
