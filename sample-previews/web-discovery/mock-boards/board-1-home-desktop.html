@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAMPLE · Board 1 — Los Pollos Hermanos Home (Desktop) — Concept Mock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lph-red:#B3122E;
+  --lph-yellow:#FFC72C;
+  --lph-cream:#FFF6E5;
+  --lph-brown:#4A2C1A;
+  --lph-orange:#E87722;
+  --lph-red-dark:#7E0C20;
+  --lph-white:#FFFFFF;
+  --head:'Oswald','Arial Narrow',sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --script:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#e9dcc8}
+/* ---- fixed SAMPLE ribbon ---- */
+.sample-ribbon{position:fixed;top:0;left:0;right:0;z-index:9999;background:#111;color:#fff;
+  font:600 13px/1 var(--body);letter-spacing:.06em;text-align:center;padding:11px 16px;text-transform:uppercase}
+.sample-ribbon b{color:var(--lph-yellow)}
+/* ---- caption bar ---- */
+.caption-bar{position:fixed;top:36px;left:0;right:0;z-index:9998;background:#fff;border-bottom:1px solid rgba(74,44,26,.15);
+  font:400 13px/1.5 var(--body);color:var(--lph-brown);padding:10px 20px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+.caption-bar .board-tag{font:700 12px var(--head);letter-spacing:.08em;background:var(--lph-red);color:var(--lph-cream);
+  padding:4px 12px;border-radius:999px;text-transform:uppercase}
+.caption-bar .mock-note{font:600 12px var(--body);color:var(--lph-orange);letter-spacing:.04em}
+/* ---- stage ---- */
+.stage{padding:120px 24px 48px;display:flex;justify-content:center}
+.canvas{width:1280px;max-width:100%;background:var(--lph-cream);border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(74,44,26,.28),0 4px 16px rgba(74,44,26,.18);border:1px solid rgba(74,44,26,.14)}
+/* ---- header ---- */
+.site-header{position:sticky;top:0;z-index:50;background:var(--lph-red);display:flex;align-items:center;gap:18px;
+  padding:12px 40px;border-bottom:4px solid var(--lph-yellow)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-name{font:600 24px var(--head);color:var(--lph-cream);letter-spacing:.04em;text-transform:uppercase;line-height:1.05}
+.brand-name small{display:block;font:600 11px var(--body);letter-spacing:.32em;color:var(--lph-yellow)}
+.nav{margin-left:auto;display:flex;gap:6px}
+.nav a{font:500 15px var(--body);color:var(--lph-cream);text-decoration:none;padding:10px 16px;border-radius:999px;letter-spacing:.02em}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,246,229,.16);outline:none}
+.nav a[aria-current]{background:rgba(255,246,229,.22)}
+.btn{display:inline-block;font:600 16px var(--body);letter-spacing:.02em;text-decoration:none;border-radius:999px;
+  padding:14px 30px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.btn-yellow{background:var(--lph-yellow);color:var(--lph-red-dark)}
+.btn-red{background:var(--lph-red);color:var(--lph-cream)}
+.btn-ghost{background:transparent;color:var(--lph-cream);border-color:var(--lph-cream)}
+.btn-ghost:hover{background:rgba(255,246,229,.14)}
+.btn-sm{padding:10px 22px;font-size:14px}
+/* ---- hero ---- */
+.hero{position:relative;background:var(--lph-red);color:var(--lph-cream);text-align:center;padding:84px 48px 96px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:repeating-conic-gradient(from -8deg at 50% 118%, #B3122E 0deg 9deg, #C22440 9deg 18deg);opacity:.9}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 62% at 50% 46%, rgba(179,18,46,0) 30%, rgba(126,12,32,.55) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--lph-yellow);color:var(--lph-red-dark);
+  font:700 13px var(--head);letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border-radius:999px;margin-bottom:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.hero h1{font:700 clamp(54px,6.4vw,92px)/1.05 var(--script);color:var(--lph-cream);text-shadow:0 4px 0 rgba(126,12,32,.6);margin-bottom:20px}
+.hero p.lede{font:500 20px/1.6 var(--body);max-width:620px;margin:0 auto 36px;color:var(--lph-cream)}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* ---- stripe divider ---- */
+.stripes{height:18px;background:repeating-linear-gradient(-45deg,var(--lph-yellow) 0 26px,var(--lph-orange) 26px 52px)}
+.stripes.thin{height:10px}
+/* ---- sections ---- */
+.section{padding:64px 56px}
+.section h2{font:600 38px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em;text-align:center;margin-bottom:10px}
+.section .sub{font:400 17px/1.6 var(--body);color:var(--lph-brown);text-align:center;max-width:640px;margin:0 auto 44px}
+/* value trio */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{background:var(--lph-white);border:1px solid rgba(74,44,26,.12);border-radius:12px;padding:36px 30px;
+  box-shadow:0 6px 18px rgba(74,44,26,.08);text-align:center;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(74,44,26,.14)}
+.card .icon{width:64px;height:64px;margin:0 auto 18px;display:block}
+.card h3{font:600 22px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px}
+.card p{font:400 15px/1.65 var(--body);color:var(--lph-brown)}
+/* featured menu */
+.menu-teaser{background:var(--lph-white);border-top:1px solid rgba(74,44,26,.1);border-bottom:1px solid rgba(74,44,26,.1)}
+.dish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:40px}
+.dish{position:relative;background:var(--lph-cream);border:1px solid rgba(74,44,26,.12);border-radius:12px;padding:30px 26px;
+  box-shadow:0 6px 18px rgba(74,44,26,.08);text-align:center}
+.dish .price{position:absolute;top:-16px;right:18px;background:var(--lph-red);color:var(--lph-cream);
+  font:700 16px var(--head);padding:8px 16px;border-radius:999px;box-shadow:0 4px 10px rgba(179,18,46,.4)}
+.dish h3{font:600 21px var(--head);color:var(--lph-brown);text-transform:uppercase;letter-spacing:.03em;margin:6px 0 8px}
+.dish p{font:400 14px/1.6 var(--body);color:var(--lph-brown)}
+.center{text-align:center}
+/* locations teaser */
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:28px}
+.loc-card{background:var(--lph-white);border:1px solid rgba(74,44,26,.12);border-radius:12px;padding:30px 28px;
+  box-shadow:0 6px 18px rgba(74,44,26,.08)}
+.loc-card h3{font:600 22px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em}
+.loc-card .flag{display:inline-block;font:700 11px var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--lph-red-dark);
+  background:var(--lph-yellow);border-radius:999px;padding:4px 12px;margin:8px 0 14px}
+.loc-card address{font:400 15px/1.7 var(--body);color:var(--lph-brown);font-style:normal;margin-bottom:10px}
+.loc-card .hours{font:500 14px var(--body);color:var(--lph-brown);margin-bottom:14px}
+.loc-card a.dir{font:600 14px var(--body);color:var(--lph-red);text-decoration:none;border-bottom:2px solid var(--lph-orange)}
+.loc-card a.dir:hover{color:var(--lph-red-dark)}
+.coming-soon{text-align:center;font:600 16px var(--script);font-size:24px;color:var(--lph-orange)}
+/* catering band */
+.catering-band{background:var(--lph-red-dark);color:var(--lph-cream);text-align:center;padding:72px 48px;position:relative;overflow:hidden}
+.catering-band::before{content:"";position:absolute;inset:0;
+  background:repeating-conic-gradient(from 4deg at 50% 130%, rgba(255,199,44,.07) 0deg 10deg, transparent 10deg 20deg)}
+.catering-band h2{font:600 44px var(--head);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;position:relative;z-index:2}
+.catering-band p{font:400 17px/1.65 var(--body);max-width:600px;margin:0 auto 32px;color:var(--lph-cream);position:relative;z-index:2}
+.catering-band .btn{position:relative;z-index:2}
+/* footer */
+.site-footer{background:var(--lph-red-dark);color:var(--lph-cream);padding:56px 56px 0;border-top:4px solid var(--lph-yellow)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-bottom:44px}
+.site-footer h4{font:600 18px var(--head);text-transform:uppercase;letter-spacing:.06em;color:var(--lph-yellow);margin-bottom:14px}
+.site-footer p,.site-footer address{font:400 14px/1.8 var(--body);color:var(--lph-cream);font-style:normal}
+.site-footer a{color:var(--lph-yellow);text-decoration:none}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.foot-bottom{border-top:1px solid rgba(255,246,229,.2);padding:20px 0;text-align:center}
+.foot-bottom .sample-note{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--lph-yellow);margin-bottom:8px}
+.foot-bottom .prov{font:400 12px var(--body);color:rgba(255,246,229,.75)}
+@media (prefers-reduced-motion:reduce){.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="sample-ribbon"><b>SAMPLE</b> — fictional client demo (Los Pollos Hermanos), not a real business.</div>
+<div class="caption-bar">
+  <span class="board-tag">Board 1 · Home — Desktop</span>
+  <span>1280px concept of the Home page: sticky header, sunburst hero, value trio, menu + locations teasers, catering band, footer.</span>
+  <span class="mock-note">concept mock — not the final build</span>
+</div>
+
+<div class="stage">
+<div class="canvas">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Los Pollos Hermanos home">
+      <svg width="52" height="52" viewBox="0 0 100 100" role="img" aria-label="Los Pollos Hermanos chicken badge">
+        <circle cx="50" cy="50" r="47" fill="#FFC72C"/>
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#7E0C20" stroke-width="5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#B3122E" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <!-- tail feathers -->
+        <path d="M30 62 L14 52 L20 66 L12 68 L24 76 Z" fill="#B3122E"/>
+        <!-- body -->
+        <ellipse cx="50" cy="62" rx="19" ry="15" fill="#B3122E"/>
+        <!-- wing -->
+        <path d="M42 58 q10 -6 18 2 q-8 8 -18 -2" fill="#7E0C20"/>
+        <!-- neck/head -->
+        <circle cx="66" cy="42" r="11" fill="#B3122E"/>
+        <!-- comb -->
+        <circle cx="60" cy="30" r="4.5" fill="#E87722"/>
+        <circle cx="66" cy="27" r="4.5" fill="#E87722"/>
+        <circle cx="72" cy="30" r="4.5" fill="#E87722"/>
+        <!-- beak -->
+        <path d="M76 40 L87 44 L76 49 Z" fill="#E87722"/>
+        <!-- eye -->
+        <circle cx="68" cy="41" r="2.4" fill="#FFF6E5"/>
+        <circle cx="68.6" cy="41" r="1.2" fill="#4A2C1A"/>
+        <!-- legs -->
+        <path d="M44 76 v8 M56 76 v8" stroke="#E87722" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Los Pollos Hermanos<small>Fried Chicken</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#" aria-current="page">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Locations</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a class="btn btn-yellow btn-sm" href="#">Order Catering</a>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Family-owned · New Mexico</span>
+      <h1>It&rsquo;s the chicken, man.</h1>
+      <p class="lede">Crispy, golden, famous &mdash; and the curly fries people write home about. Dine in, carry out, or let us feed your whole crew.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-yellow" href="#">Get a Catering Quote</a>
+        <a class="btn btn-ghost" href="#">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <!-- ============ VALUE TRIO ============ -->
+  <section class="section">
+    <h2>Three reasons folks keep coming back</h2>
+    <p class="sub">The brothers built the place on a simple idea: treat every guest like family, and never serve chicken you wouldn&rsquo;t serve at home.</p>
+    <div class="trio">
+      <article class="card">
+        <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><path d="M32 14c6 8 10 12 10 19a10 10 0 0 1-20 0c0-7 4-11 10-19z" fill="#E87722"/><path d="M32 24c3.4 4.6 5.6 7 5.6 10.6a5.6 5.6 0 0 1-11.2 0C26.4 31 28.6 28.6 32 24z" fill="#FFC72C"/></svg>
+        <h3>Family Recipe</h3>
+        <p>A closely guarded blend of herbs and spices, hand-breaded fresh every morning. The same recipe since day one &mdash; no shortcuts, ever.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><path d="M20 40l4-18 8 10 8-10 4 18z" fill="#FFC72C" stroke="#B3122E" stroke-width="2" stroke-linejoin="round"/><path d="M18 46h28" stroke="#B3122E" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Immaculate Dining Rooms</h3>
+        <p>Spotless tables, courteous staff, and a dining room we&rsquo;re proud of. Sit down, slow down, and stay a while.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><ellipse cx="32" cy="34" rx="14" ry="10" fill="#FFC72C" stroke="#B3122E" stroke-width="2"/><path d="M24 30a8 8 0 0 1 16 0" fill="none" stroke="#B3122E" stroke-width="2.5" stroke-linecap="round"/><path d="M32 24v-6" stroke="#E87722" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Catering That Shows Up</h3>
+        <p>Office lunches, family gatherings, full-blown fiestas. Hot, on time, and gone before you know it &mdash; in the best way.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED MENU TEASER ============ -->
+  <section class="section menu-teaser">
+    <h2>Crowd favorites</h2>
+    <p class="sub">A taste of the menu &mdash; the full spread has plenty more where this came from.</p>
+    <div class="dish-grid">
+      <article class="dish">
+        <span class="price">$14.99</span>
+        <h3>8 pc. Famous Recipe</h3>
+        <p>The legend itself. Eight pieces of our hand-breaded, pressure-fried chicken, seasoned with the brothers&rsquo; secret blend.</p>
+      </article>
+      <article class="dish">
+        <span class="price">$3.99</span>
+        <h3>Curly Fries</h3>
+        <p>The ones people write home about. Golden spirals, seasoned hot, impossible to stop eating.</p>
+      </article>
+      <article class="dish">
+        <span class="price">$2.99</span>
+        <h3>Horchata</h3>
+        <p>Creamy, cinnamon-kissed, ice cold. The perfect cool-down for that crispy crunch.</p>
+      </article>
+    </div>
+    <div class="center"><a class="btn btn-red" href="#">View the Full Menu</a></div>
+  </section>
+
+  <div class="stripes thin" aria-hidden="true"></div>
+
+  <!-- ============ LOCATIONS TEASER ============ -->
+  <section class="section">
+    <h2>Find your flock</h2>
+    <p class="sub">Three dining rooms and counting &mdash; each one held to the brothers&rsquo; spotless standard.</p>
+    <div class="loc-grid">
+      <article class="loc-card">
+        <h3>Albuquerque, NM</h3>
+        <span class="flag">Flagship</span>
+        <address>1200 Central Ave NW<br>Albuquerque, NM 87102</address>
+        <p class="hours">Mon&ndash;Sun · 10am&ndash;10pm</p>
+        <a class="dir" href="#">Get directions &rarr;</a>
+      </article>
+      <article class="loc-card">
+        <h3>Santa Fe, NM</h3>
+        <span class="flag">Dine-in</span>
+        <address>425 Old Santa Fe Trl<br>Santa Fe, NM 87501</address>
+        <p class="hours">Mon&ndash;Sun · 10am&ndash;10pm</p>
+        <a class="dir" href="#">Get directions &rarr;</a>
+      </article>
+      <article class="loc-card">
+        <h3>El Paso, TX</h3>
+        <span class="flag">Dine-in</span>
+        <address>8800 Gateway Blvd W<br>El Paso, TX 79925</address>
+        <p class="hours">Mon&ndash;Sun · 10am&ndash;10pm</p>
+        <a class="dir" href="#">Get directions &rarr;</a>
+      </article>
+    </div>
+    <p class="coming-soon">&#9733; New location coming soon: Tucson, AZ &#9733;</p>
+  </section>
+
+  <!-- ============ CATERING CTA BAND ============ -->
+  <section class="catering-band">
+    <h2>Feed the whole crew.</h2>
+    <p>Tell us the date, the headcount, and how hungry everybody is. We&rsquo;ll bring the chicken &mdash; hot, on time, and plenty of it.</p>
+    <a class="btn btn-yellow" href="#">Request a Catering Quote</a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="47" fill="#FFC72C"/><circle cx="50" cy="50" r="47" fill="none" stroke="#FFF6E5" stroke-width="5"/>
+            <ellipse cx="50" cy="62" rx="19" ry="15" fill="#B3122E"/><circle cx="66" cy="42" r="11" fill="#B3122E"/>
+            <path d="M76 40 L87 44 L76 49 Z" fill="#E87722"/>
+          </svg>
+          <h4 style="margin:0">Los Pollos Hermanos</h4>
+        </div>
+        <p>Family-owned fried chicken, served with pride.<br>Catering &amp; franchise inquiries welcome.</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon&ndash;Sun · 10am&ndash;10pm<br>All locations, every day.</p>
+      </div>
+      <div>
+        <h4>Locations</h4>
+        <address>Albuquerque, NM &middot; Santa Fe, NM<br>El Paso, TX &middot; <em>Coming: Tucson, AZ</em><br><a href="#">hello@example.com</a></address>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="sample-note">SAMPLE &mdash; fictional client demo, not a real business</p>
+      <p class="prov">&copy; 2026 Keith Soyka / GestaltView &middot; SAMPLE</p>
+    </div>
+  </footer>
+
+</div><!-- /canvas -->
+</div><!-- /stage -->
+
+</body>
+</html>

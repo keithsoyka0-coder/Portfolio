@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAMPLE · Board 2 — Mobile Home + Menu Page — Concept Mock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lph-red:#B3122E;
+  --lph-yellow:#FFC72C;
+  --lph-cream:#FFF6E5;
+  --lph-brown:#4A2C1A;
+  --lph-orange:#E87722;
+  --lph-red-dark:#7E0C20;
+  --lph-white:#FFFFFF;
+  --head:'Oswald','Arial Narrow',sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --script:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#e9dcc8}
+.sample-ribbon{position:fixed;top:0;left:0;right:0;z-index:9999;background:#111;color:#fff;
+  font:600 13px/1 var(--body);letter-spacing:.06em;text-align:center;padding:11px 16px;text-transform:uppercase}
+.sample-ribbon b{color:var(--lph-yellow)}
+.caption-bar{position:fixed;top:36px;left:0;right:0;z-index:9998;background:#fff;border-bottom:1px solid rgba(74,44,26,.15);
+  font:400 13px/1.5 var(--body);color:var(--lph-brown);padding:10px 20px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+.caption-bar .board-tag{font:700 12px var(--head);letter-spacing:.08em;background:var(--lph-red);color:var(--lph-cream);
+  padding:4px 12px;border-radius:999px;text-transform:uppercase}
+.caption-bar .mock-note{font:600 12px var(--body);color:var(--lph-orange);letter-spacing:.04em}
+/* ---- stage: two canvases side by side ---- */
+.stage{padding:130px 24px 48px;display:flex;gap:40px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.panel{display:flex;flex-direction:column;align-items:center;gap:14px}
+.panel-label{font:700 14px var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--lph-brown);
+  background:#fff;border:1px solid rgba(74,44,26,.15);border-radius:999px;padding:8px 22px;box-shadow:0 3px 10px rgba(74,44,26,.1)}
+.canvas{background:var(--lph-cream);border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(74,44,26,.28),0 4px 16px rgba(74,44,26,.18);border:1px solid rgba(74,44,26,.14)}
+.canvas.mobile{width:390px}
+.canvas.desktop{width:1100px;max-width:100%}
+.btn{display:inline-block;font:600 16px var(--body);letter-spacing:.02em;text-decoration:none;border-radius:999px;
+  padding:14px 28px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.btn-yellow{background:var(--lph-yellow);color:var(--lph-red-dark)}
+.btn-ghost{background:transparent;color:var(--lph-cream);border-color:var(--lph-cream)}
+.stripes{height:14px;background:repeating-linear-gradient(-45deg,var(--lph-yellow) 0 22px,var(--lph-orange) 22px 44px)}
+.stripes.thin{height:8px}
+/* ================= MOBILE HOME ================= */
+.m-header{background:var(--lph-red);display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:3px solid var(--lph-yellow)}
+.m-brand{font:600 17px var(--head);color:var(--lph-cream);letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.m-brand small{display:block;font:600 9px var(--body);letter-spacing:.28em;color:var(--lph-yellow)}
+.m-burger{margin-left:auto;display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.m-burger span{display:block;width:26px;height:3px;background:var(--lph-cream);border-radius:2px}
+.m-hero{position:relative;background:var(--lph-red);color:var(--lph-cream);text-align:center;padding:52px 24px 60px;overflow:hidden}
+.m-hero::before{content:"";position:absolute;inset:0;
+  background:repeating-conic-gradient(from -8deg at 50% 120%, #B3122E 0deg 12deg, #C22440 12deg 24deg)}
+.m-hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 75% 60% at 50% 44%, rgba(179,18,46,0) 30%, rgba(126,12,32,.6) 100%)}
+.m-hero-inner{position:relative;z-index:2}
+.m-hero .pill{display:inline-block;background:var(--lph-yellow);color:var(--lph-red-dark);font:700 11px var(--head);
+  letter-spacing:.18em;text-transform:uppercase;padding:8px 18px;border-radius:999px;margin-bottom:20px}
+.m-hero h1{font:700 52px/1.05 var(--script);color:var(--lph-cream);text-shadow:0 3px 0 rgba(126,12,32,.6);margin-bottom:14px}
+.m-hero p{font:400 15px/1.6 var(--body);margin-bottom:28px}
+.m-hero .btn{display:block;margin:0 8px 12px;font-size:15px;padding:13px 20px}
+.m-sec{padding:40px 20px}
+.m-sec h2{font:600 26px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em;text-align:center;margin-bottom:8px}
+.m-sec .sub{font:400 14px/1.6 var(--body);color:var(--lph-brown);text-align:center;margin-bottom:28px}
+.m-card{background:var(--lph-white);border:1px solid rgba(74,44,26,.12);border-radius:12px;padding:26px 22px;
+  box-shadow:0 6px 18px rgba(74,44,26,.08);text-align:center;margin-bottom:18px}
+.m-card .icon{width:52px;height:52px;margin:0 auto 12px;display:block}
+.m-card h3{font:600 19px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
+.m-card p{font:400 14px/1.65 var(--body);color:var(--lph-brown)}
+.m-band{background:var(--lph-red-dark);color:var(--lph-cream);text-align:center;padding:44px 24px}
+.m-band h2{font:600 28px var(--head);text-transform:uppercase;margin-bottom:10px}
+.m-band p{font:400 14px/1.65 var(--body);margin-bottom:24px}
+.m-band .btn{display:block;margin:0 8px}
+.m-foot{background:var(--lph-red-dark);color:var(--lph-cream);padding:32px 24px 0;border-top:3px solid var(--lph-yellow);text-align:center}
+.m-foot .sample-note{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--lph-yellow);margin-bottom:8px}
+.m-foot .prov{font:400 11px var(--body);color:rgba(255,246,229,.75);padding-bottom:18px}
+/* ================= DESKTOP MENU PAGE ================= */
+.d-header{position:sticky;top:0;z-index:50;background:var(--lph-red);display:flex;align-items:center;gap:16px;
+  padding:12px 40px;border-bottom:4px solid var(--lph-yellow)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-name{font:600 24px var(--head);color:var(--lph-cream);letter-spacing:.04em;text-transform:uppercase;line-height:1.05}
+.brand-name small{display:block;font:600 11px var(--body);letter-spacing:.32em;color:var(--lph-yellow)}
+.nav{margin-left:auto;display:flex;gap:6px}
+.nav a{font:500 15px var(--body);color:var(--lph-cream);text-decoration:none;padding:10px 16px;border-radius:999px}
+.nav a:hover{background:rgba(255,246,229,.16)}
+.nav a[aria-current]{background:rgba(255,246,229,.22)}
+.btn-sm{padding:10px 22px;font-size:14px}
+.page-hero{background:var(--lph-red);color:var(--lph-cream);text-align:center;padding:56px 40px 64px;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;
+  background:repeating-conic-gradient(from -8deg at 50% 125%, #B3122E 0deg 9deg, #C22440 9deg 18deg);opacity:.85}
+.page-hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 65% at 50% 46%, rgba(179,18,46,0) 30%, rgba(126,12,32,.55) 100%)}
+.page-hero h1{position:relative;z-index:2;font:600 54px var(--head);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.page-hero p{position:relative;z-index:2;font:600 22px var(--script);color:var(--lph-yellow)}
+.menu-sec{padding:56px 64px 8px}
+.cat-head{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+.cat-head h2{font:600 32px var(--head);color:var(--lph-red);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.cat-head .rule{flex:1;height:10px;border-radius:999px;
+  background:repeating-linear-gradient(-45deg,var(--lph-yellow) 0 16px,var(--lph-orange) 16px 32px)}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:48px}
+.item{background:var(--lph-white);border:1px solid rgba(74,44,26,.12);border-radius:12px;padding:24px 26px;
+  box-shadow:0 6px 18px rgba(74,44,26,.08);display:flex;gap:18px;align-items:flex-start;transition:transform .15s ease}
+.item:hover{transform:translateY(-3px)}
+.item .dot{flex:none;width:54px;height:54px;border-radius:50%;background:var(--lph-cream);border:2px solid var(--lph-orange);
+  display:flex;align-items:center;justify-content:center;font:700 20px var(--script);color:var(--lph-red)}
+.item-body{flex:1}
+.item-row{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.item-row h3{font:600 20px var(--head);color:var(--lph-brown);text-transform:uppercase;letter-spacing:.02em}
+.item-row .leader{flex:1;border-bottom:2px dotted rgba(74,44,26,.35);transform:translateY(-4px)}
+.item-row .price{font:700 19px var(--head);color:var(--lph-red);white-space:nowrap}
+.item p.desc{font:400 14px/1.6 var(--body);color:var(--lph-brown)}
+.allergen{margin:8px 64px 56px;background:var(--lph-white);border:2px dashed var(--lph-orange);border-radius:12px;
+  padding:28px 32px;display:flex;gap:18px;align-items:flex-start}
+.allergen .warn{flex:none;width:46px;height:46px;border-radius:50%;background:var(--lph-yellow);color:var(--lph-red-dark);
+  font:700 24px var(--head);display:flex;align-items:center;justify-content:center}
+.allergen h3{font:600 18px var(--head);color:var(--lph-red-dark);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.allergen p{font:400 14px/1.65 var(--body);color:var(--lph-brown)}
+.d-foot{background:var(--lph-red-dark);color:var(--lph-cream);padding:36px 64px 0;border-top:4px solid var(--lph-yellow)}
+.d-foot .row{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:28px}
+.d-foot h4{font:600 17px var(--head);text-transform:uppercase;letter-spacing:.06em;color:var(--lph-yellow);margin-bottom:10px}
+.d-foot p{font:400 14px/1.8 var(--body)}
+.d-foot .bottom{border-top:1px solid rgba(255,246,229,.2);padding:18px 0;text-align:center}
+.d-foot .sample-note{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--lph-yellow);margin-bottom:8px}
+.d-foot .prov{font:400 12px var(--body);color:rgba(255,246,229,.75)}
+@media (prefers-reduced-motion:reduce){.btn,.item{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="sample-ribbon"><b>SAMPLE</b> — fictional client demo (Los Pollos Hermanos), not a real business.</div>
+<div class="caption-bar">
+  <span class="board-tag">Board 2 · Mobile Home + Menu Page</span>
+  <span>390px Home hero + value props &amp; 1100px Menu page: categories, menu cards with fictional items &amp; prices, allergen note.</span>
+  <span class="mock-note">concept mock — not the final build</span>
+</div>
+
+<div class="stage">
+
+  <!-- ============ PANEL A: MOBILE HOME ============ -->
+  <div class="panel">
+    <span class="panel-label">Panel A · Home — Mobile 390px</span>
+    <div class="canvas mobile">
+      <header class="m-header">
+        <svg width="40" height="40" viewBox="0 0 100 100" role="img" aria-label="Los Pollos Hermanos chicken badge">
+          <circle cx="50" cy="50" r="47" fill="#FFC72C"/>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#7E0C20" stroke-width="5"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#B3122E" stroke-width="2.5" stroke-dasharray="6 5"/>
+          <path d="M30 62 L14 52 L20 66 L12 68 L24 76 Z" fill="#B3122E"/>
+          <ellipse cx="50" cy="62" rx="19" ry="15" fill="#B3122E"/>
+          <path d="M42 58 q10 -6 18 2 q-8 8 -18 -2" fill="#7E0C20"/>
+          <circle cx="66" cy="42" r="11" fill="#B3122E"/>
+          <circle cx="60" cy="30" r="4.5" fill="#E87722"/><circle cx="66" cy="27" r="4.5" fill="#E87722"/><circle cx="72" cy="30" r="4.5" fill="#E87722"/>
+          <path d="M76 40 L87 44 L76 49 Z" fill="#E87722"/>
+          <circle cx="68" cy="41" r="2.4" fill="#FFF6E5"/><circle cx="68.6" cy="41" r="1.2" fill="#4A2C1A"/>
+          <path d="M44 76 v8 M56 76 v8" stroke="#E87722" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <span class="m-brand">Los Pollos Hermanos<small>Fried Chicken</small></span>
+        <button class="m-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </header>
+
+      <section class="m-hero">
+        <div class="m-hero-inner">
+          <span class="pill">Family-owned · New Mexico</span>
+          <h1>It&rsquo;s the chicken, man.</h1>
+          <p>Crispy, golden, famous &mdash; and the curly fries people write home about.</p>
+          <a class="btn btn-yellow" href="#">Get a Catering Quote</a>
+          <a class="btn btn-ghost" href="#">See the Menu</a>
+        </div>
+      </section>
+
+      <div class="stripes" aria-hidden="true"></div>
+
+      <section class="m-sec">
+        <h2>Why folks come back</h2>
+        <p class="sub">Three promises, kept daily.</p>
+        <article class="m-card">
+          <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><path d="M32 14c6 8 10 12 10 19a10 10 0 0 1-20 0c0-7 4-11 10-19z" fill="#E87722"/><path d="M32 24c3.4 4.6 5.6 7 5.6 10.6a5.6 5.6 0 0 1-11.2 0C26.4 31 28.6 28.6 32 24z" fill="#FFC72C"/></svg>
+          <h3>Family Recipe</h3>
+          <p>Hand-breaded fresh every morning, seasoned with the brothers&rsquo; secret blend. The same recipe since day one.</p>
+        </article>
+        <article class="m-card">
+          <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><path d="M20 40l4-18 8 10 8-10 4 18z" fill="#FFC72C" stroke="#B3122E" stroke-width="2" stroke-linejoin="round"/><path d="M18 46h28" stroke="#B3122E" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Immaculate Dining Rooms</h3>
+          <p>Spotless tables, courteous staff, and a dining room we&rsquo;re proud of. Sit down and stay a while.</p>
+        </article>
+        <article class="m-card">
+          <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFF6E5" stroke="#B3122E" stroke-width="3"/><ellipse cx="32" cy="34" rx="14" ry="10" fill="#FFC72C" stroke="#B3122E" stroke-width="2"/><path d="M24 30a8 8 0 0 1 16 0" fill="none" stroke="#B3122E" stroke-width="2.5" stroke-linecap="round"/><path d="M32 24v-6" stroke="#E87722" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <h3>Catering That Shows Up</h3>
+          <p>Office lunches, family gatherings, full-blown fiestas. Hot, on time, and plenty of it.</p>
+        </article>
+      </section>
+
+      <section class="m-band">
+        <h2>Feed the whole crew.</h2>
+        <p>Tell us the date and the headcount. We&rsquo;ll bring the chicken.</p>
+        <a class="btn btn-yellow" href="#">Request a Catering Quote</a>
+      </section>
+
+      <footer class="m-foot">
+        <p class="sample-note">SAMPLE &mdash; fictional demo, not a real business</p>
+        <p class="prov">&copy; 2026 Keith Soyka / GestaltView &middot; SAMPLE</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ PANEL B: MENU PAGE (DESKTOP) ============ -->
+  <div class="panel">
+    <span class="panel-label">Panel B · Menu Page — Desktop</span>
+    <div class="canvas desktop">
+      <header class="d-header">
+        <a class="brand" href="#" aria-label="Los Pollos Hermanos home">
+          <svg width="52" height="52" viewBox="0 0 100 100" role="img" aria-label="Los Pollos Hermanos chicken badge">
+            <circle cx="50" cy="50" r="47" fill="#FFC72C"/>
+            <circle cx="50" cy="50" r="47" fill="none" stroke="#7E0C20" stroke-width="5"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#B3122E" stroke-width="2.5" stroke-dasharray="6 5"/>
+            <path d="M30 62 L14 52 L20 66 L12 68 L24 76 Z" fill="#B3122E"/>
+            <ellipse cx="50" cy="62" rx="19" ry="15" fill="#B3122E"/>
+            <path d="M42 58 q10 -6 18 2 q-8 8 -18 -2" fill="#7E0C20"/>
+            <circle cx="66" cy="42" r="11" fill="#B3122E"/>
+            <circle cx="60" cy="30" r="4.5" fill="#E87722"/><circle cx="66" cy="27" r="4.5" fill="#E87722"/><circle cx="72" cy="30" r="4.5" fill="#E87722"/>
+            <path d="M76 40 L87 44 L76 49 Z" fill="#E87722"/>
+            <circle cx="68" cy="41" r="2.4" fill="#FFF6E5"/><circle cx="68.6" cy="41" r="1.2" fill="#4A2C1A"/>
+            <path d="M44 76 v8 M56 76 v8" stroke="#E87722" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">Los Pollos Hermanos<small>Fried Chicken</small></span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#">Home</a>
+          <a href="#" aria-current="page">Menu</a>
+          <a href="#">Locations</a>
+          <a href="#">Contact</a>
+        </nav>
+        <a class="btn btn-yellow btn-sm" href="#">Order Catering</a>
+      </header>
+
+      <section class="page-hero">
+        <h1>The Menu</h1>
+        <p>all prices fictional &middot; all chicken real crispy</p>
+      </section>
+
+      <div class="stripes" aria-hidden="true"></div>
+
+      <!-- CHICKEN -->
+      <section class="menu-sec" aria-labelledby="cat-chicken">
+        <div class="cat-head"><h2 id="cat-chicken">Chicken</h2><span class="rule" aria-hidden="true"></span></div>
+        <div class="items">
+          <article class="item">
+            <span class="dot" aria-hidden="true">8</span>
+            <div class="item-body">
+              <div class="item-row"><h3>8 pc. Famous Recipe</h3><span class="leader"></span><span class="price">$14.99</span></div>
+              <p class="desc">The legend itself. Eight pieces of hand-breaded, pressure-fried chicken in the brothers&rsquo; secret blend of herbs and spices.</p>
+            </div>
+          </article>
+          <article class="item">
+            <span class="dot" aria-hidden="true">T</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Tenders</h3><span class="leader"></span><span class="price">$9.99</span></div>
+              <p class="desc">Five all-white-meat tenders, breaded fresh each morning and fried golden. Dipping sauce of your choice.</p>
+            </div>
+          </article>
+          <article class="item">
+            <span class="dot" aria-hidden="true">S</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Sandwich</h3><span class="leader"></span><span class="price">$8.49</span></div>
+              <p class="desc">A crispy fillet on a toasted bun with pickles, slaw, and our house sauce. Simple. Perfect.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SIDES -->
+      <section class="menu-sec" aria-labelledby="cat-sides">
+        <div class="cat-head"><h2 id="cat-sides">Sides</h2><span class="rule" aria-hidden="true"></span></div>
+        <div class="items">
+          <article class="item">
+            <span class="dot" aria-hidden="true">C</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Curly Fries</h3><span class="leader"></span><span class="price">$3.99</span></div>
+              <p class="desc">The famous spirals. Golden, seasoned, and gone before you know it.</p>
+            </div>
+          </article>
+          <article class="item">
+            <span class="dot" aria-hidden="true">S</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Slaw</h3><span class="leader"></span><span class="price">$2.99</span></div>
+              <p class="desc">Cool, creamy, and cut fresh daily. The crunch that cools the crunch.</p>
+            </div>
+          </article>
+          <article class="item">
+            <span class="dot" aria-hidden="true">C</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Corn</h3><span class="leader"></span><span class="price">$2.49</span></div>
+              <p class="desc">Buttered sweet corn on the cob, served hot. A classic for a reason.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DRINKS & DESSERTS -->
+      <section class="menu-sec" aria-labelledby="cat-drinks">
+        <div class="cat-head"><h2 id="cat-drinks">Drinks &amp; Desserts</h2><span class="rule" aria-hidden="true"></span></div>
+        <div class="items">
+          <article class="item">
+            <span class="dot" aria-hidden="true">H</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Horchata</h3><span class="leader"></span><span class="price">$2.99</span></div>
+              <p class="desc">Creamy, cinnamon-kissed, ice cold. The perfect cool-down for that crispy crunch.</p>
+            </div>
+          </article>
+          <article class="item">
+            <span class="dot" aria-hidden="true">F</span>
+            <div class="item-body">
+              <div class="item-row"><h3>Flan</h3><span class="leader"></span><span class="price">$4.49</span></div>
+              <p class="desc">Silky caramel custard, made in-house. Save room &mdash; trust us.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ALLERGEN NOTE -->
+      <aside class="allergen" aria-label="Allergen note">
+        <span class="warn" aria-hidden="true">!</span>
+        <div>
+          <h3>Allergen Note</h3>
+          <p>Our kitchen handles wheat, egg, dairy, soy, and sesame. Items are prepared in a shared fryer, so cross-contact is possible. Please tell our staff about any allergies before ordering &mdash; we&rsquo;ll walk you through what works for you. <em>(Fictional menu; prices and items are invented for this sample.)</em></p>
+        </div>
+      </aside>
+
+      <footer class="d-foot">
+        <div class="row">
+          <div><h4>Hours</h4><p>Mon&ndash;Sun · 10am&ndash;10pm, all locations.</p></div>
+          <div><h4>Catering</h4><p>Feed the whole crew &mdash; request a quote on the Contact page.</p></div>
+        </div>
+        <div class="bottom">
+          <p class="sample-note">SAMPLE &mdash; fictional client demo, not a real business</p>
+          <p class="prov">&copy; 2026 Keith Soyka / GestaltView &middot; SAMPLE</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</div><!-- /stage -->
+
+</body>
+</html>

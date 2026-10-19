@@ -1,0 +1,68 @@
+/* Web Discovery sample only; native scrolling is the no-script fallback. */
+#web-deliverables-sample .artifact-carousel {
+  min-width: 0;
+  margin: 26px 0;
+  padding: 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .025);
+}
+#web-deliverables-sample .artifact-carousel h4 { font-size: 1rem; margin-bottom: 8px; }
+#web-deliverables-sample .artifact-track {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--teal) var(--bg2);
+  padding-bottom: 12px;
+  border-radius: 8px;
+}
+#web-deliverables-sample .artifact-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+#web-deliverables-sample .artifact-slide h5 { font-size: 1.05rem; color: var(--ink); margin: 0 0 12px; }
+#web-deliverables-sample .artifact-preview {
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: #fff;
+}
+#web-deliverables-sample .artifact-preview iframe {
+  display: block;
+  width: 100%;
+  height: 460px;
+  border: 0;
+  /* Keep a swipe over the preview on the native parent scroller. */
+  pointer-events: none;
+}
+#web-deliverables-sample .artifact-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 14px 0 4px; }
+#web-deliverables-sample .artifact-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+#web-deliverables-sample .artifact-controls[hidden] { display: none; }
+#web-deliverables-sample .artifact-controls button {
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--teal);
+  background: var(--bg2);
+  border: 1px solid var(--glass-border);
+  border-radius: 7px;
+  padding: 10px 14px;
+  cursor: pointer;
+  min-height: 44px;
+}
+#web-deliverables-sample .artifact-controls button:disabled { opacity: .45; cursor: default; }
+#web-deliverables-sample .artifact-status { color: var(--muted); font-size: .85rem; flex: 1 1 150px; text-align: center; }
+#web-deliverables-sample .artifact-carousel :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+@media (max-width: 600px) {
+  #web-deliverables-sample .artifact-carousel { padding: 12px; }
+  #web-deliverables-sample .artifact-preview iframe { height: 360px; }
+  #web-deliverables-sample .artifact-status { flex-basis: 100%; order: 3; }
+  #web-deliverables-sample .artifact-controls { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #web-deliverables-sample .artifact-track { scroll-behavior: auto; }
+}
