@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implementation Spec — Los Pollos Hermanos 4-Page Site (SAMPLE)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lph-red:#B3122E;
+    --lph-yellow:#FFC72C;
+    --lph-cream:#FFF6E5;
+    --lph-brown:#4A2C1A;
+    --lph-orange:#E87722;
+    --lph-red-dark:#7E0C20;
+    --white:#FFFFFF;
+    --card-border:1px solid rgba(74,44,26,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--lph-cream);
+    color:var(--lph-brown);
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+    font-size:15px;line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald','Arial Narrow',sans-serif;
+    font-weight:700;line-height:1.25;
+    color:var(--lph-red);
+  }
+  h1{font-size:30px;}
+  h2{font-size:22px;margin:0 0 10px;}
+  h3{font-size:16px;margin:14px 0 6px;}
+  .accent{font-family:'Caveat',cursive;font-weight:600;}
+
+  /* ---------- SAMPLE banner (top, fixed in screen) ---------- */
+  .sample-ribbon{
+    background:var(--lph-brown);
+    color:var(--lph-yellow);
+    text-align:center;
+    font-family:'Oswald','Arial Narrow',sans-serif;
+    font-weight:700;letter-spacing:2px;font-size:14px;
+    padding:10px 16px;
+  }
+  .sample-ribbon .dot{color:var(--lph-red);}
+  @media print{ .sample-ribbon{position:static;} }
+
+  /* ---------- Document shell ---------- */
+  .doc{max-width:900px;margin:0 auto;padding:32px 24px 64px;}
+
+  .cover{
+    background:var(--lph-red);
+    color:var(--lph-cream);
+    border-radius:12px;
+    padding:48px 40px;
+    margin:24px 0 32px;
+    position:relative;overflow:hidden;
+  }
+  .cover::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(115deg,transparent 0 34px,rgba(255,199,44,.08) 34px 52px);
+  }
+  .cover > *{position:relative;}
+  .cover h1{color:var(--white);font-size:34px;margin:8px 0 6px;}
+  .cover .tagline{font-family:'Caveat',cursive;font-size:22px;color:var(--lph-yellow);}
+  .cover .meta{margin-top:18px;font-size:13px;color:var(--lph-cream);}
+  .cover .meta strong{color:var(--lph-yellow);}
+  .cover .badge{
+    display:inline-block;background:var(--lph-yellow);color:var(--lph-brown);
+    font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:1.5px;padding:6px 14px;border-radius:999px;margin-bottom:14px;
+  }
+
+  section{
+    background:var(--white);
+    border:var(--card-border);
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(74,44,26,.06);
+    padding:28px 32px;
+    margin:0 0 24px;
+  }
+  section.stripe{background:
+    repeating-linear-gradient(-45deg,#fff 0 26px,#FFFCF2 26px 52px);}
+  p{margin:0 0 10px;}
+  ul,ol{margin:6px 0 12px 22px;}
+  li{margin:4px 0;}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px;background:#F6EEDF;border-radius:4px;padding:1px 6px;
+  }
+  .note{
+    border-left:4px solid var(--lph-orange);
+    background:#FFF9EE;padding:12px 16px;border-radius:0 8px 8px 0;
+    margin:12px 0;
+  }
+  .note strong{color:var(--lph-red);}
+
+  /* ---------- Tables ---------- */
+  table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px;}
+  thead th{
+    background:var(--lph-red);color:var(--white);
+    font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;
+    text-align:left;padding:10px 12px;font-size:14px;letter-spacing:.4px;
+  }
+  tbody td{padding:10px 12px;border-bottom:1px solid rgba(74,44,26,.12);vertical-align:top;}
+  tbody tr:nth-child(even) td{background:#FFFDF7;}
+  td.nowrap{white-space:nowrap;}
+  .pill{
+    display:inline-block;font-family:'Oswald','Arial Narrow',sans-serif;
+    font-weight:700;font-size:12px;letter-spacing:1px;
+    background:var(--lph-yellow);color:var(--lph-brown);
+    border-radius:999px;padding:3px 12px;
+  }
+  .pill.grey{background:#EFE6D6;}
+
+  /* ---------- Phase cards ---------- */
+  .phase{
+    border:var(--card-border);border-radius:12px;margin:0 0 16px;overflow:hidden;
+  }
+  .phase-head{
+    background:var(--lph-brown);color:var(--lph-cream);
+    padding:12px 18px;
+    font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:16px;
+  }
+  .phase-head .n{color:var(--lph-yellow);}
+  .phase-body{padding:14px 18px;}
+
+  .divider{
+    border:0;border-top:3px solid var(--lph-orange);
+    margin:20px 0;
+  }
+
+  .checklist{list-style:none;margin-left:0;}
+  .checklist li{position:relative;padding-left:32px;margin:8px 0;}
+  .checklist li::before{
+    content:"☐";position:absolute;left:4px;top:0;
+    font-size:18px;color:var(--lph-red);font-weight:700;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--lph-red-dark);color:var(--lph-cream);
+    border-radius:12px;padding:28px 32px;margin-top:8px;
+    font-size:13px;
+  }
+  footer .sample-line{
+    font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;
+    letter-spacing:1.5px;color:var(--lph-yellow);font-size:14px;margin-bottom:8px;
+  }
+  footer a{color:var(--lph-yellow);}
+
+  /* ---------- Print ---------- */
+  @page{size:letter;margin:2cm;}
+  @media print{
+    body{font-size:11pt;background:#fff;}
+    .doc{max-width:none;padding:0;}
+    .cover{break-inside:avoid;}
+    section{break-inside:avoid;box-shadow:none;margin-bottom:14pt;padding:18pt 20pt;}
+    footer{break-inside:avoid;}
+    table{font-size:10pt;}
+    thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .cover,.cover::before{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .sample-ribbon{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    h2{page-break-after:avoid;}
+    .phase{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-ribbon" role="banner">
+  <span class="dot">●</span>&nbsp; SAMPLE — FICTIONAL CLIENT, ILLUSTRATIVE ONLY — LOS POLLOS HERMANOS IS FICTIONAL &nbsp;<span class="dot">●</span>
+</div>
+
+<div class="doc">
+
+  <!-- ============ COVER ============ -->
+  <header class="cover">
+    <span class="badge">PHASE 2a DELIVERABLE · SAMPLE</span>
+    <h1>Implementation Spec</h1>
+    <p class="tagline">"It's the chicken, man." — tagline invented for this sample</p>
+    <p class="meta">
+      Fictional client: <strong>Los Pollos Hermanos</strong> (fictional fried-chicken chain, as seen on TV)<br>
+      Scope: <strong>4-page marketing site</strong> — Home · Menu · Locations · Contact<br>
+      Prepared: October 2026 · Spec version 1.0 · Built from the fictional client brief only
+    </p>
+  </header>
+
+  <!-- ============ 1. SCOPE SUMMARY ============ -->
+  <section>
+    <h2>1 · Scope Summary</h2>
+    <p>This spec describes the Phase-2a implementation plan for a <strong>4-page static marketing site</strong> for the fictional Los Pollos Hermanos franchise group. The site supports the two fictional engagement goals: driving <strong>catering quote requests</strong> and <strong>franchise inquiries</strong>, while letting a non-technical manager update menu items and locations without rebuilding the site.</p>
+    <table>
+      <thead><tr><th>Page</th><th>File</th><th>Primary job</th></tr></thead>
+      <tbody>
+        <tr><td class="nowrap"><strong>Home</strong></td><td><code>index.html</code></td><td>First impression; brand sell; route visitors to Menu, Locations, Contact</td></tr>
+        <tr><td class="nowrap"><strong>Menu</strong></td><td><code>menu.html</code></td><td>Scannable food listing with prices (all fictional), allergen note</td></tr>
+        <tr><td class="nowrap"><strong>Locations</strong></td><td><code>locations.html</code></td><td>Find-us cards for 3 fictional locations + "coming soon" notice</td></tr>
+        <tr><td class="nowrap"><strong>Contact</strong></td><td><code>contact.html</code></td><td>Catering quote form → fictional inbox; franchise inquiry block; 4-question FAQ</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Static by design.</strong> No server, no database, no CMS backend. The site is HTML + CSS + a small JS file, editable in plainly-marked regions. Fast on phones, cheap to host, nothing to patch at 3am.</div>
+  </section>
+
+  <!-- ============ 2. PHASED BUILD PLAN ============ -->
+  <section>
+    <h2>2 · Phased Build Plan</h2>
+    <p>The build runs in five phases, each ending in something the client can see and approve before the next begins.</p>
+
+    <div class="phase">
+      <div class="phase-head"><span class="n">PHASE 1 —</span> SETUP &amp; TOKENS</div>
+      <div class="phase-body">
+        <ul>
+          <li>Scaffold project: 4 HTML files, <code>styles.css</code>, <code>script.js</code>, <code>assets/</code> for SVG illustration.</li>
+          <li>Encode the <strong>full token set</strong> from brief §5 as CSS custom properties (<code>:root</code> block). Zero hardcoded hex colors anywhere else.</li>
+          <li>Set type scale: Oswald headings, Inter body, Caveat for taglines only; system stacks as the live fallback.</li>
+          <li>Define shared shells: sticky header component, footer component, SAMPLE banner ribbon.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="n">PHASE 2 —</span> PAGES &amp; CONTENT</div>
+      <div class="phase-body">
+        <ul>
+          <li><strong>Home:</strong> red sunburst hero with invented tagline, dual CTA (View Menu / Request Catering), 3 value props (family recipe · immaculate dining rooms · catering), featured menu teaser, locations teaser.</li>
+          <li><strong>Menu:</strong> 3 category cards (Chicken · Sides · Drinks &amp; Desserts) with all fictional prices; allergen note.</li>
+          <li><strong>Locations:</strong> 3 fictional location cards — Albuquerque NM (Central Ave — Flagship), Santa Fe NM, El Paso TX — each with fictional address, Mon–Sun 10am–10pm hours, phone, "Get directions" link; "New location coming: Tucson AZ" notice.</li>
+          <li><strong>Contact:</strong> catering quote form (name, email, event date, guests, message), franchise inquiry block (separate email link), 4-question FAQ (catering minimums, franchise info, allergens, hours).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="n">PHASE 3 —</span> COMPONENTS &amp; INTERACTION</div>
+      <div class="phase-body">
+        <ul>
+          <li>Header: sticky, red, logo badge + nav + "Order Catering" CTA pill button.</li>
+          <li>Contact form: labels above inputs, inline validation (JS), friendly error/success states; submits to the fictional inbox (no real backend in the sample).</li>
+          <li>FAQ accordion: keyboard-operable, expands/collapses with aria attributes.</li>
+          <li>Stripe/sunburst CSS motifs, illustrated chicken badge, stripe dividers — CSS/SVG only, no photos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="n">PHASE 4 —</span> QA &amp; ACCESSIBILITY</div>
+      <div class="phase-body">
+        <ul>
+          <li>Layout verified at <strong>360px</strong> and <strong>1280px</strong>; no horizontal scroll anywhere.</li>
+          <li>WCAG 2.1 AA contrast checked on every text/background pairing in the token set.</li>
+          <li>Keyboard navigation: nav, accordion, form all reachable and operable without a mouse; visible focus styles.</li>
+          <li>Spellcheck, link check, and a mobile load pass (imagery is CSS/SVG, so pages stay light).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="n">PHASE 5 —</span> HANDOFF</div>
+      <div class="phase-body">
+        <ul>
+          <li>Editable regions clearly marked in the code (see §4) so a non-technical manager can find them.</li>
+          <li>Provenance envelope line on every file: <code>© 2026 Keith Soyka / GestaltView · SAMPLE</code>.</li>
+          <li>Handoff walkthrough + the §7 checklist signed off with the client.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. PER-PAGE BUILD NOTES ============ -->
+  <section>
+    <h2>3 · Per-Page Build Notes</h2>
+
+    <h3>3.1 Home — <code>index.html</code></h3>
+    <ul>
+      <li><strong>Hero:</strong> <code>--lph-red</code> sunburst background (CSS repeating gradient), invented tagline <span class="accent">"It's the chicken, man."</span>, dual CTA buttons — red pill on cream, yellow pill on red.</li>
+      <li><strong>Value-prop trio:</strong> three cards — family recipe, immaculate dining rooms, catering.</li>
+      <li><strong>Teasers:</strong> featured-menu row (3 top sellers, prices fictional) and locations teaser strip linking to full pages.</li>
+      <li><strong>CTA:</strong> catering band routing to <code>contact.html</code>.</li>
+    </ul>
+
+    <h3>3.2 Menu — <code>menu.html</code></h3>
+    <table>
+      <thead><tr><th>Category</th><th>Items (all prices fictional)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Chicken</strong></td><td>8 pc. Famous Recipe <strong>$14.99</strong> · Tenders <strong>$9.99</strong> · Sandwich <strong>$8.49</strong></td></tr>
+        <tr><td><strong>Sides</strong></td><td>Curly Fries <strong>$3.99</strong> · Slaw <strong>$2.99</strong> · Corn <strong>$2.49</strong></td></tr>
+        <tr><td><strong>Drinks &amp; Desserts</strong></td><td>Horchata <strong>$2.99</strong> · Flan <strong>$4.49</strong></td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>Each category renders as a card (12px radius, <code>--lph-brown</code> at 12% border, soft shadow).</li>
+      <li><strong>Allergen note</strong> block below the categories (copy to be supplied at Phase 2 review).</li>
+      <li>Menu items live in a <strong>marked editable region</strong> — each item is one self-contained line a manager can copy/edit.</li>
+    </ul>
+
+    <h3>3.3 Locations — <code>locations.html</code></h3>
+    <table>
+      <thead><tr><th>Location (fictional)</th><th>Card contents</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Albuquerque NM</strong> — Central Ave (Flagship)</td><td>Fictional address · Mon–Sun 10am–10pm · phone · "Get directions" link</td></tr>
+        <tr><td><strong>Santa Fe NM</strong></td><td>Fictional address · Mon–Sun 10am–10pm · phone · "Get directions" link</td></tr>
+        <tr><td><strong>El Paso TX</strong></td><td>Fictional address · Mon–Sun 10am–10pm · phone · "Get directions" link</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><strong>"New location coming: Tucson AZ"</strong> notice banner above the cards.</li>
+      <li>Location cards live in a <strong>marked editable region</strong> — adding Tucson is: copy one card block, change the fields.</li>
+    </ul>
+
+    <h3>3.4 Contact — <code>contact.html</code></h3>
+    <ul>
+      <li><strong>Catering quote form</strong> fields: name, email, event date, guests, message → fictional inbox.</li>
+      <li>Labels above inputs; inline validation with clear error text; keyboard-friendly tab order.</li>
+      <li><strong>Franchise inquiry block:</strong> separate email link, visually distinct from the catering form.</li>
+      <li><strong>FAQ accordion</strong> (4 questions, per brief): catering minimums · franchise info · allergens · hours.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 4. TECHNICAL APPROACH ============ -->
+  <section>
+    <h2>4 · Technical Approach</h2>
+    <h3>4.1 Stack</h3>
+    <p>Plain <strong>static HTML + CSS + one small JS file</strong>. No framework, no build step, no server. Rationale: the brief demands speed on mobile, near-zero hosting cost, and maintainability by a non-technical manager — a static site meets all three; anything heavier would be over-engineering.</p>
+    <h3>4.2 Token-driven CSS</h3>
+    <p>All six LPH colors live as CSS custom properties in one <code>:root</code> block (<code>--lph-red</code>, <code>--lph-yellow</code>, <code>--lph-cream</code>, <code>--lph-brown</code>, <code>--lph-orange</code>, <code>--lph-red-dark</code>). No hex values outside that block — so a rebrand is a six-line change. Spacing uses the 8px base unit; buttons are pill radius (999px); cards are 12px radius.</p>
+    <h3>4.3 Editable regions</h3>
+    <p>Menu items and locations are wrapped in plainly-marked HTML comments a non-technical manager can find, e.g.:</p>
+    <p><code>&lt;!-- ★ EDITABLE: MENU ITEMS — copy a block to add one ★ --&gt;</code><br>
+    <code>&lt;!-- ★ EDITABLE: LOCATIONS — copy a card to add one ★ --&gt;</code></p>
+    <p>Each menu item and each location card is one self-contained, copy-pasteable block. The handoff walkthrough opens the file in a text editor and demonstrates an actual edit.</p>
+    <h3>4.4 Imagery</h3>
+    <p>No photos anywhere — brand is carried by CSS/SVG illustration (sunburst hero, chicken badge, stripe dividers) per the brief. This also keeps mobile load times trivial.</p>
+    <h3>4.5 Accessibility baseline</h3>
+    <p>WCAG 2.1 AA contrast on all text pairings; semantic HTML landmarks; keyboard-navigable nav, accordion, and form; visible focus indicators; English copy only.</p>
+  </section>
+
+  <!-- ============ 5. ACCEPTANCE CRITERIA ============ -->
+  <section>
+    <h2>5 · Acceptance Criteria (brief §7)</h2>
+    <p>"Done" means all six of these hold. Each is verified before handoff.</p>
+    <table>
+      <thead><tr><th>#</th><th>Criterion</th><th>How it's verified</th></tr></thead>
+      <tbody>
+        <tr><td class="nowrap"><strong>1</strong></td><td>All 4 pages render from the token set — no hardcoded colors outside tokens.</td><td>Code review: grep the CSS for hex values outside the <code>:root</code> block.</td></tr>
+        <tr><td class="nowrap"><strong>2</strong></td><td>Mobile (360px) and desktop (1280px) layouts verified; no horizontal scroll.</td><td>Manual device-width test on both viewports; scroll check per page.</td></tr>
+        <tr><td class="nowrap"><strong>3</strong></td><td>Contrast AA on all text. Keyboard-navigable nav and form.</td><td>Contrast checker pass on token pairings; keyboard-only walkthrough of nav, accordion, form.</td></tr>
+        <tr><td class="nowrap"><strong>4</strong></td><td>Menu items and locations editable in marked regions a non-technical manager can find.</td><td>Live demo: manager locates the markers and makes a real edit during handoff.</td></tr>
+        <tr><td class="nowrap"><strong>5</strong></td><td>Every file carries the provenance envelope line.</td><td>Check each delivered file for <code>© 2026 Keith Soyka / GestaltView · SAMPLE</code>.</td></tr>
+        <tr><td class="nowrap"><strong>6</strong></td><td>No real business data anywhere; SAMPLE banner visible on every page.</td><td>Content audit against the fictional brief; banner present on all 4 pages.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 6. EXCLUSIONS ============ -->
+  <section>
+    <h2>6 · Exclusions — What Is NOT Included</h2>
+    <p>Per brief §3, the following are <strong>out of scope</strong>, stated plainly so there are no surprises:</p>
+    <ul>
+      <li><strong>No online ordering.</strong> No cart, no checkout, no order tracking.</li>
+      <li><strong>No payments.</strong> No card processing, no invoices.</li>
+      <li><strong>No accounts.</strong> No sign-up, no logins, no member areas.</li>
+      <li><strong>No real photography</strong> — illustration and typography carry the brand.</li>
+      <li><strong>English copy only</strong>; no multilingual versions in this phase.</li>
+      <li><strong>4 pages only.</strong> Additional pages (blog, careers, press) are a future phase.</li>
+    </ul>
+    <div class="note"><strong>What happens instead:</strong> the catering form collects quote requests and routes them to the fictional inbox — that <em>is</em> the conversion path. Ordering and payments can be scoped as a separate engagement later.</div>
+  </section>
+
+  <!-- ============ 7. TIMELINE & MILESTONES ============ -->
+  <section>
+    <h2>7 · Timeline &amp; Milestones</h2>
+    <p>Indicative schedule for the fictional engagement — weeks start at kickoff (K).</p>
+    <table>
+      <thead><tr><th>Milestone</th><th>Phase</th><th>Timing</th><th>Client sees</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">M1</span> <strong>Tokens &amp; shells approved</strong></td><td>1</td><td>K + 1 wk</td><td>Style tile: palette, type, header/footer shells in the LPH theme</td></tr>
+        <tr><td><span class="pill">M2</span> <strong>All 4 pages drafted</strong></td><td>2</td><td>K + 2 wk</td><td>Clickable draft of every page with fictional copy</td></tr>
+        <tr><td><span class="pill">M3</span> <strong>Components live</strong></td><td>3</td><td>K + 3 wk</td><td>Working form validation, FAQ accordion, responsive nav</td></tr>
+        <tr><td><span class="pill">M4</span> <strong>QA sign-off</strong></td><td>4</td><td>K + 4 wk</td><td>Accessibility + viewport report against the §5 criteria</td></tr>
+        <tr><td><span class="pill grey">M5</span> <strong>Handoff complete</strong></td><td>5</td><td>K + 5 wk</td><td>Files delivered, edit demo done, checklist signed</td></tr>
+      </tbody>
+    </table>
+    <p>Each milestone gates the next: no phase begins until the client approves the previous milestone's review.</p>
+  </section>
+
+  <!-- ============ 8. HANDOFF CHECKLIST ============ -->
+  <section>
+    <h2>8 · Handoff Checklist</h2>
+    <p>Completed together with the client at the Phase 5 handoff meeting.</p>
+    <ul class="checklist">
+      <li>All 4 HTML pages delivered, rendering in the LPH theme from tokens only (criterion 1).</li>
+      <li>360px and 1280px layouts verified; no horizontal scroll (criterion 2).</li>
+      <li>AA contrast verified; keyboard walkthrough of nav, accordion, and form completed (criterion 3).</li>
+      <li>Editable regions demonstrated: manager locates the menu markers and makes a live edit (criterion 4).</li>
+      <li>Provenance envelope line present in every delivered file (criterion 5).</li>
+      <li>SAMPLE banner visible on every page; content audit confirms no real business data (criterion 6).</li>
+      <li>Exclusions reviewed with client — ordering, payments, accounts confirmed out of scope.</li>
+      <li>Client knows the catering-form destination (fictional inbox) and the franchise inquiry email.</li>
+      <li>Future-phase notes captured (extra pages, multilingual copy, ordering) — not promised, just noted.</li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p class="sample-line">● SAMPLE — FICTIONAL CLIENT, ILLUSTRATIVE ONLY — NO REAL BUSINESS DATA ●</p>
+    <p>© 2026 Keith Soyka / GestaltView · SAMPLE<br>
+    Los Pollos Hermanos is a fictional restaurant chain from the TV series <em>Breaking Bad</em>. All copy, prices, addresses, and hours in this document are invented for demonstration purposes.</p>
+  </footer>
+
+</div>
+</body>
+</html>

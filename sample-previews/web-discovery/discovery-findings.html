@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery Findings — Los Pollos Hermanos (SAMPLE)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* ---------- LPH design tokens (from client brief) ---------- */
+  :root {
+    --lph-red: #B3122E;
+    --lph-yellow: #FFC72C;
+    --lph-cream: #FFF6E5;
+    --lph-brown: #4A2C1A;
+    --lph-orange: #E87722;
+    --lph-red-dark: #7E0C20;
+    --white: #FFFFFF;
+  }
+
+  @page {
+    size: letter;
+    margin: 2cm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--lph-cream);
+    color: var(--lph-brown);
+    font-size: 11pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Oswald', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--lph-red);
+    line-height: 1.25;
+  }
+
+  /* ---------- SAMPLE ribbon (top, on every page) ---------- */
+  .sample-ribbon {
+    background: var(--lph-brown);
+    color: var(--lph-yellow);
+    text-align: center;
+    font-size: 9.5pt;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+  }
+  @media print {
+    .sample-ribbon { position: fixed; top: 0; left: 0; right: 0; }
+  }
+
+  /* ---------- Cover header ---------- */
+  .cover {
+    background: var(--lph-red);
+    color: var(--lph-cream);
+    padding: 56px 40px 48px;
+    border-bottom: 10px solid var(--lph-yellow);
+  }
+  .cover h1 {
+    color: var(--white);
+    font-size: 34pt;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .cover .tagline {
+    font-family: 'Caveat', 'Inter', cursive;
+    font-size: 20pt;
+    color: var(--lph-yellow);
+    margin-bottom: 28px;
+  }
+  .cover-meta {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .cover-meta td {
+    padding: 6px 24px 6px 0;
+    font-size: 10pt;
+    color: var(--lph-cream);
+    vertical-align: top;
+  }
+  .cover-meta td.label {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 8.5pt;
+    color: var(--lph-yellow);
+    white-space: nowrap;
+  }
+
+  /* ---------- Body layout ---------- */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 32px 16px;
+  }
+
+  .doc-label {
+    display: inline-block;
+    background: var(--lph-yellow);
+    color: var(--lph-red-dark);
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  section { margin-bottom: 36px; page-break-inside: avoid; }
+  section.section-break { page-break-before: always; }
+
+  h2 {
+    font-size: 17pt;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--lph-yellow);
+  }
+  h3 { font-size: 12.5pt; margin: 18px 0 8px; }
+
+  p { margin-bottom: 12px; }
+
+  ul, ol { margin: 0 0 14px 24px; }
+  li { margin-bottom: 7px; }
+
+  .lede {
+    font-size: 12.5pt;
+    color: var(--lph-red-dark);
+  }
+
+  /* ---------- Finding cards (table-free, print-safe) ---------- */
+  .finding {
+    background: var(--white);
+    border: 1px solid rgba(74, 44, 26, 0.12);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+  }
+  .finding .finding-num {
+    display: inline-block;
+    background: var(--lph-red);
+    color: var(--white);
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 1px;
+    width: 34px; height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .finding h3 { display: inline; color: var(--lph-red); margin: 0; font-size: 12.5pt; }
+  .finding p { margin-top: 10px; margin-bottom: 0; }
+  .finding .impact {
+    margin-top: 10px;
+    border-top: 1px dashed rgba(74, 44, 26, 0.25);
+    padding-top: 10px;
+    font-size: 10pt;
+  }
+  .finding .impact strong {
+    color: var(--lph-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 8.5pt;
+  }
+
+  /* ---------- Tables ---------- */
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 10pt;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  table.data th {
+    background: var(--lph-red);
+    color: var(--white);
+    text-align: left;
+    padding: 12px 14px;
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-size: 10.5pt;
+    letter-spacing: 0.5px;
+  }
+  table.data td {
+    padding: 11px 14px;
+    border-bottom: 1px solid rgba(74, 44, 26, 0.12);
+    vertical-align: top;
+  }
+  table.data tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    background: var(--lph-cream);
+    border: 1px solid var(--lph-orange);
+    color: var(--lph-red-dark);
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pill.high { background: var(--lph-red); border-color: var(--lph-red); color: var(--white); }
+
+  /* ---------- Callout ---------- */
+  .callout {
+    border-left: 6px solid var(--lph-orange);
+    background: var(--white);
+    padding: 18px 22px;
+    border-radius: 0 12px 12px 0;
+    margin: 18px 0;
+  }
+  .callout h3 { color: var(--lph-red-dark); margin: 0 0 8px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .rec-box {
+    background: var(--lph-red-dark);
+    color: var(--lph-cream);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-top: 14px;
+  }
+  .rec-box h3 { color: var(--lph-yellow); margin: 0 0 10px; }
+  .rec-box p, .rec-box li { color: var(--lph-cream); }
+  .rec-box ol { margin-left: 22px; }
+
+  /* ---------- Footer ---------- */
+  .doc-footer {
+    border-top: 10px solid var(--lph-red);
+    background: var(--lph-brown);
+    color: var(--lph-cream);
+    padding: 24px 32px 28px;
+    margin-top: 32px;
+    font-size: 9.5pt;
+  }
+  .doc-footer .sample-line {
+    color: var(--lph-yellow);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .doc-footer .prov {
+    color: rgba(255, 246, 229, 0.85);
+  }
+
+  @media screen {
+    .page { box-shadow: 0 2px 24px rgba(74, 44, 26, 0.08); background: var(--lph-cream); }
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-ribbon">Sample &mdash; fictional client, illustrative only</div>
+
+<header class="cover">
+  <h1>DISCOVERY FINDINGS</h1>
+  <div class="tagline">"It's the chicken, man."</div>
+  <table class="cover-meta">
+    <tr>
+      <td class="label">Client</td>
+      <td><strong>Los Pollos Hermanos</strong> &mdash; fictional fried-chicken chain (SAMPLE brief)</td>
+    </tr>
+    <tr>
+      <td class="label">Phase</td>
+      <td>Phase 1 of 4: Discovery &rarr; Implementation Spec &rarr; Design Spec &rarr; Build</td>
+    </tr>
+    <tr>
+      <td class="label">Prepared</td>
+      <td>October 18, 2026 &mdash; Keith Soyka / GestaltView</td>
+    </tr>
+    <tr>
+      <td class="label">Purpose</td>
+      <td>Record what was learned in discovery and set the direction for the spec phase. Nothing in this document is a design decision; everything here becomes an input to the Implementation Spec.</td>
+    </tr>
+  </table>
+</header>
+
+<main class="page">
+
+  <span class="doc-label">Phase 1 Deliverable &mdash; Sample</span>
+
+  <section>
+    <h2>1. Client Overview (Fictional)</h2>
+    <p class="lede">Los Pollos Hermanos &mdash; "The Chicken Brothers" &mdash; is a fictional family-owned fried-chicken restaurant chain, "as seen on TV." This document is built entirely from a fictional sample brief; no real business data is represented anywhere in it.</p>
+    <table class="data">
+      <tr><th style="width:32%">Attribute</th><th>Detail (fictional)</th></tr>
+      <tr><td><strong>Business</strong></td><td>Fictional fried-chicken restaurant chain</td></tr>
+      <tr><td><strong>Founded by</strong></td><td>Fictional brothers Gus Fring and Max Arciniega</td></tr>
+      <tr><td><strong>Known for</strong></td><td>Immaculate dining rooms, courteous staff, the famous curly fries</td></tr>
+      <tr><td><strong>The ask</strong></td><td>A modern 4-page marketing site to support catering inquiries and new-location announcements</td></tr>
+      <tr><td><strong>Locations (fictional)</strong></td><td>Albuquerque NM (Central Ave &mdash; flagship), Santa Fe NM, El Paso TX; new location coming: Tucson AZ</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>2. Engagement Goals</h2>
+    <p>The fictional "why" behind the engagement, taken directly from the brief:</p>
+    <table class="data">
+      <tr><th style="width:6%">#</th><th>Goal</th><th style="width:30%">How the site must answer it</th></tr>
+      <tr><td><strong>1</strong></td><td>Look legitimate and appetizing &mdash; the site is the first impression for catering clients.</td><td>Premium, trustworthy first impression; brand-forward hero and value props.</td></tr>
+      <tr><td><strong>2</strong></td><td>Drive two conversions: <strong>catering quote requests</strong> and <strong>franchise inquiries</strong>.</td><td>Both conversion paths visible and reachable from every page; the contact page carries both.</td></tr>
+      <tr><td><strong>3</strong></td><td>Announce new locations without rebuilding the site each time (editable by a non-technical manager).</td><td>Locations and menu content isolated in plainly-marked, manager-editable regions.</td></tr>
+      <tr><td><strong>4</strong></td><td>Load fast on phones &mdash; most visitors arrive from social/maps on mobile.</td><td>Mobile-first performance budget; no heavy assets; fast first paint on mid-range devices.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. Constraints (From Brief)</h2>
+    <ul>
+      <li><strong>4 pages only:</strong> Home, Menu, Locations, Contact.</li>
+      <li><strong>No online ordering, no payments, no accounts.</strong> Explicitly out of scope &mdash; stated plainly so scope stays bounded.</li>
+      <li><strong>No real photography available.</strong> The brand must be carried by CSS/SVG illustration and typography (sunburst hero, illustrated chicken badge, stripe dividers).</li>
+      <li><strong>WCAG 2.1 AA contrast required</strong> on all text. Copy in English only.</li>
+      <li><strong>Handoff must be maintainable by a non-technical manager</strong> &mdash; menu items and locations editable in plainly-marked spots, without code changes.</li>
+      <li><strong>Design token set is fixed:</strong> LPH red <code>#B3122E</code>, yellow <code>#FFC72C</code>, cream <code>#FFF6E5</code>, brown <code>#4A2C1A</code>, orange <code>#E87722</code>, red-dark <code>#7E0C20</code>. No hardcoded colors outside these tokens.</li>
+    </ul>
+  </section>
+
+  <section class="section-break">
+    <h2>4. Key Findings</h2>
+    <p>What discovery surfaced that the spec phase must act on:</p>
+
+    <div class="finding">
+      <span class="finding-num">1</span>
+      <h3>Two conversions, two audiences &mdash; one site must serve both</h3>
+      <p>The site's success is measured by <strong>catering quote requests</strong> and <strong>franchise inquiries</strong> &mdash; two distinct visitor intents. Catering visitors are event planners seeking trust and appetite appeal; franchise visitors are investors seeking legitimacy and a clear path to contact. Both conversion paths must be present and unambiguous, with the Contact page carrying catering as the primary form and the franchise inquiry as a distinct, separate block (not a variant of the same form).</p>
+      <div class="impact"><strong>Design impact:</strong> dual-CTA hero ("Order Catering" + franchise path); Contact page split into two clearly-separated conversion zones.</div>
+    </div>
+
+    <div class="finding">
+      <span class="finding-num">2</span>
+      <h3>Mobile-first audience &mdash; performance is a first-class requirement</h3>
+      <p>Most visitors arrive from social and maps on phones. This is not a "responsive afterthought" situation: the design and performance budgets must be set mobile-first, with a fast first paint on mid-range devices over mobile connections. Every design choice &mdash; illustration complexity, font loading, form widgets &mdash; gets judged against load time.</p>
+      <div class="impact"><strong>Design impact:</strong> mobile-first layout spec; performance budget defined in the Implementation Spec before any design work begins.</div>
+    </div>
+
+    <div class="finding">
+      <span class="finding-num">3</span>
+      <h3>No photography &rarr; the brand must live in CSS/SVG and type</h3>
+      <p>No real photography is available, so "appetizing" must be delivered through illustration and typography alone: a sunburst hero, an illustrated chicken badge, retro-diner diagonal-stripe motifs, and a confident type pairing (Oswald headings, Inter body, Caveat for the tagline). The risk is a site that feels empty or generic; the mitigation is treating the illustrated brand system as a first-class deliverable, not decoration.</p>
+      <div class="impact"><strong>Design impact:</strong> an illustrated brand component set (badge, sunburst, stripe dividers) becomes part of the design spec; no placeholder image slots that imply "photo goes here."</div>
+    </div>
+
+    <div class="finding">
+      <span class="finding-num">4</span>
+      <h3>A non-technical manager must edit menu and locations &mdash; maintainability is a feature</h3>
+      <p>The person maintaining this site is not a developer. Menu items (with prices, allergen note) and locations (addresses, hours, phones, "coming soon" announcements) must live in plainly-marked, clearly-labeled regions that a non-technical manager can find and edit without touching layout or logic. This is an acceptance criterion for "done," so the implementation must be structured for it from the start &mdash; not retrofitted.</p>
+      <div class="impact"><strong>Design impact:</strong> content regions explicitly zoned and labeled in the implementation spec; the handoff includes a short plain-language editing guide.</div>
+    </div>
+
+    <div class="finding">
+      <span class="finding-num">5</span>
+      <h3>Scope is intentionally narrow &mdash; keep it that way</h3>
+      <p>The brief explicitly excludes online ordering, payments, and accounts. These are the most likely scope-creep vectors (a "can't we just add a cart?" conversation). Discovery confirms the exclusions are deliberate and should be carried forward as stated constraints into the spec phase, with the 4-page structure treated as a hard boundary.</p>
+      <div class="impact"><strong>Design impact:</strong> the Implementation Spec restates out-of-scope items explicitly; any future addition is a new engagement, not an expansion.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Risks &amp; Assumptions</h2>
+    <table class="data">
+      <tr><th style="width:30%">Risk / Assumption</th><th>Likelihood</th><th>Mitigation</th></tr>
+      <tr>
+        <td><strong>R1 &mdash; Illustration quality gap:</strong> with no photography, a weak illustration system makes the site feel generic rather than appetizing.</td>
+        <td><span class="pill high">High</span></td>
+        <td>Treat the SVG brand set as a first-class deliverable; validate appetite appeal at the mock-board stage before build.</td>
+      </tr>
+      <tr>
+        <td><strong>R2 &mdash; Scope creep into ordering/payments:</strong> stakeholders request cart, checkout, or accounts mid-build.</td>
+        <td><span class="pill">Medium</span></td>
+        <td>Out-of-scope items restated in the spec; additions priced as separate engagements.</td>
+      </tr>
+      <tr>
+        <td><strong>R3 &mdash; Manager-editable regions ignored in build:</strong> content gets hardcoded into layout, making future edits require a developer.</td>
+        <td><span class="pill">Medium</span></td>
+        <td>Zoning requirement in the Implementation Spec; verified against acceptance criterion 4 before handoff.</td>
+      </tr>
+      <tr>
+        <td><strong>R4 &mdash; Mobile performance regression:</strong> design embellishments (fonts, sunburst effects) bloat load time on phones.</td>
+        <td><span class="pill">Medium</span></td>
+        <td>Performance budget set in spec; verify on 360px mobile before sign-off.</td>
+      </tr>
+      <tr>
+        <td><strong>A1 &mdash; Fictional content is final for the sample:</strong> menu items, prices, locations, and hours are invented and will not change.</td>
+        <td><span class="pill">Assumption</span></td>
+        <td>Any real engagement would re-run discovery against actual business content.</td>
+      </tr>
+      <tr>
+        <td><strong>A2 &mdash; Catering inbox exists:</strong> the quote form has a fictional destination inbox to deliver to.</td>
+        <td><span class="pill">Assumption</span></td>
+        <td>Form action and inbox address confirmed in spec phase (real projects: before build).</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. Recommended Direction Into Spec Phase</h2>
+    <div class="callout">
+      <h3>The one-sentence read</h3>
+      <p>This is a <strong>trust-and-conversion site</strong>, not a catalog or a store: four pages whose entire job is to make a catering planner hungry and confident, give a franchise prospect a clear door to knock on, and let a non-technical manager keep it alive afterward.</p>
+    </div>
+    <div class="rec-box">
+      <h3>Spec-phase priorities (in order)</h3>
+      <ol>
+        <li><strong>Lock the conversion architecture first:</strong> dual-CTA routing on every page; Contact page split into catering form (name, email, event date, guests, message) and a separate franchise inquiry block; 4-question FAQ (catering minimums, franchise info, allergens, hours).</li>
+        <li><strong>Define the illustrated brand system:</strong> chicken badge, sunburst hero, stripe dividers &mdash; as named, reusable components, with the no-photography rule enforced (no empty "image goes here" slots).</li>
+        <li><strong>Zone the manager-editable regions:</strong> menu items/prices/allergen note and the three locations (+ Tucson "coming soon") as plainly-marked, isolated content regions; pair with a plain-language editing guide at handoff.</li>
+        <li><strong>Set the mobile performance budget and AA contrast checks</strong> as acceptance gates: 360px and 1280px verified, no horizontal scroll, keyboard-navigable nav and form.</li>
+        <li><strong>Restate the hard boundaries:</strong> 4 pages, no ordering/payments/accounts &mdash; carried verbatim from discovery into the Implementation Spec.</li>
+      </ol>
+    </div>
+    <p style="margin-top:16px;">Next deliverable: <strong>Implementation Spec</strong> &mdash; the build-ready technical contract this findings document feeds directly.</p>
+  </section>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="sample-line">Sample &mdash; fictional client, illustrative only</div>
+  <div class="prov">&copy; 2026 Keith Soyka / GestaltView &middot; SAMPLE. Los Pollos Hermanos is a fictional restaurant chain from the TV series <em>Breaking Bad</em>. All names, addresses, prices, and business details in this document are invented for demonstration purposes.</div>
+</footer>
+
+</body>
+</html>

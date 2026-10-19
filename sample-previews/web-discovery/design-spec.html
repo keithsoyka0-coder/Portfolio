@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Spec + Theme Package — Los Pollos Hermanos (SAMPLE)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lph-red:#B3122E; --lph-yellow:#FFC72C; --lph-cream:#FFF6E5;
+    --lph-brown:#4A2C1A; --lph-orange:#E87722; --lph-red-dark:#7E0C20;
+    --lph-white:#FFFFFF;
+  }
+  @page { size: letter; margin: 2cm; }
+  *{ box-sizing:border-box; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    margin:0; padding:0; background:var(--lph-cream); color:var(--lph-brown);
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-size:15px; line-height:1.6;
+  }
+  .wrap{ max-width:960px; margin:0 auto; padding:0 24px 0 24px; }
+  h1,h2,h3,h4{ font-family:'Oswald','Arial Narrow',sans-serif; color:var(--lph-brown);
+    text-transform:uppercase; letter-spacing:.02em; line-height:1.2; margin:1.4em 0 .5em; }
+  h1{ font-size:38px; } h2{ font-size:27px; border-bottom:3px solid var(--lph-yellow); padding-bottom:6px; }
+  h3{ font-size:20px; } h4{ font-size:16px; }
+  p{ margin:.6em 0; }
+  a{ color:var(--lph-red); }
+  code{ background:#F1E4CE; padding:2px 6px; border-radius:4px; font-size:13.5px; color:var(--lph-brown); }
+  pre{ background:#F1E4CE; padding:14px 16px; border-radius:8px; font-size:13px; line-height:1.55;
+    overflow-x:auto; white-space:pre-wrap; color:var(--lph-brown); border:1px solid rgba(74,44,26,.12); }
+  table{ width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:14px; }
+  th{ font-family:'Oswald','Arial Narrow',sans-serif; text-transform:uppercase; font-size:13px;
+    letter-spacing:.05em; text-align:left; background:var(--lph-brown); color:var(--lph-cream);
+    padding:10px 12px; }
+  td{ padding:10px 12px; border-bottom:1px solid rgba(74,44,26,.14); vertical-align:top; }
+  tr:nth-child(even) td{ background:#FDF3E2; }
+  ul,ol{ margin:.5em 0 .8em 1.2em; padding:0; }
+  li{ margin:.3em 0; }
+  .tagline{ font-family:'Caveat',cursive; font-size:30px; color:var(--lph-yellow); margin:0; }
+
+  /* ---- SAMPLE banner ---- */
+  .sample-banner{ background:var(--lph-red-dark); color:var(--lph-yellow); text-align:center;
+    font-family:'Oswald','Arial Narrow',sans-serif; font-size:14px; letter-spacing:.12em;
+    text-transform:uppercase; padding:10px 16px; }
+
+  /* ---- Spec hero ---- */
+  .spec-hero{ background:var(--lph-red); color:var(--lph-cream); margin:0 0 28px; padding:44px 24px;
+    position:relative; overflow:hidden; text-align:center; }
+  .spec-hero h1{ color:var(--lph-cream); margin:.2em 0 .1em; font-size:40px; }
+  .spec-hero p.sub{ color:var(--lph-yellow); font-size:15px; letter-spacing:.08em; text-transform:uppercase;
+    margin:.4em 0; font-weight:600; }
+  .spec-hero p.meta{ font-size:13px; opacity:.92; }
+  .sunburst{ position:absolute; top:-70px; left:50%; margin-left:-175px; width:350px; height:350px; opacity:.28; }
+
+  /* ---- Stripes ---- */
+  .stripe-divider{ height:10px; border:none; margin:26px 0;
+    background:repeating-linear-gradient(-45deg, var(--lph-yellow) 0 14px, var(--lph-orange) 14px 28px); }
+
+  /* ---- Buttons ---- */
+  .btn{ display:inline-block; font-family:'Oswald','Arial Narrow',sans-serif; font-weight:600;
+    text-transform:uppercase; letter-spacing:.06em; font-size:15px; border-radius:999px;
+    padding:13px 30px; text-decoration:none; margin:6px 8px 6px 0; border:none; }
+  .btn-red{ background:var(--lph-red); color:var(--lph-cream); }
+  .btn-yellow{ background:var(--lph-yellow); color:var(--lph-brown); }
+  .btn-outline{ background:transparent; color:var(--lph-cream); border:2px solid var(--lph-cream); }
+
+  /* ---- Swatches / specimens ---- */
+  .swatch{ display:inline-block; width:64px; height:44px; border-radius:8px;
+    border:1px solid rgba(74,44,26,.25); vertical-align:middle; }
+  .specimen-card{ background:var(--lph-white); border:1px solid rgba(74,44,26,.12); border-radius:12px;
+    box-shadow:0 2px 8px rgba(74,44,26,.08); padding:18px 20px; margin:12px 0; }
+  .space-bar{ height:14px; background:var(--lph-orange); border-radius:7px; display:inline-block; vertical-align:middle; }
+
+  /* ---- Component demos ---- */
+  .demo-label{ font-family:'Oswald','Arial Narrow',sans-serif; font-size:12px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--lph-red); margin:18px 0 6px; }
+  .demo-box{ background:var(--lph-white); border:1px solid rgba(74,44,26,.12); border-radius:12px;
+    box-shadow:0 2px 8px rgba(74,44,26,.08); overflow:hidden; margin:8px 0 4px; }
+  .demo-header{ background:var(--lph-red); color:var(--lph-cream); padding:14px 20px; }
+  .demo-header .brand{ font-family:'Oswald','Arial Narrow',sans-serif; font-weight:700; font-size:20px;
+    text-transform:uppercase; letter-spacing:.03em; }
+  .demo-nav{ font-size:13px; margin-top:6px; }
+  .demo-nav span{ margin-right:16px; }
+  .demo-hero{ background:var(--lph-red); color:var(--lph-cream); padding:36px 24px; text-align:center;
+    position:relative; overflow:hidden; }
+  .demo-card-grid{ padding:18px 20px; }
+  .menu-card{ background:var(--lph-white); border:1px solid rgba(74,44,26,.12); border-radius:12px;
+    box-shadow:0 2px 8px rgba(74,44,26,.08); padding:16px 18px; margin:0 0 12px; }
+  .menu-card .item{ font-family:'Oswald','Arial Narrow',sans-serif; font-size:17px; font-weight:600; }
+  .menu-card .price{ font-family:'Oswald','Arial Narrow',sans-serif; font-size:17px; color:var(--lph-red);
+    font-weight:600; }
+  .menu-card .dots{ border-bottom:2px dotted rgba(74,44,26,.3); }
+  .badge{ display:inline-block; background:var(--lph-yellow); color:var(--lph-brown);
+    font-family:'Oswald','Arial Narrow',sans-serif; font-size:12px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.08em; border-radius:999px; padding:4px 12px; }
+  .form-demo label{ display:block; font-weight:600; font-size:13.5px; margin:12px 0 4px; }
+  .form-demo input,.form-demo textarea{ width:100%; padding:11px 12px; font-size:15px;
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif; color:var(--lph-brown);
+    background:var(--lph-white); border:1px solid rgba(74,44,26,.35); border-radius:8px; }
+  .form-demo .error{ color:var(--lph-red); font-size:13px; font-weight:600; margin-top:4px; }
+  details.faq{ background:var(--lph-white); border:1px solid rgba(74,44,26,.12); border-radius:12px;
+    margin:0 0 10px; padding:14px 18px; box-shadow:0 2px 8px rgba(74,44,26,.08); }
+  details.faq summary{ font-family:'Oswald','Arial Narrow',sans-serif; font-weight:600; font-size:16px;
+    cursor:pointer; text-transform:none; letter-spacing:0; color:var(--lph-brown); }
+  details.faq summary::-webkit-details-marker{ color:var(--lph-red); }
+  .footer-demo{ background:var(--lph-red-dark); color:var(--lph-cream); padding:28px 24px; font-size:14px; }
+  .footer-demo h4{ color:var(--lph-yellow); margin:0 0 8px; }
+  .note{ background:#FDF3E2; border-left:5px solid var(--lph-yellow); padding:12px 16px; margin:14px 0;
+    border-radius:0 8px 8px 0; font-size:14px; }
+  .callout{ background:var(--lph-brown); color:var(--lph-cream); border-radius:12px; padding:18px 22px; margin:16px 0; }
+  .callout strong{ color:var(--lph-yellow); }
+  .two-col td:first-child{ width:50%; }
+
+  .doc-footer{ margin-top:40px; }
+  @media print{
+    .sample-banner{ position:static; }
+    .spec-hero{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    body{ font-size:12pt; }
+    .wrap{ max-width:none; padding:0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP SAMPLE BANNER -->
+<div class="sample-banner">★ SAMPLE — fictional client demo, not a real business ★</div>
+
+<!-- SPEC HERO -->
+<div class="spec-hero">
+  <svg class="sunburst" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="#FFC72C">
+      <rect x="96" y="0" width="8" height="60"/><rect x="96" y="0" width="8" height="60" transform="rotate(30 100 100)"/>
+      <rect x="96" y="0" width="8" height="60" transform="rotate(60 100 100)"/><rect x="96" y="0" width="8" height="60" transform="rotate(90 100 100)"/>
+      <rect x="96" y="0" width="8" height="60" transform="rotate(120 100 100)"/><rect x="96" y="0" width="8" height="60" transform="rotate(150 100 100)"/>
+      <rect x="96" y="0" width="8" height="60" transform="rotate(180 100 100)"/><rect x="96" y="0" width="8" height="60" transform="rotate(210 100 100)"/>
+      <rect x="96" y="0" width="8" height="60" transform="rotate(240 100 100)"/><rect x="96" y="0" width="8" height="60" transform="rotate(270 100 100)"/>
+      <rect x="96" y="0" width="8" height="60" transform="rotate(300 100 100)"/><rect x="96" y="0" width="8" height="60" transform="rotate(330 100 100)"/>
+    </g>
+    <circle cx="100" cy="100" r="42" fill="#B3122E" stroke="#FFC72C" stroke-width="6"/>
+    <circle cx="100" cy="100" r="26" fill="#FFC72C"/>
+  </svg>
+  <p class="sub">Los Pollos Hermanos · Fictional Franchise Site · Phase 2b Deliverable</p>
+  <h1>Design Spec + Theme Package</h1>
+  <p class="tagline">"It's the chicken, man."</p>
+  <p class="meta">Prepared 2026-10-18 · Everything in this document renders from the token set in §1 — no hardcoded colors anywhere.</p>
+</div>
+
+<div class="wrap">
+
+<!-- CONTENTS -->
+<h2>Contents</h2>
+<ol>
+  <li>Design Tokens — color, typography, spacing, radius &amp; shadow</li>
+  <li>Component Specs — anatomy + behavior for every component</li>
+  <li>Retro-Diner Art Direction</li>
+  <li>Responsive Behavior — 360px / 1280px</li>
+  <li>Accessibility Notes</li>
+</ol>
+
+<hr class="stripe-divider">
+
+<!-- ============ §1 TOKENS ============ -->
+<h2>1 · Design Tokens</h2>
+<p>The single source of truth. The build references these tokens by name; no literal color, font, or spacing values appear outside this section.</p>
+
+<h3>1.1 Color palette</h3>
+<table>
+  <tr><th>Token</th><th>Swatch</th><th>Hex</th><th>Usage</th><th>Contrast notes</th></tr>
+  <tr>
+    <td><code>--lph-red</code></td><td><span class="swatch" style="background:#B3122E"></span></td><td>#B3122E</td>
+    <td>Primary brand red — headers, hero background, primary CTAs, nav</td>
+    <td>Cream/white text on red: 6.43 / 6.90 — <strong>AA pass</strong></td>
+  </tr>
+  <tr>
+    <td><code>--lph-yellow</code></td><td><span class="swatch" style="background:#FFC72C"></span></td><td>#FFC72C</td>
+    <td>Warm brand yellow — accents, highlights, badges, CTA on dark sections</td>
+    <td>Brown text on yellow: 8.08 — <strong>AA pass</strong>. Never white text on yellow.</td>
+  </tr>
+  <tr>
+    <td><code>--lph-cream</code></td><td><span class="swatch" style="background:#FFF6E5"></span></td><td>#FFF6E5</td>
+    <td>Page background — every page body</td>
+    <td>Brown text on cream: 11.74 — <strong>AA pass</strong></td>
+  </tr>
+  <tr>
+    <td><code>--lph-brown</code></td><td><span class="swatch" style="background:#4A2C1A"></span></td><td>#4A2C1A</td>
+    <td>Body text (dark roast brown); card borders tinted at 12% opacity</td>
+    <td>Primary text color against cream/white/yellow — all AA pass</td>
+  </tr>
+  <tr>
+    <td><code>--lph-orange</code></td><td><span class="swatch" style="background:#E87722"></span></td><td>#E87722</td>
+    <td>Secondary accent — hovers, dividers, stripe motifs. <strong>Decorative only.</strong></td>
+    <td>Brown on orange: 4.26 — <strong>no text in orange, ever</strong></td>
+  </tr>
+  <tr>
+    <td><code>--lph-red-dark</code></td><td><span class="swatch" style="background:#7E0C20"></span></td><td>#7E0C20</td>
+    <td>Footer and deep-contrast sections</td>
+    <td>Cream on red-dark: 9.98; yellow on red-dark: 6.86 — <strong>AA pass</strong></td>
+  </tr>
+  <tr>
+    <td><code>--lph-white</code></td><td><span class="swatch" style="background:#FFFFFF"></span></td><td>#FFFFFF</td>
+    <td>Cards on cream</td>
+    <td>Brown on white: 12.60 — <strong>AA pass</strong></td>
+  </tr>
+</table>
+<div class="note"><strong>Approved text pairings (AA-verified):</strong> brown on cream · brown on white · brown on yellow · cream or white on red · cream or yellow on red-dark. <strong>Forbidden:</strong> any text on orange; white on yellow; body text below AA at any size.</div>
+
+<h3>1.2 Typography</h3>
+<p>Exact stacks per brief §5. Google Fonts is progressive enhancement only — every stack ends in a system fallback that carries the design if fonts fail to load.</p>
+
+<div class="specimen-card">
+  <p style="margin:0 0 4px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#B3122E; font-weight:600;">Headings — <code>'Oswald','Arial Narrow',sans-serif</code> · Bold condensed</p>
+  <p style="font-family:'Oswald','Arial Narrow',sans-serif; font-weight:700; font-size:40px; line-height:1.1; margin:4px 0; text-transform:uppercase;">Display 40 — Famous Recipe Chicken</p>
+  <p style="font-family:'Oswald','Arial Narrow',sans-serif; font-weight:600; font-size:28px; margin:4px 0; text-transform:uppercase;">H2 28 — Our Locations</p>
+  <p style="font-family:'Oswald','Arial Narrow',sans-serif; font-weight:500; font-size:21px; margin:4px 0; text-transform:uppercase;">H3 21 — Catering &amp; Events</p>
+</div>
+
+<div class="specimen-card">
+  <p style="margin:0 0 4px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#B3122E; font-weight:600;">Body — <code>'Inter','Helvetica Neue',Arial,sans-serif</code> · Clean sans</p>
+  <p style="font-size:16px; line-height:1.6; margin:4px 0;">Body 16 — Crisp, golden, and unmistakably ours. Every batch of our Famous Recipe chicken is prepared fresh throughout the day, the way it has been since the brothers opened their doors. This is the paragraph size and rhythm for all long-form copy.</p>
+  <p style="font-size:14px; line-height:1.55; margin:4px 0;">Small 14 — Captions, form hints, card metadata.</p>
+</div>
+
+<div class="specimen-card">
+  <p style="margin:0 0 4px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#B3122E; font-weight:600;">Accent — <code>'Caveat',cursive</code> · fallback cursive · Use sparingly</p>
+  <p class="tagline" style="color:#B3122E;">"It's the chicken, man."</p>
+  <p style="font-size:13px; margin:8px 0 0;">Reserved for taglines and hand-written-feel moments (hero tagline, pull-quotes). Never for body text, never for navigation, never at small sizes.</p>
+</div>
+
+<table>
+  <tr><th>Role</th><th>Stack</th><th>Size / Weight</th><th>Line-height</th></tr>
+  <tr><td>Display / hero</td><td>Oswald → Arial Narrow → sans-serif</td><td>56px / 700</td><td>1.05</td></tr>
+  <tr><td>H1</td><td>Oswald stack</td><td>40px / 700</td><td>1.1</td></tr>
+  <tr><td>H2</td><td>Oswald stack</td><td>28px / 600</td><td>1.15</td></tr>
+  <tr><td>H3</td><td>Oswald stack</td><td>21px / 500</td><td>1.25</td></tr>
+  <tr><td>Body</td><td>Inter → Helvetica Neue → Arial → sans-serif</td><td>16px / 400</td><td>1.6</td></tr>
+  <tr><td>Small / caption</td><td>Inter stack</td><td>14px / 400–500</td><td>1.55</td></tr>
+  <tr><td>Tagline</td><td>Caveat → cursive</td><td>30px / 700</td><td>1.2</td></tr>
+  <tr><td>Button label</td><td>Oswald stack</td><td>15px / 600, uppercase, +0.06em</td><td>1</td></tr>
+</table>
+
+<h3>1.3 Spacing scale</h3>
+<p>Base unit 8px. Every margin, padding, and gap is a multiple of the base.</p>
+<table>
+  <tr><th>Token</th><th>Value</th><th>Visual</th><th>Usage</th></tr>
+  <tr><td><code>space-1</code></td><td>8px</td><td><span class="space-bar" style="width:8px"></span></td><td>Tight gaps — icon/text pairs, badge padding</td></tr>
+  <tr><td><code>space-2</code></td><td>16px</td><td><span class="space-bar" style="width:16px"></span></td><td>Card internal padding (compact)</td></tr>
+  <tr><td><code>space-3</code></td><td>24px</td><td><span class="space-bar" style="width:24px"></span></td><td>Component gaps, form field spacing</td></tr>
+  <tr><td><code>space-4</code></td><td>32px</td><td><span class="space-bar" style="width:32px"></span></td><td>Card padding (large), section sub-spacing</td></tr>
+  <tr><td><code>space-5</code></td><td>40px</td><td><span class="space-bar" style="width:40px"></span></td><td>Mobile section padding</td></tr>
+  <tr><td><code>space-6</code></td><td>48px</td><td><span class="space-bar" style="width:48px"></span></td><td>Between content blocks</td></tr>
+  <tr><td><code>space-8</code></td><td>64px</td><td><span class="space-bar" style="width:64px"></span></td><td>Desktop section padding</td></tr>
+</table>
+
+<h3>1.4 Radius &amp; shadow</h3>
+<table class="two-col">
+  <tr><th>Definition</th><th>Rendered</th></tr>
+  <tr><td><code>radius-card: 12px</code> — all cards<br><code>radius-pill: 999px</code> — buttons, badges<br><code>radius-input: 8px</code> — form fields</td>
+    <td><span class="swatch" style="background:#FFFFFF; border-radius:12px; width:80px;"></span>&nbsp;&nbsp;<span class="badge">Pill badge</span></td></tr>
+  <tr><td><code>shadow-card: 0 2px 8px rgba(74,44,26,.08)</code> — resting state<br><code>shadow-lift: 0 8px 24px rgba(74,44,26,.14)</code> — hover on interactive cards<br><code>border-card: 1px solid rgba(74,44,26,.12)</code></td>
+    <td><div style="background:#FFFFFF; border:1px solid rgba(74,44,26,.12); border-radius:12px; box-shadow:0 2px 8px rgba(74,44,26,.08); padding:12px 16px; font-size:13px;">Resting card — shadow-card</div></td></tr>
+</table>
+
+<h3>1.5 Buttons (live samples)</h3>
+<p>These are the real buttons — same tokens the site will use.</p>
+<a class="btn btn-red" href="#2">Order Catering</a>
+<a class="btn btn-yellow" href="#2">Get a Franchise Kit</a>
+<a class="btn btn-outline" href="#2" style="background:#B3122E;">Ghost on Red</a>
+<table>
+  <tr><th>Variant</th><th>Spec</th><th>Use</th></tr>
+  <tr><td>Primary</td><td>Pill, red bg, cream text</td><td>"Order Catering" CTA on light sections; header CTA</td></tr>
+  <tr><td>On-dark</td><td>Pill, yellow bg, brown text</td><td>CTAs inside hero / red-dark sections</td></tr>
+  <tr><td>Ghost</td><td>Pill, 2px cream border, cream text</td><td>Secondary action on red backgrounds</td></tr>
+  <tr><td>Hover (all)</td><td>Lift: shadow-lift + translateY(-1px); orange 3px underline sweep on text links</td><td>Every interactive element must have a visible hover/focus state</td></tr>
+  <tr><td>Focus (all)</td><td>3px solid yellow outline, offset 2px — always visible against any background</td><td>Keyboard users; never removed</td></tr>
+</table>
+
+<hr class="stripe-divider">
+
+<!-- ============ §2 COMPONENTS ============ -->
+<h2 id="2">2 · Component Specs</h2>
+<p>For each component: anatomy (what it is made of) and behavior (how it acts). Demo blocks below are built only from §1 tokens.</p>
+
+<h3>2.1 SAMPLE banner</h3>
+<p class="demo-label">Live demo</p>
+<div class="sample-banner">★ SAMPLE — fictional client demo, not a real business ★</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Full-width ribbon, red-dark bg, yellow Oswald 14px uppercase letterspaced text, centered. Star glyphs both ends.</td>
+    <td>Fixed to the top of the viewport on every page (every page, no exceptions). Static (non-fixed) in print. Sits above the header in stacking order; header slides under it on scroll.</td>
+  </tr>
+</table>
+
+<h3>2.2 Header (sticky)</h3>
+<p class="demo-label">Live demo</p>
+<div class="demo-box">
+  <div class="demo-header">
+    <div class="brand">🐔 Los Pollos Hermanos</div>
+    <div class="demo-nav"><span>Home</span><span>Menu</span><span>Locations</span><span>Contact</span>&nbsp;&nbsp;<span class="badge">Order Catering</span></div>
+  </div>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Red background bar. Left: chicken-badge logo mark (SVG, §3) + wordmark in Oswald 20px cream, uppercase. Center/right: nav links (Oswald 15px, cream, uppercase). Right: "Order Catering" pill button (yellow on red per §1.5).</td>
+    <td>Sticky below the SAMPLE banner. On scroll past 120px: bar gains shadow-lift. Mobile (360px): logo + hamburger; nav collapses to a full-width red dropdown panel; CTA button stays visible. Keyboard: skip-link → logo → nav → CTA; <kbd>Esc</kbd> closes the mobile menu; focus returns to the hamburger.</td>
+  </tr>
+</table>
+
+<h3>2.3 Hero</h3>
+<p class="demo-label">Live demo</p>
+<div class="demo-box">
+  <div class="demo-hero">
+    <p class="tagline">"It's the chicken, man."</p>
+    <p style="font-family:'Oswald','Arial Narrow',sans-serif; font-size:26px; text-transform:uppercase; margin:.3em 0; font-weight:700;">Family Recipe. Immaculate Dining Rooms.</p>
+    <p style="font-size:14px; margin:.4em 0 1em;">Crisp, golden, and unmistakably ours — since day one.</p>
+    <a class="btn btn-yellow" href="#2">Order Catering</a><a class="btn btn-outline" href="#2">See the Menu</a>
+  </div>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Red background with SVG sunburst radiating behind the copy (yellow rays at 30% opacity, cream center medallion). Layer order: sunburst → Caveat tagline (yellow, 30px) → Oswald headline (cream, Display 56 desktop) → Inter subcopy (cream, 16px) → dual CTA (yellow primary + cream ghost secondary).</td>
+    <td>No parallax, no autoplay motion — hero must be legible the instant it paints. Sunburst scales with the container and is clipped (overflow hidden), so no horizontal scroll at 360px. <code>prefers-reduced-motion</code>: any decorative rotation freezes.</td>
+  </tr>
+</table>
+
+<h3>2.4 Value-prop trio</h3>
+<p class="demo-label">Live demo — one of three</p>
+<div class="menu-card">
+  <span class="badge">Family Recipe</span>
+  <p class="item" style="margin:.5em 0 .2em;">Secret spices, prepared fresh</p>
+  <p style="font-size:14px; margin:0;">The same recipe the brothers perfected — crisped in small batches all day long.</p>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Three white cards (radius-card, border-card, shadow-card). Each: yellow pill badge (prop label) + Oswald item line + Inter 14px description. Props: Family Recipe · Immaculate Dining Rooms · Catering That Shows Up.</td>
+    <td>Desktop: three-across. Mobile: stacked, full width. Hover: shadow-lift, no layout shift (shadow only). Cards are not links — no fake affordances; the card CTA row below routes onward.</td>
+  </tr>
+</table>
+
+<h3>2.5 Menu category cards</h3>
+<p class="demo-label">Live demo</p>
+<div class="menu-card">
+  <p class="item" style="margin:0 0 8px;"><span class="badge">Chicken</span></p>
+  <table style="margin:0;">
+    <tr><td style="border:none; padding:6px 0;"><span class="item">8 pc. Famous Recipe</span></td><td class="dots" style="border:none;"></td><td class="price" style="border:none; padding:6px 0;">$14.99</td></tr>
+    <tr><td style="border:none; padding:6px 0;"><span class="item">Tenders</span></td><td style="border:none;"></td><td class="price" style="border:none; padding:6px 0;">$9.99</td></tr>
+    <tr><td style="border:none; padding:6px 0;"><span class="item">Sandwich</span></td><td style="border:none;"></td><td class="price" style="border:none; padding:6px 0;">$8.49</td></tr>
+  </table>
+  <p style="font-size:13px; margin:10px 0 0; color:#B3122E; font-weight:600;">⚠ Allergen note: prepared in kitchens that handle wheat, dairy, egg &amp; peanut.</p>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>White card per category (Chicken / Sides / Drinks &amp; Desserts). Category badge (yellow pill) + rows: Oswald item name — dotted leader — Oswald price in red. Allergen note pinned under the Chicken card in red 13px bold. <strong>Menu items live in a plainly-marked editable region</strong> (<code>&lt;!-- EDIT MENU HERE --&gt;</code>) a non-technical manager can find.</td>
+    <td>One category per row on mobile; three-across on desktop. Prices are fictional and right-aligned; row never wraps price under name (min column widths). Editing an item = editing one line of plain text; no classes or markup to touch.</td>
+  </tr>
+</table>
+
+<h3>2.6 Location cards</h3>
+<p class="demo-label">Live demo</p>
+<div class="menu-card">
+  <p class="item" style="margin:0 0 4px;">Albuquerque, NM <span class="badge">Flagship</span></p>
+  <p style="font-size:14px; margin:4px 0;">1234 Central Ave SE (fictional)<br>Mon–Sun · 10am–10pm<br>(505) 555-0148 (fictional)</p>
+  <p style="margin:8px 0 0;"><a href="#2" style="font-weight:600;">Get directions →</a></p>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>White card per location: Oswald city/state line + optional "Flagship" yellow badge; Inter 14px address (marked fictional), hours, phone; red text-link "Get directions →" with orange underline sweep on hover. Three fictional locations: Albuquerque NM (Central Ave — Flagship), Santa Fe NM, El Paso TX. Below the cards: a cream callout — "New location coming: Tucson, AZ."</td>
+    <td>Cards reorder without code changes — each location is one self-contained block in a marked editable region (<code>&lt;!-- EDIT LOCATIONS HERE --&gt;</code>). Directions links open maps in a new tab with <code>rel="noopener"</code>. Tucson teaser is a text line, not a card — it must not look bookable.</td>
+  </tr>
+</table>
+
+<h3>2.7 Contact form</h3>
+<p class="demo-label">Live demo (catering quote form)</p>
+<div class="demo-box"><div class="demo-card-grid form-demo">
+  <label for="d-name">Name</label><input id="d-name" type="text" placeholder="Jane Doe">
+  <label for="d-email">Email</label><input id="d-email" type="email" placeholder="jane@example.com" aria-describedby="d-email-err">
+  <p class="error" id="d-email-err">Please enter a valid email address.</p>
+  <label for="d-date">Event date</label><input id="d-date" type="date">
+  <label for="d-guests">Number of guests</label><input id="d-guests" type="number" min="1" placeholder="50">
+  <label for="d-msg">Message</label><textarea id="d-msg" rows="3" placeholder="Tell us about your event…"></textarea>
+  <p><a class="btn btn-red" href="#2">Request Catering Quote</a></p>
+  <p style="font-size:13px;">Franchising instead? <a href="#2" style="font-weight:600;">Email the franchise team →</a> (separate inbox, no form).</p>
+</div></div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Labels always above inputs (never placeholder-only). Fields: name, email, event date, guests, message. Red pill submit. Inline error text in red 13px bold, linked via <code>aria-describedby</code>. Franchise inquiries use a plain email link — separate block, separate inbox, no form.</td>
+    <td>Inline validation on blur and on submit; error summary moves focus to the first invalid field. <code>inputmode</code> set per field (email, numeric). No page reload on error. Success: cream confirmation panel with next-step copy — never a bare "submitted." Keyboard: full tab order, visible yellow focus rings (§1.5).</td>
+  </tr>
+</table>
+
+<h3>2.8 FAQ accordion</h3>
+<p class="demo-label">Live demo</p>
+<details class="faq">
+  <summary>What are your catering minimums?</summary>
+  <p style="font-size:14px;">Catering quotes start at 20 guests. For smaller gatherings, call your nearest location — we'll make it work. (Fictional policy for this sample.)</p>
+</details>
+<details class="faq">
+  <summary>How do I get franchise information?</summary>
+  <p style="font-size:14px;">Use the franchise email link on the Contact page — a separate inbox, answered by the franchise team. (Fictional process for this sample.)</p>
+</details>
+<details class="faq">
+  <summary>Do you handle common allergens?</summary>
+  <p style="font-size:14px;">Our kitchens handle wheat, dairy, egg, and peanut. Tell us about allergies when you request a quote and we'll walk through options. (Fictional note.)</p>
+</details>
+<details class="faq">
+  <summary>What are your hours?</summary>
+  <p style="font-size:14px;">Every location is open Mon–Sun, 10am–10pm. (Fictional hours.)</p>
+</details>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>White cards, one per question (4 total: catering minimums, franchise info, allergens, hours). Oswald 16px summary; Inter 14px answer. Chevron/marker in red.</td>
+    <td>Native <code>&lt;details&gt;</code> — keyboard-operable and screen-reader announced with zero JavaScript. One-or-many open allowed (no forced single-open). Answers fully visible in print (all panels expand via print CSS).</td>
+  </tr>
+</table>
+
+<h3>2.9 Footer</h3>
+<p class="demo-label">Live demo</p>
+<div class="footer-demo">
+  <h4>Los Pollos Hermanos</h4>
+  <p>Albuquerque · Santa Fe · El Paso &nbsp;|&nbsp; Mon–Sun 10am–10pm<br>
+  Addresses and phone numbers shown are fictional.<br>
+  <span style="color:#FFC72C; font-weight:600;">SAMPLE — fictional demo. Not a real business.</span></p>
+</div>
+<table>
+  <tr><th>Anatomy</th><th>Behavior</th></tr>
+  <tr>
+    <td>Red-dark background, cream text. Columns: brand line, fictional locations + hours, quick nav, catering CTA. Microcopy line in yellow bold: "SAMPLE — fictional demo. Not a real business."</td>
+    <td>Footer is the trust anchor: the SAMPLE microcopy is never optional and never hidden below the fold on mobile. Nav links mirror the header; nothing in the footer exists that isn't reachable from the header.</td>
+  </tr>
+</table>
+
+<hr class="stripe-divider">
+
+<!-- ============ §3 ART DIRECTION ============ -->
+<h2>3 · Retro-Diner Art Direction</h2>
+<div class="callout">
+  <strong>The one-line brief:</strong> a 1962 roadside diner, redrawn in flat vector — chrome-red optimism, mustard-yellow neon, cream formica. Warm, not kitsch. The chicken is the hero; everything else is the tray it sits on.
+</div>
+<ul>
+  <li><strong>Sunburst:</strong> reserved for the hero and the logo medallion. Yellow rays at ≤30% opacity on red — present but never loud enough to fight the headline. Constructed in SVG (12 rays at 30° intervals); no raster images anywhere.</li>
+  <li><strong>Stripes:</strong> diagonal yellow/orange repeating stripes (45°, 14px bands) as section dividers only — the divider used between sections of this very document. Never behind text.</li>
+  <li><strong>Logo badge:</strong> circular medallion — red field, yellow ring, cream chicken silhouette in SVG. Flat, two-tone, legible at 24px favicon size and at hero scale.</li>
+  <li><strong>Imagery rule (absolute):</strong> no photos. All illustration is CSS/SVG. This is a constraint from brief §3, and it is also the aesthetic — the flatness <em>is</em> the brand.</li>
+  <li><strong>No gradients on text.</strong> Ever. (AA contrast commitment — gradient text cannot guarantee a ratio.) Decorative gradients are avoided entirely; solid tokens only.</li>
+  <li><strong>Voice of the copy:</strong> warm, courteous, immaculate — "the brothers" tone. Short sentences. The Caveat tagline is the wink; everything else is the handshake.</li>
+</ul>
+
+<hr class="stripe-divider">
+
+<!-- ============ §4 RESPONSIVE ============ -->
+<h2>4 · Responsive Behavior</h2>
+<p>Two verified breakpoints. Mobile-first CSS; the 360px layout is the default, 1280px enhances.</p>
+<table>
+  <tr><th></th><th>360px (mobile)</th><th>1280px (desktop)</th></tr>
+  <tr><td><strong>Layout</strong></td><td>Single column, full-width sections</td><td>Max-width 1200px container, centered</td></tr>
+  <tr><td><strong>Section padding</strong></td><td>40px (space-5)</td><td>64px (space-8)</td></tr>
+  <tr><td><strong>Hero headline</strong></td><td>Display 40px</td><td>Display 56px</td></tr>
+  <tr><td><strong>Header</strong></td><td>Logo + hamburger; CTA stays visible</td><td>Full nav inline + CTA</td></tr>
+  <tr><td><strong>Value-prop trio</strong></td><td>Stacked</td><td>Three across</td></tr>
+  <tr><td><strong>Menu categories</strong></td><td>Stacked</td><td>Three across</td></tr>
+  <tr><td><strong>Location cards</strong></td><td>Stacked</td><td>Three across</td></tr>
+  <tr><td><strong>CTAs</strong></td><td>Full-width buttons, min-height 48px</td><td>Inline buttons, min-height 44px</td></tr>
+  <tr><td><strong>Form</strong></td><td>Fields full width, 16px+ font (no iOS zoom)</td><td>Two-column for date/guests pair</td></tr>
+</table>
+<div class="note"><strong>Non-negotiables:</strong> no horizontal scroll at either width · touch targets ≥ 44×44px (48px on mobile) · body font never below 16px on inputs (prevents iOS auto-zoom) · the SAMPLE banner and footer microcopy visible without scrolling sideways at 360px.</div>
+
+<hr class="stripe-divider">
+
+<!-- ============ §5 ACCESSIBILITY ============ -->
+<h2>5 · Accessibility Notes</h2>
+<ul>
+  <li><strong>Contrast:</strong> WCAG 2.1 AA on all text. Verified pairings in §1.1 — every ratio re-checked against the final tokens (brown on cream 11.74, cream on red 6.43, brown on yellow 8.08, cream on red-dark 9.98). Orange is decorative-only: brown-on-orange (4.26) fails, so it never carries text.</li>
+  <li><strong>Keyboard:</strong> skip-link → header → main → footer order; visible yellow focus ring on every interactive element (§1.5); <kbd>Esc</kbd> closes the mobile menu and returns focus; accordion is native <code>&lt;details&gt;</code>.</li>
+  <li><strong>Forms:</strong> real <code>&lt;label&gt;</code> elements (never placeholder-only), errors announced via <code>aria-describedby</code>, focus moved to the first invalid field, success confirmed in a full panel.</li>
+  <li><strong>Motion:</strong> no autoplay, no parallax. <code>prefers-reduced-motion: reduce</code> freezes all decorative animation (sunburst, hover lifts keep their end-state, no transitions).</li>
+  <li><strong>Semantics:</strong> one <code>h1</code> per page; landmark regions (<code>header</code>/<code>main</code>/<code>footer</code>/<code>nav</code>); decorative SVGs carry <code>aria-hidden="true"</code>; the chicken logo has an accessible name.</li>
+  <li><strong>Touch &amp; readability:</strong> 44px minimum targets (48px mobile); 16px minimum input font; line-length capped at ~68 characters for body copy.</li>
+</ul>
+
+<!-- DOC FOOTER -->
+<div class="doc-footer">
+  <hr class="stripe-divider">
+  <div class="sample-banner" style="margin-bottom:0;">★ SAMPLE — fictional client, illustrative only ★</div>
+  <div class="wrap" style="padding-top:18px; padding-bottom:30px;">
+    <p style="font-size:13px; text-align:center; margin:0;">
+      © 2026 Keith Soyka / GestaltView · SAMPLE<br>
+      <span style="opacity:.8;">Design Spec + Theme Package · Phase 2b · Prepared 2026-10-18 · Fictional client: Los Pollos Hermanos (illustrative only — no real business data)</span>
+    </p>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>
