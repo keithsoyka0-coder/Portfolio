@@ -1,0 +1,89 @@
+{
+  "claim": {
+    "id": "C-017",
+    "statement": "Practices cryptographic attestation: 255 OpenTimestamps proofs with valid v1 headers over artifacts (byte-verified 2026-10-11). Provenance-envelope, Merkle-verification, selective-disclosure (W3C verifiable credentials / BBS+ / zero-knowledge), and cryptographic-accumulator revocation designs exist at thesis/spec stage.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "partial",
+    "how_and_why": "Grade reason (v2): 255 .ots files located 2026-10-11 (ots_15_o7go.zip, strip-and-inspected; all 255 carry valid OpenTimestamps v1 proof headers, byte-verified) \u2014 the timestamping practice is verified. Provenance-envelope, Merkle-verification, selective-disclosure, and accumulator-revocation components are thesis/spec-stage designs, not implemented systems. The v1 statement presented all five as implemented \u2014 a compound-claim overreach corrected per independent review R-2026-10-11-SOL. Overall grade: partial (least-supported material assertion). Artifact-coverage scale (~2,200 artifacts) remains issuer-stated; the receipt files themselves are the verified evidence.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-017-1",
+        "descriptor": "OTS receipt files [not_found]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "not_found",
+        "provenance": "searched ~/workspace \u2014 none found",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      },
+      {
+        "artifact_id": "A-C-017-2",
+        "descriptor": "OTS references [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "referenced in thesis/ledger materials; receipts not located",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      },
+      {
+        "artifact_id": "A-C-017-4",
+        "descriptor": "255 OpenTimestamps proof files (.ots)",
+        "function": "Proves cryptographic timestamping practice: every file carries a valid OTS v1 proof header.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/ots_15_o7go.zip; strip-and-inspected 2026-10-11",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "automated_inspection",
+        "reproducibility": "inspectable"
+      }
+    ],
+    "assertions": [
+      {
+        "id": "C-017.A1",
+        "assertion": "OpenTimestamps timestamping practice: 255 .ots receipts, all with valid v1 proof headers (byte-verified)",
+        "grade": "verified"
+      },
+      {
+        "id": "C-017.A2",
+        "assertion": "Provenance envelopes with content hashing + interpretation bounds",
+        "grade": "partial",
+        "note": "Referenced in materials; implementation scope unconfirmed."
+      },
+      {
+        "id": "C-017.A3",
+        "assertion": "Merkle-tree client-side verification",
+        "grade": "partial",
+        "note": "Design referenced; standalone implementation unconfirmed."
+      },
+      {
+        "id": "C-017.A4",
+        "assertion": "Selective disclosure via W3C VC / BBS+ / zero-knowledge proofs",
+        "grade": "planned",
+        "note": "Thesis-derived designs."
+      },
+      {
+        "id": "C-017.A5",
+        "assertion": "Revocation via cryptographic accumulators",
+        "grade": "planned",
+        "note": "Thesis-derived designs."
+      }
+    ],
+    "derivation_history": "DRAFT from spreadsheet mergence: 9 source rows (spreadsheet rows 21\u2013288; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Individuals and firms can prove claims and capability provenance without exposing underlying private data.",
+    "v2_changes": "Statement rescoped (verified practice vs spec-stage designs separated); grade verified\u2192partial; component assertions added."
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

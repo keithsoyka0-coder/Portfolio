@@ -1,0 +1,29 @@
+{
+  "claim": {
+    "id": "C-029",
+    "statement": "Built a Shopify Revenue Agent: a Billy-engine adaptation with store-DNA initialization and automated insight-generation modules for e-commerce storefronts.",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "planned",
+    "how_and_why": "Grade reason: Shopify Revenue Agent: only 2 rows, assessor-labeled STAGED yet 'production-ready' \u2014 no repo, directory, or deployment found; treated as a staged plan, not a built product.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 2 source rows (spreadsheet rows 90\u2013354; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Small e-commerce operators get automated storefront analytics and conversion insights.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-029-1",
+        "descriptor": "Repo or directory [not_found]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "not_found",
+        "provenance": "searched ~/workspace and GitHub org \u2014 not found",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

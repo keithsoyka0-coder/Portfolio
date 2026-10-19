@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-035",
+    "statement": "Built the Neural Aurora design system: design tokens, dark neural aesthetics, brand kits and media kits, a shared React component library, interactive exhibit scaffolds, and adaptive neurodivergent-friendly layouts.",
+    "category": "Creative Direction & Brand",
+    "micro_category": "creative-direction--brand",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Design system corroborated: brand-kit zips on disk, NEON_AURORA_AD_SPEC in bot-squad, and the live portfolio itself demonstrates the system.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 12 source rows (spreadsheet rows 60\u2013407; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Consistent, distinctive visual identity across portfolio, products, and client deliverables.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-035-1",
+        "descriptor": "Brand kits",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/GestaltView_Brand_Kit_70_canva-ready.zip",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-035-2",
+        "descriptor": "Ad spec",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/bot-squad/NEON_AURORA_AD_SPEC.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-035-3",
+        "descriptor": "Live demonstration",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://keith-soyka-portfolio.vercel.app",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

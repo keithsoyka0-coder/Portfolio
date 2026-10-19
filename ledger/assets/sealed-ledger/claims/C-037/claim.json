@@ -1,0 +1,71 @@
+{
+  "claim": {
+    "id": "C-037",
+    "statement": "Authored research and thought leadership: a PeerJ Computer Science manuscript draft on context-preservation architecture, the Recognition Gap framework with a published thesis (Oct 10, 2026), a six-article LinkedIn suite, and the Mergence synthesis method.",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "partial",
+    "how_and_why": "Grade reason: Thought leadership corroborated at the artifact layer (peerj-paper dir, recognition-gap doc, ORCID bio, 2 of 6 LinkedIn articles published); PeerJ manuscript is outline/abstract-stage, not a submitted paper.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 35\u2013331; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Positions him as a practitioner-researcher in personal intelligence infrastructure and gives his methods citable form.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-037-1",
+        "descriptor": "Paper workspace",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/peerj-paper/",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-037-2",
+        "descriptor": "Recognition-gap articulation",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/recognition-gap-articulation_2026-10-03.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-037-3",
+        "descriptor": "ORCID record",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://orcid.org/0009-0006-5585-112X",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-037-4",
+        "descriptor": "PeerJ manuscript [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "outline/abstract stage per rows \u2014 not submitted",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,62 @@
+{
+  "claim": {
+    "id": "C-013",
+    "statement": "Designed the Two-Pass Gravity Protocol ('hype has surface area, signal has gravity'): a heuristic engine for scoring knowledge fragments for hype vs signal during ingestion \u2014 implemented as the protocol.ts module. The fuller engine vision (database tables, API endpoints, inspector UI, test suite) remains spec-stage.",
+    "category": "Data Layer & Retrieval",
+    "micro_category": "data-layer--retrieval",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason (v2): protocol corroborated as designed + implemented module (protocol.ts exists in repo). The v1 statement's component list (tables, API, inspector UI, tests) could be read as implemented \u2014 clarified in v2 as spec-stage per independent review R-2026-10-11-SOL. Overall grade: verified for the asserted scope (design + module).",
+    "evidence": [
+      {
+        "artifact_id": "A-C-013-1",
+        "descriptor": "Protocol module",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:shared/gravity/protocol.ts (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-013-2",
+        "descriptor": "Protocol spec [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "named in rows as spec-two-pass-gravity-protocol; spec-stage portions flagged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ],
+    "assertions": [
+      {
+        "id": "C-013.A1",
+        "assertion": "Two-Pass Gravity Protocol designed (named heuristic, specified)",
+        "grade": "verified"
+      },
+      {
+        "id": "C-013.A2",
+        "assertion": "protocol.ts module implemented in repo",
+        "grade": "verified"
+      },
+      {
+        "id": "C-013.A3",
+        "assertion": "Fuller engine: database tables, API endpoints, inspector UI, test suite",
+        "grade": "planned",
+        "note": "Spec-stage."
+      }
+    ],
+    "derivation_history": "DRAFT from spreadsheet mergence: 2 source rows (spreadsheet rows 140\u2013225; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Knowledge pipelines can filter inflated or low-substance content before it becomes agent memory.",
+    "v2_changes": "Statement clarified (implemented module vs spec-stage vision separated); component assertions added; grade unchanged."
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

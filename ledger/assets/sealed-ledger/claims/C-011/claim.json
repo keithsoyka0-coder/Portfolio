@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-011",
+    "statement": "Built an additive, idempotent ingestion and corpus pipeline: markdown-aware chunking with SHA-256 dedup, temporal flow manifest ordering, manifest-index orchestration, multi-stage summarization (inchworm progressive, snowball corpus synthesis, loom gap analysis), deep corpus excavation, and versioned training-dataset builds with commit-level provenance.",
+    "category": "Data Layer & Retrieval",
+    "micro_category": "data-layer--retrieval",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Ingestion pipeline corroborated: manifest pipeline scripts on disk; additive/idempotent loader is his documented methodology; corpus-scale numbers conflict across rows (different scopes/dates) \u2014 kept as flagged. Issuer verdict 2026-10-11: corpus scale resolved from the official repo manifest (repo_manifest_16_rhom.json, generated 2026-04-19 for GestaltView_Corpus_-_Knowledge_Repository): 2,438 files / 5,492,740 words / ~80MB across 16 categories. The competing '4,050 files / 14.5M words' figure has no manifest behind it and is not stated in the ledger. Scope correction per issuer 2026-10-11: the manifest covers the corpus knowledge repository ONLY \u2014 it does not include the current runtime. The runtime (keithsoyka0-coder/gestaltview) is a separate body of work: 7,771 blobs counted in the repo tree 2026-10-11. The two figures must never be conflated or summed without stating the boundary. Snapshot limitation per issuer 2026-10-11: the manifest is dated 2026-04-19 and excludes everything created since \u2014 including the entire last month of work (adapters, share cards, ledger builds, embodiment and OTS packages). Current corpus scale is unverified until a fresh manifest is generated; the 2026-04-19 figures are a floor, not a current count. Manifest inventory 2026-10-11: (1) corpus knowledge repository manifest, 2026-04-19: 2,438 files / 5.49M words \u2014 corpus only, excludes runtime and everything since; (2) runtime manifest labeled 'gestaltview-v2', 2026-10-10: 1,516 files / 207 API endpoints \u2014 runtime codebase snapshot, no matching remote repo found. Separate scopes, separate dates \u2014 never merged into one figure.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 31 source rows (spreadsheet rows 5\u2013427; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Organizations can turn sprawling unstructured archives into searchable, provenance-tracked knowledge bases without silent rewrites.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-011-1",
+        "descriptor": "Manifest pipeline",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/gestaltview_manifest_pipeline_74_gire.py",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-011-2",
+        "descriptor": "Corpus methodology",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "documented in memory: additive/idempotent ingestion, SHA-256 dedup",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-011-4",
+        "descriptor": "Corpus repo manifest (2,438 files, 5.49M words, 2026-04-19)",
+        "function": "Establishes the checkable corpus scale: file/word/byte counts with per-file hashes.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/repo_manifest_16_rhom.json",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

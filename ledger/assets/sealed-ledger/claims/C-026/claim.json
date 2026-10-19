@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-026",
+    "statement": "Built a generative render engine and document pipeline: 15-16 artifact types (documents, decks, diagrams, mindmaps, brand assets), multi-format export (HTML/JSON/Markdown/PDF), sandboxed iframe rendering, Creation Corner artifact staging with approval gates, rapid prototype capture, and repo-to-DeepWiki documentation generation (35 chapters, Mermaid integration).",
+    "category": "Developer Tooling",
+    "micro_category": "developer-tooling",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Render engine corroborated: gen-render zips on disk, DeepWiki compiled doc on disk, render-engine showcase page live in Portfolio repo; 15-vs-16 artifact-type conflict kept.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 22 source rows (spreadsheet rows 23\u2013373; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Turns raw inputs into branded, publication-ready collateral and navigable technical documentation.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-026-1",
+        "descriptor": "Render engine zips",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/gestaltview-gen-render_2_k7ul.zip",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-026-2",
+        "descriptor": "Compiled DeepWiki",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/GestaltView-DeepWiki-Compiled_2026-10-08.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-026-3",
+        "descriptor": "Showcase page",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/Portfolio:showcase/render-engine.html (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

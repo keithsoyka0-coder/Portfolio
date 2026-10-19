@@ -1,0 +1,29 @@
+{
+  "claim": {
+    "id": "C-031",
+    "statement": "Built the GestaltView Agent Trainer (GAT) white-label kit: ~282 files with API, Supabase schema and RLS, retrieval RPCs, CLI, React scaffolds, agent templates, Docker, MCP integration, and operator docs (SPEC, PLAYBOOK, CONSULTING).",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "planned",
+    "how_and_why": "Grade reason: GAT white-label kit: assessor-labeled 'shippable after runtime rewiring'; no GAT directory or package found in workspace; treated as a staged kit, not a shipped product.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 2 source rows (spreadsheet rows 268\u2013394; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Agencies and consultants can white-label and deploy custom AI agent systems without building the substrate.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-031-1",
+        "descriptor": "Kit directory or package [not_found]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "not_found",
+        "provenance": "searched ~/workspace \u2014 not found",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

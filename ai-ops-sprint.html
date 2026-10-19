@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>AI Ops Sprint — Keith Soyka</title>
+  <meta name="description" content="One workflow. Two weeks. Working. A fixed-price $2,500 AI operations sprint: find the money your operation is losing, prove it, automate the supported fix. Evidence graded in plain language." />
+  <link rel="canonical" href="https://keith-soyka-portfolio.vercel.app/ai-ops-sprint.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Keith Soyka" />
+  <meta property="og:title" content="AI Ops Sprint — Keith Soyka" />
+  <meta property="og:description" content="One workflow. Two weeks. Working. Find the costly friction, rebuild one process, leave with something the team can actually run." />
+  <meta property="og:url" content="https://keith-soyka-portfolio.vercel.app/ai-ops-sprint.html" />
+  <meta property="og:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Ops Sprint — Keith Soyka" />
+  <meta name="twitter:description" content="One workflow. Two weeks. Working. A fixed-price $2,500 AI operations sprint." />
+  <meta name="twitter:image" content="https://keith-soyka-portfolio.vercel.app/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#0c1115; --muted:#52606a; --paper:#f4f3ef; --sheet:#ffffff;
+      --line:#cbd0d2; --accent:#e75828; --accent-ink:#fff7f0; --signal:#007f88;
+      --soft:#e8e8e2; --dark:#11181d; --shadow:0 20px 60px rgba(12,17,21,.12);
+      --radius:18px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink:#f2f3ef; --muted:#aeb9bd; --paper:#0b1013; --sheet:#12191d;
+        --line:#334047; --accent:#ff7849; --accent-ink:#160b07; --signal:#38bbc3;
+        --soft:#192126; --dark:#05080a; --shadow:0 20px 70px rgba(0,0,0,.35);
+      }
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:"Archivo",sans-serif; font-variation-settings:"wdth" 98; }
+    button, a { font:inherit; }
+    button { color:inherit; }
+    .page { min-height:100vh; overflow:hidden; }
+    .shell { width:min(1180px, calc(100% - 36px)); margin:auto; }
+    .utility { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-bottom:1px solid var(--line); }
+    .tabs { display:flex; flex-wrap:wrap; gap:6px; }
+    .backlink { font-size:14px; font-weight:700; color:var(--muted); text-decoration:none; white-space:nowrap; }
+    .backlink:hover { color:var(--ink); }
+    .tab { border:0; background:transparent; padding:10px 13px; cursor:pointer; color:var(--muted); border-radius:999px; font-size:14px; font-weight:700; }
+    .tab[aria-selected="true"] { background:var(--ink); color:var(--paper); }
+    .status { font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--muted); white-space:nowrap; }
+    .panel { display:none; }
+    .panel.active { display:block; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr); min-height:600px; align-items:stretch; border-bottom:1px solid var(--line); }
+    .hero-copy { padding:84px 56px 70px 0; display:flex; flex-direction:column; justify-content:center; }
+    .kicker { display:flex; align-items:center; gap:10px; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--signal); font-weight:600; margin-bottom:24px; }
+    .kicker::before { content:""; width:34px; height:2px; background:var(--signal); }
+    h1 { margin:0; font-size:clamp(52px,8vw,112px); line-height:.88; letter-spacing:-.067em; font-weight:750; font-variation-settings:"wdth" 82; max-width:800px; }
+    .hero-copy > p { margin:30px 0 0; max-width:610px; font-size:clamp(18px,2vw,24px); line-height:1.45; color:var(--muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+    .btn { border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:13px 17px; border-radius:8px; font-weight:750; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:9px; min-height:48px; }
+    .btn.secondary { background:transparent; color:var(--ink); }
+    .btn.accent { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+    .btn:focus-visible, .tab:focus-visible, .copy:focus-visible, .scene-dot:focus-visible { outline:3px solid var(--signal); outline-offset:3px; }
+    .hero-rail { background:var(--dark); color:#f3f5f4; padding:44px 38px; display:flex; flex-direction:column; justify-content:space-between; position:relative; }
+    .hero-rail::before { content:""; position:absolute; inset:0; background:repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,255,255,.035) 24px 25px); pointer-events:none; }
+    .price { position:relative; }
+    .price small { font-family:"IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.08em; color:#9fb2b7; }
+    .price strong { display:block; font-size:clamp(62px,8vw,100px); letter-spacing:-.07em; line-height:.95; margin:8px 0; }
+    .price p { color:#b8c4c7; margin:0; font-size:15px; }
+    .scope-list { position:relative; display:grid; gap:1px; background:#334047; border:1px solid #334047; }
+    .scope { background:#11181d; padding:18px; display:grid; grid-template-columns:28px 1fr; gap:12px; align-items:start; }
+    .scope b { color:#ff8b62; font-family:"IBM Plex Mono",monospace; font-size:12px; }
+    .scope span { line-height:1.35; font-size:14px; }
+    .section { padding:88px 0; border-bottom:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:1fr 1.2fr; gap:60px; align-items:start; margin-bottom:54px; }
+    h2 { margin:0; font-size:clamp(34px,5vw,62px); line-height:.98; letter-spacing:-.045em; font-variation-settings:"wdth" 86; }
+    .section-head p { margin:0; font-size:18px; line-height:1.6; color:var(--muted); max-width:600px; }
+    .process { counter-reset:steps; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .step { counter-increment:steps; padding:28px 24px 32px; min-height:250px; border-right:1px solid var(--line); position:relative; }
+    .step:last-child { border-right:0; }
+    .step::before { content:"0" counter(steps); font-family:"IBM Plex Mono",monospace; color:var(--accent); font-size:12px; }
+    .step h3 { font-size:24px; letter-spacing:-.025em; margin:48px 0 12px; }
+    .step p { margin:0; color:var(--muted); line-height:1.55; font-size:15px; }
+    .promise-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .promise { background:var(--sheet); padding:28px; min-height:210px; border:1px solid var(--line); box-shadow:0 1px 0 rgba(0,0,0,.04); }
+    .promise:nth-child(2), .promise:nth-child(3) { border-radius:var(--radius); }
+    .promise .tag { font-family:"IBM Plex Mono",monospace; color:var(--signal); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+    .promise h3 { font-size:25px; margin:32px 0 10px; letter-spacing:-.025em; }
+    .promise p { color:var(--muted); line-height:1.55; margin:0; }
+    .anti-scope { display:grid; grid-template-columns:1fr 1fr; background:var(--accent); color:var(--accent-ink); }
+    .anti-scope > div { padding:50px; }
+    .anti-scope .quote { font-size:clamp(36px,5vw,66px); letter-spacing:-.05em; line-height:.98; font-weight:750; }
+    .anti-scope .details { border-left:1px solid rgba(255,255,255,.35); }
+    .details p { font-size:18px; line-height:1.6; margin:0 0 18px; }
+    .fine { font-size:12px !important; font-family:"IBM Plex Mono",monospace; opacity:.8; }
+
+    /* motion cut */
+    .motion-wrap { padding:56px 0 90px; }
+    .motion-top { display:flex; justify-content:space-between; gap:30px; align-items:end; margin-bottom:28px; }
+    .motion-top h1 { font-size:clamp(42px,7vw,84px); }
+    .motion-top p { color:var(--muted); max-width:470px; line-height:1.55; margin:0; }
+    .player { background:#070b0e; color:#fff; aspect-ratio:16/9; min-height:400px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+    .player::before { content:""; position:absolute; inset:0; background:linear-gradient(120deg,rgba(0,127,136,.2),transparent 35%),repeating-linear-gradient(90deg,transparent 0 78px,rgba(255,255,255,.025) 78px 79px); }
+    .scene { position:absolute; inset:0; display:grid; place-items:center; padding:8%; opacity:0; pointer-events:none; transform:translateY(24px); transition:opacity .45s ease, transform .45s ease; }
+    .scene.active { opacity:1; transform:translateY(0); }
+    .scene-inner { width:100%; max-width:920px; }
+    .scene .scene-no { font-family:"IBM Plex Mono",monospace; color:#62d2d7; font-size:12px; }
+    .scene h3 { font-size:clamp(38px,6vw,88px); letter-spacing:-.06em; line-height:.92; margin:18px 0; max-width:850px; }
+    .scene p { font-size:clamp(16px,2vw,22px); color:#bcc9cc; max-width:650px; line-height:1.45; }
+    .scene .strike { color:#ff8255; text-decoration:line-through; text-decoration-thickness:4px; }
+    .diagram { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:34px; }
+    .node { border:1px solid #52636a; min-height:92px; padding:18px; font-family:"IBM Plex Mono",monospace; font-size:13px; display:flex; align-items:end; position:relative; }
+    .node::before { content:""; position:absolute; width:9px; height:9px; border-radius:50%; top:14px; left:14px; background:#62d2d7; }
+    .node.alert::before { background:#ff8255; box-shadow:0 0 0 6px rgba(255,130,85,.18); }
+    .controls { display:flex; gap:10px; align-items:center; margin-top:16px; }
+    .progress { height:4px; background:var(--line); flex:1; position:relative; }
+    .progress > span { display:block; height:100%; width:0%; background:var(--accent); transition:width .2s linear; }
+    .scene-nav { display:flex; gap:6px; }
+    .scene-dot { width:24px; height:24px; padding:0; border:0; background:transparent; position:relative; cursor:pointer; }
+    .scene-dot::after { content:""; width:7px; height:7px; border-radius:50%; background:var(--line); position:absolute; inset:0; margin:auto; }
+    .scene-dot.active::after { background:var(--accent); transform:scale(1.5); }
+    .storyboard { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:64px; }
+    .board-card { border:1px solid var(--line); background:var(--sheet); padding:20px; min-height:160px; }
+    .board-card b { font-family:"IBM Plex Mono",monospace; color:var(--accent); font-size:11px; }
+    .board-card h4 { font-size:19px; margin:22px 0 8px; }
+    .board-card p { margin:0; color:var(--muted); line-height:1.45; font-size:14px; }
+
+    /* campaign kit */
+    .kit-wrap { padding:58px 0 100px; }
+    .kit-head { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; margin-bottom:48px; align-items:end; }
+    .kit-head h1 { font-size:clamp(44px,7vw,84px); }
+    .kit-head p { color:var(--muted); line-height:1.6; margin:0; }
+    .asset-list { display:grid; gap:1px; background:var(--line); border:1px solid var(--line); }
+    .asset { background:var(--sheet); display:grid; grid-template-columns:180px 1fr auto; gap:28px; align-items:start; padding:28px; }
+    .asset-meta { font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--signal); text-transform:uppercase; letter-spacing:.05em; }
+    .asset-copy h3 { margin:0 0 12px; font-size:23px; letter-spacing:-.02em; }
+    .asset-copy pre { white-space:pre-wrap; font-family:"Archivo",sans-serif; color:var(--muted); line-height:1.55; margin:0; font-size:15px; }
+    .copy { border:1px solid var(--line); background:transparent; padding:10px 12px; border-radius:7px; cursor:pointer; min-width:84px; font-size:13px; font-weight:700; }
+    .copy[data-state="done"] { background:var(--signal); border-color:var(--signal); color:#fff; }
+    .download-bar { margin-top:22px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 0; }
+    .download-bar p { color:var(--muted); margin:0; font-size:14px; }
+    .footer-note { padding:35px 0 55px; display:flex; justify-content:space-between; gap:25px; color:var(--muted); font-family:"IBM Plex Mono",monospace; font-size:11px; }
+    .toast { position:fixed; bottom:22px; left:50%; transform:translate(-50%,30px); opacity:0; background:var(--ink); color:var(--paper); padding:12px 16px; border-radius:8px; font-size:13px; font-weight:700; transition:.25s; pointer-events:none; z-index:10; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width: 820px) {
+      .shell { width:min(100% - 24px, 680px); }
+      .utility { align-items:flex-start; flex-direction:column; padding:14px 0; gap:8px; }
+      .tabs { width:100%; }
+      .tab { flex:1; }
+      .status { display:none; }
+      .hero { grid-template-columns:1fr; }
+      .hero-copy { padding:58px 0 48px; }
+      h1 { font-size:clamp(54px,17vw,82px); }
+      .hero-rail { min-height:500px; margin:0 -12px; padding:36px 24px; }
+      .section { padding:62px 0; }
+      .section-head, .kit-head { grid-template-columns:1fr; gap:24px; }
+      .process { grid-template-columns:1fr 1fr; }
+      .step:nth-child(2) { border-right:0; }
+      .step:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+      .promise-grid { grid-template-columns:1fr; }
+      .promise { min-height:auto; }
+      .anti-scope { grid-template-columns:1fr; margin:0 -12px; }
+      .anti-scope > div { padding:36px 24px; }
+      .anti-scope .details { border-left:0; border-top:1px solid rgba(255,255,255,.35); }
+      .motion-wrap, .kit-wrap { padding-top:40px; }
+      .motion-top { display:block; }
+      .motion-top p { margin-top:20px; }
+      .player { aspect-ratio:auto; min-height:480px; margin:0 -12px; }
+      .scene { padding:30px 26px; }
+      .diagram { grid-template-columns:1fr; }
+      .node { min-height:68px; }
+      .storyboard { grid-template-columns:1fr; }
+      .asset { grid-template-columns:1fr; gap:16px; }
+      .copy { justify-self:start; }
+      .download-bar, .footer-note { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width: 480px) {
+      .process { grid-template-columns:1fr; }
+      .step { border-right:0; border-bottom:1px solid var(--line) !important; min-height:auto; }
+      .step:last-child { border-bottom:0 !important; }
+      .actions .btn { width:100%; justify-content:center; }
+      .controls { flex-wrap:wrap; }
+      .progress { order:3; flex-basis:100%; }
+      .scene-nav { margin-left:auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="shell">
+    <nav class="utility" aria-label="Artifact sections">
+      <a class="backlink" href="index.html">&larr; Keith Soyka</a>
+      <div class="tabs" role="tablist" aria-label="Views">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="offer" id="tab-offer" data-tab="offer">The offer</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="motion" id="tab-motion" data-tab="motion">30-sec cut</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="kit" id="tab-kit" data-tab="kit">Campaign kit</button>
+      </div>
+      <span class="status">FIXED SCOPE / TEN BUSINESS DAYS</span>
+    </nav>
+  </div>
+
+  <main>
+    <section class="panel active" id="offer" role="tabpanel" aria-labelledby="tab-offer">
+      <div class="shell hero">
+        <div class="hero-copy">
+          <div class="kicker">Operational improvement, not AI theater</div>
+          <h1>One workflow.<br>Two weeks.<br>Working.</h1>
+          <p>Find the costly friction, rebuild one process, and leave your team with something they can actually run—without open-ended consulting or a dependency on the person who built it.</p>
+          <div class="actions">
+            <button class="btn accent" data-open="motion">Watch the 30-sec cut <span aria-hidden="true">→</span></button>
+            <button class="btn secondary" data-copy-key="fit">Copy fit-check opener</button>
+          </div>
+        </div>
+        <aside class="hero-rail" aria-label="Sprint terms">
+          <div class="price">
+            <small>Fixed investment</small>
+            <strong>$2,500</strong>
+            <p>One workflow · ten business days</p>
+          </div>
+          <div class="scope-list">
+            <div class="scope"><b>01</b><span>A mapped workflow and a clear leverage point</span></div>
+            <div class="scope"><b>02</b><span>One working automation or AI-assisted process</span></div>
+            <div class="scope"><b>03</b><span>A trained maintainer and complete documentation</span></div>
+            <div class="scope"><b>04</b><span>30 days of fixes on what was built</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-head">
+            <h2>Diagnose before you automate.</h2>
+            <p>The sprint starts with the work as it actually happens—not the clean version in a process manual. We trace the delays, workarounds, rework, and decisions that create cost, then choose the single intervention with the clearest operational payoff.</p>
+          </div>
+          <div class="process">
+            <article class="step"><h3>Trace the work</h3><p>Map the workflow with the people closest to it. Capture the real handoffs and exceptions.</p></article>
+            <article class="step"><h3>Find the edge</h3><p>Surface the friction your team feels—and the rough edges they have learned to work around.</p></article>
+            <article class="step"><h3>Build one fix</h3><p>Automate or redesign one bounded workflow, using your actual data and real edge cases.</p></article>
+            <article class="step"><h3>Hand it over</h3><p>Test, document, and train your person. The work is complete when they can run it.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-head">
+            <h2>What “done” means.</h2>
+            <p>No vague transformation program. No binder left on a shelf. The finish line is observable, bounded, and agreed before the build begins.</p>
+          </div>
+          <div class="promise-grid">
+            <article class="promise"><span class="tag">Working artifact</span><h3>A workflow in use</h3><p>A functioning automation or AI-assisted process—not a recommendation for someone else to build.</p></article>
+            <article class="promise"><span class="tag">Continuity</span><h3>A person who can own it</h3><p>Your designated maintainer learns the operating path, failure points, and recovery steps.</p></article>
+            <article class="promise"><span class="tag">Legibility</span><h3>Documentation built for Tuesday</h3><p>Clear instructions for the person doing the work, including what the system can and cannot do.</p></article>
+            <article class="promise"><span class="tag">Protection</span><h3>Thirty days of fixes</h3><p>If something in the agreed build breaks during the first 30 days, it gets corrected. New scope stays new scope.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell anti-scope">
+        <div class="quote">The bounds<br>are the feature.</div>
+        <div class="details">
+          <p>One workflow. One price. One end date. If discovery reveals a larger problem, that becomes a second, separately scoped sprint—not a surprise invoice and not a project that never ends.</p>
+          <p class="fine">Not a fit for enterprise-wide transformation, multi-system replacement, or undefined “make us AI-ready” engagements.</p>
+        </div>
+      </section>
+      <div class="shell footer-note"><span>AI OPS SPRINT / OFFER PAGE</span><span>Built to be understood before the first call.</span></div>
+    </section>
+
+    <section class="panel" id="motion" role="tabpanel" aria-labelledby="tab-motion" hidden>
+      <div class="shell motion-wrap">
+        <div class="motion-top">
+          <h1>The 30-second cut.</h1>
+          <p>A motion-first explainer built around the differentiator: the sprint does not begin by automating the first problem someone names. It finds the rough edge underneath it.</p>
+        </div>
+        <div class="player" id="player" aria-live="polite">
+          <article class="scene active" data-duration="4500">
+            <div class="scene-inner"><span class="scene-no">00:00—00:04</span><h3>The rush shipment is not the problem.</h3><p>It is the signal that something upstream is breaking.</p></div>
+          </article>
+          <article class="scene" data-duration="4500">
+            <div class="scene-inner"><span class="scene-no">00:04—00:09</span><h3>Most automation starts with an answer.</h3><p>We start by tracing the work.</p></div>
+          </article>
+          <article class="scene" data-duration="5000">
+            <div class="scene-inner"><span class="scene-no">00:09—00:14</span><h3>Find the rough edge.</h3><div class="diagram"><div class="node">Request enters</div><div class="node alert">Approval stalls</div><div class="node">Cost arrives</div></div></div>
+          </article>
+          <article class="scene" data-duration="4500">
+            <div class="scene-inner"><span class="scene-no">00:14—00:18</span><h3>Build <span class="strike">everything</span> one fix.</h3><p>The smallest intervention that changes the operation.</p></div>
+          </article>
+          <article class="scene" data-duration="5000">
+            <div class="scene-inner"><span class="scene-no">00:18—00:23</span><h3>Test it where work gets messy.</h3><p>Your data. Your exceptions. Your team.</p></div>
+          </article>
+          <article class="scene" data-duration="5000">
+            <div class="scene-inner"><span class="scene-no">00:23—00:28</span><h3>Then leave it in their hands.</h3><p>Working workflow. Trained maintainer. Documentation. 30 days of fixes.</p></div>
+          </article>
+          <article class="scene" data-duration="4500">
+            <div class="scene-inner"><span class="scene-no">00:28—00:32</span><h3>One workflow.<br>Two weeks.<br>$2,500.</h3><p>The bounds are the feature.</p></div>
+          </article>
+        </div>
+        <div class="controls">
+          <button class="btn" id="playBtn" aria-pressed="false">Play cut</button>
+          <div class="progress" aria-label="Video progress"><span id="progressBar"></span></div>
+          <div class="scene-nav" id="sceneNav" aria-label="Choose scene"></div>
+        </div>
+        <div class="storyboard">
+          <article class="board-card"><b>HOOK</b><h4>Open on the symptom</h4><p>Name the expensive, visible problem—then reframe it as evidence of a deeper operational break.</p></article>
+          <article class="board-card"><b>PROOF OF METHOD</b><h4>Show the failure being caught</h4><p>The stalled approval makes diagnosis visible. The value is not “AI”; it is seeing what the operation has normalized.</p></article>
+          <article class="board-card"><b>OFFER</b><h4>End on the boundary</h4><p>Price, timeline, output. No inflated transformation promise; just a clear decision a buyer can make.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="kit" role="tabpanel" aria-labelledby="tab-kit" hidden>
+      <div class="shell kit-wrap">
+        <div class="kit-head">
+          <h1>Campaign kit.</h1>
+          <p>One offer, translated for the places it has to travel: a direct message, a public post, a spoken opener, and the one-page brief. Each asset keeps the same promise and the same boundary.</p>
+        </div>
+        <div class="asset-list">
+          <article class="asset">
+            <div class="asset-meta">Direct message / warm lead</div>
+            <div class="asset-copy"><h3>Specific, not generic</h3><pre id="copy-dm">Thanks for reaching out—operations and performance improvement is exactly where I come from: 22 years running frontline operations before spending the last year building AI systems.
+
+The way I work with ops leaders is a fixed-scope sprint: we pick one workflow, I automate or rebuild it, and your team learns to run it. Two weeks, $2,500, defined end date—no open-ended consulting, no dependency.</pre></div>
+            <button class="copy" data-copy-target="copy-dm">Copy</button>
+          </article>
+          <article class="asset">
+            <div class="asset-meta">LinkedIn / launch post</div>
+            <div class="asset-copy"><h3>Lead with the limit</h3><pre id="copy-post">I’m offering one deliberately bounded engagement: one operational workflow, rebuilt in two weeks, for $2,500.
+
+We start by tracing the work as it actually happens—the delays, handoffs, and exceptions people have learned to work around. Then I build the smallest intervention that changes the operation, test it against real edge cases, document it, and train the person who will own it.
+
+The bounds are the feature. If the problem is bigger, that becomes a second sprint—not scope creep.</pre></div>
+            <button class="copy" data-copy-target="copy-post">Copy</button>
+          </article>
+          <article class="asset">
+            <div class="asset-meta">Discovery call / 20 seconds</div>
+            <div class="asset-copy"><h3>Say what changes</h3><pre id="copy-talk">I don’t start by automating the first problem someone names. I map the workflow, find where the cost or delay is actually entering, and then we fix one bounded piece. At the end of two weeks, your team has a working workflow, a trained owner, and documentation—not a recommendation deck.</pre></div>
+            <button class="copy" data-copy-target="copy-talk">Copy</button>
+          </article>
+          <article class="asset">
+            <div class="asset-meta">Objection / what breaks later?</div>
+            <div class="asset-copy"><h3>Answer without overpromising</h3><pre id="copy-objection">The sprint includes 30 days of fixes on what we built. I also train a maintainer and document the failure and recovery paths so your team is not dependent on me. If your process changes later, that is new work: we can handle it at $150 an hour or scope a second sprint, depending on the size.</pre></div>
+            <button class="copy" data-copy-target="copy-objection">Copy</button>
+          </article>
+          <article class="asset">
+            <div class="asset-meta">Fit check / first question</div>
+            <div class="asset-copy"><h3>Start with the symptom</h3><pre id="copy-fit">What is the operational symptom you can already see—rush costs, repeated rework, a queue that never clears, or decisions that stall—and what does it force your team to do next?</pre></div>
+            <button class="copy" data-copy-target="copy-fit">Copy</button>
+          </article>
+        </div>
+        <div class="download-bar">
+          <p>Need the package outside this page? Export the complete offer and campaign copy as a clean Markdown brief.</p>
+          <button class="btn secondary" id="downloadBtn">Download brief</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast" role="status">Copied</div>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  var openButtons = document.querySelectorAll('[data-open]');
+  var toast = document.getElementById('toast');
+  var toastTimer;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+
+  function activate(id) {
+    tabs.forEach(function(tab){
+      var selected = tab.getAttribute('data-tab') === id;
+      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    panels.forEach(function(panel){
+      var active = panel.id === id;
+      panel.classList.toggle('active', active);
+      panel.hidden = !active;
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  tabs.forEach(function(tab){ tab.addEventListener('click', function(){ activate(tab.getAttribute('data-tab')); }); });
+  openButtons.forEach(function(button){ button.addEventListener('click', function(){ activate(button.getAttribute('data-open')); }); });
+
+  var fallbackText = {
+    fit: 'What is the operational symptom you can already see—rush costs, repeated rework, a queue that never clears, or decisions that stall—and what does it force your team to do next?'
+  };
+
+  function copyText(text, button) {
+    function done(){
+      if (button) {
+        button.setAttribute('data-state','done');
+        var prior = button.textContent;
+        button.textContent = 'Copied';
+        setTimeout(function(){ button.removeAttribute('data-state'); button.textContent = prior; }, 1500);
+      }
+      showToast('Copied to clipboard');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
+  }
+  function fallbackCopy(text) {
+    var area = document.createElement('textarea');
+    area.value = text; area.style.position = 'fixed'; area.style.opacity = '0';
+    document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove();
+  }
+  document.querySelectorAll('[data-copy-target]').forEach(function(button){
+    button.addEventListener('click', function(){ copyText(document.getElementById(button.getAttribute('data-copy-target')).innerText, button); });
+  });
+  document.querySelectorAll('[data-copy-key]').forEach(function(button){
+    button.addEventListener('click', function(){ copyText(fallbackText[button.getAttribute('data-copy-key')], button); });
+  });
+
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.scene'));
+  var nav = document.getElementById('sceneNav');
+  var playBtn = document.getElementById('playBtn');
+  var progressBar = document.getElementById('progressBar');
+  var current = 0, playing = false, sceneStart = 0, elapsedBefore = 0, raf = null;
+  var total = scenes.reduce(function(sum, scene){ return sum + Number(scene.getAttribute('data-duration')); }, 0);
+  var cumulative = [];
+  scenes.reduce(function(sum, scene, i){ cumulative[i] = sum; return sum + Number(scene.getAttribute('data-duration')); }, 0);
+
+  scenes.forEach(function(scene, i){
+    var dot = document.createElement('button');
+    dot.className = 'scene-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label','Scene ' + (i + 1));
+    dot.addEventListener('click', function(){ pause(); setScene(i); updateProgress(cumulative[i]); });
+    nav.appendChild(dot);
+  });
+  function setScene(i) {
+    current = i;
+    scenes.forEach(function(scene, index){ scene.classList.toggle('active', index === i); });
+    Array.prototype.slice.call(nav.children).forEach(function(dot, index){ dot.classList.toggle('active', index === i); });
+  }
+  function updateProgress(ms){ progressBar.style.width = Math.min(100, (ms / total) * 100) + '%'; }
+  function tick(now) {
+    if (!playing) return;
+    var sceneElapsed = now - sceneStart;
+    var duration = Number(scenes[current].getAttribute('data-duration'));
+    updateProgress(cumulative[current] + Math.min(sceneElapsed, duration));
+    if (sceneElapsed >= duration) {
+      if (current < scenes.length - 1) { setScene(current + 1); sceneStart = now; }
+      else { pause(); updateProgress(total); playBtn.textContent = 'Replay cut'; return; }
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  function play() {
+    if (current === scenes.length - 1 && progressBar.style.width === '100%') { setScene(0); updateProgress(0); }
+    playing = true; sceneStart = performance.now(); playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed','true');
+    raf = requestAnimationFrame(tick);
+  }
+  function pause() {
+    playing = false; if (raf) cancelAnimationFrame(raf); playBtn.textContent = 'Play cut'; playBtn.setAttribute('aria-pressed','false');
+  }
+  playBtn.addEventListener('click', function(){ playing ? pause() : play(); });
+
+  var brief = '# AI Ops Sprint\n\n## Offer\n**$2,500 fixed · ten business days · one workflow**\n\nWe map the workflow with your team, find the leverage point, and build one automation or AI-assisted process. Then we test it against real data and edge cases, train your maintainer, and document the operating and recovery paths. The package includes 30 days of fixes on what was built.\n\n## Deliverables\n- One mapped workflow and clear leverage point\n- One working automation or AI-assisted process\n- One trained maintainer\n- Complete documentation\n- 30 days of fixes on the agreed build\n\n## Boundary\nOne workflow. One price. One end date. If discovery reveals a larger problem, that becomes a separately scoped second sprint—not scope creep.\n\n## Launch post\n' + document.getElementById('copy-post').innerText + '\n\n## Direct message\n' + document.getElementById('copy-dm').innerText + '\n\n## Discovery opener\n' + document.getElementById('copy-talk').innerText + '\n\n## Fit-check question\n' + document.getElementById('copy-fit').innerText + '\n';
+  document.getElementById('downloadBtn').addEventListener('click', function(){
+    var blob = new Blob([brief], {type:'text/markdown'});
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a'); link.href = url; link.download = 'ai-ops-sprint-brief.md';
+    document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url); showToast('Brief downloaded');
+  });
+})();
+</script>
+</body>
+</html>

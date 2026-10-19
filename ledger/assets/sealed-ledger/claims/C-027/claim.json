@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-027",
+    "statement": "Built Resume Rockstar v2.0/v2.1.1: an AI resume platform with PLK resonance scoring, six-dimension ATS optimization, voice/file input, three-mode chat discovery, cognitive typing heuristics, and Stripe billing, positioned for neurodivergent job seekers.",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "partial",
+    "how_and_why": "Grade reason: Resume Rockstar is described in detailed, consistent rows (FastAPI+Next.js, v2.1.1) but no repo or build directory was found in the workspace; production deployment is self-reported per row 367.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 4 source rows (spreadsheet rows 82\u2013367; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Job seekers - especially ADHD/autistic - get resume tooling that works with their cognitive style rather than against it.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-027-1",
+        "descriptor": "Repo or build dir [not_found]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "not_found",
+        "provenance": "searched ~/workspace \u2014 not found",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      },
+      {
+        "artifact_id": "A-C-027-2",
+        "descriptor": "Row detail [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "rows describe v2.0/v2.1.1 consistently; treated as self-reported",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

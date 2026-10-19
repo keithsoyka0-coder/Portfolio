@@ -1,0 +1,184 @@
+{
+  "scheme": "SHA-256 binary Merkle tree; leaves = sha256(raw file bytes), ordered by relative path; parent = sha256(hex(left)+hex(right)), lowercase hex ASCII; odd trailing node duplicated",
+  "sealed_at": "2026-10-12T02:36:58+00:00",
+  "issuer": "Keith Soyka",
+  "version": "v2",
+  "supersedes": "v1 (root 056fd3784afe583317f3679b29dddc412401813601bf3ffa7bfa1b3ef3dd0179) \u2014 v1 seal remains valid for v1's files",
+  "scope": "43 content files: 37 claims (23 verified / 12 partial / 2 planned) + ATTESTATIONS.md + EXCLUSIONS.md + ROADMAP.md + LEDGER.md + README.md + reviews/R-2026-10-11-SOL.md. Envelope (manifest.json, seal.json, hashes.sha256) not leaves. HTML companion not covered.",
+  "leaf_count": 43,
+  "leaves": [
+    {
+      "path": "ATTESTATIONS.md",
+      "sha256": "344bc096a79ac8acedc22590c206783b9c0fdbe88ff739a870bff3c481d8316e"
+    },
+    {
+      "path": "EXCLUSIONS.md",
+      "sha256": "a1da801e3ca0385fe264760e22501471f00699eaf17f8b41fdd6f10656664813"
+    },
+    {
+      "path": "LEDGER.md",
+      "sha256": "f6f8cc593c045d9712272ab8e64604f85684d791a67ada394ec5dde30de10ac4"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a656f6ec71d20a5fccc01367877760d6ac24ef38d5e1537de0499214276e3a59"
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "14a02af140623ca431862c59f076a62ec7727a0bb3f213e4dec69b2c589dffc4"
+    },
+    {
+      "path": "claims/C-001/claim.json",
+      "sha256": "d7b8f9708d0403af95c82616293727c9340e7f95c987477e89c44c09859016bb"
+    },
+    {
+      "path": "claims/C-002/claim.json",
+      "sha256": "fd0adc31625da35ade4715f2834f0aeec9f352a1818a3846e5ee3dffdcfe17c8"
+    },
+    {
+      "path": "claims/C-003/claim.json",
+      "sha256": "f72d10ae7f356a323d6a2a4515c51d612b90d685c677798d466d7d8eb17ca623"
+    },
+    {
+      "path": "claims/C-004/claim.json",
+      "sha256": "0b5a210222f6b4065fb2768f34e6a03cbae42058774c59fa680b527af15f5618"
+    },
+    {
+      "path": "claims/C-005/claim.json",
+      "sha256": "0fb4975b8ed7efd87519e6df14c24e155d2d21b9f74260909605d7d2414d55eb"
+    },
+    {
+      "path": "claims/C-006/claim.json",
+      "sha256": "3e17e69188a91a5eea983384b206a0321e143f9eaf65a88f557f7e6bc1c63aef"
+    },
+    {
+      "path": "claims/C-007/claim.json",
+      "sha256": "624e91bc54abb4d2fedc2a808d850d39bfe0d5cbdd187a2fd31f05e9d2cbf212"
+    },
+    {
+      "path": "claims/C-008/claim.json",
+      "sha256": "1fb6f802569cb47a44526bc1042877b39a2c31bb6067ac3a9506dd661ad2ef03"
+    },
+    {
+      "path": "claims/C-009/claim.json",
+      "sha256": "4f62747a45a1ce624de08389675370b1afa7482aff4f32adea3eab92ee4a6102"
+    },
+    {
+      "path": "claims/C-010/claim.json",
+      "sha256": "77cb0f761f3c31fdef47cdbe0dfaa5f2089293d2dc8e6c490123a7f67b0a0390"
+    },
+    {
+      "path": "claims/C-011/claim.json",
+      "sha256": "1c92768776729a9598de1110bfe6c9a5620e025782a2d1ae16f544e59c20c577"
+    },
+    {
+      "path": "claims/C-012/claim.json",
+      "sha256": "e98deeee847b6490db5dca2ea54bf238d6141faf33e3dae9a9304e0af189180c"
+    },
+    {
+      "path": "claims/C-013/claim.json",
+      "sha256": "469808fcbc7487b3957bf08db798aa2207236727076e8b32035bbe16de8db83b"
+    },
+    {
+      "path": "claims/C-014/claim.json",
+      "sha256": "db5393dfa45994dfa618e41efbf9b74d3b01f4615c17e2b6c930db100b8555a5"
+    },
+    {
+      "path": "claims/C-015/claim.json",
+      "sha256": "8126b4ad28d40f8ad7aea725afe2cf9f992f0547c25ab5805d793a42f11298d3"
+    },
+    {
+      "path": "claims/C-016/claim.json",
+      "sha256": "2ea05cf71df26fd5974995c2f43b934e5e728d07302028f118ef22b30a2c38f1"
+    },
+    {
+      "path": "claims/C-017/claim.json",
+      "sha256": "7af5cadf89088cf54e67ba31f76ee114dc5742cd3a21abe11e7c5e574e363f61"
+    },
+    {
+      "path": "claims/C-018/claim.json",
+      "sha256": "ab0b1d16f2ce3ad080fb3e2fd960fc8bac1142ed9c83ddd21fb5bb29e66c9fe4"
+    },
+    {
+      "path": "claims/C-019/claim.json",
+      "sha256": "a7aa779a1e3ec0b7f8e6412ac99ac4924f8faae1b5802a726e2271e956bfc005"
+    },
+    {
+      "path": "claims/C-020/claim.json",
+      "sha256": "cc37ebbb93f0b32f81e7078840e9cce5bad320c5924492b38cc54260308ed3ca"
+    },
+    {
+      "path": "claims/C-021/claim.json",
+      "sha256": "41a46b1c0a8369925f386e97223bc2ce710c92e060ca14c286fe3fbd7ef13287"
+    },
+    {
+      "path": "claims/C-022/claim.json",
+      "sha256": "d733fd7e08a00cd4e1fdd14f55142a3eaad8b13e8130f004f1fce8e6b0d20de4"
+    },
+    {
+      "path": "claims/C-023/claim.json",
+      "sha256": "b7394253256e2bccdad931a6979d333bebfe3bbaf6dc5f42a3aa3dfbdc86ebe5"
+    },
+    {
+      "path": "claims/C-024/claim.json",
+      "sha256": "0760924dbe96de8d3a8378375a6bb43e1f02c344e0e7a48649482d47b2cf77de"
+    },
+    {
+      "path": "claims/C-025/claim.json",
+      "sha256": "bb12f4c98624b149d939d9762cc7fa6e0e2ef9ceeb418c0e167033fe106d07d0"
+    },
+    {
+      "path": "claims/C-026/claim.json",
+      "sha256": "a3587001c35f07a1639092087c55160f35e069289b33718ee9e50c24e8dc229b"
+    },
+    {
+      "path": "claims/C-027/claim.json",
+      "sha256": "696c8b2d7e40614c47963d61524ab1227af3cdc1156343aa5d82eebcc6268933"
+    },
+    {
+      "path": "claims/C-028/claim.json",
+      "sha256": "78e258508a69349ef2139324311599784310efc44d0e954f073b6a8cdaea206e"
+    },
+    {
+      "path": "claims/C-029/claim.json",
+      "sha256": "50b83e104e8adfde9fdcea3926d0a1050f658424bac3845dc5719ecd6d4b4175"
+    },
+    {
+      "path": "claims/C-030/claim.json",
+      "sha256": "2435b4f625d2cd726cbb3d1dbc5ccbcc451fce0179e0d30b40c59013a69c3e8c"
+    },
+    {
+      "path": "claims/C-031/claim.json",
+      "sha256": "b4ae1fa8b9bc4de1f3cdd7e98961e8be4815f4f82237420c7c4f19dc7e9fa95f"
+    },
+    {
+      "path": "claims/C-032/claim.json",
+      "sha256": "0e214ca3479eb708c3e20c6ebfa240bba4e504ad9872dbc2793df1105d5012fa"
+    },
+    {
+      "path": "claims/C-033/claim.json",
+      "sha256": "bb920375f6985a30942983916363307770f260f4868ece3bfa9a018b573cb43a"
+    },
+    {
+      "path": "claims/C-034/claim.json",
+      "sha256": "6ed03da8d8edbbdb1a76b1789226113178d0c41a0cb9dff4b5a5b17436ffaae7"
+    },
+    {
+      "path": "claims/C-035/claim.json",
+      "sha256": "23f605871e93dbdd0725833bce9d884517767c5a15e0c65874afd16d003d31d7"
+    },
+    {
+      "path": "claims/C-036/claim.json",
+      "sha256": "0a1f76182fa87437c29041e46dd09eb85d35c10a21eb7641b7b44dd07b04c7d3"
+    },
+    {
+      "path": "claims/C-037/claim.json",
+      "sha256": "d60a9bc81fd1284ac72f0c2dfa2c44412e64724a14ca05fc78e83715dabf74cf"
+    },
+    {
+      "path": "reviews/R-2026-10-11-SOL.md",
+      "sha256": "3041d0d4c373db72af8a9dc05d07b8e49376f59e2b23ff890b54e376230ea0d6"
+    }
+  ],
+  "merkle_root": "da6bd04bbc1c948e8170ec3cfb75bdd0173fb5dff127a3430c954a46f4995642"
+}

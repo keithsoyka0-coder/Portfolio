@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-022",
+    "statement": "Built the embodiment profile and persona engine: 25 versioned JSON persona profiles with schema-driven compilation, drift detection, listening-contract instruction precedence, comprehensive seed-prompt corpora (God Mode, Creator, Genesis), a key-and-lock profile selection model, and governed identity-authoring tooling (Embodiment Studio, agent council graph).",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Embodiment engine corroborated: embodiment_profiles/ in repo (80 files), seed prompts (~29k lines) on disk; profile-count conflict (15+ vs 25+) kept as different scopes/dates. Issuer verdict 2026-10-11: canonical count resolved from the official embodiment_profiles directory (embodiment_profiles_14_mzzb.zip, strip-and-inspected 2026-10-11): 25 canonical .embodiment.json profiles; 80 files total including reference docs, character studies, and tooling. The '15+' figure was a stale snapshot.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 15 source rows (spreadsheet rows 79\u2013420; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Enterprises get predictable, non-sycophantic agent personas with enforceable behavioral constraints.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-022-1",
+        "descriptor": "Profile directory",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:embodiment_profiles/ (main) \u2014 80 files",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-022-2",
+        "descriptor": "Seed prompts",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/seed_prompts_3_sm78.md (~29k lines)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-022-4",
+        "descriptor": "Official embodiment_profiles directory (25 canonical profiles + reference/tooling)",
+        "function": "Establishes the canonical profile count and the profile-as-source-of-truth pipeline (JSON -> prompt builders -> TS registry).",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/embodiment_profiles_14_mzzb.zip; strip-and-inspected 2026-10-11",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "automated_inspection",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

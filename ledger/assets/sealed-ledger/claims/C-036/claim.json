@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "id": "C-036",
+    "statement": "Built the founder portfolio and showcase layer: portfolio site (v10.3), explainer video, interactive showcase demos (Billy chat, tribunal, render engine), a visual narrative atlas of 65 auto-generated diagrams, and the VTCA verifiable-content SEO framework.",
+    "category": "Creative Direction & Brand",
+    "micro_category": "creative-direction--brand",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Portfolio site corroborated: live deployment loads, v10 zip on disk, PRs #8/#10 merged; VTCA spec remains a candidate (not ratified) per row 145.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 6 source rows (spreadsheet rows 45\u2013324; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Public-facing proof of work that markets capabilities without falsifying the underlying systems.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-036-1",
+        "descriptor": "Live site",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://keith-soyka-portfolio.vercel.app",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-036-2",
+        "descriptor": "Site package",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/your_files/Portfolio_Site_v10.zip",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-036-3",
+        "descriptor": "Recent PRs",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/Portfolio PRs #8, #10 \u2014 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

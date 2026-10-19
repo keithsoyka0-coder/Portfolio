@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-015",
+    "statement": "Authored the ten constitutional invariants (five user-facing, five for digital intelligences) as canonical docs plus machine-readable JSON, enforced across runtime system prompts, embodiment profiles, council runners, and protocol libraries, with a framework canon (Modules 0-12) and an EU AI Act compliance mapping.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Constitutional invariants corroborated: machine-readable JSON + framework PDF on disk, canonical v1.1 documented; enforcement across runtimes is described in embodiment profiles (self-reported).",
+    "derivation_history": "DRAFT from spreadsheet mergence: 18 source rows (spreadsheet rows 6\u2013400; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Enterprise AI deployments get a documented, testable alignment and safety contract instead of implicit prompt folklore.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-015-1",
+        "descriptor": "Machine-readable invariants",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/5_invariants_for_digital_intelligences_8_yoex.json",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-015-2",
+        "descriptor": "Governance framework PDF",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/The_Ethos_of_Orchestration-_A_Governance_Framework_for_Human-Centric_AI_20_ysuv.pdf",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

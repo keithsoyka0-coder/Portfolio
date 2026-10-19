@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-032",
+    "statement": "Runs a structured AI consulting and advisory practice: opportunity audits (from $2,500), bespoke agent builds ($5,000+), fractional advisory ($2,500/mo), hosted sandboxes, hardware-hardened command-center deployments, training and maintainer-handoff programs, sample audit/plan deliverables, launch sequencing across freelance and expert-network channels, and a four-door staged commercial launch (Fiverr, AI-training platforms, expert networks, consulting marketplaces).",
+    "category": "Business & Commercialization",
+    "micro_category": "business--commercialization",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Consulting practice corroborated: sample audit PDFs on disk, three-tier offers with pricing published on the live portfolio; revenue figures in rows are projections, not realized revenue \u2014 no earnings evidence.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 41 source rows (spreadsheet rows 8\u2013434; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Enterprises and SMBs buy scoped, evidence-backed AI implementations with acceptance criteria instead of open-ended experiments.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-032-1",
+        "descriptor": "Sample audit",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/user/files/Sample_AI_Opportunity_Audit_4_6nsp.pdf",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-032-2",
+        "descriptor": "Published offers",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://keith-soyka-portfolio.vercel.app \u2014 Audit from $2,500; Build from $5,000; Advisory from $2,500/mo",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,18 @@
+{
+  "ledger": "ledger-keithsoyka-2026-10-11-v2",
+  "issuer": "Keith Soyka",
+  "issued": "2026-10-12T02:36:58+00:00",
+  "status": "SEALED v2 2026-10-11 by issuer instruction; supersedes v1",
+  "source": "Keith_Soyka_Accomplishments_and_Capabilities_3_wwv7.xlsx (434 rows) via _analysis/claim-manifest.json",
+  "claims_total": 37,
+  "grade_distribution": {
+    "verified": 23,
+    "partial": 12,
+    "planned": 2
+  },
+  "review": "reviews/R-2026-10-11-SOL.md",
+  "attestation_record": "ATTESTATIONS.md",
+  "merkle_root": "da6bd04bbc1c948e8170ec3cfb75bdd0173fb5dff127a3430c954a46f4995642",
+  "seal": "seal.json",
+  "note": "Attestation confirms the claims as stated at their grades. The ledger attests to artifacts, provenance, associations, assessments, decisions, and state transitions \u2014 not that evidence proves the conclusions attributed to it."
+}

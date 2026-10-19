@@ -1,0 +1,71 @@
+{
+  "claim": {
+    "id": "C-024",
+    "statement": "Built test infrastructure: 734 vitest tests across 173 files, all passing in ~42s (2026-10-10 19:01 UTC run), with automated test reporting to JSON/Markdown for mobile review, CI workflow libraries, and deterministic test fixes (e.g. timezone-dependent date parsing).",
+    "category": "Developer Tooling",
+    "micro_category": "developer-tooling",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Test infrastructure corroborated: 243 test-ish TS/JS files counted in repo tree, PRs #12/#21 merged touching tests; exact test counts REINSTATED 2026-10-11: console log of the 2026-10-10 19:01 UTC full-suite run shows 173/173 files and 734/734 tests passing in 41.61s. Honest arc preserved: the morning run the same day was 732/734 with 2 named failures (billy.name mock export, render-decide PDF bytes); both were fixed by the evening run. Supporting practice evidence 2026-10-11: CurrentState_Runtime_17_5e76.md contains dated per-pass validation logs (e.g. '32 tests passed', '7 passed' with TZ-matrix runs). Aggregate suite counts remain excluded per the testing-figures rule until a single replicable full-suite log exists.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 7 source rows (spreadsheet rows 117\u2013404; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Sustains a large solo codebase with regression safety and readable test summaries.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-024-1",
+        "descriptor": "Test files in repo",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview \u2014 243 test-matching TS/JS files on main",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-024-2",
+        "descriptor": "Test-related PRs",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview PRs #12, #21 \u2014 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-024-3",
+        "descriptor": "CurrentState development log (per-pass test validation entries)",
+        "function": "Shows the testing practice in action: dated passes with explicit validation commands and results.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/CurrentState_Runtime_17_5e76.md",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-024-4",
+        "descriptor": "Full-suite vitest console log, 2026-10-10 19:01 UTC (734/734 passing)",
+        "function": "Replicable evidence for the test-count figures: the complete terminal output of the green run.",
+        "disclosure": "disclosed",
+        "provenance": "workspace/user/files/console.log_22_5fmq.txt (issuer-supplied)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

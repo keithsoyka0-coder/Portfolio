@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-019",
+    "statement": "Performed security hardening: patched an SSRF-adjacent vulnerability with LLM-proxy allowlists, rotated compromised credentials after a .gitignore negation bug (PR #22), shipped a BOLA authorization patch with a 9-case vitest suite, sandboxed the render engine with opaque-origin CSP, added crisis-detection protocols to the conversational agent, and enforced PR-only code management with pre-curation tagging.",
+    "category": "Governance & Security",
+    "micro_category": "governance--security",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Security-hardening record corroborated: PR #22 (env-file fix) merged, credential-rotation incident documented in rows as handled transparently; crisis-detection protocol named but not individually verified.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 11 source rows (spreadsheet rows 59\u2013423; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Demonstrates operational security discipline: incident response, secret containment, and hardened review gates on AI-assisted codebases.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-019-1",
+        "descriptor": "Env hygiene PR",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview PR #22 \u2014 merged",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-019-2",
+        "descriptor": "Rotation incident [unverifiable]",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "unverifiable",
+        "provenance": "described in rows 131/321 as real leaked-secrets incident, rotated",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "unavailable",
+        "independence": "asserted_only",
+        "reproducibility": "asserted_only"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-012",
+    "statement": "Built cross-session memory and hybrid retrieval: Mem0 working memory plus Supabase pgvector ground truth with corpus-wins-facts / Mem0-wins-preferences merge rules, 768-dim HNSW vector indexing with in-database cosine matching (match_knowledge_fragments), memory transplant and context seeding across runtimes, PLK-governed personal-language interpretation, and an Intent/GIL interpretive layer preserving non-linear human intent.",
+    "category": "Data Layer & Retrieval",
+    "micro_category": "data-layer--retrieval",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Memory/retrieval architecture corroborated: mem0-mcp skill installed, pgvector retrieval is the runtime's documented source of truth; 1,418 fragments vs 27,737 rows treated as different DB targets; '10ms p99' latency figure EXCLUDED per issuer rule 2026-10-11 (no replicable logs); reinstate only with logs.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 21 source rows (spreadsheet rows 12\u2013414; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Persistent companions and advisors retain context across sessions and runtimes without compressing identity or hallucinating memory.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-012-1",
+        "descriptor": "Mem0 integration",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "~/workspace/skills/mem0-mcp/",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-012-2",
+        "descriptor": "Retrieval as source of truth",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "documented: Supabase match_knowledge_fragments is the single source of truth",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}

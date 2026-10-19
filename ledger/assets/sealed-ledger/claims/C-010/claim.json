@@ -1,0 +1,43 @@
+{
+  "claim": {
+    "id": "C-010",
+    "statement": "Built a large Supabase/Postgres data layer (217 tables, 75 functions, ~299 RLS policies per the Aug 2026 dump) with deterministic visibility/access-control logic, in-schema governance tables (policy_rule, audit_log, evidence_source), DI/user schema separation, versioned migration suites, and a hybrid Postgres plus Apache Iceberg lake mirror.",
+    "category": "Data Layer & Retrieval",
+    "micro_category": "data-layer--retrieval",
+    "evidence_grade": "verified",
+    "how_and_why": "Grade reason: Large Supabase schema corroborated by his published snapshot figures (217 tables / 299 RLS / 75 functions, Aug 2026) repeated on his live portfolio; exact counts are snapshot-reported, not independently tallied.",
+    "derivation_history": "DRAFT from spreadsheet mergence: 13 source rows (spreadsheet rows 4\u2013371; full list in _analysis/claim-manifest.json).",
+    "assessment_notes": "Assessor-stated commercial interpretation (not an issuer claim): Market value (assessor-stated): Multi-tenant agent systems get row-level isolation, auditable state, and a migration path from transactional to analytical workloads.",
+    "evidence": [
+      {
+        "artifact_id": "A-C-010-1",
+        "descriptor": "Published schema figures",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "https://keith-soyka-portfolio.vercel.app \u2014 '217 Postgres tables \u00b7 299 RLS policies \u00b7 75 DB functions (Aug 2026 snapshot)'",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "selectively_disclosed",
+        "independence": "issuer_supplied",
+        "reproducibility": "inspectable"
+      },
+      {
+        "artifact_id": "A-C-010-2",
+        "descriptor": "Migration files",
+        "function": "Corroborating artifact named in the source assessment.",
+        "disclosure": "disclosed",
+        "provenance": "github keithsoyka0-coder/gestaltview:supabase/ migrations (main)",
+        "captured_at": null,
+        "package_path": null,
+        "sha256": null,
+        "bytes": null,
+        "access": "public",
+        "independence": "third_party_record",
+        "reproducibility": "inspectable"
+      }
+    ]
+  },
+  "status": "ATTESTED 2026-10-11 \u2014 blanket issuer attestation (\"I attest the claims and their strict boundary controls\"); see ATTESTATIONS.md. Grade unchanged by attestation."
+}
